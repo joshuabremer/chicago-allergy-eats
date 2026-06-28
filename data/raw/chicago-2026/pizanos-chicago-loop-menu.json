@@ -1,0 +1,48 @@
+{
+  "sourceName": "User-pasted Pizano's Chicago Loop menu and allergen notes",
+  "sourceUrl": "https://www.pizanoschicago.com/locations/chicago-loop/menu/#",
+  "capturedAt": "2026-06-28",
+  "location": "Pizano's Chicago Loop",
+  "sections": [
+    {
+      "name": "Location info",
+      "items": [
+        "61 E. Madison Street, Chicago, IL 60603",
+        "Phone: 312-236-1777",
+        "Dine in and carryout: Sunday through Thursday 11 AM-11 PM; Friday and Saturday 11 AM-11 PM"
+      ]
+    },
+    {
+      "name": "Appetizers",
+      "items": [
+        "Garlic Bread - fresh bread smothered with garlic butter, side of marinara",
+        "Cheesy Garlic Bread - covered with melted cheese, side of marinara",
+        "Wisconsin Cheese Curds - deep fried, served with marinara or spicy ranch",
+        "Fried Pickles - golden brown with spicy ranch for dipping",
+        "Fried Calamari - lightly breaded and seasoned with lemon and marinara",
+        "Cheese Sticks - golden brown with marinara for dipping"
+      ]
+    },
+    {
+      "name": "Salads and pizza",
+      "items": [
+        "Pizano Salad - lettuce, fresh vegetables, croutons, homemade Italian dressing",
+        "Caesar Salad - romaine, croutons, parmesan, classic dressing",
+        "Chopped Salad - chopped lettuce, basil, bacon, grilled chicken, tomato, mozzarella cheese, scallions, homemade Italian",
+        "Deep Dish Pizza - cheese pizza, cheese sausage or pepperoni pizza, meat lovers"
+      ]
+    },
+    {
+      "name": "Allergen notes from user-provided source work",
+      "items": [
+        "Peanuts or Tree Nuts: We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients.",
+        "A few items, such as the vanilla ice cream and chocolate chip cookie dough, are made in a facility where peanuts and tree nuts are present.",
+        "Gluten-free pizza dough may contain traces of almond and coconut."
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from user-pasted menu and follow-up allergen source work so future rescans can reuse it without refetching the site.",
+    "This combines the menu paste with the specific allergen notes the user wanted preserved."
+  ]
+}

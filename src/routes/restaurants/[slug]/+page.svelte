@@ -2,7 +2,7 @@
 	import RestaurantDetail from '$lib/components/RestaurantDetail.svelte';
 	import RestaurantMap from '$lib/components/RestaurantMap.svelte';
 	import type { PageData } from './$types';
-	import type { DecisionState, UserReview } from '$lib/types';
+	import type { DecisionState, ResearchTag, UserReview } from '$lib/types';
 	import { getUserReview, loadUserReviews, saveUserReviews } from '$lib/user-reviews';
 
 	let { data }: { data: PageData } = $props();
@@ -36,36 +36,30 @@
 		};
 	}
 
-	function addPersonalTag(tag: string) {
-		const normalizedTag = tag.trim();
-
-		if (!normalizedTag) {
-			return;
-		}
-
-		if (
-			getUserReview(reviewState, data.place.slug).personalTags.some(
-				(value) => value.toLowerCase() === normalizedTag.toLowerCase()
-			)
-		) {
-			return;
-		}
+	function setComment(comment: string) {
+		const normalizedComment = comment.trim();
 
 		reviewState = {
 			...reviewState,
 			[data.place.slug]: {
 				...getUserReview(reviewState, data.place.slug),
-				personalTags: [...getUserReview(reviewState, data.place.slug).personalTags, normalizedTag]
+				comment: normalizedComment || undefined
 			}
 		};
 	}
 
-	function removePersonalTag(tag: string) {
+	function hideResearchTag(tag: ResearchTag) {
+		const review = getUserReview(reviewState, data.place.slug);
+
+		if (review.hiddenResearchTags.includes(tag)) {
+			return;
+		}
+
 		reviewState = {
 			...reviewState,
 			[data.place.slug]: {
-				...getUserReview(reviewState, data.place.slug),
-				personalTags: getUserReview(reviewState, data.place.slug).personalTags.filter((value) => value !== tag)
+				...review,
+				hiddenResearchTags: [...review.hiddenResearchTags, tag]
 			}
 		};
 	}
@@ -94,8 +88,8 @@
 				fullPage={true}
 				onSetDecision={setDecision}
 				onSetRejected={setRejected}
-				onAddPersonalTag={addPersonalTag}
-				onRemovePersonalTag={removePersonalTag}
+				onSetComment={setComment}
+				onHideResearchTag={hideResearchTag}
 			/>
 		</div>
 

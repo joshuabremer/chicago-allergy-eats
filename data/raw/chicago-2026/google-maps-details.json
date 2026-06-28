@@ -460,5 +460,55 @@
     "phone": "+1 312-929-4580",
     "latitude": 41.8847068,
     "longitude": -87.6476011
+  },
+  {
+    "name": "Big Star",
+    "address": "1531 N Damen Ave, Chicago, IL 60622",
+    "website": "https://www.bigstarchicago.com/location/wicker-park/",
+    "phone": "+1 877-298-0617",
+    "rating": 4.4,
+    "latitude": 41.9091742,
+    "longitude": -87.6771281
+  },
+  {
+    "name": "Big Star Wrigleyville",
+    "address": "3640 N Clark St, Chicago, IL 60613",
+    "website": "https://www.bigstarchicago.com/location/wrigleyville/",
+    "phone": "+1 877-416-6932",
+    "rating": 4.0,
+    "latitude": 41.9481784,
+    "longitude": -87.6575019
+  },
+  {
+    "name": "Dove's Luncheonette",
+    "address": "1545 N Damen Ave, Chicago, IL 60622",
+    "website": "https://www.doveschicago.com/",
+    "phone": "+1 773-645-4060",
+    "latitude": 41.909438,
+    "longitude": -87.6772965
+  },
+  {
+    "name": "Parlor Pizza Bar River North",
+    "address": "405 N Dearborn St, Chicago, IL 60654",
+    "website": "https://parlorchicago.com/",
+    "rating": 4.3,
+    "latitude": 41.8894461,
+    "longitude": -87.6292878
+  },
+  {
+    "name": "Parlor Pizza Bar West Loop",
+    "address": "108 N Green St, Chicago, IL 60607",
+    "website": "https://parlorchicago.com/",
+    "rating": 4.3,
+    "latitude": 41.8834763,
+    "longitude": -87.6488895
+  },
+  {
+    "name": "Parlor Pizza Bar Wicker Park",
+    "address": "1824 W Division St, Chicago, IL 60622",
+    "website": "https://parlorchicago.com/",
+    "rating": 4.4,
+    "latitude": 41.9034707,
+    "longitude": -87.6734502
   }
 ]

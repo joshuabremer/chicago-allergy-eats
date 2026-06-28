@@ -3,32 +3,31 @@
 	import RestaurantMap from '$lib/components/RestaurantMap.svelte';
 	import { restaurants } from '$lib/data/restaurants';
 	import { DECISION_STATES, RESEARCH_TAGS, type DecisionState, type ResearchTag, type Restaurant } from '$lib/types';
-	import { getInboxResearchEntries } from '$lib/restaurant-helpers';
 	import { getUserReview, loadUserReviews, saveUserReviews } from '$lib/user-reviews';
+
+	const DEFAULT_VISIBLE_DECISION_STATES: DecisionState[] = [
+		'ready-to-review',
+		'needs-more-info',
+		'approved'
+	];
 
 	let searchText = $state('');
 	let activeTypes = $state<string[]>([]);
 	let activeResearchTags = $state<ResearchTag[]>([]);
-	let activeDecisionStates = $state<DecisionState[]>([]);
+	let activeDecisionStates = $state<DecisionState[]>([...DEFAULT_VISIBLE_DECISION_STATES]);
 	let reviewState = $state(loadUserReviews());
 	const decisionStateLabels: Record<DecisionState, string> = {
-		unverified: 'Unverified',
+		'ready-to-review': 'Ready to review',
+		'needs-more-info': 'Needs more info',
 		approved: 'Approved',
 		rejected: 'Rejected'
 	};
 
-	const inboxEntries = getInboxResearchEntries();
 	const allTypes = Array.from(new Set(restaurants.map((restaurant) => restaurant.type)));
 	const visiblePlaces = $derived.by(() => restaurants.filter(matchesFilters));
-	const groupedPlaces = $derived.by(() => groupPlacesByNeighborhood(visiblePlaces));
-	const promotedCount = $derived.by(
-		() =>
-			restaurants.filter((restaurant) => {
-				const review = getUserReview(reviewState, restaurant.slug);
-				return review.decision === 'approved' || review.personalTags.length > 0;
-			}).length
+	const sortedVisiblePlaces = $derived.by(() =>
+		[...visiblePlaces].sort((left, right) => left.name.localeCompare(right.name))
 	);
-	const inboxCount = $derived(inboxEntries.length);
 
 	$effect(() => {
 		saveUserReviews(reviewState);
@@ -54,6 +53,7 @@
 
 	function matchesFilters(restaurant: Restaurant) {
 		const review = getUserReview(reviewState, restaurant.slug);
+		const visibleResearchTags = getVisibleResearchTags(restaurant);
 		const search = searchText.trim().toLowerCase();
 
 		if (
@@ -70,7 +70,7 @@
 			return false;
 		}
 
-		if (activeResearchTags.length > 0 && !activeResearchTags.every((tag) => restaurant.researchTags.includes(tag))) {
+		if (activeResearchTags.length > 0 && !activeResearchTags.every((tag) => visibleResearchTags.includes(tag))) {
 			return false;
 		}
 
@@ -89,15 +89,9 @@
 		return `/restaurants/${slug}`;
 	}
 
-	function groupPlacesByNeighborhood(places: Restaurant[]) {
-		return Object.entries(
-			places.reduce<Record<string, Restaurant[]>>((groups, place) => {
-				groups[place.neighborhood] = [...(groups[place.neighborhood] ?? []), place].sort((left, right) =>
-					left.name.localeCompare(right.name)
-				);
-				return groups;
-			}, {})
-		).sort(([left], [right]) => left.localeCompare(right));
+	function getVisibleResearchTags(restaurant: Restaurant) {
+		const hiddenResearchTags = getUserReview(reviewState, restaurant.slug).hiddenResearchTags;
+		return restaurant.researchTags.filter((tag) => !hiddenResearchTags.includes(tag));
 	}
 </script>
 
@@ -124,7 +118,7 @@
 						searchText = '';
 						activeTypes = [];
 						activeResearchTags = [];
-						activeDecisionStates = [];
+						activeDecisionStates = [...DEFAULT_VISIBLE_DECISION_STATES];
 					}}
 				>
 					Reset
@@ -189,49 +183,44 @@
 		<section class="sidebar-card list-card">
 			<div class="filter-heading">
 				<div>
-					<h2>Neighborhood list</h2>
-					<p class="list-summary">{visiblePlaces.length} visible • {promotedCount} promoted • {inboxCount} inbox</p>
+					<h2>Restaurant list</h2>
+					<p class="list-summary">{visiblePlaces.length} visible</p>
 				</div>
 			</div>
 
-			{#if groupedPlaces.length > 0}
+			{#if sortedVisiblePlaces.length > 0}
 				<div class="group-list">
-					{#each groupedPlaces as [neighborhood, places]}
-						<section class="neighborhood-group">
-							<h3>{neighborhood}</h3>
-							<div class="place-list">
-								{#each places as restaurant}
-									<a href={restaurantHref(restaurant.slug)} class="place-card">
-										<div class="place-card-top">
-											<div>
-												<strong>{restaurant.name}</strong>
-												<p>{restaurant.type} • {restaurant.meals.join(', ')}</p>
-											</div>
-											{#if getUserReview(reviewState, restaurant.slug).decision === 'rejected'}
-												<span class="rejected-pill">Rejected</span>
-											{:else if getUserReview(reviewState, restaurant.slug).decision === 'approved'}
-												<span class="approved-pill">Approved</span>
-											{:else}
-												<span class="unverified-pill">Unverified</span>
-											{/if}
-										</div>
+					{#each sortedVisiblePlaces as restaurant}
+						<a href={restaurantHref(restaurant.slug)} class="place-card">
+							<div class="place-card-top">
+								<div>
+									<strong>{restaurant.name}</strong>
+									<p>{restaurant.neighborhood} • {restaurant.type} • {restaurant.meals.join(', ')}</p>
+								</div>
+								{#if getUserReview(reviewState, restaurant.slug).decision === 'rejected'}
+									<span class="rejected-pill">Rejected</span>
+								{:else if getUserReview(reviewState, restaurant.slug).decision === 'approved'}
+									<span class="approved-pill">Approved</span>
+								{:else if getUserReview(reviewState, restaurant.slug).decision === 'needs-more-info'}
+									<span class="needs-more-info-pill">Needs more info</span>
+								{:else}
+									<span class="ready-to-review-pill">Ready to review</span>
+								{/if}
+							</div>
 
-										{#if restaurant.summary}
-											<p class="place-summary">{restaurant.summary}</p>
-										{/if}
+							{#if restaurant.summary}
+								<p class="place-summary">{restaurant.summary}</p>
+							{/if}
 
-										<div class="chip-row compact">
-											{#each restaurant.researchTags as tag}
-												<span class="info-chip">{tag}</span>
-											{/each}
-											{#each getUserReview(reviewState, restaurant.slug).personalTags as tag}
-												<span class="personal-chip">{tag}</span>
-											{/each}
-										</div>
-									</a>
+							<div class="chip-row compact">
+								{#each getVisibleResearchTags(restaurant) as tag}
+									<span class="info-chip">{tag}</span>
+								{/each}
+								{#each getUserReview(reviewState, restaurant.slug).personalTags as tag}
+									<span class="personal-chip">{tag}</span>
 								{/each}
 							</div>
-						</section>
+						</a>
 					{/each}
 				</div>
 			{:else}
@@ -255,30 +244,11 @@
 						<div>
 							<h3>What is already wired up</h3>
 							<ul>
-								<li>Neighborhood-grouped list with type and research tag filters</li>
+								<li>Searchable restaurant list with type and research tag filters</li>
 								<li>Dedicated restaurant pages for deep review</li>
-								<li>Browser-saved approvals and personal “promote” tags</li>
-								<li>Repo-backed research dump for raw links, PDFs, ideas, and notes</li>
+								<li>Browser-saved decision states and comments</li>
+								<li>Repo-backed research sources for raw links, PDFs, ideas, and notes</li>
 							</ul>
-						</div>
-
-						<div>
-							<h3>Research inbox</h3>
-							{#if inboxEntries.length > 0}
-								<div class="inbox-list">
-									{#each inboxEntries as entry}
-										<article>
-											<div>
-												<strong>{entry.title}</strong>
-												<span>{entry.kind} • {entry.capturedAt}</span>
-											</div>
-											<p>{entry.excerpt}</p>
-										</article>
-									{/each}
-								</div>
-							{:else}
-								<p class="empty-state">No uncategorized research notes yet.</p>
-							{/if}
 						</div>
 					</div>
 				</section>
@@ -365,7 +335,6 @@
 	}
 
 	.place-card p,
-	.inbox-list span,
 	.approved-pill {
 		font-size: 0.8rem;
 	}
@@ -456,20 +425,6 @@
 		padding-right: 0.25rem;
 	}
 
-	.neighborhood-group {
-		display: grid;
-		gap: 0.5rem;
-	}
-
-	.neighborhood-group h3 {
-		margin-bottom: 0;
-	}
-
-	.place-list {
-		display: grid;
-		gap: 0.55rem;
-	}
-
 	.place-card {
 		display: grid;
 		gap: 0.5rem;
@@ -537,7 +492,7 @@
 		white-space: nowrap;
 	}
 
-	.unverified-pill {
+	.ready-to-review-pill {
 		display: inline-flex;
 		align-items: center;
 		border-radius: 999px;
@@ -545,6 +500,17 @@
 		font-size: 0.76rem;
 		background: #e2e8f0;
 		color: #475569;
+		white-space: nowrap;
+	}
+
+	.needs-more-info-pill {
+		display: inline-flex;
+		align-items: center;
+		border-radius: 999px;
+		padding: 0.32rem 0.58rem;
+		font-size: 0.76rem;
+		background: #fef3c7;
+		color: #92400e;
 		white-space: nowrap;
 	}
 
@@ -577,8 +543,7 @@
 		pointer-events: auto;
 	}
 
-	.overview-grid,
-	.inbox-list {
+	.overview-grid {
 		display: grid;
 		gap: 1rem;
 	}
@@ -593,24 +558,6 @@
 		padding-left: 1rem;
 		display: grid;
 		gap: 0.45rem;
-	}
-
-	.inbox-list article {
-		padding: 1rem;
-		border-radius: 1rem;
-		background: white;
-		border: 1px solid #e2e8f0;
-	}
-
-	.inbox-list div {
-		display: flex;
-		justify-content: space-between;
-		gap: 0.75rem;
-		margin-bottom: 0.45rem;
-	}
-
-	.inbox-list p {
-		margin-bottom: 0;
 	}
 
 	@media (max-width: 1100px) {

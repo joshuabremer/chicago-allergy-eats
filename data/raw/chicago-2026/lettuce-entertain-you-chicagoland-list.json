@@ -1,0 +1,96 @@
+{
+  "sourceName": "Lettuce Entertain You Chicagoland restaurant list",
+  "sourceUrl": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+  "capturedAt": "2026-06-28T14:17:12.542-04:00",
+  "restaurants": [
+    {
+      "name": "Aba",
+      "locations": ["302 N Green St, Chicago, IL"],
+      "phoneNumbers": ["773-645-1400"]
+    },
+    {
+      "name": "Beatrix",
+      "locations": [
+        "519 N Clark St, Chicago, IL",
+        "671 N St Clair St, Chicago, IL",
+        "834 W Fulton Market, Chicago, IL",
+        "155 N Upper Wacker Dr, Chicago, IL"
+      ],
+      "phoneNumbers": ["312-284-1377", "312-642-0001", "312-733-0370", "312-736-0404"]
+    },
+    {
+      "name": "Cafe Ba-Ba-Reeba!",
+      "locations": ["2024 N Halsted St, Chicago, IL"],
+      "phoneNumbers": ["773-935-5000"]
+    },
+    {
+      "name": "Ema",
+      "locations": ["74 W Illinois St, Chicago, IL"],
+      "phoneNumbers": ["312-527-5586"]
+    },
+    {
+      "name": "Joe's Seafood, Prime Steak & Stone Crab",
+      "locations": ["60 E Grand Ave, Chicago, IL"],
+      "phoneNumbers": ["312-379-5637"]
+    },
+    {
+      "name": "Mon Ami Gabi",
+      "locations": ["2300 N Lincoln Park West, Chicago, IL"],
+      "phoneNumbers": ["773-348-8886"]
+    },
+    {
+      "name": "Pizzeria Portofino",
+      "locations": ["317 N Clark St, Chicago, IL"],
+      "phoneNumbers": ["312-900-9018"]
+    },
+    {
+      "name": "Ramen-San",
+      "locations": ["59 W Hubbard St, Chicago, IL", "1962 N Halsted St, Chicago, IL"],
+      "phoneNumbers": ["312-377-9950", "773-248-3000"]
+    },
+    {
+      "name": "Ramen-San Deluxe",
+      "locations": ["165 E Huron St, Chicago, IL"],
+      "phoneNumbers": ["312-767-4075"]
+    },
+    {
+      "name": "Ramen-San Whisky Bar",
+      "locations": ["219 N Green St, Chicago, IL"],
+      "phoneNumbers": ["773-645-0085"]
+    },
+    {
+      "name": "RPM Italian",
+      "locations": ["52 W Illinois St, Chicago, IL"],
+      "phoneNumbers": ["312-222-1888"]
+    },
+    {
+      "name": "RPM Seafood",
+      "locations": ["317 N Clark St, Chicago, IL"],
+      "phoneNumbers": ["312-900-9035"]
+    },
+    {
+      "name": "RPM Steak",
+      "locations": ["66 W Kinzie St, Chicago, IL"],
+      "phoneNumbers": ["312-284-4990"]
+    },
+    {
+      "name": "Summer House Santa Monica",
+      "locations": ["1954 N Halsted St, Chicago, IL"],
+      "phoneNumbers": ["773-634-4100"]
+    },
+    {
+      "name": "Sushi-San",
+      "locations": ["63 W Grand Ave, Chicago, IL", "233 S Wacker Dr, Chicago, IL", "1950 N Halsted St, Chicago, IL"],
+      "phoneNumbers": ["312-828-0575", "773-389-7101"]
+    },
+    {
+      "name": "Wildfire",
+      "locations": ["159 W Erie St, Chicago, IL"],
+      "phoneNumbers": ["312-787-9000"]
+    }
+  ],
+  "notes": [
+    "This is the Chicago subset of the user-pasted Lettuce Entertain You restaurant list so future prompts can match chain membership without reparsing the PDF.",
+    "The PDF is a chain membership source, not a direct allergy-accommodation review."
+  ]
+}

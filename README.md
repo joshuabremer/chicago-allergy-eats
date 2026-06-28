@@ -1,6 +1,6 @@
 # Chicago Allergy Eats
 
-A SvelteKit site for researching Chicago restaurants by neighborhood, comparing allergy-related evidence, and saving browser-local approvals/promotions.
+A SvelteKit site for researching Chicago restaurants, comparing allergy-related evidence, and saving browser-local review decisions.
 
 ## What is in the app
 

@@ -1,0 +1,10 @@
+{
+  "sourceName": "User-supplied Reddit lead",
+  "sourceUrl": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+  "capturedAt": "2026-06-28T14:17:12.542-04:00",
+  "summaryFromUser": "Apparently Lettuce restaurants are really good.",
+  "notes": [
+    "Direct fetch was blocked by Reddit verification, so this file preserves the user-supplied takeaway and the thread URL for future follow-up.",
+    "Use this as a chain-level lead rather than as a direct quoted review unless the thread content is captured later."
+  ]
+}

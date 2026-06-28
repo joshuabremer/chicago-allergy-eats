@@ -1,0 +1,26 @@
+{
+  "sourceName": "Lettuce Entertain You contact FAQ",
+  "sourceUrl": "https://www.lettuce.com/contact/",
+  "capturedAt": "2026-06-28T14:23:20.089-04:00",
+  "relevantQuotes": [
+    {
+      "subject": "Dietary restrictions",
+      "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies. We ask that you inform the hostess as well as your waiter/waitress as soon as you are greeted. You are also more than welcome to reach out to any of our restaurants individually if you wish to discuss further prior to your visit.",
+      "href": "https://www.lettuce.com/contact/"
+    },
+    {
+      "subject": "Vegan options",
+      "quote": "All of our restaurants can accommodate a vegan diet, but menus that will already have plenty of vegan options can be found at Beatrix, Ema, and Hub 51.",
+      "href": "https://www.lettuce.com/contact/"
+    },
+    {
+      "subject": "Gluten-free options",
+      "quote": "All of our restaurants can accommodate a gluten-free diet, but please see our Gluten-Free Friendly Restaurants post with a list of our most gluten conscious restaurants.",
+      "href": "https://www.lettuce.com/contact/"
+    }
+  ],
+  "notes": [
+    "This is the official Lettuce Entertain You source for chain-wide dietary accommodations language.",
+    "Use it as the primary green-flag source for Lettuce group restaurants in this project."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "sourceName": "User-pasted Parlor Pizza menu",
+  "sourceUrl": "https://parlorchicago.com/",
+  "capturedAt": "2026-06-28",
+  "locations": ["Wicker Park", "River North", "West Loop"],
+  "sections": [
+    {
+      "name": "Pre-pizza",
+      "items": [
+        "Hummus - celery, cucumbers, carrots, grilled garlic bread",
+        "Kale & Artichoke Dip - roasted red peppers, garlic cream, bread crumbs, garlic toast",
+        "Parlor Pizza Bread - house beer bread topped with garlic, mozzarella, shallot, parmesan, pepperoni, scallion cream, cherry peppers, sesame seeds",
+        "Glazed Brussels Sprouts - spicy maple syrup, toasted pumpkin & sesame seeds, lemon, roasted garlic & shallots",
+        "Hand Cut Frites - with sriracha honey mustard, jalapeño cream cheese sauce, ketchup"
+      ]
+    },
+    {
+      "name": "Salads",
+      "items": [
+        "Kale Cobb Salad - bacon, egg, scallion, avocado, tomatoes, blue cheese, buttermilk ranch",
+        "Antipasto Chopped Salad - prosciutto, pepperoni, artichoke hearts, pepperoncinis, provolone, tomatoes, olives, potatoes, creamy Italian dressing",
+        "Watermelon Salad - watermelon, feta cheese, roasted pistachios, honey lemon vinaigrette, fresh mint",
+        "Caesar Salad - garlic bread crostini, crispy parmesan cheese, Greek yogurt Caesar dressing",
+        "Super Green Salad - spinach, kale, romaine, parmesan, green olives, broccoli, asparagus, avocado, pistachios, chili flakes, avocado vinaigrette"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted menu text without refetching the website.",
+    "The pasted menu explicitly listed pistachios on the Watermelon Salad and Super Green Salad."
+  ]
+}

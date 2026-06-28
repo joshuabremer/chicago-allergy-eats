@@ -27,6 +27,24 @@
       "parsedPath": "data/raw/chicago-2026/articles/parsed/allthingsallergies-chicago-guide.json",
       "rawApiPath": "data/raw/chicago-2026/articles/raw/allthingsallergies-chicago-guide.json",
       "quoteCount": 1
+    },
+    {
+      "slug": "spokin-wicker-park-chicago-guide",
+      "title": "Wicker Park Chicago Food Allergy Friendly City Guide",
+      "sourceName": "Spokin",
+      "articleUrl": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-wicker-park-chicago-guide.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-wicker-park-chicago-guide.json",
+      "quoteCount": 5
+    },
+    {
+      "slug": "spokin-chicago-food-allergy-friendly-city-guide",
+      "title": "Chicago Food Allergy Friendly City Guide",
+      "sourceName": "Spokin",
+      "articleUrl": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-chicago-food-allergy-friendly-city-guide.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-chicago-food-allergy-friendly-city-guide.json",
+      "quoteCount": 35
     }
   ]
 }

@@ -3,14 +3,14 @@ export const RESEARCH_TAGS = [
 	'Nut free menu',
 	'Nut free kitchen',
 	'Can confidently accommodate',
-	'Has allergen guide',
+	'Has allergy guide',
+	'Has allergy labels',
 	'Has great reviews',
-	'Probably OK',
-	'Reservation target'
+	'Probably OK'
 ] as const;
 
 export type ResearchTag = (typeof RESEARCH_TAGS)[number];
-export const DECISION_STATES = ['unverified', 'approved', 'rejected'] as const;
+export const DECISION_STATES = ['ready-to-review', 'needs-more-info', 'approved', 'rejected'] as const;
 export type DecisionState = (typeof DECISION_STATES)[number];
 
 export type RestaurantType =
@@ -26,10 +26,16 @@ export type MealService = 'Breakfast' | 'Brunch' | 'Lunch' | 'Dinner' | 'Dessert
 
 export type ResourceKind = 'menu' | 'allergen' | 'website' | 'review' | 'reservation';
 
+export type MenuFlag = {
+	tone: 'green' | 'red';
+	note: string;
+};
+
 export type ResourceLink = {
 	label: string;
 	href: string;
 	kind: ResourceKind;
+	menuFlags?: MenuFlag[];
 };
 
 export type SourceQuote = {
@@ -44,6 +50,7 @@ export type Restaurant = {
 	neighborhood: string;
 	address: string;
 	phone?: string;
+	email?: string;
 	rating?: number;
 	type: RestaurantType;
 	cuisineSummary: string;
@@ -75,5 +82,7 @@ export type ResearchDumpEntry = {
 export type UserReview = {
 	decision: DecisionState;
 	rejectionNote?: string;
+	comment?: string;
+	hiddenResearchTags: ResearchTag[];
 	personalTags: string[];
 };

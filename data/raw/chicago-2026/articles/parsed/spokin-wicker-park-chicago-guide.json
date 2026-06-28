@@ -1,0 +1,66 @@
+{
+  "title": "Wicker Park Chicago Food Allergy Friendly City Guide",
+  "sourceName": "Spokin",
+  "articleUrl": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide",
+  "places": [
+    {
+      "name": "Big Star",
+      "sourceLink": "https://www.bigstarchicago.com/",
+      "location": "Wicker Park, Chicago",
+      "quote": "There are limited nut offerings on the menu, and their tortillas are gluten-free."
+    },
+    {
+      "name": "Dove's Luncheonette",
+      "sourceLink": "https://www.doveschicago.com/",
+      "location": "Wicker Park, Chicago",
+      "quote": "Please be aware that one of Dove’s homemade hot sauces, available at each table, contains almonds."
+    },
+    {
+      "name": "Small Cheval",
+      "sourceLink": "https://smallcheval.com/",
+      "location": "Wicker Park, Chicago",
+      "quote": "There are gluten-free options available and no nuts on the menu."
+    },
+    {
+      "name": "Parlor Pizza",
+      "sourceLink": "https://parlorchicago.com/",
+      "location": "Wicker Park, Chicago",
+      "quote": "There are very limited nuts on the menu."
+    },
+    {
+      "name": "Jeni's Splendid Ice Creams",
+      "sourceLink": "https://jenis.com/",
+      "location": "Wicker Park, Chicago",
+      "quote": "All ice cream flavors have allergen warnings displayed. They offer nut-free, dairy-free, egg-free and gluten-free options."
+    }
+  ],
+  "quotes": [
+    {
+      "subject": "Big Star",
+      "quote": "There are limited nut offerings on the menu, and their tortillas are gluten-free.",
+      "href": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Dove's Luncheonette",
+      "quote": "Please be aware that one of Dove’s homemade hot sauces, available at each table, contains almonds.",
+      "href": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Small Cheval",
+      "quote": "There are gluten-free options available and no nuts on the menu.",
+      "href": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Parlor Pizza",
+      "quote": "There are very limited nuts on the menu.",
+      "href": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Jeni's Splendid Ice Creams",
+      "quote": "All ice cream flavors have allergen warnings displayed. They offer nut-free, dairy-free, egg-free and gluten-free options.",
+      "href": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide"
+    }
+  ],
+  "sourceUrl": "https://www.spokin.com/wicker-park-chicago-food-allergy-friendly-city-guide",
+  "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-wicker-park-chicago-guide.json"
+}

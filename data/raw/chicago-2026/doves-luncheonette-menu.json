@@ -1,0 +1,42 @@
+{
+  "sourceName": "User-pasted Dove's Luncheonette menu",
+  "sourceUrl": "https://www.doveschicago.com/menu",
+  "capturedAt": "2026-06-28",
+  "location": "Dove's Luncheonette",
+  "sections": [
+    {
+      "name": "Main menu highlights",
+      "items": [
+        "Chipotle Deviled Eggs - hot sauce, scallions",
+        "Pimento Cheese - hook's 3 year cheddar, pepper jelly, b&b pickles, fried saltines",
+        "Masa Pancakes - mole-spiced maple syrup, whipped agave butter",
+        "Little Gem Salad - radish, carrot, queso fresco, pepitas, herby breadcrumbs, burnt chili vinaigrette",
+        "OK Onion Burger - kilgus beef patty, grilled onions, bread & butter pickles, american cheese, comeback sauce, sesame seed bun",
+        "Tlayuda - giant crispy masa tortilla, refried black beans, snap peas, stracciatella, preserved lemon, salsa verde, spring greens"
+      ]
+    },
+    {
+      "name": "Sides and drinks",
+      "items": [
+        "Breakfast Potatoes",
+        "Al Pastor Seasoned Fries",
+        "Refried Black Beans",
+        "Dirty Horchata Latte - spiced coffee infused vodka, cold brew, oat milk, cinnamon, almond, vanilla"
+      ]
+    },
+    {
+      "name": "Happy hour",
+      "items": [
+        "El Animal Fries - caramelized onions, comeback sauce",
+        "Relish Tray - deviled eggs, crudite, b&b pickles, herb dip",
+        "Little Gem Salad - root vegetables, queso fresco, pepitas, herby breadcrumb, burnt chili vinaigrette",
+        "Chicken Sando - fried chicken thigh, salsa seca, ranch, shredded lettuce, sesame bun",
+        "OK Onion Burger - kilgus beef patty, grilled onions, b&b pickles, american cheese, comeback sauce, sesame seed bun"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted menu text without refetching the website.",
+    "The pasted menu explicitly included almond in the Dirty Horchata Latte."
+  ]
+}

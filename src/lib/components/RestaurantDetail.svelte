@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { DecisionState, Restaurant, UserReview } from '$lib/types';
+	import type { DecisionState, ResearchTag, Restaurant, UserReview } from '$lib/types';
 
 	let {
 		place,
@@ -7,33 +7,21 @@
 		fullPage = false,
 		onSetDecision,
 		onSetRejected,
-		onAddPersonalTag,
-		onRemovePersonalTag
+		onSetComment,
+		onHideResearchTag
 	}: {
 		place: Restaurant;
 		review: UserReview;
 		fullPage?: boolean;
 		onSetDecision: (decision: DecisionState) => void;
 		onSetRejected: (note: string) => void;
-		onAddPersonalTag: (tag: string) => void;
-		onRemovePersonalTag: (tag: string) => void;
+		onSetComment: (comment: string) => void;
+		onHideResearchTag: (tag: ResearchTag) => void;
 	} = $props();
 
-	let newTag = $state('');
 	let showRejectForm = $state(false);
 	let rejectionDraft = $state('');
-
-	function handleTagSubmit(event: SubmitEvent) {
-		event.preventDefault();
-		const nextTag = newTag.trim();
-
-		if (!nextTag) {
-			return;
-		}
-
-		onAddPersonalTag(nextTag);
-		newTag = '';
-	}
+	let commentDraft = $state('');
 
 	function handleRejectSubmit(event: SubmitEvent) {
 		event.preventDefault();
@@ -62,6 +50,20 @@
 		rejectionDraft = '';
 		onSetDecision(nextDecision);
 	}
+
+	function handleCommentSubmit(event: SubmitEvent) {
+		event.preventDefault();
+		onSetComment(commentDraft);
+	}
+
+	$effect(() => {
+		commentDraft = review.comment ?? '';
+	});
+
+	const visibleResearchTags = $derived(
+		place.researchTags.filter((tag) => !review.hiddenResearchTags.includes(tag))
+	);
+	const analysisFlags = $derived(place.resources.flatMap((resource) => resource.menuFlags ?? []));
 </script>
 
 <article class:full-page={fullPage} class="detail-card">
@@ -77,7 +79,8 @@
 		<label class="status-field">
 			<span>Status</span>
 			<select value={selectedDecision} onchange={handleDecisionChange}>
-				<option value="unverified">Unverified</option>
+				<option value="ready-to-review">Ready to review</option>
+				<option value="needs-more-info">Needs more info</option>
 				<option value="approved">Approved</option>
 				<option value="rejected">Rejected</option>
 			</select>
@@ -122,6 +125,9 @@
 				{#if place.phone}
 					<li><strong>Phone:</strong> {place.phone}</li>
 				{/if}
+				{#if place.email}
+					<li><strong>Email:</strong> <a href={`mailto:${place.email}`}>{place.email}</a></li>
+				{/if}
 				{#if place.rating}
 					<li><strong>Google rating:</strong> {place.rating.toFixed(1)}</li>
 				{/if}
@@ -131,32 +137,17 @@
 		<div>
 			<h2>Research tags</h2>
 			<div class="chip-row">
-				{#if place.researchTags.length > 0}
-					{#each place.researchTags as tag}
-						<span class="chip">{tag}</span>
+				{#if visibleResearchTags.length > 0}
+					{#each visibleResearchTags as tag}
+						<button type="button" class="chip removable-chip" onclick={() => onHideResearchTag(tag)}>
+							<span>{tag}</span>
+							<span class="chip-dismiss" aria-hidden="true">×</span>
+						</button>
 					{/each}
 				{:else}
 					<span class="empty-chip">No research tags yet</span>
 				{/if}
 			</div>
-
-			<h2>Your tags</h2>
-			<div class="chip-row">
-				{#if review.personalTags.length > 0}
-					{#each review.personalTags as tag}
-						<button type="button" class="chip removable-chip" onclick={() => onRemovePersonalTag(tag)}>
-							{tag} <span aria-hidden="true">×</span>
-						</button>
-					{/each}
-				{:else}
-					<span class="empty-chip">No personal tags yet</span>
-				{/if}
-			</div>
-
-			<form class="tag-form" onsubmit={handleTagSubmit}>
-				<input bind:value={newTag} name="tag" placeholder="Add a custom tag" />
-				<button type="submit">Add tag</button>
-			</form>
 		</div>
 	</section>
 
@@ -165,8 +156,8 @@
 		{#if place.resources.length > 0}
 			<div class="link-list">
 				{#each place.resources as resource}
-					<a href={resource.href} target="_blank" rel="noreferrer">
-						<span>{resource.label}</span>
+					<a href={resource.href} target="_blank" rel="noreferrer" class="link-entry">
+						<span class="link-label">{resource.label}</span>
 						<span class="link-kind">{resource.kind}</span>
 					</a>
 				{/each}
@@ -175,6 +166,20 @@
 			<p class="empty-state">No saved links yet. Add menu, website, review, or allergen links in the data files.</p>
 		{/if}
 	</section>
+
+	{#if analysisFlags.length > 0}
+		<section>
+			<h2>Analysis</h2>
+			<div class="analysis-list">
+				{#each analysisFlags as flag}
+					<p class="analysis-flag">
+						<span aria-hidden="true">{flag.tone === 'green' ? '👍' : '🚩'}</span>
+						<span>{flag.note}</span>
+					</p>
+				{/each}
+			</div>
+		</section>
+	{/if}
 
 	<section>
 		<h2>Pull-out quotes</h2>
@@ -196,6 +201,33 @@
 		{:else}
 			<p class="empty-state">No saved quotes yet.</p>
 		{/if}
+	</section>
+
+	<section>
+		<h2>Comments</h2>
+		<form class="comment-form" onsubmit={handleCommentSubmit}>
+			<textarea
+				bind:value={commentDraft}
+				name="comment"
+				rows="4"
+				placeholder="Add any notes or follow-up questions for this restaurant"
+			></textarea>
+			<div class="comment-actions">
+				<button type="submit" class="save-button">Save comment</button>
+				{#if review.comment}
+					<button
+						type="button"
+						class="clear-button"
+						onclick={() => {
+							commentDraft = '';
+							onSetComment('');
+						}}
+					>
+						Clear
+					</button>
+				{/if}
+			</div>
+		</form>
 	</section>
 </article>
 
@@ -253,8 +285,7 @@
 	}
 
 	button,
-	select,
-	.tag-form button {
+	select {
 		padding: 0.8rem 1rem;
 		border-radius: 0.9rem;
 		font-weight: 700;
@@ -320,11 +351,27 @@
 	}
 
 	.chip-row,
-	.link-list,
-	.quote-list {
+	.quote-list,
+	.analysis-list {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.6rem;
+	}
+
+	.link-list,
+	.analysis-list {
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.analysis-flag {
+		margin: 0;
+		display: flex;
+		align-items: start;
+		gap: 0.5rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		color: #334155;
 	}
 
 	.chip,
@@ -344,22 +391,14 @@
 	}
 
 	.removable-chip {
-		background: #ede9fe;
-		color: #6d28d9;
+		border: none;
+		cursor: pointer;
+		gap: 0.45rem;
 	}
 
-	.tag-form {
-		display: flex;
-		gap: 0.65rem;
-		margin-top: 0.85rem;
-	}
-
-	input {
-		flex: 1;
-		border-radius: 0.9rem;
-		border: 1px solid #cbd5e1;
-		padding: 0.8rem 0.95rem;
-		font: inherit;
+	.chip-dismiss {
+		font-size: 1rem;
+		line-height: 1;
 	}
 
 	textarea {
@@ -371,20 +410,32 @@
 		resize: vertical;
 	}
 
-	.tag-form button {
-		background: #1d4ed8;
-		color: white;
-	}
-
 	.reject-form {
 		display: grid;
 		gap: 0.8rem;
+	}
+
+	.comment-form {
+		display: grid;
+		gap: 0.8rem;
+	}
+
+	.comment-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
 	}
 
 	.decision-actions {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.75rem;
+	}
+
+	.save-button {
+		background: #1d4ed8;
+		color: white;
+		cursor: pointer;
 	}
 
 	.clear-button {
@@ -395,23 +446,25 @@
 		font-weight: 700;
 	}
 
-	.link-list a {
-		display: grid;
-		gap: 0.25rem;
-		padding: 0.9rem 1rem;
-		border-radius: 1rem;
-		background: white;
-		border: 1px solid #e2e8f0;
+	.link-entry {
+		display: flex;
+		align-items: baseline;
+		gap: 0.55rem;
+		padding: 0.2rem 0;
 		text-decoration: none;
-		color: inherit;
-		min-width: 12rem;
+		color: #1d4ed8;
+		width: fit-content;
+	}
+
+	.link-label {
+		line-height: 1.4;
 	}
 
 	.link-kind {
-		font-size: 0.82rem;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
+		font-size: 0.8rem;
 		color: #64748b;
+		text-transform: none;
+		letter-spacing: normal;
 	}
 
 	blockquote {
@@ -444,8 +497,7 @@
 		}
 
 		.detail-header,
-		.meta-grid,
-		.tag-form {
+		.meta-grid {
 			grid-template-columns: 1fr;
 			display: grid;
 		}

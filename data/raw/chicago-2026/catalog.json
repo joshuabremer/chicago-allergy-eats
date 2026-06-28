@@ -5,7 +5,16 @@
     "data/raw/chicago-2026/google-maps-details.json",
     "data/raw/chicago-2026/restaurant-conversations.json",
     "data/raw/chicago-2026/manual-restaurant-research.json",
-    "data/raw/chicago-2026/restaurant-decisions.json"
+    "data/raw/chicago-2026/restaurant-decisions.json",
+    "data/raw/chicago-2026/beatrix-river-north-menus.json",
+    "data/raw/chicago-2026/big-star-wicker-park-menu.json",
+    "data/raw/chicago-2026/doves-luncheonette-menu.json",
+    "data/raw/chicago-2026/parlor-pizza-menu.json",
+    "data/raw/chicago-2026/pizanos-chicago-loop-menu.json",
+    "data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json",
+    "data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json",
+    "data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json",
+    "data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json"
   ],
   "files": [
     {

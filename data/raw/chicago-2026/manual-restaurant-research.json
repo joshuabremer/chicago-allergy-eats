@@ -24,7 +24,7 @@
   },
   {
     "restaurantName": "Epic Burger",
-    "researchTags": ["Spokin verified", "Has allergen guide"],
+    "researchTags": ["Spokin verified", "Has allergy guide"],
     "resources": [
       {
         "label": "Menu",
@@ -38,6 +38,11 @@
       }
     ],
     "notes": ["User-provided note: Epic Burger is Spokin verified."]
+  },
+  {
+    "restaurantName": "BIBIBOP Asian Grill",
+    "researchTags": ["Has allergy guide"],
+    "notes": ["User-provided note: BIBIBOP has a full allergy guide."]
   },
   {
     "restaurantName": "Tacombi Fulton Market",
@@ -64,16 +69,24 @@
   },
   {
     "restaurantName": "Cindy's Rooftop",
+    "email": "cindysinfo@caa.bokagrp.com",
     "resources": [
       {
         "label": "Brunch menu",
         "href": "https://cindysrooftop.com/menu",
-        "kind": "menu"
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the menu labeling is really good."
+          }
+        ]
       }
     ]
   },
   {
     "restaurantName": "Eataly",
+    "email": "guestrelationschi@eataly.com",
     "resources": [
       {
         "label": "Wine bar page",
@@ -89,11 +102,18 @@
   },
   {
     "restaurantName": "Au Cheval",
+    "researchTags": ["Has allergy labels"],
     "resources": [
       {
         "label": "Menu",
         "href": "https://www.auchevaldiner.com/chicago/home",
-        "kind": "menu"
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: in the pasted menu, none of the listed dishes were marked with the menu's nut symbol."
+          }
+        ]
       }
     ],
     "quotes": [
@@ -105,7 +125,663 @@
     "notes": ["User-provided menu paste suggested no listed dishes were marked with the menu's nut symbol."]
   },
   {
+    "restaurantName": "Small Cheval",
+    "resources": [
+      {
+        "label": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/DO1dWENDlEm/",
+        "kind": "review"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Shout out to Small Cheval for always taking my food allergy seriously. They always give me a bright pink allergy label! They do not use peanut oil for frying. I do stay away from their desserts and shakes because some include Nutella and peanuts.",
+        "sourceLabel": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/DO1dWENDlEm/"
+      }
+    ],
+    "notes": ["User-provided review: signature burgers and fries looked safe, but desserts and shakes may include Nutella or peanuts."]
+  },
+  {
+    "restaurantName": "Big Star",
+    "email": "info@bigstarchicago.com",
+    "resources": [
+      {
+        "label": "Wicker Park menu",
+        "href": "https://www.bigstarchicago.com/location/wicker-park/#wicker-park-food",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Spokin says the tortillas are gluten-free and there are limited nut offerings on the menu."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the Big Star Salad includes pepitas, and the menu warns that allergy-related ingredients may be unlisted."
+          }
+        ]
+      }
+    ],
+    "notes": ["Raw source stored at data/raw/chicago-2026/big-star-wicker-park-menu.json."]
+  },
+  {
+    "restaurantName": "Big Star Wrigleyville",
+    "resources": [
+      {
+        "label": "Wrigleyville page",
+        "href": "https://www.bigstarchicago.com/location/wrigleyville/",
+        "kind": "menu"
+      }
+    ]
+  },
+  {
+    "restaurantName": "Dove's Luncheonette",
+    "email": "info@doveschicago.com",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.doveschicago.com/menu",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "red",
+            "note": "Red flag: Spokin says one of the house hot sauces on the table contains almonds."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the Dirty Horchata Latte explicitly lists almond."
+          }
+        ]
+      }
+    ],
+    "notes": ["Raw source stored at data/raw/chicago-2026/doves-luncheonette-menu.json."]
+  },
+  {
+    "restaurantName": "Parlor Pizza Bar Wicker Park",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://parlorchicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "red",
+            "note": "Red flag: pistachios appear on the Watermelon Salad and Super Green Salad."
+          },
+          {
+            "tone": "green",
+            "note": "Green flag: Spokin says there are very limited nuts on the menu overall."
+          }
+        ]
+      }
+    ],
+    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+  },
+  {
+    "restaurantName": "Parlor Pizza Bar River North",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://parlorchicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "red",
+            "note": "Red flag: pistachios appear on the Watermelon Salad and Super Green Salad."
+          }
+        ]
+      }
+    ],
+    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+  },
+  {
+    "restaurantName": "Parlor Pizza Bar West Loop",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://parlorchicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "red",
+            "note": "Red flag: pistachios appear on the Watermelon Salad and Super Green Salad."
+          }
+        ]
+      }
+    ],
+    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+  },
+  {
     "restaurantName": "Del Sur Bakery",
     "notes": ["User-provided Google listing note: temporarily closed."]
+  },
+  {
+    "restaurantName": "Pizano's Pizza & Pasta",
+    "researchTags": ["Has allergy guide"],
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.pizanoschicago.com/locations/chicago-loop/menu/#",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: they publish a real allergen guide, and the menu has a dedicated Gluten Free Specialties section."
+          },
+          {
+            "tone": "green",
+            "note": "Green flag: their allergen page says the regular pizza dough does not contain egg or dairy, and the pizza sauce does not contain dairy, onion, or garlic."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the dessert menu includes Annette's PB Cookie, and the allergen page says they cannot guarantee dishes are free from trace allergens."
+          }
+        ]
+      },
+      {
+        "label": "Allergen guide",
+        "href": "https://www.pizanoschicago.com/allergen/",
+        "kind": "allergen"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Pizano's publishes a full allergen guide and notes that regular pizza dough does not contain egg or dairy, while pizza sauce does not contain dairy, onion, or garlic.",
+        "sourceLabel": "Pizano's allergen guide",
+        "href": "https://www.pizanoschicago.com/allergen/"
+      }
+    ],
+    "notes": [
+      "User-provided note: nuts are not listed on the allergen guide, which feels like a meaningful green flag even though the site still gives a standard cross-contact disclaimer.",
+      "The allergen guide also says specials and limited-time offerings are not included, and ingredients may change.",
+      "Raw source stored at data/raw/chicago-2026/pizanos-chicago-loop-menu.json."
+    ]
+  },
+  {
+    "restaurantName": "Lou Malnati's Pizzeria",
+    "researchTags": ["Has allergy guide"],
+    "resources": [
+      {
+        "label": "Allergen information",
+        "href": "https://www.loumalnatis.com/allergen-information/",
+        "kind": "allergen",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lou Malnati's says they do not have any peanuts or tree nuts in their pizzerias, and their homemade products are made without those ingredients."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the vanilla ice cream and chocolate chip cookie dough are made in a facility where peanuts and tree nuts are present."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients. A few of our items, such as the vanilla ice cream and chocolate chip cookie dough, do not contain peanuts or tree nuts but are made in a facility where peanuts and tree nuts are present. Our gluten-free pizza dough is made from a blend of rice flour, corn, potato, and tapioca starches, pea fiber, and xanthan gum, and may contain traces of almond and coconut.",
+        "sourceLabel": "Lou Malnati's allergen information",
+        "href": "https://www.loumalnatis.com/allergen-information/"
+      }
+    ],
+    "notes": [
+      "Source reference: Lou Malnati's allergen information page.",
+      "The quoted allergen text specifically notes that the gluten-free pizza dough may contain traces of almond and coconut."
+    ]
+  },
+  {
+    "restaurantName": "Beatrix River North",
+    "resources": [
+      {
+        "label": "River North menus",
+        "href": "https://www.beatrixrestaurants.com/beatrix/river-north/menus/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted menu text is pretty explicit, with nut-related ingredients called out directly in item descriptions."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the menu includes pecan granola, cashew granola, pistachio, coconut, and cashew across multiple brunch, lunch, and dinner dishes."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "The pasted River North menus explicitly call out nut-related ingredients in multiple dishes, including pecan granola on Greek Yogurt, cashew granola in the Ahi Tuna Poke Bowl, pistachio and coconut in the Green Goddess Vegetable Salad, and cashew in the Wild Mushroom Teriyaki Bowl.",
+        "sourceLabel": "User-pasted Beatrix River North menus",
+        "href": "https://www.beatrixrestaurants.com/beatrix/river-north/menus/"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/beatrix-river-north-menus.json.",
+      "Analysis is based on the user-pasted River North menu text and should be cited back to that source."
+    ]
+  },
+  {
+    "restaurantName": "Beatrix",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes multiple Beatrix Chicago locations.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "RPM Seafood",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes RPM Seafood in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "Ramen San",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes Ramen-San, Ramen-San Deluxe, and Ramen-San Whisky Bar.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "Cafe Ba-Ba-Reeba!",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes Cafe Ba-Ba-Reeba! in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "Aba",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes Aba in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "Ema",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes Ema in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "RPM Italian",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes RPM Italian in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
+  },
+  {
+    "restaurantName": "Summer House Santa Monica",
+    "resources": [
+      {
+        "label": "Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce Entertain You restaurant list",
+        "href": "https://storage.googleapis.com/leye_bucket/wp-content/uploads/6b09fe1c-restaurant-list-3.pdf",
+        "kind": "website"
+      },
+      {
+        "label": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html",
+        "kind": "review"
+      },
+      {
+        "label": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/",
+        "kind": "website",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Lettuce says all of their restaurants have very strict procedures for dietary restrictions and are always accommodating of allergies."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Apparently Lettuce restaurants are really good.",
+        "sourceLabel": "User summary of Chicagofood Reddit thread",
+        "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
+      },
+      {
+        "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
+        "sourceLabel": "Lettuce dietary restrictions FAQ",
+        "href": "https://www.lettuce.com/contact/"
+      },
+      {
+        "quote": "How freaking awesome is it that all the Lettuce Entertain You restaurants, and there are a lot, have allergy info available and a responsible protocol in place for dealing with allergies? Many offer a gluten-free menu too!",
+        "sourceLabel": "Kid Cultivation allergy-friendly restaurants",
+        "href": "https://kidcultivation.blogspot.com/2012/05/our-allergy-friendly-restaurants.html"
+      }
+    ],
+    "notes": [
+      "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
+      "Source reference: the Lettuce Entertain You restaurant list includes Summer House Santa Monica in Chicago.",
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+    ]
   }
 ]

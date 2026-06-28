@@ -1,0 +1,361 @@
+{
+  "title": "Chicago Food Allergy Friendly City Guide",
+  "sourceName": "Spokin",
+  "articleUrl": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide",
+  "places": [
+    {
+      "name": "Summer House Santa Monica",
+      "location": "Chicago",
+      "quote": "I called ahead after seeing they had a whole GF menu to see if they could accommodate our FA child. The host who answered the phone told me about their whole process and said they were really good with food allergies! She was right! They were amazing and my FA kid’s food came out with a stick in it that was labeled allergy."
+    },
+    {
+      "name": "Piccolo Sogno",
+      "location": "Chicago",
+      "quote": "Top notch service again from the Chef and his team last night! Our family loves it here! Having multiple food allergies is challenging for my kiddo, but he feels so welcome by Piccolo Sogno."
+    },
+    {
+      "name": "Small Cheval",
+      "location": "Chicago",
+      "quote": "The most delicious burger, fries, and milkshakes, which are all seed and nut free. The patio is amazing in the summer too. A go-to for our family!"
+    },
+    {
+      "name": "RPM Italian",
+      "location": "Chicago",
+      "quote": "Wonderful staff and menu. The waitstaff was very educated about peanut and tree nut allergies. They told me the pesto has no nuts on purpose because of people with nut allergies!"
+    },
+    {
+      "name": "Little Goat Diner",
+      "location": "Chicago",
+      "quote": "They have dedicated dairy free, vegan, and gluten free menus. The options in each were great and the waitress was well educated!"
+    },
+    {
+      "name": "Uncle Julio’s Mexican From Scratch",
+      "location": "Chicago",
+      "quote": "This restaurant is family friendly and has great food. The waitstaff is very helpful and knowledgeable about my peanut and tree-nut allergy and they make sure that everything is safe for me to eat."
+    },
+    {
+      "name": "Big Star",
+      "location": "Chicago",
+      "quote": "Delicious! Plenty of gluten-free options."
+    },
+    {
+      "name": "Gibsons Bar & Steakhouse",
+      "location": "Chicago",
+      "quote": "Their amazing food is matched by their absolute top notch service and they 100% take care of their food allergic guests. So many safe options from appetizers to desserts."
+    },
+    {
+      "name": "MAK Restaurant",
+      "location": "Chicago",
+      "quote": "They are completely nut free except for their dessert which is made separately. Also super respectful of my shellfish allergy!"
+    },
+    {
+      "name": "3 Arts Club Cafe",
+      "location": "Chicago",
+      "quote": "The staff was very educated and told me exactly what was safe for me to order without hesitation. Avoid the cookies as they are at risk for cross contamination!"
+    },
+    {
+      "name": "Dove's Luncheonette",
+      "location": "Chicago",
+      "quote": "Really great! Servers are super educated and very friendly about food allergies."
+    },
+    {
+      "name": "Wheat’s End Cafe",
+      "location": "Chicago",
+      "quote": "Delicious gluten free take on the traditional brunch options I’ve been missing since going gluten free – especially yummy bagels and donuts!"
+    },
+    {
+      "name": "Parlor Pizza Bar",
+      "location": "Chicago",
+      "quote": "An absolutely amazing restaurant with tons of great options and beautiful food! The atmosphere is amazing and so is the service. Easily accommodates to allergies and is very knowledgable."
+    },
+    {
+      "name": "The Allis",
+      "location": "Chicago",
+      "quote": "There are no peanuts used inside. They are very well trained on whether you eat gluten-free by choice, or because of an allergy. They have separate practices to prevent any cross contamination."
+    },
+    {
+      "name": "Athenian Room",
+      "location": "Chicago",
+      "quote": "There were either very limited nuts or it was completely nut free – either way this is a great, safe, family friendly and casual spot!"
+    },
+    {
+      "name": "The Loyalist",
+      "location": "Chicago",
+      "quote": "Sooo good and they were really good to us – I would strongly recommend this place!"
+    },
+    {
+      "name": "Chicago Diner",
+      "location": "Chicago",
+      "quote": "Mostly nut free kitchen. The staff were well educated on the menu and allergens. Additionally, there is a comprehensive book they refer to in order to verify ingredients."
+    },
+    {
+      "name": "Quartino Ristorante",
+      "location": "Chicago",
+      "quote": "Fresh food, great single ingredient choices and a separate gluten-free menu. The staff double check orders and follows through."
+    },
+    {
+      "name": "Medici on 57th",
+      "location": "Chicago",
+      "quote": "Offer dairy and gluten free options!"
+    },
+    {
+      "name": "Honey Butter Fried Chicken",
+      "location": "Chicago",
+      "quote": "Staff is educated, kind, enthusiastic, and happy to accommodate anyone with food allergies!"
+    },
+    {
+      "name": "Urbanbelly",
+      "location": "Chicago",
+      "quote": "They took my dish away and insisted on making the same dish with no hesitation under the knowledge of the allergies. Incredibly friendly staff."
+    },
+    {
+      "name": "Monteverde Restaurant & Pastificio",
+      "location": "Chicago",
+      "quote": "The restaurant created a menu for our table that was totally safe for him. Our server was an allergy mom too so she totally got it!"
+    },
+    {
+      "name": "Split Rail",
+      "location": "Chicago",
+      "quote": "Food was amazing. Great atmosphere as well. The restaurant is peanut free and allergen friendly."
+    },
+    {
+      "name": "Ema",
+      "location": "Chicago",
+      "quote": "Waitstaff and kitchen were super helpful with allergies, and peanuts are virtually nonexistent on the menu."
+    },
+    {
+      "name": "Antique Taco",
+      "location": "Chicago",
+      "quote": "Gluten-free options and very limited nuts. Super helpful!"
+    },
+    {
+      "name": "Jeni’s Splendid Ice Creams",
+      "location": "Chicago",
+      "quote": "The staff was aware and made me feel safe. The ice cream was delicious and I would definitely go again!"
+    },
+    {
+      "name": "Swirlz Cupcakes",
+      "location": "Chicago",
+      "quote": "Delicious and several options for those with allergies compared to other cupcake places."
+    },
+    {
+      "name": "defloured: A Gluten Free Bakery",
+      "location": "Chicago",
+      "quote": "Awesome staff, very nice. Biggest selection of desserts for any and all food allergies."
+    },
+    {
+      "name": "Frío Gelato",
+      "location": "Chicago",
+      "quote": "This is a completely nut free place. They have a dairy free section as well."
+    },
+    {
+      "name": "West Town Bakery & Diner",
+      "location": "Chicago",
+      "quote": "These guys were ready to take my allergen friendly order without a blink of an eye – no eggs, nuts, sesame, no problem!"
+    },
+    {
+      "name": "Dinkel’s Bakery",
+      "location": "Chicago",
+      "quote": "We are so excited Dinkel’s has gluten free cupcakes and cakes!"
+    },
+    {
+      "name": "Sprinkles Cupcakes",
+      "location": "Chicago",
+      "quote": "Sprinkles has very good handling protocol if you inform them of an allergy."
+    },
+    {
+      "name": "Scoops Ice Cream",
+      "location": "Chicago",
+      "quote": "A great place to go if you are craving ice cream! They are very educated when it comes to allergies."
+    },
+    {
+      "name": "Do-Rite Donuts",
+      "location": "Chicago",
+      "quote": "Daily selection of gluten free donuts! Nice people. Bagged my gluten free donuts separately from other donuts."
+    },
+    {
+      "name": "Scone City",
+      "location": "Chicago",
+      "quote": "Has always worked for us even though they do have some nuts!"
+    }
+  ],
+  "quotes": [
+    {
+      "subject": "Summer House Santa Monica",
+      "quote": "I called ahead after seeing they had a whole GF menu to see if they could accommodate our FA child. The host who answered the phone told me about their whole process and said they were really good with food allergies! She was right!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Piccolo Sogno",
+      "quote": "Top notch service again from the Chef and his team last night! Our family loves it here! Having multiple food allergies is challenging for my kiddo, but he feels so welcome by Piccolo Sogno.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Small Cheval",
+      "quote": "The most delicious burger, fries, and milkshakes, which are all seed and nut free. The patio is amazing in the summer too. A go-to for our family!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "RPM Italian",
+      "quote": "Wonderful staff and menu. The waitstaff was very educated about peanut and tree nut allergies.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Little Goat Diner",
+      "quote": "They have dedicated dairy free, vegan, and gluten free menus.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Uncle Julio’s Mexican From Scratch",
+      "quote": "The waitstaff is very helpful and knowledgeable about my peanut and tree-nut allergy and they make sure that everything is safe for me to eat.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Big Star",
+      "quote": "Delicious! Plenty of gluten-free options.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Gibsons Bar & Steakhouse",
+      "quote": "They 100% take care of their food allergic guests. So many safe options from appetizers to desserts.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "MAK Restaurant",
+      "quote": "They are completely nut free except for their dessert which is made separately.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "3 Arts Club Cafe",
+      "quote": "The staff was very educated and told me exactly what was safe for me to order without hesitation. Avoid the cookies as they are at risk for cross contamination!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Dove's Luncheonette",
+      "quote": "Really great! Servers are super educated and very friendly about food allergies.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Wheat’s End Cafe",
+      "quote": "Delicious gluten free take on the traditional brunch options I’ve been missing since going gluten free – especially yummy bagels and donuts!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Parlor Pizza Bar",
+      "quote": "An absolutely amazing restaurant with tons of great options and beautiful food! Easily accommodates to allergies and is very knowledgable.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "The Allis",
+      "quote": "There are no peanuts used inside. They have separate practices to prevent any cross contamination.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Athenian Room",
+      "quote": "There were either very limited nuts or it was completely nut free.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "The Loyalist",
+      "quote": "Sooo good and they were really good to us – I would strongly recommend this place!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Chicago Diner",
+      "quote": "Mostly nut free kitchen. The staff were well educated on the menu and allergens.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Quartino Ristorante",
+      "quote": "Fresh food, great single ingredient choices and a separate gluten-free menu.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Medici on 57th",
+      "quote": "Offer dairy and gluten free options!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Honey Butter Fried Chicken",
+      "quote": "Staff is educated, kind, enthusiastic, and happy to accommodate anyone with food allergies!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Urbanbelly",
+      "quote": "They took my dish away and insisted on making the same dish with no hesitation under the knowledge of the allergies.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Monteverde Restaurant & Pastificio",
+      "quote": "The restaurant created a menu for our table that was totally safe for him.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Split Rail",
+      "quote": "The restaurant is peanut free and allergen friendly.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Ema",
+      "quote": "Waitstaff and kitchen were super helpful with allergies, and peanuts are virtually nonexistent on the menu.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Antique Taco",
+      "quote": "Gluten-free options and very limited nuts. Super helpful!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Jeni’s Splendid Ice Creams",
+      "quote": "The staff was aware and made me feel safe. The ice cream was delicious and I would definitely go again!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Swirlz Cupcakes",
+      "quote": "Delicious and several options for those with allergies compared to other cupcake places.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "defloured: A Gluten Free Bakery",
+      "quote": "Awesome staff, very nice. Biggest selection of desserts for any and all food allergies.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Frío Gelato",
+      "quote": "This is a completely nut free place. They have a dairy free section as well.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "West Town Bakery & Diner",
+      "quote": "These guys were ready to take my allergen friendly order without a blink of an eye – no eggs, nuts, sesame, no problem!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Dinkel’s Bakery",
+      "quote": "We are so excited Dinkel’s has gluten free cupcakes and cakes!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Sprinkles Cupcakes",
+      "quote": "Sprinkles has very good handling protocol if you inform them of an allergy.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Scoops Ice Cream",
+      "quote": "They are very educated when it comes to allergies.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Do-Rite Donuts",
+      "quote": "Daily selection of gluten free donuts! Nice people. Bagged my gluten free donuts separately from other donuts.",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    },
+    {
+      "subject": "Scone City",
+      "quote": "Has always worked for us even though they do have some nuts!",
+      "href": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide"
+    }
+  ],
+  "sourceUrl": "https://www.spokin.com/chicago-food-allergy-friendly-city-guide",
+  "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-chicago-food-allergy-friendly-city-guide.json"
+}

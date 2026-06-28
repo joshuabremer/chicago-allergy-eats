@@ -8,7 +8,9 @@ import restaurantsToVerify from '$lib/data/imported/restaurants-to-verify.json';
 import treeNutFreeRestaurants from '$lib/data/imported/tree-nut-free-restaurants.json';
 import allThingsAllergiesGuide from '../../../data/raw/chicago-2026/articles/parsed/allthingsallergies-chicago-guide.json';
 import spokinChicagoItinerary from '../../../data/raw/chicago-2026/articles/parsed/spokin-chicago-travel-itinerary.json';
+import spokinChicagoGuide from '../../../data/raw/chicago-2026/articles/parsed/spokin-chicago-food-allergy-friendly-city-guide.json';
 import spokinFavorites from '../../../data/raw/chicago-2026/articles/parsed/spokin-alyssa-favorite-nut-friendly-chicago-spots.json';
+import spokinWickerParkGuide from '../../../data/raw/chicago-2026/articles/parsed/spokin-wicker-park-chicago-guide.json';
 import { RESEARCH_TAGS } from '$lib/types';
 import type {
 	MealService,
@@ -49,6 +51,7 @@ type SupplementalRestaurant = {
 	address?: string;
 	website?: string;
 	phone?: string;
+	email?: string;
 };
 
 type ArticlePlace = {
@@ -100,6 +103,7 @@ type WorkingRestaurant = {
 	neighborhood: string;
 	address: string;
 	phone?: string;
+	email?: string;
 	rating?: number;
 	type: RestaurantType;
 	cuisineSummary: string;
@@ -119,6 +123,7 @@ type GoogleMapsDetail = {
 	address: string;
 	website: string;
 	phone?: string;
+	email?: string;
 	rating?: number;
 	latitude: number;
 	longitude: number;
@@ -135,6 +140,7 @@ type RestaurantConversation = {
 	website?: string;
 	address?: string;
 	phone?: string;
+	email?: string;
 	latitude?: number;
 	longitude?: number;
 	addToList?: boolean;
@@ -144,6 +150,7 @@ type RestaurantConversation = {
 type ManualRestaurantResearch = {
 	restaurantName: string;
 	researchTags?: ResearchTag[];
+	email?: string;
 	resources?: ResourceLink[];
 	quotes?: SourceQuote[];
 	notes?: string[];
@@ -173,13 +180,15 @@ const MAP_COLLECTIONS: MapCollection[] = [
 	{
 		title: 'Dinner Reservations',
 		data: dinnerReservations,
-		researchTags: ['Reservation target']
+		researchTags: []
 	}
 ];
 
 const ARTICLE_SOURCES: ParsedArticle[] = [
 	spokinFavorites,
 	spokinChicagoItinerary,
+	spokinChicagoGuide,
+	spokinWickerParkGuide,
 	allThingsAllergiesGuide
 ];
 
@@ -204,6 +213,24 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		latitude: 41.8946,
 		longitude: -87.6222,
 		researchTags: []
+	},
+	{
+		title: 'Manual additions',
+		name: 'Aba',
+		latitude: 41.8867,
+		longitude: -87.6484,
+		researchTags: [],
+		address: '302 N Green St 3rd Floor, Chicago, IL 60607',
+		phone: '+1 773-645-1400'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Ema',
+		latitude: 41.8909,
+		longitude: -87.6313,
+		researchTags: [],
+		address: '74 W Illinois St, Chicago, IL 60654',
+		phone: '+1 312-527-5586'
 	},
 	{
 		title: 'Direct restaurant response',
@@ -291,6 +318,91 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		longitude: -87.6789329,
 		researchTags: [],
 		address: '4639 N Damen Ave, Chicago, IL 60625'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Big Star',
+		latitude: 41.9091742,
+		longitude: -87.6771281,
+		researchTags: [],
+		address: '1531 N Damen Ave, Chicago, IL 60622',
+		website: 'https://www.bigstarchicago.com/location/wicker-park/',
+		phone: '+1 877-298-0617'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Big Star Wrigleyville',
+		latitude: 41.9481784,
+		longitude: -87.6575019,
+		researchTags: [],
+		address: '3640 N Clark St, Chicago, IL 60613',
+		website: 'https://www.bigstarchicago.com/location/wrigleyville/',
+		phone: '+1 877-416-6932'
+	},
+	{
+		title: 'Manual additions',
+		name: "Dove's Luncheonette",
+		latitude: 41.909438,
+		longitude: -87.6772965,
+		researchTags: [],
+		address: '1545 N Damen Ave, Chicago, IL 60622',
+		website: 'https://www.doveschicago.com/',
+		phone: '+1 773-645-4060'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Parlor Pizza Bar River North',
+		latitude: 41.8894461,
+		longitude: -87.6292878,
+		researchTags: [],
+		address: '405 N Dearborn St, Chicago, IL 60654',
+		website: 'https://parlorchicago.com/'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Parlor Pizza Bar West Loop',
+		latitude: 41.8834763,
+		longitude: -87.6488895,
+		researchTags: [],
+		address: '108 N Green St, Chicago, IL 60607'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Parlor Pizza Bar Wicker Park',
+		latitude: 41.9034707,
+		longitude: -87.6734502,
+		researchTags: [],
+		address: '1824 W Division St, Chicago, IL 60622'
+	},
+	{
+		title: 'Manual additions',
+		name: "Pizano's Pizza & Pasta",
+		latitude: 41.89823,
+		longitude: -87.62831,
+		researchTags: [],
+		address: '864 N State St, Chicago, IL 60610',
+		website: 'https://www.pizanoschicago.com/locations/chicago-state-street/',
+		phone: '+1 312-751-1766'
+	},
+	{
+		title: 'Manual additions',
+		name: "Pizano's Pizza & Pasta",
+		latitude: 41.88238,
+		longitude: -87.62544,
+		researchTags: [],
+		address: '61 E Madison St, Chicago, IL 60603',
+		website: 'https://www.pizanoschicago.com/locations/chicago-loop/',
+		phone: '+1 312-236-1777'
+	},
+	{
+		title: 'Manual additions',
+		name: "Pizano's Pizza & Pasta",
+		latitude: 41.85356,
+		longitude: -87.62232,
+		researchTags: [],
+		address: '2106 S Indiana Ave, Chicago, IL 60616',
+		website: 'https://www.pizanoschicago.com/locations/by-mccormick-place/',
+		phone: '+1 312-842-0777'
 	}
 ];
 
@@ -300,7 +412,11 @@ const NORMALIZED_NAME_ALIASES: Record<string, string> = {
 	'beatrix-river-north': 'beatrix',
 	'beatrix-streeterville': 'beatrix',
 	bibibop: 'bibibop-asian-grill',
+	'big-star-wrigleyville': 'big-star',
 	cindys: 'cindys-rooftop',
+	'del-sur-bakery': 'del-sur-bakery',
+	doves: 'doves-luncheonette',
+	'doves-luncheonette': 'doves-luncheonette',
 	'epic-burger': 'epic-burger',
 	'frio-gelato': 'frio-gelato-evanston',
 	'frio-gelato-evanston': 'frio-gelato-evanston',
@@ -310,6 +426,10 @@ const NORMALIZED_NAME_ALIASES: Record<string, string> = {
 	'jenis-splendid-ice-creams': 'jenis-splendid-ice-creams',
 	'lou-malnatis-pizzeria': 'lou-malnatis-pizzeria',
 	'paulie-gees': 'paulie-gees',
+	'parlor-pizza': 'parlor-pizza',
+	'parlor-pizza-bar-river-north': 'parlor-pizza',
+	'parlor-pizza-bar-west-loop': 'parlor-pizza',
+	'parlor-pizza-bar-wicker-park': 'parlor-pizza',
 	'piccolo-sogno': 'piccolo-sogno',
 	'portillos': 'portillos',
 	'portillos-and-barnellis-chicago': 'portillos',
@@ -374,6 +494,7 @@ function buildRestaurants(): Restaurant[] {
 				neighborhood,
 				address: buildApproximateAddress(latitude, longitude),
 				phone: undefined,
+				email: undefined,
 				rating: undefined,
 				type,
 				cuisineSummary: guessCuisineSummary(name, type),
@@ -426,6 +547,7 @@ function buildRestaurants(): Restaurant[] {
 			neighborhood,
 			address: buildApproximateAddress(restaurant.latitude, restaurant.longitude),
 			phone: restaurant.phone,
+			email: restaurant.email,
 			rating: undefined,
 			type,
 			cuisineSummary: guessCuisineSummary(restaurant.name, type),
@@ -464,6 +586,7 @@ function buildRestaurants(): Restaurant[] {
 				neighborhood: restaurant.neighborhood,
 				address: restaurant.address,
 				phone: restaurant.phone,
+				email: restaurant.email,
 				rating: restaurant.rating,
 				type: restaurant.type,
 				cuisineSummary: restaurant.cuisineSummary,
@@ -495,6 +618,7 @@ function applyGoogleMapsDetails(restaurant: WorkingRestaurant, detail?: GoogleMa
 
 	restaurant.address = detail.address;
 	restaurant.phone = detail.phone;
+	restaurant.email = detail.email ?? restaurant.email;
 	restaurant.rating = detail.rating;
 	restaurant.resources.unshift({
 		label: 'Official website',
@@ -512,6 +636,10 @@ function applySupplementalDetails(restaurant: WorkingRestaurant, supplemental: S
 		restaurant.phone = supplemental.phone;
 	}
 
+	if (supplemental.email) {
+		restaurant.email = supplemental.email;
+	}
+
 	if (supplemental.website) {
 		restaurant.resources.unshift({
 			label: 'Official website',
@@ -525,6 +653,10 @@ function applyManualResearchData(restaurant: WorkingRestaurant, researchEntries:
 	for (const entry of researchEntries) {
 		for (const tag of entry.researchTags ?? []) {
 			restaurant.researchTags.add(tag);
+		}
+
+		if (entry.email && !restaurant.email) {
+			restaurant.email = entry.email;
 		}
 
 		for (const resource of entry.resources ?? []) {
@@ -726,6 +858,10 @@ function applyConversationData(restaurant: WorkingRestaurant, conversations: Res
 		if (conversation.phone && !restaurant.phone) {
 			restaurant.phone = conversation.phone;
 		}
+
+		if (conversation.email && !restaurant.email) {
+			restaurant.email = conversation.email;
+		}
 	}
 }
 
@@ -782,7 +918,7 @@ function deriveTagsFromReferences(restaurant: WorkingRestaurant, references: Art
 	}
 
 	if (text.includes('nutrition guide') || text.includes('allergy faqs')) {
-		restaurant.researchTags.add('Has allergen guide');
+		restaurant.researchTags.add('Has allergy guide');
 	}
 }
 
@@ -840,6 +976,7 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		normalizedName.includes('lou-malnatis') ||
 		normalizedName.includes('pizzeria-uno') ||
 		normalizedName.includes('ginos-east') ||
+		normalizedName.includes('pizanos') ||
 		normalizedName.includes('paulie-gees')
 	) {
 		return 'Pizza';
@@ -851,6 +988,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 
 	if (normalizedName.includes('bagel')) {
 		return 'Bagel shop';
+	}
+
+	if (normalizedName.includes('del-sur-bakery')) {
+		return 'Filipino bakery';
 	}
 
 	if (normalizedName.includes('donut')) {
@@ -879,6 +1020,26 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 
 	if (normalizedName.includes('small-cheval') || normalizedName.includes('epic-burger')) {
 		return 'Burgers and fries';
+	}
+
+	if (normalizedName.includes('au-cheval')) {
+		return 'Diner-style burgers and sandwiches';
+	}
+
+	if (normalizedName.includes('big-star')) {
+		return 'Mexican street food';
+	}
+
+	if (normalizedName.includes('doves-luncheonette')) {
+		return 'Tex-Mex diner';
+	}
+
+	if (normalizedName.includes('parlor-pizza')) {
+		return 'Wood-fired pizza and bar food';
+	}
+
+	if (normalizedName.includes('eataly')) {
+		return 'Italian market dining';
 	}
 
 	if (normalizedName.includes('steakhouse')) {

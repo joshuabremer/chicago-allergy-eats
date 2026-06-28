@@ -1,0 +1,42 @@
+{
+  "sourceName": "User-pasted Beatrix River North menus",
+  "sourceUrl": "https://www.beatrixrestaurants.com/beatrix/river-north/menus/",
+  "capturedAt": "2026-06-28T14:14:08.204-04:00",
+  "location": "Beatrix River North",
+  "sections": [
+    {
+      "name": "Brunch",
+      "items": [
+        "Greek Yogurt v - brûléed banana, strawberry, pecan granola, orange chia honey",
+        "Protein Overnight Oats vg - superfood seeds, coconut, maple, vanilla bean, berry compote",
+        "Ahi Tuna Poke Bowl* - avocado, cashew granola, pickled mushrooms, sushi rice, ginger soy"
+      ]
+    },
+    {
+      "name": "Dinner",
+      "items": [
+        "Hot Honey Brussels Sprouts v - pickled fresno, peanut",
+        "Straight \"A\" Salad v - arugula, avocado, asian pear, asiago, almond, house vinaigrette",
+        "Green Goddess Vegetable Salad vg - snap pea, asparagus, green apple, avocado, pistachio, coconut, crispy quinoa, green curry dressing",
+        "Wild Mushroom Teriyaki Bowl vg - green vegetable & sticky rice stir-fry, citrus ponzu, cashew, garden herb salad",
+        "Blackened Fish Tacos - mexican creamed corn, guacamole, smoked almond slaw, spicy tomato salsa"
+      ]
+    },
+    {
+      "name": "Lunch",
+      "items": [
+        "Hot Honey Brussels Sprouts v - pickled fresno, peanut",
+        "Straight \"A\" Salad v - arugula, avocado, asian pear, asiago, almond, house vinaigrette",
+        "Green Goddess Vegetable Salad vg - snap pea, asparagus, green apple, avocado, pistachio, coconut, crispy quinoa, green curry dressing",
+        "Ginger Chicken Crunch Salad - napa cabbage, cashew, crispy rice noodles, pineapple, pickled red fresno, citrus-sesame dressing",
+        "Ahi Tuna Poke Bowl* - avocado, cashew granola, pickled mushroom, sushi rice, ginger soy",
+        "Wild Mushroom Teriyaki Bowl vg - green vegetable & sticky rice stir-fry, citrus ponzu, cashew, garden herb salad",
+        "Blackened Fish Tacos - mexican creamed corn, guacamole, smoked almond slaw, spicy tomato salsa"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future prompts can reuse the exact menu source without relying on refetching the page.",
+    "This capture is for the River North menu page and should be treated as source-specific evidence."
+  ]
+}

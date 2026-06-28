@@ -1,0 +1,42 @@
+{
+  "sourceName": "User-pasted Big Star Wicker Park menu",
+  "sourceUrl": "https://www.bigstarchicago.com/location/wicker-park/#wicker-park-food",
+  "capturedAt": "2026-06-28",
+  "location": "Big Star Wicker Park",
+  "sections": [
+    {
+      "name": "Starters",
+      "items": [
+        "Big Star Nachos - melty cheese sauce, crispy tortilla chips, pico de gallo, pickled jalapeños, black beans, salsa seca, guacamole, cilantro",
+        "Chips & Salsa - chipotle salsa and salsa verde",
+        "Queso Fundido - melted queso chihuahua, rajas poblano, housemade chorizo, fresh tortillas",
+        "Handmade Guacamole - fresh avocado, serrano chili, red onion, garlic, cilantro, lime",
+        "Big Star Salad - romaine, radish, black beans, cucumber, red onion, avocado, pepitas, mint, queso fresco, chile-ranch dressing"
+      ]
+    },
+    {
+      "name": "Tacos",
+      "items": [
+        "Al Pastor - marinated pork shoulder, grilled pineapple, grilled onion, cilantro",
+        "Pollo - grilled chicken, poblano, poblano salsa, queso fresco, pickled red onion, cilantro",
+        "Carne Asada - marinated skirt steak, banana pepper, salsa mocajete, guacamole, white onion, cilantro",
+        "Papas Con Rajas - potato, rajas chipotle, queso cotija, onion, cilantro",
+        "Sprout Tostada - crispy brussels sprouts, refried beans, pipian verde, pickled guajillo chilis, cilantro",
+        "Quesabirria - beef birria, chihuahua cheese, onion, cilantro, consommé"
+      ]
+    },
+    {
+      "name": "Burritos and sweets",
+      "items": [
+        "Carne Asada Burrito - skirt steak, charred corn elotes, poblano rajas, salsa, lettuce, chipotle mayo, queso chihuahua",
+        "Pollo Burrito - braised chicken, rice, charros beans, crema, poblano rajas, lettuce, and salsa seca",
+        "Bean Burrito - refried beans, chihuahua cheese, onions, cilantro, cholula hot sauce",
+        "Hot Fudge Skillet Brownie - warm chocolate brownie, caramelized cinnamon ice cream"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Wicker Park menu text without refetching the website.",
+    "The pasted menu included a warning that menu items can contain unlisted ingredients and asked diners to inform servers of allergy or dietary restrictions."
+  ]
+}
