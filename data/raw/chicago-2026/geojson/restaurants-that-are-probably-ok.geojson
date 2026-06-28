@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Restaurants that are Probably OK",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Tilly Bagel Shop" }, "geometry": { "type": "Point", "coordinates": [ -87.6263675, 41.8732733, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Tilly Bagel Shop" }, "geometry": { "type": "Point", "coordinates": [ -87.6548156, 41.885934, 0.0 ] } }
+]
+}

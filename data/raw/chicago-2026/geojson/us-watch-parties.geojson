@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "US Watch Parties",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Tree House Chicago" }, "geometry": { "type": "Point", "coordinates": [ -87.6330242, 41.8890599, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Recess" }, "geometry": { "type": "Point", "coordinates": [ -87.6490594, 41.8892853, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Big City Pickle - Fulton Market" }, "geometry": { "type": "Point", "coordinates": [ -87.6490542, 41.8850831, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Soccer House" }, "geometry": { "type": "Point", "coordinates": [ -87.6585158, 41.8913413, 0.0 ] } }
+]
+}

@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "Tree Nut Free Restaurants",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Lou Malnati's Pizzeria" }, "geometry": { "type": "Point", "coordinates": [ -87.6247701, 41.8900007, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Lou Malnati's Pizzeria" }, "geometry": { "type": "Point", "coordinates": [ -87.6337231, 41.8903514, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Lou Malnati's Pizzeria" }, "geometry": { "type": "Point", "coordinates": [ -87.6272861, 41.8715611, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Lou Malnati's Pizzeria" }, "geometry": { "type": "Point", "coordinates": [ -87.6285973, 41.9026225, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.6266168, 41.8784083, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.6887043, 41.9411335, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "The Fat Shallot Lincoln Park" }, "geometry": { "type": "Point", "coordinates": [ -87.6417864, 41.9273573, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "The Fat Shallot" }, "geometry": { "type": "Point", "coordinates": [ -87.635448, 41.88852, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "The Fat Shallot Food Truck" }, "geometry": { "type": "Point", "coordinates": [ -87.6592395, 41.8506988, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "The Fat Shallot Sterling Food Hall" }, "geometry": { "type": "Point", "coordinates": [ -87.6304599, 41.8799053, 0.0 ] } }
+]
+}

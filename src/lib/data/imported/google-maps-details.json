@@ -1,0 +1,464 @@
+[
+  {
+    "name": "Beatrix Fulton Market",
+    "address": "834 W Fulton Market, Chicago, IL 60607",
+    "website": "https://www.beatrixrestaurants.com/locations/fulton-market/",
+    "rating": 4.7,
+    "latitude": 41.8863,
+    "longitude": -87.6493
+  },
+  {
+    "name": "Beatrix River North",
+    "address": "519 N Clark St, Chicago, IL 60654",
+    "website": "https://www.beatrixrestaurants.com/locations/river-north/",
+    "rating": 4.7,
+    "latitude": 41.8905,
+    "longitude": -87.63
+  },
+  {
+    "name": "Beatrix Streeterville",
+    "address": "671 N St Clair St, Chicago, IL 60611",
+    "website": "https://www.beatrixrestaurants.com/locations/streeterville/",
+    "rating": 4.7,
+    "latitude": 41.8946,
+    "longitude": -87.6222
+  },
+  {
+    "name": "Tacombi Fulton Market",
+    "address": "126 N Peoria St, Chicago, IL 60607",
+    "website": "https://tacombi.com",
+    "phone": "+1 312-600-7039",
+    "rating": 4.4,
+    "latitude": 41.8836,
+    "longitude": -87.6496
+  },
+  {
+    "name": "Lou Malnati's Pizzeria",
+    "address": "410 N Michigan Ave, Chicago, IL 60611",
+    "website": "https://www.loumalnatis.com",
+    "phone": "+1 312-858-5600",
+    "rating": 4.2,
+    "latitude": 41.89,
+    "longitude": -87.62477
+  },
+  {
+    "name": "Lou Malnati's Pizzeria",
+    "address": "439 N Wells St, Chicago, IL 60654",
+    "website": "https://www.loumalnatis.com",
+    "phone": "+1 312-828-9800",
+    "rating": 4.4,
+    "latitude": 41.89035,
+    "longitude": -87.63372
+  },
+  {
+    "name": "Lou Malnati's Pizzeria",
+    "address": "805 S State St, Chicago, IL 60605",
+    "website": "https://www.loumalnatis.com",
+    "phone": "+1 312-786-1000",
+    "rating": 4.5,
+    "latitude": 41.87156,
+    "longitude": -87.62728
+  },
+  {
+    "name": "Lou Malnati's Pizzeria",
+    "address": "1120 N State St, Chicago, IL 60610",
+    "website": "https://www.loumalnatis.com",
+    "phone": "+1 312-725-7777",
+    "rating": 4.5,
+    "latitude": 41.90262,
+    "longitude": -87.62859
+  },
+  {
+    "name": "BIBIBOP Asian Grill",
+    "address": "24 E Jackson Blvd, Chicago, IL 60604",
+    "website": "https://order.bibibop.com",
+    "phone": "+1 872-276-3804",
+    "rating": 4.6,
+    "latitude": 41.8784,
+    "longitude": -87.62661
+  },
+  {
+    "name": "BIBIBOP Asian Grill",
+    "address": "3304 N Western Ave, Chicago, IL 60618",
+    "website": "https://order.bibibop.com",
+    "phone": "+1 773-309-3079",
+    "rating": 4.9,
+    "latitude": 41.94113,
+    "longitude": -87.6887
+  },
+  {
+    "name": "The Fat Shallot Lincoln Park",
+    "address": "2468 N Clark St, Chicago, IL 60614",
+    "website": "https://thefatshallot.com",
+    "phone": "+1 773-661-6335",
+    "rating": 4.5,
+    "latitude": 41.92735,
+    "longitude": -87.64178
+  },
+  {
+    "name": "The Fat Shallot",
+    "address": "222 W Merchandise Mart Plaza 2nd Floor, Chicago, IL 60654",
+    "website": "https://thefatshallot.com",
+    "phone": "+1 312-833-1951",
+    "rating": 4.6,
+    "latitude": 41.88852,
+    "longitude": -87.63544
+  },
+  {
+    "name": "The Fat Shallot Food Truck",
+    "address": "2300 S Throop St, Chicago, IL 60608",
+    "website": "https://thefatshallot.com",
+    "phone": "+1 773-893-0826",
+    "rating": 4.2,
+    "latitude": 41.85069,
+    "longitude": -87.65923
+  },
+  {
+    "name": "The Fat Shallot Sterling Food Hall",
+    "address": "125 S Clark St, Chicago, IL 60603",
+    "website": "https://thefatshallot.com",
+    "phone": "+1 773-459-5143",
+    "rating": 4.8,
+    "latitude": 41.8799,
+    "longitude": -87.63045
+  },
+  {
+    "name": "Jeni's Splendid Ice Creams",
+    "address": "871 N Wabash Ave, Chicago, IL 60611",
+    "website": "https://jenis.com",
+    "phone": "+1 773-261-8449",
+    "rating": 4.6,
+    "latitude": 41.89859,
+    "longitude": -87.62671
+  },
+  {
+    "name": "Jeni's Splendid Ice Creams",
+    "address": "1419 N Wells St Ste 1S, Chicago, IL 60610",
+    "website": "https://jenis.com",
+    "phone": "+1 312-877-5880",
+    "rating": 4.7,
+    "latitude": 41.90812,
+    "longitude": -87.63447
+  },
+  {
+    "name": "Jeni's Splendid Ice Creams",
+    "address": "908 W Randolph St, Chicago, IL 60607",
+    "website": "https://jenis.com",
+    "phone": "+1 708-540-6124",
+    "rating": 4.7,
+    "latitude": 41.88464,
+    "longitude": -87.65031
+  },
+  {
+    "name": "Portillo's & Barnelli's Chicago",
+    "address": "100 W Ontario St, Chicago, IL 60610",
+    "website": "https://www.portillos.com",
+    "phone": "+1 312-587-8910",
+    "rating": 4.4,
+    "latitude": 41.89351,
+    "longitude": -87.63153
+  },
+  {
+    "name": "Portillo's Chicago – Canal and Taylor",
+    "address": "520 W Taylor St, Chicago, IL 60607",
+    "website": "https://www.portillos.com",
+    "phone": "+1 312-667-4560",
+    "rating": 4.2,
+    "latitude": 41.87032,
+    "longitude": -87.64017
+  },
+  {
+    "name": "Portillo's Chicago - Addison",
+    "address": "3343 W Addison St, Chicago, IL 60618",
+    "website": "https://www.portillos.com",
+    "phone": "+1 331-900-1010",
+    "rating": 4.3,
+    "latitude": 41.94616,
+    "longitude": -87.71207
+  },
+  {
+    "name": "Dēliz Italian Steakhouse",
+    "address": "1840 W North Ave, Chicago, IL 60622",
+    "website": "https://www.delizitalian.com",
+    "phone": "+1 773-477-0000",
+    "rating": 4.7,
+    "latitude": 41.91069,
+    "longitude": -87.67424
+  },
+  {
+    "name": "Small Cheval- Fulton Market",
+    "address": "1352 W Lake St, Chicago, IL 60607",
+    "website": "https://smallcheval.com",
+    "phone": "+1 312-248-8439",
+    "rating": 4.3,
+    "latitude": 41.88571,
+    "longitude": -87.661
+  },
+  {
+    "name": "Small Cheval- Riverside",
+    "address": "150 N Riverside Plaza, Chicago, IL 60606",
+    "website": "https://smallcheval.com",
+    "phone": "+1 312-248-8440",
+    "rating": 4.5,
+    "latitude": 41.88499,
+    "longitude": -87.63844
+  },
+  {
+    "name": "Small Cheval- Old Town",
+    "address": "1345 N Wells St, Chicago, IL 60610",
+    "website": "https://smallcheval.com",
+    "phone": "+1 312-837-3860",
+    "rating": 4.4,
+    "latitude": 41.90703,
+    "longitude": -87.63399
+  },
+  {
+    "name": "Small Cheval- Lincoln Park",
+    "address": "1959 N Halsted St, Chicago, IL 60614",
+    "website": "https://smallcheval.com",
+    "phone": "+1 773-293-6000",
+    "rating": 4.2,
+    "latitude": 41.91765,
+    "longitude": -87.64814
+  },
+  {
+    "name": "Small Cheval- Wicker Park",
+    "address": "1732 N Milwaukee Ave, Chicago, IL 60647",
+    "website": "https://smallcheval.com",
+    "phone": "+1 312-837-3859",
+    "rating": 4.6,
+    "latitude": 41.91281,
+    "longitude": -87.6815
+  },
+  {
+    "name": "Small Cheval",
+    "address": "1119 W Waveland Ave, Chicago, IL 60613",
+    "website": "https://smallcheval.com",
+    "phone": "+1 312-374-1877",
+    "rating": 4.7,
+    "latitude": 41.94892,
+    "longitude": -87.65771
+  },
+  {
+    "name": "Chick-fil-A",
+    "address": "122 S Michigan Ave, Chicago, IL 60603",
+    "website": "https://www.chick-fil-a.com",
+    "phone": "+1 312-360-1644",
+    "rating": 4.1,
+    "latitude": 41.88009,
+    "longitude": -87.6247
+  },
+  {
+    "name": "Chick-fil-A",
+    "address": "177 N State St Ste 1A, Chicago, IL 60601",
+    "website": "https://www.chick-fil-a.com",
+    "phone": "+1 312-419-1522",
+    "rating": 4.3,
+    "latitude": 41.88561,
+    "longitude": -87.62765
+  },
+  {
+    "name": "Chick-fil-A",
+    "address": "225 S Canal St, Chicago, IL 60606",
+    "website": "https://www.chick-fil-a.com",
+    "phone": "+1 312-526-3743",
+    "rating": 2.9,
+    "latitude": 41.87869,
+    "longitude": -87.63897
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "247 S State St, Chicago, IL 60604",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-602-0025",
+    "rating": 3.7,
+    "latitude": 41.87853,
+    "longitude": -87.62745
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "6 E Madison St, Chicago, IL 60602",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-682-8999",
+    "rating": 3.7,
+    "latitude": 41.88224,
+    "longitude": -87.62716
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "28 N Clark St, Chicago, IL 60602",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-896-2666",
+    "rating": 3.2,
+    "latitude": 41.88275,
+    "longitude": -87.63118
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "201 W Madison St, Chicago, IL 60606",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-346-7900",
+    "rating": 3.3,
+    "latitude": 41.88179,
+    "longitude": -87.63473
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "205 W Monroe St, Chicago, IL 60606",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-424-6000",
+    "rating": 3.5,
+    "latitude": 41.8805,
+    "longitude": -87.63417
+  },
+  {
+    "name": "Jimmy John's",
+    "address": "216 W Jackson Blvd, Chicago, IL 60606",
+    "website": "https://locations.jimmyjohns.com",
+    "phone": "+1 312-424-9200",
+    "rating": 4.0,
+    "latitude": 41.87834,
+    "longitude": -87.63456
+  },
+  {
+    "name": "Small Cheval - Gold Coast",
+    "address": "Aster Hall, 900 N Michigan Ave, Chicago, IL 60611",
+    "website": "https://asterhallchicago.com",
+    "rating": 4.1,
+    "latitude": 41.89961,
+    "longitude": -87.62519
+  },
+  {
+    "name": "Daisies",
+    "address": "2375 N Milwaukee Ave, Chicago, IL 60647",
+    "website": "https://www.daisieschicago.com",
+    "phone": "+1 773-697-9443",
+    "rating": 4.4,
+    "latitude": 41.92444,
+    "longitude": -87.69961
+  },
+  {
+    "name": "Tortazo - Willis Tower",
+    "address": "233 S Wacker Dr Unit L1-11, Chicago, IL 60606",
+    "website": "https://www.tortazo.com",
+    "phone": "+1 312-962-7700",
+    "rating": 4.2,
+    "latitude": 41.87882,
+    "longitude": -87.63625
+  },
+  {
+    "name": "Seoul Taco",
+    "address": "738 N Clark St, Chicago, IL 60654",
+    "website": "https://www.seoultaco.com",
+    "phone": "+1 312-265-1607",
+    "rating": 4.3,
+    "latitude": 41.89601,
+    "longitude": -87.6316
+  },
+  {
+    "name": "Seoul Taco",
+    "address": "1034 W Belmont Ave, Chicago, IL 60657",
+    "website": "https://www.seoultaco.com",
+    "phone": "+1 773-717-7738",
+    "rating": 4.1,
+    "latitude": 41.94014,
+    "longitude": -87.65548
+  },
+  {
+    "name": "Seoul Taco",
+    "address": "1422 N Milwaukee Ave, Chicago, IL 60622",
+    "website": "https://seoultaco.com",
+    "phone": "+1 773-800-7707",
+    "rating": 3.9,
+    "latitude": 41.90773,
+    "longitude": -87.67351
+  },
+  {
+    "name": "Cindy's Rooftop",
+    "address": "12 S Michigan Ave, Chicago, IL 60603",
+    "website": "https://www.cindysrooftop.com",
+    "phone": "+1 312-792-3502",
+    "rating": 4.4,
+    "latitude": 41.88176,
+    "longitude": -87.62483
+  },
+  {
+    "name": "Tilly Bagel Shop",
+    "address": "34 E Balbo Dr, Chicago, IL 60605",
+    "website": "https://tillybagelshop.com",
+    "phone": "+1 312-300-0846",
+    "rating": 4.6,
+    "latitude": 41.87327,
+    "longitude": -87.62636
+  },
+  {
+    "name": "Tilly Bagel Shop",
+    "address": "204 N Aberdeen St, Chicago, IL 60607",
+    "website": "https://tillybagelshop.com",
+    "phone": "+1 312-300-0846",
+    "rating": 4.5,
+    "latitude": 41.88593,
+    "longitude": -87.65481
+  },
+  {
+    "name": "Piccolo Sogno",
+    "address": "464 N Halsted St, Chicago, IL 60642",
+    "website": "https://piccolosognorestaurant.com",
+    "phone": "+1 312-421-0077",
+    "latitude": 41.8908567,
+    "longitude": -87.6478315
+  },
+  {
+    "name": "Epic Burger",
+    "address": "40 E Pearson St, Chicago, IL 60611",
+    "website": "https://epicburger.com",
+    "phone": "+1 312-257-3262",
+    "rating": 4.3,
+    "latitude": 41.8977275,
+    "longitude": -87.6265873
+  },
+  {
+    "name": "Epic Burger",
+    "address": "1000 W North Ave, Chicago, IL 60642",
+    "website": "https://epicburger.com",
+    "phone": "+1 312-978-2326",
+    "rating": 4.2,
+    "latitude": 41.9110998,
+    "longitude": -87.6537471
+  },
+  {
+    "name": "Epic Burger",
+    "address": "517 S State St, Chicago, IL 60605",
+    "website": "https://epicburger.com",
+    "phone": "+1 312-934-3831",
+    "rating": 4.2,
+    "latitude": 41.8750922,
+    "longitude": -87.6273768
+  },
+  {
+    "name": "Beatnik on the River",
+    "address": "180 N Wacker Dr, Chicago, IL 60606",
+    "website": "https://beatnikontheriver.com",
+    "phone": "+1 312-526-3345",
+    "rating": 4.1,
+    "latitude": 41.88592,
+    "longitude": -87.63724
+  },
+  {
+    "name": "Eataly",
+    "address": "43 E Ohio St, Chicago, IL 60611",
+    "website": "https://www.eataly.com/us_en/stores/chicago/restaurants/wine-bar-chicago",
+    "phone": "+1 312-521-8700",
+    "rating": 4.3,
+    "latitude": 41.8921864,
+    "longitude": -87.6262542
+  },
+  {
+    "name": "Au Cheval",
+    "address": "800 W Randolph St, Chicago, IL 60607",
+    "website": "https://www.auchevaldiner.com/chicago/home",
+    "phone": "+1 312-929-4580",
+    "latitude": 41.8847068,
+    "longitude": -87.6476011
+  }
+]

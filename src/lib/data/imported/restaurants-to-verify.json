@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "Restaurants to Verify",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Daisies" }, "geometry": { "type": "Point", "coordinates": [ -87.6996148, 41.9244424, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Tacombi" }, "geometry": { "type": "Point", "coordinates": [ -87.6741255, 41.9079686, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Cafe Ba-Ba-Reeba!" }, "geometry": { "type": "Point", "coordinates": [ -87.6487012, 41.9189768, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Point 5" }, "geometry": { "type": "Point", "coordinates": [ -87.6365939, 41.8740751, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Pizzeria Uno" }, "geometry": { "type": "Point", "coordinates": [ -87.626929, 41.8923043, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RAMEN-SAN" }, "geometry": { "type": "Point", "coordinates": [ -87.6303577, 41.8898705, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RAMEN-SAN Deluxe" }, "geometry": { "type": "Point", "coordinates": [ -87.6229935, 41.8948318, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Ramen-San Lincoln Park" }, "geometry": { "type": "Point", "coordinates": [ -87.6487982, 41.917778, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RAMEN-SAN Whisky Bar" }, "geometry": { "type": "Point", "coordinates": [ -87.6485094, 41.8863134, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.9441437, 41.7601608, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.9607896, 41.8460531, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.9464617, 42.240923, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.6266168, 41.8784083, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Gino's East" }, "geometry": { "type": "Point", "coordinates": [ -87.6230528, 41.8958861, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Gino’s East - South Loop" }, "geometry": { "type": "Point", "coordinates": [ -87.6289845, 41.8752335, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BIBIBOP Asian Grill" }, "geometry": { "type": "Point", "coordinates": [ -87.6266168, 41.8784083, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Epic Burger" }, "geometry": { "type": "Point", "coordinates": [ -87.6272969, 41.8750415, 0.0 ] } }
+]
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "restaurantName": "Piccolo Sogno",
+    "researchTags": ["Spokin verified"],
+    "resources": [
+      {
+        "label": "Menus",
+        "href": "https://piccolosognorestaurant.com/menus/",
+        "kind": "menu"
+      },
+      {
+        "label": "Google allergy review",
+        "href": "https://maps.app.goo.gl/n7u77oU6hC3krQwH7",
+        "kind": "review"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "What a wonderful place to enjoy a meal! The outdoor seating was pleasant and the staff was knowledgable and kind. Made our celebration just a little more fun. It was especially great as they were able to accommodate for my brother's anaphylactic dairy allergy.",
+        "sourceLabel": "Google allergy review",
+        "href": "https://maps.app.goo.gl/n7u77oU6hC3krQwH7"
+      }
+    ]
+  },
+  {
+    "restaurantName": "Epic Burger",
+    "researchTags": ["Spokin verified", "Has allergen guide"],
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.epicburger.com/menu",
+        "kind": "menu"
+      },
+      {
+        "label": "Nutrition and allergy guide",
+        "href": "https://www.epicburger.com/nutrition",
+        "kind": "allergen"
+      }
+    ],
+    "notes": ["User-provided note: Epic Burger is Spokin verified."]
+  },
+  {
+    "restaurantName": "Tacombi Fulton Market",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "http://www.tacombi.com/menu",
+        "kind": "menu"
+      },
+      {
+        "label": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/C40wXYPrq0s/",
+        "kind": "review"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "@tacombi review. Roses: COMPLETELY NUT FREE!!! simple, no frills menu with all the best basics. But I will be back for the fact that it's nut free.",
+        "sourceLabel": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/C40wXYPrq0s/"
+      }
+    ],
+    "notes": ["Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification."]
+  },
+  {
+    "restaurantName": "Cindy's Rooftop",
+    "resources": [
+      {
+        "label": "Brunch menu",
+        "href": "https://cindysrooftop.com/menu",
+        "kind": "menu"
+      }
+    ]
+  },
+  {
+    "restaurantName": "Eataly",
+    "resources": [
+      {
+        "label": "Wine bar page",
+        "href": "https://www.eataly.com/us_en/stores/chicago/restaurants/wine-bar-chicago",
+        "kind": "website"
+      },
+      {
+        "label": "Wine bar brunch menu",
+        "href": "https://eataly-us.cdn.prismic.io/eataly-us/abqeh7bci2UF6LzK_ECH_Vino_Menu_Brunch_2026.03.12.pdf",
+        "kind": "menu"
+      }
+    ]
+  },
+  {
+    "restaurantName": "Au Cheval",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.auchevaldiner.com/chicago/home",
+        "kind": "menu"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "The pasted menu legend marks nut-containing dishes with ‡. In the items shared here, none of the listed dishes were marked with the nut symbol.",
+        "sourceLabel": "Pasted menu notes"
+      }
+    ],
+    "notes": ["User-provided menu paste suggested no listed dishes were marked with the menu's nut symbol."]
+  },
+  {
+    "restaurantName": "Del Sur Bakery",
+    "notes": ["User-provided Google listing note: temporarily closed."]
+  }
+]

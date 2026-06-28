@@ -1,0 +1,32 @@
+{
+  "importedAt": "2026-06-28T16:14:58.755425+00:00",
+  "articles": [
+    {
+      "slug": "spokin-alyssa-favorite-nut-friendly-chicago-spots",
+      "title": "Alyssa’s Favorite Nut-Friendly Chicago Spots",
+      "sourceName": "Spokin",
+      "articleUrl": "https://www.spokin.com/alyssas-favorite-nut-free-chicago-spots",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-alyssa-favorite-nut-friendly-chicago-spots.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-alyssa-favorite-nut-friendly-chicago-spots.json",
+      "quoteCount": 13
+    },
+    {
+      "slug": "spokin-chicago-travel-itinerary",
+      "title": "Chicago Nut, Milk, Egg, Shellfish + Wheat-Free Travel Itinerary",
+      "sourceName": "Spokin",
+      "articleUrl": "https://www.spokin.com/chicago-illinois-travel-itinerary-nut-milk-egg-shellfish-wheat-free",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-chicago-travel-itinerary.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-chicago-travel-itinerary.json",
+      "quoteCount": 5
+    },
+    {
+      "slug": "allthingsallergies-chicago-guide",
+      "title": "Allergy-Friendly Guide to Chicago",
+      "sourceName": "All Things Allergies",
+      "articleUrl": "http://allthingsallergies.com/2020/06/28/chicago-allergy-friendly-restaurant-guide/",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/allthingsallergies-chicago-guide.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/allthingsallergies-chicago-guide.json",
+      "quoteCount": 1
+    }
+  ]
+}

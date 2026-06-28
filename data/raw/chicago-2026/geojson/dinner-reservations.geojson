@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "Dinner Reservations",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Girl & The Goat" }, "geometry": { "type": "Point", "coordinates": [ -87.6479354, 41.8841279, 0.0 ] } }
+]
+}

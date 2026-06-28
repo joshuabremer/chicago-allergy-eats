@@ -1,0 +1,54 @@
+{
+  "sourceFolder": "/Users/jbremer/Downloads/Chicago 2026 (1)",
+  "importedAt": "2026-06-28T16:11:11.909Z",
+  "supplementalFiles": [
+    "data/raw/chicago-2026/google-maps-details.json",
+    "data/raw/chicago-2026/restaurant-conversations.json",
+    "data/raw/chicago-2026/manual-restaurant-research.json",
+    "data/raw/chicago-2026/restaurant-decisions.json"
+  ],
+  "files": [
+    {
+      "originalFilename": "Dinner Reservations.geojson",
+      "storedFilename": "dinner-reservations.geojson",
+      "title": "Dinner Reservations",
+      "featureCount": 1,
+      "storedPath": "data/raw/chicago-2026/geojson/dinner-reservations.geojson"
+    },
+    {
+      "originalFilename": "Restaurants that are Probably OK.geojson",
+      "storedFilename": "restaurants-that-are-probably-ok.geojson",
+      "title": "Restaurants that are Probably OK",
+      "featureCount": 2,
+      "storedPath": "data/raw/chicago-2026/geojson/restaurants-that-are-probably-ok.geojson"
+    },
+    {
+      "originalFilename": "Restaurants that can Accommodate.geojson",
+      "storedFilename": "restaurants-that-can-accommodate.geojson",
+      "title": "Restaurants that can Accommodate",
+      "featureCount": 29,
+      "storedPath": "data/raw/chicago-2026/geojson/restaurants-that-can-accommodate.geojson"
+    },
+    {
+      "originalFilename": "Restaurants to Verify.geojson",
+      "storedFilename": "restaurants-to-verify.geojson",
+      "title": "Restaurants to Verify",
+      "featureCount": 17,
+      "storedPath": "data/raw/chicago-2026/geojson/restaurants-to-verify.geojson"
+    },
+    {
+      "originalFilename": "Tree Nut Free Restaurants.geojson",
+      "storedFilename": "tree-nut-free-restaurants.geojson",
+      "title": "Tree Nut Free Restaurants",
+      "featureCount": 10,
+      "storedPath": "data/raw/chicago-2026/geojson/tree-nut-free-restaurants.geojson"
+    },
+    {
+      "originalFilename": "US Watch Parties.geojson",
+      "storedFilename": "us-watch-parties.geojson",
+      "title": "US Watch Parties",
+      "featureCount": 4,
+      "storedPath": "data/raw/chicago-2026/geojson/us-watch-parties.geojson"
+    }
+  ]
+}
