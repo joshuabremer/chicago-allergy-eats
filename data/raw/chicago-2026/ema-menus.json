@@ -1,0 +1,18 @@
+{
+  "sourceName": "User-pasted Ema menus",
+  "sourceUrl": "https://www.emarestaurants.com/chicago/menus",
+  "capturedAt": "2026-06-28T15:07:26.367-04:00",
+  "restaurantName": "Ema",
+  "location": "74 W Illinois St, Chicago, IL 60654",
+  "explicitNutMentions": [
+    "Tomato Caponata — pine nut",
+    "Spicy Whipped Feta — pistachio muhammara",
+    "Hamachi & Charred Avocado — coconut cream",
+    "House-Made Stracciatella — pistachio pesto",
+    "Grilled Branzino — pistachio aillade"
+  ],
+  "notes": [
+    "The pasted Ema lunch, dinner, and brunch menus explicitly name several non-almond nut ingredients.",
+    "This source is repo-backed so future rescans do not need to re-fetch the live menu page."
+  ]
+}

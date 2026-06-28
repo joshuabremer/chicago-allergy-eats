@@ -1,8 +1,16 @@
-import { browser } from '$app/environment';
 import defaultRestaurantDecisions from '$lib/data/imported/restaurant-decisions.json';
-import type { DecisionState, ResearchTag, UserReview } from '$lib/types';
+import {
+	DECISION_STATES,
+	RESEARCH_TAGS,
+	type DecisionState,
+	type ResearchTag,
+	type UserReview
+} from '$lib/types';
 
-export const USER_REVIEWS_STORAGE_KEY = 'chicago-allergy-eats:user-reviews';
+const RESEARCH_TAG_MIGRATIONS: Partial<Record<string, ResearchTag>> = {
+	'Can confidently accommodate': 'Can accommodate'
+};
+export type UserReviewState = Record<string, UserReview>;
 
 type DefaultRestaurantDecision = {
 	slug: string;
@@ -23,36 +31,27 @@ const DEFAULT_REVIEW_BY_SLUG = new Map(
 	])
 );
 
-export function loadUserReviews(): Record<string, UserReview> {
-	if (!browser) {
-		return {};
-	}
-
-	const stored = localStorage.getItem(USER_REVIEWS_STORAGE_KEY);
-
-	if (!stored) {
-		return {};
-	}
-
-	try {
-		const parsed = JSON.parse(stored) as Record<string, unknown>;
-		return Object.fromEntries(
-			Object.entries(parsed).map(([slug, value]) => [slug, normalizeUserReview(value)])
-		);
-	} catch {
-		return {};
-	}
+export function loadUserReviews(initialState: unknown): UserReviewState {
+	return normalizeUserReviewState(initialState);
 }
 
-export function saveUserReviews(reviewState: Record<string, UserReview>) {
-	if (!browser) {
-		return;
+export async function saveUserReviews(reviewState: UserReviewState): Promise<UserReviewState> {
+	const response = await fetch('/api/user-reviews', {
+		method: 'PUT',
+		headers: {
+			'content-type': 'application/json'
+		},
+		body: JSON.stringify(sortUserReviewState(reviewState))
+	});
+
+	if (!response.ok) {
+		throw new Error(`Failed to save user reviews (${response.status}).`);
 	}
 
-	localStorage.setItem(USER_REVIEWS_STORAGE_KEY, JSON.stringify(reviewState));
+	return normalizeUserReviewState(await response.json());
 }
 
-export function getUserReview(reviewState: Record<string, UserReview>, slug: string): UserReview {
+export function getUserReview(reviewState: UserReviewState, slug: string): UserReview {
 	return (
 		reviewState[slug] ??
 		DEFAULT_REVIEW_BY_SLUG.get(slug) ?? {
@@ -65,10 +64,32 @@ export function getUserReview(reviewState: Record<string, UserReview>, slug: str
 	);
 }
 
+export function normalizeUserReviewState(value: unknown): UserReviewState {
+	if (!isObjectRecord(value)) {
+		throw new TypeError('User review payload must be an object keyed by slug.');
+	}
+
+	return Object.fromEntries(
+		Object.entries(value).map(([slug, reviewValue]) => [slug, normalizeUserReview(reviewValue)])
+	);
+}
+
+export function sortUserReviewState(reviewState: UserReviewState): UserReviewState {
+	return Object.fromEntries(
+		Object.entries(reviewState).sort(([leftSlug], [rightSlug]) => leftSlug.localeCompare(rightSlug))
+	);
+}
+
 function normalizeUserReview(value: unknown): UserReview {
 	const review = typeof value === 'object' && value ? (value as Record<string, unknown>) : {};
 	const hiddenResearchTags = Array.isArray(review.hiddenResearchTags)
-		? review.hiddenResearchTags.filter((tag): tag is ResearchTag => typeof tag === 'string')
+		? Array.from(
+				new Set(
+					review.hiddenResearchTags
+						.map((tag) => normalizeResearchTag(tag))
+						.filter((tag): tag is ResearchTag => Boolean(tag))
+				)
+			)
 		: [];
 	const personalTags = Array.isArray(review.personalTags)
 		? review.personalTags.filter((tag): tag is string => typeof tag === 'string')
@@ -76,14 +97,9 @@ function normalizeUserReview(value: unknown): UserReview {
 	const rejectionNote = typeof review.rejectionNote === 'string' ? review.rejectionNote : undefined;
 	const comment = typeof review.comment === 'string' ? review.comment : undefined;
 
-	if (
-		review.decision === 'approved' ||
-		review.decision === 'rejected' ||
-		review.decision === 'ready-to-review' ||
-		review.decision === 'needs-more-info'
-	) {
+	if (isDecisionState(review.decision)) {
 		return {
-			decision: review.decision as DecisionState,
+			decision: review.decision,
 			rejectionNote: review.decision === 'rejected' ? rejectionNote : undefined,
 			comment,
 			hiddenResearchTags,
@@ -102,4 +118,21 @@ function normalizeUserReview(value: unknown): UserReview {
 		hiddenResearchTags,
 		personalTags
 	};
+}
+
+function normalizeResearchTag(tag: unknown): ResearchTag | undefined {
+	if (typeof tag !== 'string') {
+		return undefined;
+	}
+
+	const normalizedTag = RESEARCH_TAG_MIGRATIONS[tag] ?? tag;
+	return RESEARCH_TAGS.includes(normalizedTag as ResearchTag) ? (normalizedTag as ResearchTag) : undefined;
+}
+
+function isDecisionState(value: unknown): value is DecisionState {
+	return typeof value === 'string' && DECISION_STATES.includes(value as DecisionState);
+}
+
+function isObjectRecord(value: unknown): value is Record<string, unknown> {
+	return typeof value === 'object' && value !== null && !Array.isArray(value);
 }

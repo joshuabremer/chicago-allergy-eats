@@ -1,0 +1,20 @@
+{
+  "sourceName": "User-pasted Aba menus",
+  "sourceUrl": "https://www.abarestaurants.com/chicago/menus",
+  "capturedAt": "2026-06-28T15:07:26.367-04:00",
+  "restaurantName": "Aba",
+  "location": "302 N Green St 3rd Floor, Chicago, IL 60607",
+  "explicitNutMentions": [
+    "Whipped Feta — crushed pistachio",
+    "Carrot & Labneh — sesame crusted cashew",
+    "Muhammara — walnut",
+    "Salmon Poke — toasted cashew cream",
+    "Halloumi w/ Tomato Jam — pistachio",
+    "Frozen Greek Yogurt — Pistachio, Candied Orange",
+    "Chocolate Hazelnut Torte — hazelnut"
+  ],
+  "notes": [
+    "The pasted Aba lunch, brunch, and dinner menus explicitly name multiple non-almond nuts.",
+    "This source is repo-backed so future rescans do not need to re-fetch the live menu page."
+  ]
+}

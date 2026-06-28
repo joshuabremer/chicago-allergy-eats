@@ -1,0 +1,101 @@
+{
+  "title": "Allergy-Friendly Steakhouses",
+  "sourceName": "Spokin",
+  "articleUrl": "https://www.spokin.com/allergy-friendly-steakhouses",
+  "places": [
+    {
+      "name": "Steak 48",
+      "location": "Chicago, Illinois",
+      "quote": "Really delicious steak, lamb chops, and traditional steakhouse sides. Pretty touristy but a good dinner!"
+    },
+    {
+      "name": "Gibsons Bar & Steakhouse",
+      "location": "Chicago, Illinois",
+      "quote": "Their amazing food is matched by their absolute top notch service. Most servers have been there for years and they 100% take care of their food allergic guests."
+    },
+    {
+      "name": "RPM Steak",
+      "location": "Chicago, Illinois",
+      "quote": "Celebrated my graduation here because RPM restaurants are the best for managing allergies!"
+    },
+    {
+      "name": "The Clubhouse Oakbrook",
+      "location": "Oakbrook, Illinois",
+      "quote": "They offered us an allergy menu, but were incredibly knowledgeable about every buffet item."
+    },
+    {
+      "name": "Chicago Cut",
+      "location": "Chicago, Illinois",
+      "quote": "The service here is exceptional. My daughter safely had bread, steak, salad, fries and a lot of sides!"
+    },
+    {
+      "name": "Prime & Provisions Steakhouse",
+      "location": "Chicago, Illinois",
+      "quote": "They had a clear allergy protocol that included special tickets on orders."
+    },
+    {
+      "name": "Maple & Ash",
+      "location": "Chicago, Illinois",
+      "quote": "Really delicious steak, lamb chops, and traditional steakhouse sides. Pretty touristy but a good dinner!"
+    },
+    {
+      "name": "Gibsons Bar & Steakhouse",
+      "location": "Oakbrook, Illinois",
+      "quote": "Dedicated fryer for French fries, joy for our 9 year old, and delish steaks cooked to perfection."
+    },
+    {
+      "name": "Joe's Seafood, Prime Steak & Stone Crab",
+      "location": "Chicago, Illinois",
+      "quote": "We were so thrilled to see bright pink labels on the bags listing my son’s allergies when we picked up."
+    },
+    {
+      "name": "Tango Sur",
+      "location": "Chicago, Illinois",
+      "quote": "YUM! Portions are huge here and you can’t go wrong with the steak and mashed potatoes!"
+    },
+    {
+      "name": "Weber Grill Restaurant",
+      "location": "Chicago, Illinois",
+      "quote": "Our waiter was really helpful and her food had allergy markers when it came out. They have separate grills for beef, chicken, and seafood."
+    },
+    {
+      "name": "Sullivan's Steakhouse",
+      "location": "Naperville, Illinois",
+      "quote": "When we arrived they had notes in the system and all staff was aware. The chef came to the table and verified with our son what he wanted."
+    },
+    {
+      "name": "100 South Chop House & Grille",
+      "location": "Elmhurst, Illinois",
+      "quote": "Friendly waitstaff that is very helpful in working with food allergies."
+    }
+  ],
+  "quotes": [
+    {
+      "subject": "Gibsons Bar & Steakhouse",
+      "quote": "Their amazing food is matched by their absolute top notch service. Most servers have been there for years and they 100% take care of their food allergic guests.",
+      "href": "https://www.spokin.com/allergy-friendly-steakhouses"
+    },
+    {
+      "subject": "RPM Steak",
+      "quote": "Celebrated my graduation here because RPM restaurants are the best for managing allergies!",
+      "href": "https://www.spokin.com/allergy-friendly-steakhouses"
+    },
+    {
+      "subject": "Prime & Provisions Steakhouse",
+      "quote": "They had a clear allergy protocol that included special tickets on orders.",
+      "href": "https://www.spokin.com/allergy-friendly-steakhouses"
+    },
+    {
+      "subject": "Joe's Seafood, Prime Steak & Stone Crab",
+      "quote": "We were so thrilled to see bright pink labels on the bags listing my son’s allergies when we picked up.",
+      "href": "https://www.spokin.com/allergy-friendly-steakhouses"
+    },
+    {
+      "subject": "Weber Grill Restaurant",
+      "quote": "Our waiter was really helpful and her food had allergy markers when it came out. They have separate grills for beef, chicken, and seafood.",
+      "href": "https://www.spokin.com/allergy-friendly-steakhouses"
+    }
+  ],
+  "sourceUrl": "https://www.spokin.com/allergy-friendly-steakhouses",
+  "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-allergy-friendly-steakhouses.json"
+}

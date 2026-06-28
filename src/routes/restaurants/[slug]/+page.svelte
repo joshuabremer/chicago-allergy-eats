@@ -7,14 +7,14 @@
 
 	let { data }: { data: PageData } = $props();
 
-	let reviewState = $state<Record<string, UserReview>>(loadUserReviews());
+	let reviewState = $state<Record<string, UserReview>>(loadUserReviews({}));
 
 	$effect(() => {
-		saveUserReviews(reviewState);
+		reviewState = loadUserReviews(data.reviewState);
 	});
 
-	function setDecision(decision: DecisionState) {
-		reviewState = {
+	async function setDecision(decision: DecisionState) {
+		reviewState = await saveUserReviews({
 			...reviewState,
 			[data.place.slug]: {
 				...getUserReview(reviewState, data.place.slug),
@@ -22,46 +22,46 @@
 				rejectionNote:
 					decision === 'rejected' ? getUserReview(reviewState, data.place.slug).rejectionNote : undefined
 			}
-		};
+		});
 	}
 
-	function setRejected(note: string) {
-		reviewState = {
+	async function setRejected(note: string) {
+		reviewState = await saveUserReviews({
 			...reviewState,
 			[data.place.slug]: {
 				...getUserReview(reviewState, data.place.slug),
 				decision: 'rejected',
 				rejectionNote: note
 			}
-		};
+		});
 	}
 
-	function setComment(comment: string) {
+	async function setComment(comment: string) {
 		const normalizedComment = comment.trim();
 
-		reviewState = {
+		reviewState = await saveUserReviews({
 			...reviewState,
 			[data.place.slug]: {
 				...getUserReview(reviewState, data.place.slug),
 				comment: normalizedComment || undefined
 			}
-		};
+		});
 	}
 
-	function hideResearchTag(tag: ResearchTag) {
+	async function hideResearchTag(tag: ResearchTag) {
 		const review = getUserReview(reviewState, data.place.slug);
 
 		if (review.hiddenResearchTags.includes(tag)) {
 			return;
 		}
 
-		reviewState = {
+		reviewState = await saveUserReviews({
 			...reviewState,
 			[data.place.slug]: {
 				...review,
 				hiddenResearchTags: [...review.hiddenResearchTags, tag]
 			}
-		};
+		});
 	}
 </script>
 
@@ -71,14 +71,7 @@
 </svelte:head>
 
 <div class="page-shell">
-	<header class="page-header">
-		<a href="/" class="back-link">← Back to neighborhood list</a>
-		<div>
-			<p class="eyebrow">{data.place.neighborhood}</p>
-			<h1>{data.place.name}</h1>
-			<p>{data.place.cuisineSummary}</p>
-		</div>
-	</header>
+	<a href="/" class="back-link">← Back to restaurant list</a>
 
 	<div class="content-grid">
 		<div class="detail-column">
@@ -125,18 +118,11 @@
 		gap: 1.25rem;
 	}
 
-	.page-header,
 	.map-card {
 		background: rgb(255 255 255 / 0.9);
 		border: 1px solid rgb(226 232 240 / 0.92);
 		border-radius: 1.5rem;
 		box-shadow: 0 20px 50px rgb(15 23 42 / 0.1);
-	}
-
-	.page-header {
-		padding: 1.4rem;
-		display: grid;
-		gap: 1rem;
 	}
 
 	.back-link {
@@ -145,31 +131,8 @@
 		font-weight: 700;
 	}
 
-	.eyebrow {
-		margin: 0 0 0.35rem;
-		font-size: 0.8rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: #1d4ed8;
-	}
-
-	h1,
-	h2,
-	p {
+	h2 {
 		margin-top: 0;
-	}
-
-	h1 {
-		margin-bottom: 0.6rem;
-		font-size: clamp(1.9rem, 3vw, 2.6rem);
-		line-height: 1.1;
-	}
-
-	.page-header p:last-child {
-		margin-bottom: 0;
-		color: #475569;
-		line-height: 1.6;
 	}
 
 	.content-grid {

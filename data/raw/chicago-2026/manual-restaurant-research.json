@@ -24,7 +24,7 @@
   },
   {
     "restaurantName": "Epic Burger",
-    "researchTags": ["Spokin verified", "Has allergy guide"],
+    "researchTags": ["Spokin verified", "Has allergy guide", "Reached out"],
     "resources": [
       {
         "label": "Menu",
@@ -46,6 +46,7 @@
   },
   {
     "restaurantName": "Tacombi Fulton Market",
+    "researchTags": ["Reached out"],
     "resources": [
       {
         "label": "Menu",
@@ -86,6 +87,7 @@
   },
   {
     "restaurantName": "Eataly",
+    "researchTags": ["Reached out"],
     "email": "guestrelationschi@eataly.com",
     "resources": [
       {
@@ -102,7 +104,7 @@
   },
   {
     "restaurantName": "Au Cheval",
-    "researchTags": ["Has allergy labels"],
+    "researchTags": ["Has allergy labels", "Reached out"],
     "resources": [
       {
         "label": "Menu",
@@ -315,6 +317,11 @@
             "note": "Red flag: the vanilla ice cream and chocolate chip cookie dough are made in a facility where peanuts and tree nuts are present."
           }
         ]
+      },
+      {
+        "label": "Nut Free New York Chicago trip review",
+        "href": "https://nutfreenewyork.com/2017/08/29/chicago/",
+        "kind": "review"
       }
     ],
     "quotes": [
@@ -322,11 +329,17 @@
         "quote": "We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients. A few of our items, such as the vanilla ice cream and chocolate chip cookie dough, do not contain peanuts or tree nuts but are made in a facility where peanuts and tree nuts are present. Our gluten-free pizza dough is made from a blend of rice flour, corn, potato, and tapioca starches, pea fiber, and xanthan gum, and may contain traces of almond and coconut.",
         "sourceLabel": "Lou Malnati's allergen information",
         "href": "https://www.loumalnatis.com/allergen-information/"
+      },
+      {
+        "quote": "Here’s their official allergen-information page. (If you’re averse to clicking, the gist is that there aren’t any peanuts or tree nuts in the kitchen.)",
+        "sourceLabel": "Nut Free New York Chicago trip review",
+        "href": "https://nutfreenewyork.com/2017/08/29/chicago/"
       }
     ],
     "notes": [
       "Source reference: Lou Malnati's allergen information page.",
-      "The quoted allergen text specifically notes that the gluten-free pizza dough may contain traces of almond and coconut."
+      "The quoted allergen text specifically notes that the gluten-free pizza dough may contain traces of almond and coconut.",
+      "Raw source stored at data/raw/chicago-2026/nut-free-new-york-chicago-trip.json."
     ]
   },
   {
@@ -470,6 +483,17 @@
     "restaurantName": "Ramen San",
     "resources": [
       {
+        "label": "Menus",
+        "href": "https://www.ramensan.com/menus/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: in the pasted Ramen-San menu sections, no explicit tree nuts or peanuts stood out."
+          }
+        ]
+      },
+      {
         "label": "Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
         "kind": "review"
@@ -498,6 +522,10 @@
     ],
     "quotes": [
       {
+        "quote": "The pasted Ramen-San lunch, dinner, and express lunch sections did not explicitly name tree nuts or peanuts, though sesame appeared repeatedly.",
+        "sourceLabel": "User-pasted Ramen-San menus"
+      },
+      {
         "quote": "Apparently Lettuce restaurants are really good.",
         "sourceLabel": "User summary of Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
@@ -516,7 +544,7 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Ramen-San, Ramen-San Deluxe, and Ramen-San Whisky Bar.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/ramen-san-menus.json."
     ]
   },
   {
@@ -576,6 +604,21 @@
     "restaurantName": "Aba",
     "resources": [
       {
+        "label": "Menus",
+        "href": "https://www.abarestaurants.com/chicago/menus",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Aba menus are explicit about ingredients, so nut-containing dishes are clearly named instead of being hidden."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the pasted Aba menus explicitly list pistachio, cashew, walnut, and hazelnut in multiple dishes and desserts."
+          }
+        ]
+      },
+      {
         "label": "Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
         "kind": "review"
@@ -603,6 +646,10 @@
       }
     ],
     "quotes": [
+      {
+        "quote": "The pasted Aba menus explicitly name pistachio, cashew, walnut, and hazelnut in dishes including Whipped Feta, Carrot & Labneh, Muhammara, Halloumi w/ Tomato Jam, Frozen Greek Yogurt, and Chocolate Hazelnut Torte.",
+        "sourceLabel": "User-pasted Aba menus"
+      },
       {
         "quote": "Apparently Lettuce restaurants are really good.",
         "sourceLabel": "User summary of Chicagofood Reddit thread",
@@ -622,12 +669,27 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Aba in Chicago.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/aba-menus.json."
     ]
   },
   {
     "restaurantName": "Ema",
     "resources": [
+      {
+        "label": "Menus",
+        "href": "https://www.emarestaurants.com/chicago/menus",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Ema menus are explicit about ingredients, so nut-containing dishes are clearly named instead of being hidden."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the pasted Ema menus explicitly list pine nut, pistachio, and coconut in multiple dishes."
+          }
+        ]
+      },
       {
         "label": "Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
@@ -657,6 +719,10 @@
     ],
     "quotes": [
       {
+        "quote": "The pasted Ema menus explicitly name pine nut, pistachio, and coconut in dishes including Tomato Caponata, Spicy Whipped Feta, Hamachi & Charred Avocado, House-Made Stracciatella, and Grilled Branzino.",
+        "sourceLabel": "User-pasted Ema menus"
+      },
+      {
         "quote": "Apparently Lettuce restaurants are really good.",
         "sourceLabel": "User summary of Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
@@ -675,7 +741,7 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Ema in Chicago.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/ema-menus.json."
     ]
   },
   {
@@ -735,6 +801,17 @@
     "restaurantName": "Summer House Santa Monica",
     "resources": [
       {
+        "label": "Lincoln Park menus",
+        "href": "https://www.summerhouserestaurants.com/lincoln-park/menus/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: in the pasted Summer House menus, no explicit non-almond nuts stood out across the main, brunch, lunch, kids, or dessert sections."
+          }
+        ]
+      },
+      {
         "label": "Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
         "kind": "review"
@@ -763,6 +840,10 @@
     ],
     "quotes": [
       {
+        "quote": "The pasted Summer House menus explicitly mention almonds in the Almond Croissant and toasted almonds in the Shaved Brussels Sprouts, but no explicit non-almond nuts stood out in the sections shared here.",
+        "sourceLabel": "User-pasted Summer House Santa Monica menus"
+      },
+      {
         "quote": "Apparently Lettuce restaurants are really good.",
         "sourceLabel": "User summary of Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
@@ -781,7 +862,7 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Summer House Santa Monica in Chicago.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/summer-house-santa-monica-menus.json."
     ]
   }
 ]

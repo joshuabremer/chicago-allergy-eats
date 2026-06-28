@@ -1,0 +1,87 @@
+{
+  "sourceName": "Nut Free New York Chicago trip article",
+  "sourceUrl": "https://nutfreenewyork.com/2017/08/29/chicago/",
+  "capturedAt": "2026-06-28T14:50:12.105-04:00",
+  "overview": "Travel diary and restaurant roundup from Nut Free New York describing allergy-related dining experiences in and around Chicago.",
+  "notes": [
+    "This file preserves exact or near-exact allergen-related excerpts from the fetched article so later prompts can rescan it without making fresh web calls.",
+    "The source mixes places the author visited with places they researched but did not make it to."
+  ],
+  "restaurants": [
+    {
+      "name": "Al's Italian Beef",
+      "status": "ate there",
+      "allergenExcerpt": "According to the two Al’s cashiers I spoke to, there are no tree nut (or peanut) products of any sort present at any Al’s location. Plus, their bread, which comes from Gonnella Baking Co., is made in a nut-free facility."
+    },
+    {
+      "name": "Bagel Art Café",
+      "status": "ate there",
+      "allergenExcerpt": "With the exception of some almond milk that’s used in a latte, there are no tree nut or peanut products present in Bagel Art’s kitchen."
+    },
+    {
+      "name": "FRÍO Gelato",
+      "status": "ate there",
+      "allergenExcerpt": "The gelato (and sorbet) itself is made in a nut-free facility."
+    },
+    {
+      "name": "Giordano’s",
+      "status": "ate there",
+      "allergenExcerpt": "The only nuts at Giordano’s are the walnuts that go into one of the salads. According to my server, the salads are prepared at their own station, so there isn’t really much chance for the salad walnuts to come into contact with any of the non-salad food."
+    },
+    {
+      "name": "Jet’s Pizza",
+      "status": "ate there",
+      "allergenExcerpt": "Here’s their Special Diets Wizard, which indicates that the only trouble menu item is the croutons."
+    },
+    {
+      "name": "Lawrence Fish Market",
+      "status": "ate there",
+      "allergenExcerpt": "There are no nuts in the kitchen, per a phone call I made from the back corner of a Barnes & Noble."
+    },
+    {
+      "name": "Lou Malnati’s Pizzeria",
+      "status": "ate there",
+      "allergenExcerpt": "Here’s their official allergen-information page. (If you’re averse to clicking, the gist is that there aren’t any peanuts or tree nuts in the kitchen.)"
+    },
+    {
+      "name": "Portillo’s",
+      "status": "ate there",
+      "allergenExcerpt": "There are no nuts in the kitchen, save for the almonds and walnuts that go into a few of the salads. But those salads aren’t prepared anywhere near the rest of the food, so those nuts are easy enough to avoid, I’d say."
+    },
+    {
+      "name": "Sweet Maple Café",
+      "status": "ate there",
+      "allergenExcerpt": "The owner’s severely allergic to peanuts, tree nuts, and shellfish, so none of the above are present in the kitchen."
+    },
+    {
+      "name": "Affresco Pizzeria & Lounge",
+      "status": "missed",
+      "allergenExcerpt": "There are no peanuts or tree nuts in the kitchen, and with the exception of some made-elsewhere desserts that aren’t even kept in (or near) the kitchen, everything’s evidently safe for the nut-allergic."
+    },
+    {
+      "name": "All Aboard Diner",
+      "status": "missed",
+      "allergenExcerpt": "They market themselves as a 'peanut and allergy conscious environment,' and when I called to ask, I was told that applies to tree nuts, too. They don’t cook with nuts, and nothing they sell contains any actual nuts."
+    },
+    {
+      "name": "Furious Spoon",
+      "status": "missed",
+      "allergenExcerpt": "No nuts on the menu. Simple."
+    },
+    {
+      "name": "Nutphree’s Bakery",
+      "status": "missed",
+      "allergenExcerpt": "Here’s their about page, which includes a rather impressive allergen statement."
+    },
+    {
+      "name": "Sharko’s BBQ",
+      "status": "missed",
+      "allergenExcerpt": "According to their FAQ, there are no nuts or nut oils in anything on the menu."
+    },
+    {
+      "name": "Wells Street Popcorn",
+      "status": "missed",
+      "allergenExcerpt": "According to their website, all Wells Street kitchens are entirely nut-, peanut-, and gluten-free."
+    }
+  ]
+}

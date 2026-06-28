@@ -1,6 +1,6 @@
 # Chicago Allergy Eats
 
-A SvelteKit site for researching Chicago restaurants, comparing allergy-related evidence, and saving browser-local review decisions.
+A SvelteKit site for researching Chicago restaurants, comparing allergy-related evidence, and saving review decisions to a JSON-backed server store.
 
 ## What is in the app
 
@@ -8,7 +8,7 @@ A SvelteKit site for researching Chicago restaurants, comparing allergy-related 
 - Filters for restaurant type, research tags, and approved-only view
 - Map view with clickable markers
 - Detail panel with notes, quotes, links, and research dump items
-- Browser-local approvals and personal tags for "want to try" style promotion
+- JSON-backed approvals, comments, and personal tags for "want to try" style promotion
 
 ## Where to keep adding information
 
@@ -25,7 +25,13 @@ The intended workflow is:
 
 1. Dump raw findings into `research-dump.ts`
 2. Later promote the good parts into `restaurants.ts`
-3. Use the app UI to browse, filter, and locally approve/promote places
+3. Use the app UI to browse, filter, and approve/promote places
+
+## Review state storage
+
+Review decisions, comments, and hidden tags are stored in:
+
+1. `data/user-reviews.json` — the server-backed JSON store used by the app at runtime
 
 That means in future prompts you can send me rough notes like:
 

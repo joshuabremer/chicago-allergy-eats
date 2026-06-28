@@ -1,0 +1,34 @@
+{
+  "sourceName": "User-sent restaurant outreach emails",
+  "capturedAt": "2026-06-28T15:33:56.662-04:00",
+  "notes": [
+    "These entries capture restaurants the user has already contacted but has not yet received a reply from.",
+    "Use this as outreach-status context during future synthesis and follow-up."
+  ],
+  "entries": [
+    {
+      "restaurantName": "Tacombi Fulton Market",
+      "sentAt": "2026-06-27T23:34:00-05:00",
+      "to": "info",
+      "subjectSummary": "Asked whether the Fulton Market location can accommodate a tree nut allergy, whether the kitchen is tree-nut free, and whether TVs will be showing the game."
+    },
+    {
+      "restaurantName": "Au Cheval",
+      "sentAt": "2026-06-27T22:04:00-05:00",
+      "to": "contact",
+      "subjectSummary": "Asked whether they have a tree nut free kitchen or can confidently accommodate a tree nut allergy."
+    },
+    {
+      "restaurantName": "Eataly",
+      "sentAt": "2026-06-27T22:04:00-05:00",
+      "to": "contact",
+      "subjectSummary": "Asked whether they have a tree nut free kitchen or can confidently accommodate a tree nut allergy."
+    },
+    {
+      "restaurantName": "Epic Burger",
+      "sentAt": "2026-06-22T22:43:00-05:00",
+      "to": "info",
+      "subjectSummary": "Asked whether they have a tree nut free kitchen or can confidently accommodate a tree nut allergy."
+    }
+  ]
+}

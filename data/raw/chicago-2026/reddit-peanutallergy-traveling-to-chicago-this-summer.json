@@ -1,0 +1,34 @@
+{
+  "sourceName": "Reddit lead: Traveling to Chicago this summer",
+  "sourceUrl": "https://www.reddit.com/r/peanutallergy/comments/1t5i4tx/traveling_to_chicago_this_summer/",
+  "capturedAt": "2026-06-28T14:50:12.105-04:00",
+  "directFetchStatus": "blocked by Reddit verification",
+  "notes": [
+    "Direct thread capture was not possible because Reddit returned a verification wall.",
+    "The search-based synthesis below is preserved as a lead only and should not be treated as a direct quote from the Reddit thread."
+  ],
+  "searchSynthesis": {
+    "highLevelTakeaways": [
+      "The summary layer emphasized calling ahead, asking about allergy workflows, and favoring places with strong server training.",
+      "Several community favorites overlapped with existing Chicago allergy guides, especially Lettuce and Boka-adjacent spots."
+    ],
+    "mentionedRestaurants": [
+      "Summer House Santa Monica",
+      "Piccolo Sogno",
+      "Small Cheval",
+      "RPM Italian",
+      "Little Goat Diner",
+      "Uncle Julio's",
+      "Big Star",
+      "Gibsons Bar & Steakhouse",
+      "MAK Restaurant",
+      "Armitage Alehouse",
+      "Gilt Bar",
+      "Au Cheval",
+      "Aba",
+      "Lyra",
+      "RPM Steak",
+      "Beatrix"
+    ]
+  }
+}

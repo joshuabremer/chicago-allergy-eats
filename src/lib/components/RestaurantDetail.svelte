@@ -13,15 +13,18 @@
 		place: Restaurant;
 		review: UserReview;
 		fullPage?: boolean;
-		onSetDecision: (decision: DecisionState) => void;
-		onSetRejected: (note: string) => void;
-		onSetComment: (comment: string) => void;
-		onHideResearchTag: (tag: ResearchTag) => void;
+		onSetDecision: (decision: DecisionState) => void | Promise<void>;
+		onSetRejected: (note: string) => void | Promise<void>;
+		onSetComment: (comment: string) => void | Promise<void>;
+		onHideResearchTag: (tag: ResearchTag) => void | Promise<void>;
 	} = $props();
 
 	let showRejectForm = $state(false);
 	let rejectionDraft = $state('');
 	let commentDraft = $state('');
+	let lastSyncedComment = $state<string | undefined>(undefined);
+	const savedComment = $derived(review.comment ?? '');
+	const commentIsDirty = $derived(commentDraft.trim() !== savedComment);
 
 	function handleRejectSubmit(event: SubmitEvent) {
 		event.preventDefault();
@@ -51,13 +54,18 @@
 		onSetDecision(nextDecision);
 	}
 
-	function handleCommentSubmit(event: SubmitEvent) {
-		event.preventDefault();
-		onSetComment(commentDraft);
+	function handleCommentSave() {
+		const normalizedComment = commentDraft.trim();
+		lastSyncedComment = normalizedComment || undefined;
+		commentDraft = normalizedComment;
+		onSetComment(normalizedComment);
 	}
 
 	$effect(() => {
-		commentDraft = review.comment ?? '';
+		if (review.comment !== lastSyncedComment) {
+			lastSyncedComment = review.comment;
+			commentDraft = review.comment ?? '';
+		}
 	});
 
 	const visibleResearchTags = $derived(
@@ -205,15 +213,18 @@
 
 	<section>
 		<h2>Comments</h2>
-		<form class="comment-form" onsubmit={handleCommentSubmit}>
+		<div class="comment-form">
 			<textarea
 				bind:value={commentDraft}
 				name="comment"
 				rows="4"
 				placeholder="Add any notes or follow-up questions for this restaurant"
+				onblur={handleCommentSave}
 			></textarea>
 			<div class="comment-actions">
-				<button type="submit" class="save-button">Save comment</button>
+				<button type="button" class="save-button" onclick={handleCommentSave} disabled={!commentIsDirty}>
+					{commentIsDirty ? 'Save comment' : 'Saved'}
+				</button>
 				{#if review.comment}
 					<button
 						type="button"
@@ -227,7 +238,7 @@
 					</button>
 				{/if}
 			</div>
-		</form>
+		</div>
 	</section>
 </article>
 
@@ -479,6 +490,7 @@
 	blockquote p {
 		margin: 0 0 0.55rem;
 		line-height: 1.6;
+		font-style: italic;
 	}
 
 	blockquote footer {

@@ -12,9 +12,19 @@
     "data/raw/chicago-2026/parlor-pizza-menu.json",
     "data/raw/chicago-2026/pizanos-chicago-loop-menu.json",
     "data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json",
+    "data/raw/chicago-2026/reddit-foodallergies-chicago-trip-with-food-allergies.json",
+    "data/raw/chicago-2026/reddit-peanutallergy-traveling-to-chicago-this-summer.json",
+    "data/raw/chicago-2026/reddit-chicago-suburbs-allergy-friendly-restaurants.json",
+    "data/raw/chicago-2026/reddit-askchicago-dining-with-food-allergies.json",
     "data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json",
     "data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json",
-    "data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json"
+    "data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json",
+    "data/raw/chicago-2026/nut-free-new-york-chicago-trip.json",
+    "data/raw/chicago-2026/summer-house-santa-monica-menus.json",
+    "data/raw/chicago-2026/aba-menus.json",
+    "data/raw/chicago-2026/ema-menus.json",
+    "data/raw/chicago-2026/ramen-san-menus.json",
+    "data/raw/chicago-2026/restaurant-outreach-sent.json"
   ],
   "files": [
     {

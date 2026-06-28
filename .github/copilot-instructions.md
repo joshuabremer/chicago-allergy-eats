@@ -47,6 +47,9 @@
 ## Research tag taxonomy
 
 - Keep `Nut free menu` distinct from `Nut free kitchen`.
+- Use `Can accommodate` when a restaurant says it can handle the allergy, but leave the confidence judgment to the user.
+- Use `Got email response` when the restaurant has replied directly to outreach.
+- Use `Reached out` when the user has sent a message to the restaurant and is waiting on a reply.
 - Keep `Has allergy guide` distinct from `Has allergy labels`.
 - Use `Has allergy guide` for full allergen or nutrition guides such as BIBIBOP.
 - Use `Has allergy labels` for menus that visibly label allergens without providing a full guide.
@@ -55,6 +58,7 @@
 ## Detail page interaction
 
 - Research tags on the detail page can be dismissed with an `x`, and that dismissal should stay browser-local instead of rewriting curated source data.
+- Do not show a long freeform Notes section on the detail page.
 
 ## Menu and analysis conventions
 

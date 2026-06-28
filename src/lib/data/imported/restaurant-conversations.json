@@ -6,7 +6,7 @@
     "contactEmail": "tony@piccolosognorestaurant.com",
     "responseQuote": "We can certainly take care of you. We just need to know in advance. We do use the following nuts in the kitchen so you know: almonds, pine nuts, pistachio, hazelnuts, but we can make sure there is no cross contamination.",
     "summary": "Can accommodate with advance notice. Nuts are present in the kitchen, but the restaurant said it can avoid cross contamination.",
-    "researchTags": ["Can confidently accommodate"],
+    "researchTags": ["Can accommodate", "Got email response"],
     "website": "https://www.piccolosognorestaurant.com",
     "address": "464 N Halsted St, Chicago, IL 60642",
     "latitude": 41.89,
@@ -20,7 +20,7 @@
     "contactEmail": "kinza@daisieschicago.com",
     "responseQuote": "We do not have a fully tree nut free kitchen as almonds are on our rainbow trout dish, and nuts are in our strawberry toast and waffle cone dessert. However, we are fully confident and able to accommodate a tree nut allergy with no cross contamination and will mark up a menu for you when you dine so you are fully aware of your options and the dishes that can be modified to accommodate your allergy. If there is ever any risk of cross contamination we will not serve the dish to you at all and have a thorough allergy procedure for any and all guests as well as for dietary restrictions.",
     "summary": "Not tree-nut free, but they say they can confidently accommodate and will mark up the menu with safe options and modifications.",
-    "researchTags": ["Can confidently accommodate"]
+    "researchTags": ["Can accommodate", "Got email response"]
   },
   {
     "restaurantName": "The Fat Shallot",
@@ -38,7 +38,7 @@
     "contactEmail": "ekort@lettuce.com",
     "responseQuote": "We can confidently accommodate a tree nut allergy in our kitchen. Our restaurant subscribes to a comprehensive allergy procedure to ensure the safety of every person dining with us.",
     "summary": "They say they can confidently accommodate a tree nut allergy and follow a comprehensive allergy procedure.",
-    "researchTags": ["Can confidently accommodate"],
+    "researchTags": ["Can accommodate", "Got email response"],
     "website": "https://www.rpmrestaurants.com/rpm-seafood/",
     "address": "317 N Clark St, Chicago, IL 60654",
     "latitude": 41.887936,
@@ -52,7 +52,7 @@
     "contactEmail": "ray@delizitalian.com",
     "responseQuote": "We can accommodate your allergy. Our menu can be modified for any allergies as well as gluten free options as well. Once you have made your reservation I will be more than happy to let the kitchen know prior to your reservation date and time and have it in the notes.",
     "summary": "They say they can accommodate tree nut allergies, modify the menu, and note the allergy in advance once a reservation is made.",
-    "researchTags": ["Can confidently accommodate"]
+    "researchTags": ["Can accommodate", "Got email response"]
   },
   {
     "restaurantName": "Beatnik on the River",
@@ -61,7 +61,7 @@
     "contactEmail": "aly@beatnikontheriver.com",
     "responseQuote": "The tree nut warning listed on our desserts is due to the manufacturing facility where they are produced. While the desserts themselves do not contain tree nuts as ingredients, they are made in a facility that also processes tree nuts, so we disclose that potential for cross-contact. The waffles have Nutella on top, but they would otherwise be nut-free if the Nutella is omitted. Hamachi ceviche contains coconut, while we list it as a tree nut for labeling purposes in accordance with prior FDA regulations, it does not contain any tree nuts. The only other tree nut we have in house is in our Coco Covfefe cocktail, which uses Orgeat, an almond syrup. We do our best to stay as nut free as possible and provide all available information to those with allergies.",
     "summary": "They shared detailed allergen info, but you decided to pass on it. Tree nut exposure points include dessert facility cross-contact, Nutella on waffles, and almond orgeat in a cocktail.",
-    "researchTags": [],
+    "researchTags": ["Got email response"],
     "website": "https://beatnikontheriver.com",
     "address": "180 N Wacker Dr, Chicago, IL 60606",
     "phone": "+1 312-526-3345",

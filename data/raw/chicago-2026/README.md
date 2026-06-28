@@ -18,9 +18,19 @@ This folder is the repo-backed home for the raw source material imported from:
 - `parlor-pizza-menu.json` — user-pasted Parlor Pizza menu capture
 - `pizanos-chicago-loop-menu.json` — user-pasted Pizano's Chicago Loop menu capture plus allergen notes
 - `reddit-chicagofood-food-allergy-thread.json` — user-supplied takeaway and source URL for a Reddit allergy discussion that needs manual follow-up if exact quotes are needed
+- `reddit-foodallergies-chicago-trip-with-food-allergies.json` — Reddit travel thread URL plus clearly labeled search-layer synthesis because direct Reddit fetch was blocked
+- `reddit-peanutallergy-traveling-to-chicago-this-summer.json` — Reddit peanut-allergy Chicago travel thread preserved as a blocked-fetch lead with secondary synthesis
+- `reddit-chicago-suburbs-allergy-friendly-restaurants.json` — Chicago suburbs Reddit lead preserved with blocked-fetch status and search-layer notes
+- `reddit-askchicago-dining-with-food-allergies.json` — AskChicago Reddit lead preserved with blocked-fetch status and search-layer notes
 - `lettuce-entertain-you-chicagoland-list.json` — user-pasted Chicago subset of the Lettuce Entertain You restaurant list PDF
 - `kid-cultivation-allergy-friendly-restaurants.json` — captured quote about Lettuce Entertain You allergy protocols from an allergy-focused restaurant roundup
 - `lettuce-contact-dietary-restrictions.json` — user-pasted official Lettuce Entertain You accommodations language from the contact FAQ
+- `nut-free-new-york-chicago-trip.json` — captured allergen-related excerpts from a Chicago restaurant roundup on Nut Free New York
+- `summer-house-santa-monica-menus.json` — user-pasted Summer House Santa Monica menus with a note that only almond mentions were explicit in the pasted sections
+- `aba-menus.json` — user-pasted Aba menus with explicit pistachio, cashew, walnut, and hazelnut callouts
+- `ema-menus.json` — user-pasted Ema menus with explicit pine nut, pistachio, and coconut callouts
+- `ramen-san-menus.json` — user-pasted Ramen-San menus noting no explicit tree nuts or peanuts in the pasted sections
+- `restaurant-outreach-sent.json` — user-sent outreach emails to restaurants that have not yet replied
 
 ## Imported files
 

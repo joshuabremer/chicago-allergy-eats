@@ -1,0 +1,27 @@
+{
+  "sourceName": "Reddit lead: Chicago trip with food allergies",
+  "sourceUrl": "https://www.reddit.com/r/FoodAllergies/comments/1mc2ogb/chicago_trip_with_food_allergies/",
+  "capturedAt": "2026-06-28T14:50:12.105-04:00",
+  "directFetchStatus": "blocked by Reddit verification",
+  "notes": [
+    "Direct thread capture was not possible because Reddit returned a verification wall.",
+    "The search-based synthesis below is preserved as a lead only and should not be treated as a direct quote from the Reddit thread."
+  ],
+  "searchSynthesis": {
+    "highLevelTakeaways": [
+      "Chicago surfaced as a relatively allergy-friendly city when diners call ahead and communicate clearly.",
+      "Staff knowledge, cross-contact awareness, and explicit allergy protocols were recurring themes in the summary layer."
+    ],
+    "mentionedRestaurants": [
+      "Summer House Santa Monica",
+      "Piccolo Sogno",
+      "Small Cheval",
+      "RPM Italian",
+      "Little Goat Diner",
+      "Uncle Julio's",
+      "Big Star",
+      "Gibsons Bar & Steakhouse",
+      "MAK Restaurant"
+    ]
+  }
+}

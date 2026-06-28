@@ -45,6 +45,15 @@
       "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-chicago-food-allergy-friendly-city-guide.json",
       "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-chicago-food-allergy-friendly-city-guide.json",
       "quoteCount": 35
+    },
+    {
+      "slug": "spokin-allergy-friendly-steakhouses",
+      "title": "Allergy-Friendly Steakhouses",
+      "sourceName": "Spokin",
+      "articleUrl": "https://www.spokin.com/allergy-friendly-steakhouses",
+      "parsedPath": "data/raw/chicago-2026/articles/parsed/spokin-allergy-friendly-steakhouses.json",
+      "rawApiPath": "data/raw/chicago-2026/articles/raw/spokin-allergy-friendly-steakhouses.json",
+      "quoteCount": 5
     }
   ]
 }

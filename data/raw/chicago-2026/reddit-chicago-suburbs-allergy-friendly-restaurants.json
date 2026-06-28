@@ -1,0 +1,27 @@
+{
+  "sourceName": "Reddit lead: Chicago suburbs allergy-friendly restaurants",
+  "sourceUrl": "https://www.reddit.com/r/ChicagoSuburbs/comments/zoeadv/looking_for_recommendations_for_restaurants_that/",
+  "capturedAt": "2026-06-28T14:50:12.105-04:00",
+  "directFetchStatus": "blocked by Reddit verification",
+  "notes": [
+    "Direct thread capture was not possible because Reddit returned a verification wall.",
+    "The search-based synthesis below is preserved as a lead only and should not be treated as a direct quote from the Reddit thread."
+  ],
+  "searchSynthesis": {
+    "highLevelTakeaways": [
+      "The summary layer again emphasized staff training, calling ahead, and restaurants that visibly label or flag allergy-safe orders.",
+      "This looks more like a lead list than a directly verified source until the actual thread content is captured."
+    ],
+    "mentionedRestaurants": [
+      "Summer House Santa Monica",
+      "Piccolo Sogno",
+      "Small Cheval",
+      "RPM Italian",
+      "Little Goat Diner",
+      "Uncle Julio's",
+      "Big Star",
+      "Gibsons Bar & Steakhouse",
+      "MAK Restaurant"
+    ]
+  }
+}

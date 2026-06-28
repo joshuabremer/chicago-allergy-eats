@@ -9,6 +9,7 @@ import treeNutFreeRestaurants from '$lib/data/imported/tree-nut-free-restaurants
 import allThingsAllergiesGuide from '../../../data/raw/chicago-2026/articles/parsed/allthingsallergies-chicago-guide.json';
 import spokinChicagoItinerary from '../../../data/raw/chicago-2026/articles/parsed/spokin-chicago-travel-itinerary.json';
 import spokinChicagoGuide from '../../../data/raw/chicago-2026/articles/parsed/spokin-chicago-food-allergy-friendly-city-guide.json';
+import spokinSteakhouses from '../../../data/raw/chicago-2026/articles/parsed/spokin-allergy-friendly-steakhouses.json';
 import spokinFavorites from '../../../data/raw/chicago-2026/articles/parsed/spokin-alyssa-favorite-nut-friendly-chicago-spots.json';
 import spokinWickerParkGuide from '../../../data/raw/chicago-2026/articles/parsed/spokin-wicker-park-chicago-guide.json';
 import { RESEARCH_TAGS } from '$lib/types';
@@ -160,7 +161,7 @@ const MAP_COLLECTIONS: MapCollection[] = [
 	{
 		title: 'Restaurants that can Accommodate',
 		data: accommodatingRestaurants,
-		researchTags: ['Can confidently accommodate']
+		researchTags: ['Can accommodate', 'Got email response']
 	},
 	{
 		title: 'Restaurants to Verify',
@@ -188,6 +189,7 @@ const ARTICLE_SOURCES: ParsedArticle[] = [
 	spokinFavorites,
 	spokinChicagoItinerary,
 	spokinChicagoGuide,
+	spokinSteakhouses,
 	spokinWickerParkGuide,
 	allThingsAllergiesGuide
 ];
@@ -233,11 +235,29 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		phone: '+1 312-527-5586'
 	},
 	{
+		title: 'Manual additions',
+		name: 'Summer House Santa Monica',
+		latitude: 41.9176217,
+		longitude: -87.6487786,
+		researchTags: [],
+		address: '1954 N Halsted St, Chicago, IL 60614',
+		phone: '+1 773-634-4100'
+	},
+	{
+		title: 'Manual additions',
+		name: 'RPM Italian',
+		latitude: 41.8910437,
+		longitude: -87.6299745,
+		researchTags: [],
+		address: '52 W Illinois St, Chicago, IL 60654',
+		phone: '+1 312-222-1888'
+	},
+	{
 		title: 'Direct restaurant response',
 		name: 'Piccolo Sogno',
 		latitude: 41.8908567,
 		longitude: -87.6478315,
-		researchTags: ['Can confidently accommodate'],
+		researchTags: ['Can accommodate', 'Got email response'],
 		address: '464 N Halsted St, Chicago, IL 60642',
 		website: 'https://piccolosognorestaurant.com',
 		phone: '+1 312-421-0077'
@@ -247,7 +267,7 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		name: 'RPM Seafood',
 		latitude: 41.887936,
 		longitude: -87.630635,
-		researchTags: ['Can confidently accommodate'],
+		researchTags: ['Can accommodate', 'Got email response'],
 		address: '317 N Clark St, Chicago, IL 60654',
 		website: 'https://www.rpmrestaurants.com/rpm-seafood/'
 	},
@@ -910,7 +930,7 @@ function deriveTagsFromReferences(restaurant: WorkingRestaurant, references: Art
 	}
 
 	if (text.includes('highly accommodating')) {
-		restaurant.researchTags.add('Can confidently accommodate');
+		restaurant.researchTags.add('Can accommodate');
 	}
 
 	if (text.includes('spokin verified')) {
@@ -1399,7 +1419,9 @@ function removeQuotedResources(resources: ResourceLink[], quotes: SourceQuote[])
 		quotes.map((quote) => quote.href).filter((href): href is string => typeof href === 'string').map(normalizeHref)
 	);
 
-	return resources.filter((resource) => !quotedHrefs.has(normalizeHref(resource.href)));
+	return resources.filter(
+		(resource) => resource.kind === 'menu' || !quotedHrefs.has(normalizeHref(resource.href))
+	);
 }
 
 function compareCoordinates(

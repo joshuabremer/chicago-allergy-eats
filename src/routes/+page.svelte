@@ -1,21 +1,36 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import RestaurantMap from '$lib/components/RestaurantMap.svelte';
 	import { restaurants } from '$lib/data/restaurants';
-	import { DECISION_STATES, RESEARCH_TAGS, type DecisionState, type ResearchTag, type Restaurant } from '$lib/types';
-	import { getUserReview, loadUserReviews, saveUserReviews } from '$lib/user-reviews';
+	import type { PageData } from './$types';
+	import {
+		DECISION_STATES,
+		RESEARCH_TAGS,
+		type DecisionState,
+		type ResearchTag,
+		type Restaurant,
+		type RestaurantType
+	} from '$lib/types';
+	import { getUserReview, loadUserReviews } from '$lib/user-reviews';
+
+	let { data }: { data: PageData } = $props();
 
 	const DEFAULT_VISIBLE_DECISION_STATES: DecisionState[] = [
 		'ready-to-review',
 		'needs-more-info',
 		'approved'
 	];
+	const HOMEPAGE_FILTERS_STORAGE_KEY = 'chicago-allergy-eats:homepage-filters';
+	const allTypes = Array.from(new Set(restaurants.map((restaurant) => restaurant.type)));
+	const persistedFilters = loadHomepageFilters();
 
-	let searchText = $state('');
-	let activeTypes = $state<string[]>([]);
-	let activeResearchTags = $state<ResearchTag[]>([]);
-	let activeDecisionStates = $state<DecisionState[]>([...DEFAULT_VISIBLE_DECISION_STATES]);
-	let reviewState = $state(loadUserReviews());
+	let searchText = $state(persistedFilters.searchText);
+	let activeTypes = $state<string[]>(persistedFilters.activeTypes);
+	let activeResearchTags = $state<ResearchTag[]>(persistedFilters.activeResearchTags);
+	let activeDecisionStates = $state<DecisionState[]>(persistedFilters.activeDecisionStates);
+	let reviewState = $state(loadUserReviews({}));
+	let hoveredSlug = $state<string | null>(null);
 	const decisionStateLabels: Record<DecisionState, string> = {
 		'ready-to-review': 'Ready to review',
 		'needs-more-info': 'Needs more info',
@@ -23,14 +38,31 @@
 		rejected: 'Rejected'
 	};
 
-	const allTypes = Array.from(new Set(restaurants.map((restaurant) => restaurant.type)));
 	const visiblePlaces = $derived.by(() => restaurants.filter(matchesFilters));
 	const sortedVisiblePlaces = $derived.by(() =>
 		[...visiblePlaces].sort((left, right) => left.name.localeCompare(right.name))
 	);
+	const markerDecisions = $derived.by(() =>
+		Object.fromEntries(restaurants.map((restaurant) => [restaurant.slug, getUserReview(reviewState, restaurant.slug).decision]))
+	);
 
 	$effect(() => {
-		saveUserReviews(reviewState);
+		reviewState = loadUserReviews(data.reviewState);
+	});
+
+	$effect(() => {
+		if (!browser) {
+			return;
+		}
+
+		const nextFilters = {
+			searchText,
+			activeTypes,
+			activeResearchTags,
+			activeDecisionStates
+		};
+
+		localStorage.setItem(HOMEPAGE_FILTERS_STORAGE_KEY, JSON.stringify(nextFilters));
 	});
 
 	function toggleType(type: string) {
@@ -93,38 +125,67 @@
 		const hiddenResearchTags = getUserReview(reviewState, restaurant.slug).hiddenResearchTags;
 		return restaurant.researchTags.filter((tag) => !hiddenResearchTags.includes(tag));
 	}
+
+	function loadHomepageFilters() {
+		if (!browser) {
+			return defaultHomepageFilters();
+		}
+
+		const stored = localStorage.getItem(HOMEPAGE_FILTERS_STORAGE_KEY);
+
+		if (!stored) {
+			return defaultHomepageFilters();
+		}
+
+		try {
+			const parsed = JSON.parse(stored) as Record<string, unknown>;
+
+			return {
+				searchText: typeof parsed.searchText === 'string' ? parsed.searchText : '',
+				activeTypes: Array.isArray(parsed.activeTypes)
+					? parsed.activeTypes.filter(
+							(type): type is RestaurantType =>
+								typeof type === 'string' && allTypes.includes(type as RestaurantType)
+						)
+					: [],
+				activeResearchTags: Array.isArray(parsed.activeResearchTags)
+					? parsed.activeResearchTags.filter(
+							(tag): tag is ResearchTag => typeof tag === 'string' && RESEARCH_TAGS.includes(tag as ResearchTag)
+						)
+					: [],
+				activeDecisionStates: Array.isArray(parsed.activeDecisionStates)
+					? parsed.activeDecisionStates.filter(
+							(state): state is DecisionState =>
+								typeof state === 'string' && DECISION_STATES.includes(state as DecisionState)
+						)
+					: [...DEFAULT_VISIBLE_DECISION_STATES]
+			};
+		} catch {
+			return defaultHomepageFilters();
+		}
+	}
+
+	function defaultHomepageFilters() {
+		return {
+			searchText: '',
+			activeTypes: [],
+			activeResearchTags: [] as ResearchTag[],
+			activeDecisionStates: [...DEFAULT_VISIBLE_DECISION_STATES]
+		};
+	}
 </script>
 
 <svelte:head>
 	<title>Chicago Allergy Eats</title>
 	<meta
 		name="description"
-		content="Neighborhood-based Chicago restaurant research with filters, map view, and browser-saved approvals."
+		content="Neighborhood-based Chicago restaurant research with filters, map view, and JSON-backed review decisions."
 	/>
 </svelte:head>
 
 <div class="shell">
 	<aside class="sidebar">
 		<section class="sidebar-card filters">
-			<div class="filter-heading">
-				<div>
-					<p class="eyebrow">Chicago allergy eats</p>
-					<h2>Filters</h2>
-				</div>
-				<button
-					type="button"
-					class="reset-button"
-					onclick={() => {
-						searchText = '';
-						activeTypes = [];
-						activeResearchTags = [];
-						activeDecisionStates = [...DEFAULT_VISIBLE_DECISION_STATES];
-					}}
-				>
-					Reset
-				</button>
-			</div>
-
 			<label class="search-field">
 				<span>Search</span>
 				<input bind:value={searchText} placeholder="Neighborhood, cuisine, or note" />
@@ -191,7 +252,27 @@
 			{#if sortedVisiblePlaces.length > 0}
 				<div class="group-list">
 					{#each sortedVisiblePlaces as restaurant}
-						<a href={restaurantHref(restaurant.slug)} class="place-card">
+						<a
+							href={restaurantHref(restaurant.slug)}
+							class="place-card"
+							class:hovered={hoveredSlug === restaurant.slug}
+							onmouseenter={() => {
+								hoveredSlug = restaurant.slug;
+							}}
+							onmouseleave={() => {
+								if (hoveredSlug === restaurant.slug) {
+									hoveredSlug = null;
+								}
+							}}
+							onfocus={() => {
+								hoveredSlug = restaurant.slug;
+							}}
+							onblur={() => {
+								if (hoveredSlug === restaurant.slug) {
+									hoveredSlug = null;
+								}
+							}}
+						>
 							<div class="place-card-top">
 								<div>
 									<strong>{restaurant.name}</strong>
@@ -231,7 +312,16 @@
 
 	<section class="workspace">
 		<div class="map-shell">
-			<RestaurantMap places={visiblePlaces} onSelect={goToRestaurant} />
+			<RestaurantMap
+				places={visiblePlaces}
+				selectedSlug={hoveredSlug}
+				onSelect={goToRestaurant}
+				initialCenter={[41.8848, -87.6296]}
+				initialZoom={15}
+				showHotelMarker
+				{markerDecisions}
+				centerOnSelected
+			/>
 
 			<div class="overlay">
 				<section class="overview-card">
@@ -273,7 +363,7 @@
 
 	.shell {
 		display: grid;
-		grid-template-columns: minmax(19rem, 27rem) minmax(0, 1fr);
+		grid-template-columns: minmax(19rem, 2fr) minmax(0, 3fr);
 		min-height: 100vh;
 	}
 
@@ -444,6 +534,12 @@
 		transform: translateY(-1px);
 		border-color: #93c5fd;
 		box-shadow: 0 12px 30px rgb(37 99 235 / 0.14);
+	}
+
+	.place-card.hovered {
+		transform: translateY(-1px);
+		border-color: #60a5fa;
+		box-shadow: 0 16px 36px rgb(37 99 235 / 0.18);
 	}
 
 	.place-card-top {

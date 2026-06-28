@@ -1,0 +1,49 @@
+{
+  "sourceName": "User-pasted Summer House Santa Monica menus",
+  "sourceUrl": "https://www.summerhouserestaurants.com/lincoln-park/menus/",
+  "capturedAt": "2026-06-28T15:02:54.165-04:00",
+  "restaurantName": "Summer House Santa Monica",
+  "location": "1954 N Halsted St, Chicago, IL 60614",
+  "sections": [
+    {
+      "name": "Main",
+      "notes": [
+        "The pasted main menu explicitly names toasted almonds in Shaved Brussels Sprouts.",
+        "No explicit non-almond nuts stood out in the pasted main menu items."
+      ]
+    },
+    {
+      "name": "Brunch",
+      "notes": [
+        "The pasted brunch menu explicitly names almonds in Almond Croissant and toasted almonds in Shaved Brussels Sprouts.",
+        "No explicit non-almond nuts stood out in the pasted brunch menu items."
+      ]
+    },
+    {
+      "name": "Lunch",
+      "notes": [
+        "The pasted lunch menu explicitly names toasted almonds in Shaved Brussels Sprouts.",
+        "No explicit non-almond nuts stood out in the pasted lunch menu items."
+      ]
+    },
+    {
+      "name": "Kids",
+      "notes": [
+        "No explicit nuts stood out in the pasted kids menu items."
+      ]
+    },
+    {
+      "name": "Dessert",
+      "notes": [
+        "No explicit nuts stood out in the pasted dessert menu items."
+      ]
+    }
+  ],
+  "summary": {
+    "explicitNonAlmondNuts": [],
+    "explicitAlmondMentions": [
+      "Almond Croissant",
+      "Shaved Brussels Sprouts with toasted almonds"
+    ]
+  }
+}
