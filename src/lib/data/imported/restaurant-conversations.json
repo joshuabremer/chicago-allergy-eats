@@ -69,5 +69,32 @@
     "longitude": -87.63724,
     "addToList": true,
     "decision": "Rejected after reviewing the response."
+  },
+  {
+    "restaurantName": "Ema",
+    "date": "2026-06-29",
+    "contactName": "Bruce Cole",
+    "contactEmail": "bcole@lettuce.com",
+    "responseQuote": "We can definitely accommodate a tree nut allergy. Please let your server and they will handle the whole process with our chef.",
+    "summary": "Bruce Cole, the general manager, said Ema can definitely accommodate a tree nut allergy and will have the server coordinate the process with the chef.",
+    "researchTags": ["Can accommodate", "Got email response"]
+  },
+  {
+    "restaurantName": "Seoul Taco",
+    "date": "2026-06-29",
+    "contactName": "Amelia Lennaman",
+    "contactEmail": "Amelia@seoultaco.com",
+    "responseQuote": "We do not currently use any tree nut products in our store. The closest item we have is sesame seeds and oil. Pink Mu is currently sharing kitchen space with us at our Clark St location, and to my knowledge they do not carry any tree nut items either. But I would definitely let them know about the allergy if you do visit.",
+    "summary": "Amelia said Seoul Taco does not currently use tree nut products in the store. She noted sesame is the closest item, and that Pink Mu shares the Clark St kitchen space but, to her knowledge, does not carry tree nut items either.",
+    "researchTags": ["Can accommodate", "Got email response"]
+  },
+  {
+    "restaurantName": "Tortazo - Willis Tower",
+    "date": "2026-06-29",
+    "contactName": "Heather Terhune",
+    "contactEmail": "heather.terhune@tortazo.com",
+    "responseQuote": "This is not an issue. There are almonds in the Horchata so do not order this. We also have peanuts and pumpkin seeds on site if that is an issue. Please let the cashier know about your allergies when you arrive so we can take extra precautions like using a new cutting board and washing hands before cooking your items.",
+    "summary": "Heather Terhune said Tortazo can accommodate the allergy, asked guests to tell the cashier on arrival, and said the team can use a new cutting board and wash hands before cooking allergy orders.",
+    "researchTags": ["Can accommodate", "Got email response"]
   }
 ]

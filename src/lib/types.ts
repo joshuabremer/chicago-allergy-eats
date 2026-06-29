@@ -12,7 +12,13 @@ export const RESEARCH_TAGS = [
 ] as const;
 
 export type ResearchTag = (typeof RESEARCH_TAGS)[number];
-export const DECISION_STATES = ['ready-to-review', 'needs-more-info', 'approved', 'rejected'] as const;
+export const DECISION_STATES = [
+	'ready-to-review',
+	'needs-more-info',
+	'awaiting-restaurant-response',
+	'approved',
+	'rejected'
+] as const;
 export type DecisionState = (typeof DECISION_STATES)[number];
 
 export type RestaurantType =
@@ -29,7 +35,7 @@ export type MealService = 'Breakfast' | 'Brunch' | 'Lunch' | 'Dinner' | 'Dessert
 export type ResourceKind = 'menu' | 'allergen' | 'website' | 'review' | 'reservation';
 
 export type MenuFlag = {
-	tone: 'green' | 'red';
+	tone: 'green' | 'yellow' | 'red';
 	note: string;
 };
 

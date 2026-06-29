@@ -1,0 +1,57 @@
+{
+  "sourceName": "User-pasted Tortazo menu",
+  "sourceUrl": "https://www.tortazo.com",
+  "capturedAt": "2026-06-28",
+  "location": "Tortazo - Willis Tower",
+  "sections": [
+    {
+      "name": "Tortas and snacks",
+      "items": [
+        "Beef Quesabirria - red chile braised beef, jack cheese, roasted red onions, cilantro, served with broth for dipping",
+        "Carne Asada - chile-rubbed prime sirloin, avocado, poblano rajas, arugula, chimichurri",
+        "Chipotle-Roasted Chicken - avocado, poblano rajas, Chihuahua cheese, arugula, cilantro crema",
+        "Chorizo + Queso - Gunthorp Farms chorizo, jack cheese, poblano rajas, avocado",
+        "Cubana Clasica - Berkshire pork loin, carnitas, bacon, jack cheese, chipotle mustard, pickled onions",
+        "Crispy Chicken Milanesa - Napa cabbage, pickled jalapenos, Cotija cheese, avocado-tomatillo salsa, cilantro crema",
+        "Eggplant Milanesa - vegetarian version of the crispy chicken milanesa torta",
+        "Chile + Garlic Peanuts",
+        "Chips + Salsa - tomatillo + chipotle",
+        "Chips + Guacamole - Almost Naked",
+        "Chips + Guacamole - Fully Dressed - bacon, serrano chiles, Cotija cheese, pepitas, tomatoes",
+        "Queso Fundido - jack, fontina + Cotija cheese, cilantro, roasted peppers + onions"
+      ]
+    },
+    {
+      "name": "Soups, salads, tacos, and more",
+      "items": [
+        "Tortilla Soup - avocado, Chihuahua cheese, pasilla chile, lime crema, tortilla strips, cilantro + onion",
+        "Guacamole Cobb - romaine + arugula, bacon, roasted corn + black bean salsa, tomatoes, poblano rajas, queso fresco, chipotle ranch dressing",
+        "El Tortazo - romaine + arugula, avocado, black beans, radishes, poblano rajas, cilantro, tortilla strips, green chile citrus vinaigrette",
+        "Crispy Chicken Peanut Crunch - kale + cabbage, pickled carrots, sesame-peanut crunch, spicy salsa macha vinaigrette",
+        "Baja Chicken tacos - avocado, queso fresco, chipotle mayo, slaw, cilantro",
+        "Carnitas tacos - guacamole, radish, cilantro + onion",
+        "Carne Asada tacos - pico de gallo",
+        "Chicken Al Pastor tacos - roasted pineapple + onion salsa, cilantro",
+        "Shrimp Dorados Style tacos - shrimp, Chihuahua cheese, salsa diabla, crema, slaw, cilantro + onion",
+        "Barbacoa tacos - red chile braised beef, roasted onions, Cotija cheese, cilantro + onion",
+        "Chicken + Bacon quesadilla - tomatoes, Chihuahua cheese, garlic mojo, cilantro crema",
+        "Roasted Mushroom quesadilla - poblano rajas, Chihuahua cheese, garlic mojo, cilantro crema",
+        "Carne Asada + Rajas quesadilla - chile-rubbed sirloin, Chihuahua cheese, poblano rajas, avocado-tomatillo salsa",
+        "Chicken Chilaquiles - poblano rajas, Cotija + Chihuahua cheese, black beans, tortilla strips, salsa roja",
+        "Fried Plantains - Cotija cheese, lime crema",
+        "Black Beans - queso fresco, cilantro + red onion",
+        "Fully Dressed Wheel Chips - puffed not pork chicharrones, Valentina, Tajin, Cotija cheese",
+        "Cinnamon Sugar Churros",
+        "Kids Crispy Chicken Strips + Chips",
+        "Grilled Cheese Torta",
+        "Cheese Quesadilla",
+        "Chicken Tacos"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Tortazo menu text without refetching the website.",
+    "The pasted menu explicitly includes peanuts in Chile + Garlic Peanuts and in the Crispy Chicken Peanut Crunch.",
+    "User noted that the allergen guide only calls out tree nuts in the horchata."
+  ]
+}

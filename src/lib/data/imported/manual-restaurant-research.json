@@ -6,7 +6,21 @@
       {
         "label": "Menus",
         "href": "https://piccolosognorestaurant.com/menus/",
-        "kind": "menu"
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Piccolo Sogno menus use GF/GFA labels across many dishes, which gives some up-front menu guidance."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the pasted menu does not include a dedicated allergen protocol or nut-free handling note, so cross-contact still needs a direct question."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the pasted menus explicitly include pistachio pesto, pistachios, hazelnuts, and pine nuts in multiple dishes, including salads, antipasti, soup, pasta, and focaccia."
+          }
+        ]
       },
       {
         "label": "Google allergy review",
@@ -19,7 +33,15 @@
         "quote": "What a wonderful place to enjoy a meal! The outdoor seating was pleasant and the staff was knowledgable and kind. Made our celebration just a little more fun. It was especially great as they were able to accommodate for my brother's anaphylactic dairy allergy.",
         "sourceLabel": "Google allergy review",
         "href": "https://maps.app.goo.gl/n7u77oU6hC3krQwH7"
+      },
+      {
+        "quote": "Ravioli \"Piccolo Sogno\" - Four cheese ravioli, pine nuts, butter, Marsala glaze, parmesan curls",
+        "sourceLabel": "User-pasted Piccolo Sogno menus"
       }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/piccolo-sogno-menus.json.",
+      "The pasted menus explicitly mention pistachio pesto, pistachios, hazelnuts, and pine nuts in multiple dishes."
     ]
   },
   {
@@ -45,13 +67,61 @@
     "notes": ["User-provided note: BIBIBOP has a full allergy guide."]
   },
   {
-    "restaurantName": "Tacombi Fulton Market",
+    "restaurantName": "Seoul Taco",
+    "resources": [
+      {
+        "label": "User-pasted menu",
+        "href": "https://www.seoultaco.com",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Seoul Taco menu is easy to scan, repeats the same core build across formats, and does not explicitly call out tree nuts in the pasted items."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: many dishes depend on named sauces like Seoul Sauce, wasabi sauce, gochujang sauce, and truffle soy without ingredient breakdowns in the pasted menu."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: many dishes depend on named sauces like Seoul Sauce, wasabi sauce, gochujang sauce, and truffle soy without ingredient breakdowns in the pasted menu."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Gogi Bowl - white rice, choice of protein, Korean salad mix, carrots, green onions, sesame oil and gochujang sauce, topped with a sunny side up egg.",
+        "sourceLabel": "User-pasted Seoul Taco menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/seoul-taco-menus.json.",
+      "The pasted menu does not explicitly mention tree nuts or peanuts, but it does repeatedly call out sesame seeds and sesame oil."
+    ]
+  },
+  {
+    "restaurantName": "Tacombi",
     "researchTags": ["Reached out"],
     "resources": [
       {
         "label": "Menu",
-        "href": "http://www.tacombi.com/menu",
-        "kind": "menu"
+        "href": "https://www.tacombi.com/menu",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Tacombi menu is fairly ingredient-specific, and the food menu does not explicitly call out tree nuts in the items shared here."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the pasted menu only includes a standard raw or undercooked foods warning and does not include a dedicated allergen guide or nut-handling statement, so cross-contact still needs a direct question."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the drinks menu explicitly includes coconut in the pina colada."
+          }
+        ]
       },
       {
         "label": "Instagram allergy review",
@@ -64,9 +134,101 @@
         "quote": "@tacombi review. Roses: COMPLETELY NUT FREE!!! simple, no frills menu with all the best basics. But I will be back for the fact that it's nut free.",
         "sourceLabel": "Instagram allergy review",
         "href": "https://www.instagram.com/p/C40wXYPrq0s/"
+      },
+      {
+        "quote": "Served on freshly made Vista Hermosa corn tortillas",
+        "sourceLabel": "User-pasted Tacombi menus"
       }
     ],
-    "notes": ["Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification."]
+    "notes": [
+      "Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification.",
+      "Raw source stored at data/raw/chicago-2026/tacombi-menus.json.",
+      "User confirmed the pasted menu is the same for both Tacombi and Tacombi Fulton Market."
+    ]
+  },
+  {
+    "restaurantName": "Tacombi Fulton Market",
+    "researchTags": ["Reached out"],
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.tacombi.com/menu",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Tacombi menu is fairly ingredient-specific, and the food menu does not explicitly call out tree nuts in the items shared here."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the pasted menu only includes a standard raw or undercooked foods warning and does not include a dedicated allergen guide or nut-handling statement, so cross-contact still needs a direct question."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the drinks menu explicitly includes coconut in the pina colada."
+          }
+        ]
+      },
+      {
+        "label": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/C40wXYPrq0s/",
+        "kind": "review"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "@tacombi review. Roses: COMPLETELY NUT FREE!!! simple, no frills menu with all the best basics. But I will be back for the fact that it's nut free.",
+        "sourceLabel": "Instagram allergy review",
+        "href": "https://www.instagram.com/p/C40wXYPrq0s/"
+      },
+      {
+        "quote": "Served on freshly made Vista Hermosa corn tortillas",
+        "sourceLabel": "User-pasted Tacombi menus"
+      }
+    ],
+    "notes": [
+      "Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification.",
+      "Raw source stored at data/raw/chicago-2026/tacombi-menus.json.",
+      "User confirmed the pasted menu is the same for both Tacombi and Tacombi Fulton Market."
+    ]
+  },
+  {
+    "restaurantName": "Daisies",
+    "resources": [
+      {
+        "label": "User-pasted menus",
+        "href": "https://www.daisieschicago.com",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Daisies menus are ingredient-detailed, and they explicitly call out that gluten-free substitutions are available."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu does not include a dedicated allergen guide or nut-free handling note in the pasted text, so cross-contact still needs a direct question."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the pasted menus explicitly include pine nuts in the cappellacci, hazelnuts in the strawberry toast, and multiple nut-forward desserts and pours including pecan and pistachio."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Gluten-Free substitution available for $5 allow 60 minutes to prepare",
+        "sourceLabel": "User-pasted Daisies menus"
+      },
+      {
+        "quote": "Cappellacci - summer squash | calabrian chili | pine nuts",
+        "sourceLabel": "User-pasted Daisies menus"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/daisies-menus.json.",
+      "The pasted Daisies menus explicitly mention pine nuts, hazelnuts, almond, peanut butter, pecan, almond praline, and pistachio."
+    ]
   },
   {
     "restaurantName": "Cindy's Rooftop",
@@ -155,13 +317,20 @@
         "menuFlags": [
           {
             "tone": "green",
-            "note": "Green flag: Spokin says the tortillas are gluten-free and there are limited nut offerings on the menu."
+            "note": "Green flag: in the pasted menu sections, no explicit tree nuts were called out."
           },
           {
-            "tone": "red",
-            "note": "Red flag: the Big Star Salad includes pepitas, and the menu warns that allergy-related ingredients may be unlisted."
+            "tone": "yellow",
+            "note": "Yellow flag: the menu warns that items can contain unlisted ingredients."
           }
         ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "The pasted Big Star menu did not explicitly list peanuts or tree nuts in the captured sections, but the restaurant warns that menu items can contain unlisted ingredients.",
+        "sourceLabel": "User-pasted Big Star Wicker Park menu",
+        "href": "https://www.bigstarchicago.com/location/wicker-park/#wicker-park-food"
       }
     ],
     "notes": ["Raw source stored at data/raw/chicago-2026/big-star-wicker-park-menu.json."]
@@ -186,12 +355,12 @@
         "kind": "menu",
         "menuFlags": [
           {
-            "tone": "red",
-            "note": "Red flag: Spokin says one of the house hot sauces on the table contains almonds."
+            "tone": "green",
+            "note": "Green flag: in the pasted Dove's menu sections here, the food items do not explicitly mention cashew, pistachio, hazelnut, pecan, or walnut."
           },
           {
-            "tone": "red",
-            "note": "Red flag: the Dirty Horchata Latte explicitly lists almond."
+            "tone": "yellow",
+            "note": "Yellow flag: several items rely on named sauces or condiments like mole-spiced maple syrup, comeback sauce, salsa verde, and table hot sauces without ingredient breakdowns, so cross-contact and hidden ingredients still need a direct question."
           }
         ]
       }
@@ -310,11 +479,11 @@
         "menuFlags": [
           {
             "tone": "green",
-            "note": "Green flag: Lou Malnati's says they do not have any peanuts or tree nuts in their pizzerias, and their homemade products are made without those ingredients."
+            "note": "Green flag: Lou Malnati's says they do not have tree nuts in their pizzerias, and their homemade products are made without those ingredients."
           },
           {
             "tone": "red",
-            "note": "Red flag: the vanilla ice cream and chocolate chip cookie dough are made in a facility where peanuts and tree nuts are present."
+            "note": "Red flag: the vanilla ice cream and chocolate chip cookie dough are made in a facility where tree nuts are present."
           }
         ]
       },
@@ -489,7 +658,15 @@
         "menuFlags": [
           {
             "tone": "green",
-            "note": "Green flag: in the pasted Ramen-San menu sections, no explicit tree nuts or peanuts stood out."
+            "note": "Green flag: the pasted Ramen-San menus are fairly explicit about ingredients, and multiple locations repeat the same base ramen structure."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu says items may require slight modifications and asks diners to advise the restaurant of any dietary restrictions and allergies."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the Lincoln Park lunch and dinner menu explicitly includes cashew in the kale & cashew salad."
           }
         ]
       },
@@ -522,7 +699,7 @@
     ],
     "quotes": [
       {
-        "quote": "The pasted Ramen-San lunch, dinner, and express lunch sections did not explicitly name tree nuts or peanuts, though sesame appeared repeatedly.",
+        "quote": "Across the pasted Ramen-San menus, sesame appears repeatedly and the menu asks diners to advise the restaurant of allergies; the Lincoln Park lunch and dinner menu also explicitly includes cashew in the kale & cashew salad.",
         "sourceLabel": "User-pasted Ramen-San menus"
       },
       {
@@ -748,6 +925,25 @@
     "restaurantName": "RPM Italian",
     "resources": [
       {
+        "label": "User-pasted menu",
+        "href": "https://www.rpmrestaurants.com/rpm-italian-chicago/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted RPM Italian menu is ingredient-forward and includes a direct note telling guests to alert the server about food allergies or dietary restrictions."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: despite the allergy note, the pasted menu does not include a dedicated allergen guide or nut-free handling statement, so cross-contact still needs a direct question."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the pasted menu explicitly includes pistachio gelato with Sicilian pistachios and Marzadro Pistachio."
+          }
+        ]
+      },
+      {
         "label": "Chicagofood Reddit thread",
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/",
         "kind": "review"
@@ -781,6 +977,14 @@
         "href": "https://www.reddit.com/r/chicagofood/comments/1mwlj1c/restaurants_that_are_food_allergy_sufferer/"
       },
       {
+        "quote": "Please alert your server if you have any food allergies or dietary restrictions.",
+        "sourceLabel": "User-pasted RPM Italian menu"
+      },
+      {
+        "quote": "Tuna Crudo - Farm Cucumber, Blood Orange, Toasted Almond",
+        "sourceLabel": "User-pasted RPM Italian menu"
+      },
+      {
         "quote": "All of our restaurants have very strict procedures when it comes to dietary restrictions and we are always accommodating of any allergies.",
         "sourceLabel": "Lettuce dietary restrictions FAQ",
         "href": "https://www.lettuce.com/contact/"
@@ -794,7 +998,8 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes RPM Italian in Chicago.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/rpm-italian-menus.json.",
+      "The pasted RPM Italian menu explicitly mentions toasted almond, almond biscotti, pistachio gelato with Sicilian pistachios, and Marzadro Pistachio."
     ]
   },
   {
@@ -863,6 +1068,46 @@
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Summer House Santa Monica in Chicago.",
       "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/summer-house-santa-monica-menus.json."
+    ]
+  },
+  {
+    "restaurantName": "Tortazo - Willis Tower",
+    "researchTags": ["Has allergy guide"],
+    "resources": [
+      {
+        "label": "Allergen guide",
+        "href": "https://images.getbento.com/accounts/a648ce9bc66858b28a546b5b5115fc55/media/67IUIUXTNahVZlWHv73V_2025.06.02%20Tortazo%20Allergen%20Guide.pdf",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: Tortazo has a dedicated allergen guide."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the allergen guide indicates horchata is the tree nut item to avoid."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: Tortazo says each location's menu can vary, so the local store menu still matters alongside the allergen guide."
+          }
+        ]
+      },
+      {
+        "label": "User-pasted food menu",
+        "href": "https://www.tortazo.com",
+        "kind": "menu"
+      },
+      {
+        "label": "Allergen guide page",
+        "href": "https://www.tortazo.com/menu/allergen-menu/",
+        "kind": "allergen"
+      }
+    ],
+    "quotes": [
+    ],
+    "notes": [
+      "Raw sources stored at data/raw/chicago-2026/tortazo-allergen-guide.json and data/raw/chicago-2026/tortazo-menu.json."
     ]
   }
 ]

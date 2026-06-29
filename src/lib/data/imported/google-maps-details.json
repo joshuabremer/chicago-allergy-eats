@@ -87,6 +87,15 @@
     "longitude": -87.6887
   },
   {
+    "name": "Cafe Ba-Ba-Reeba!",
+    "address": "2024 N Halsted St, Chicago, IL 60614",
+    "website": "https://www.cafebabareeba.com",
+    "phone": "+1 773-935-5000",
+    "rating": 4.8,
+    "latitude": 41.91897,
+    "longitude": -87.64867
+  },
+  {
     "name": "The Fat Shallot Lincoln Park",
     "address": "2468 N Clark St, Chicago, IL 60614",
     "website": "https://thefatshallot.com",
@@ -336,6 +345,32 @@
     "rating": 4.4,
     "latitude": 41.92444,
     "longitude": -87.69961
+  },
+  {
+    "name": "Ramen-San",
+    "address": "59 W Hubbard St #2, Chicago, IL 60654",
+    "website": "https://www.ramensan.com/menus/",
+    "phone": "+1 312-377-9950",
+    "rating": 4.7,
+    "latitude": 41.8899,
+    "longitude": -87.6304
+  },
+  {
+    "name": "Ramen-San Deluxe",
+    "address": "165 E Huron St, Chicago, IL 60611",
+    "website": "https://www.ramensan.com/menus/",
+    "rating": 4.8,
+    "latitude": 41.8948,
+    "longitude": -87.6230
+  },
+  {
+    "name": "Ramen-San Lincoln Park",
+    "address": "1962 N Halsted St, Chicago, IL 60614",
+    "website": "https://www.ramensan.com/menus/",
+    "phone": "+1 773-248-3000",
+    "rating": 4.9,
+    "latitude": 41.9178,
+    "longitude": -87.6488
   },
   {
     "name": "Tortazo - Willis Tower",

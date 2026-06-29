@@ -1,0 +1,86 @@
+{
+  "sourceName": "User-pasted RPM Italian menu",
+  "sourceUrl": "https://www.rpmrestaurants.com/rpm-italian-chicago/",
+  "capturedAt": "2026-06-28",
+  "location": "RPM Italian",
+  "sections": [
+    {
+      "name": "Antipasti and salads",
+      "items": [
+        "Stracciatella Bruschetta - roasted heirloom tomato, housemade ciabatta",
+        "Tableside Beef Tartare - Westholme wagyu, quail egg, black truffle",
+        "Tuna Crudo - farm cucumber, blood orange, toasted almond",
+        "Imported Burrata Panzanella - tomato fonduta, ciabatta",
+        "Shredded Brussels Sprouts - avocado, Mama Lil peppers",
+        "RPM Caesar Salad - parmesan frico",
+        "Giuliana's Italian Salad - salumi, provolone, pepperoncini, ricotta salata",
+        "Rosemary and Sea Salt Focaccia",
+        "Whipped Ricotta and Wild Blossom Honey Focaccia",
+        "Truffled Garlic Bread",
+        "Devodier Prosciutto Service - Parmigiano Reggiano, gnocco fritto, aged balsamico"
+      ]
+    },
+    {
+      "name": "Hot antipasti, pizza, pasta, and mains",
+      "items": [
+        "Arancini - smoked scamorza, pomodoro",
+        "Squash Blossoms - ricotta, basil pesto, lemon",
+        "Prime Beef Meatballs - roasted garlic, pomodoro, shaved parmesan",
+        "Fritto Misto - blue prawns, calamari, lemon aioli",
+        "Mediterranean Octopus - chickpea puree, celery",
+        "Roasted Mozzarella di Buffala - lemon leaves, salsa verde",
+        "Charred Pepperoni pizzette",
+        "Truffle Bianco pizzette - mozzarella, seasonal truffles",
+        "Mama DePandi's Bucatini - pomodoro, Genovese basil",
+        "Mafaldine Cacio e Pepe - toasted pepper, Cacio de Roma",
+        "Carbonara - black pepper pancetta, egg yolk",
+        "Short Rib Bolognese - pappardelle, rosemary",
+        "Sweet Corn Cappelletti - black truffle, tarragon",
+        "Shrimp Fra Diavolo - linguine, Calabrian chili, lemon",
+        "Spicy Dungeness Crab - squid ink spaghetti, Fresno chili",
+        "Ricotta Gnocchi - local Sungold tomato, Gran Tartufo",
+        "Rigatoni alla Vodka - roasted tomato, Calabrian chili",
+        "Maine Lobster Ravioli - sweet basil, lobster Marsala",
+        "Grilled Lamb Chops - lemon, spring peas, oregano",
+        "Center Cut Filet Mignon",
+        "Grass Fed Bone-In Ribeye",
+        "Gorgonzola-Cured Wagyu",
+        "Prime Dry-Aged Bistecca Fiorentina",
+        "Chicken Parmesan",
+        "Spaghetti and Meatball",
+        "Eggplant Parmesan alla Billi",
+        "Black Truffle Chicken Vesuvio",
+        "Spicy Broccolini",
+        "Roasted Wild Mushrooms",
+        "Crispy Brussels Sprouts",
+        "Garlic-Whipped Potatoes",
+        "Asparagus and Crispy Guanciale",
+        "Grilled Giant Prawns - pesto Trapanese, Sicilian olive oil",
+        "Mediterranean Branzino - watercress, lemon condiment",
+        "Roasted Ora King Salmon - Sicilian olive, summer tomato",
+        "Alaskan Halibut - zucchini caponata, aqua pazza",
+        "Dover Sole Piccata - capers, brown butter"
+      ]
+    },
+    {
+      "name": "Desserts and digestivi",
+      "items": [
+        "RPM Affogato - tiramisu gelato, La Colombe espresso, almond biscotti",
+        "Traditional Affogato - vanilla bean gelato, La Colombe espresso",
+        "14K Chocolate Cake",
+        "Bomboloni - Italian brioche donut, lemon cream",
+        "Martha M's Special Occasion Carrot Cake",
+        "Pistachio Gelato - wild Italian strawberries, Sicilian pistachios",
+        "Tiramisu",
+        "Bill's Chocolate Budino",
+        "Orangecello Caravella",
+        "Marzadro Pistachio"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted RPM Italian menu text without refetching the website.",
+    "The pasted menu explicitly mentions toasted almond, almond biscotti, pistachio gelato with Sicilian pistachios, and Marzadro Pistachio.",
+    "The pasted menu also includes a direct allergy notice asking guests to alert the server about food allergies or dietary restrictions."
+  ]
+}

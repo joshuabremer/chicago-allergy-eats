@@ -1,0 +1,86 @@
+{
+  "sourceName": "User-pasted Daisies menus",
+  "sourceUrl": "https://www.daisieschicago.com",
+  "capturedAt": "2026-06-28",
+  "location": "Daisies",
+  "sections": [
+    {
+      "name": "Brunch",
+      "items": [
+        "Tigelle Sandwich - sunny egg, prosciutto cotto, calabrian chili and strawberry jam",
+        "Scrambled Egg Bruschetta - black truffle ricotta, parmesan, chives",
+        "Whole Wheat Pancakes - orange zest, maple syrup, whipped butter",
+        "Salmon Gravlax - potato latke, spring onion vinaigrette, cured egg yolk",
+        "Eggs in Purgatory - arrabbiata, sourdough, house cheese",
+        "Agnolotti - beets, smoked trout roe, dill",
+        "Smoked Whitefish Sandwich - smoked trout roe, iceberg, dill, sprouted wheat",
+        "Raviolo Carbonara - bacon, egg yolk, braised greens",
+        "Eggs Benedict - pickled ramps, porchetta di testa, fermented leeks",
+        "Pappardelle - mushroom ragu, house cheese, basil",
+        "Breakfast Potatoes - rosemary, house cheese",
+        "Simple Green Salad - pecorino di parco, wishbone vinaigrette",
+        "Bacon",
+        "Breakfast Sausage Links - maple, sage"
+      ]
+    },
+    {
+      "name": "Lunch",
+      "items": [
+        "Onion Dip - house made ruffles",
+        "Chicken Parm - tuscan kale, provolone, tomato vinaigrette, hoagie",
+        "Chicken Caesar Wrap - lemon-pepper chicken, croutons, parmesan",
+        "Turkey Rachel - purple slaw, 1000 island, marble rye, swiss",
+        "BBQ Beet - smoked beet, pepper conserva, caper aioli",
+        "Smoked Whitefish - smoked trout roe, iceberg, dill, sprouted wheat",
+        "White Bean Salad - roasted fennel, bacon bits, truffle vinaigrette",
+        "Potato Salad - leeks, dill, grain mustard",
+        "Simple Green Salad - leafy greens, pecorino, wish bone vinaigrette",
+        "Pasta Salad - giardiniera, scallion, hard cooked egg",
+        "Sunchoke and Leek Soup - fermented leek powder, chives"
+      ]
+    },
+    {
+      "name": "Dinner",
+      "items": [
+        "Porchetta di Testa - whitefish tonnato, frisee, red wine vinaigrette",
+        "Cabbage - beef tongue, clam vinaigrette, dill",
+        "Green Bean Tartare - pickled asparagus, colatura, whitefish roe",
+        "Onion Dip - house made ruffles",
+        "Fritto Misto - cheese curds, seasonal veg, tarragon aioli",
+        "Simple Green Salad - leafy greens, pecorino, wishbone vinaigrette",
+        "Pappardelle - mushroom ragu, house cheese, basil",
+        "Cappellacci - summer squash, calabrian chili, pine nuts",
+        "Stracci - lamb sugo, soft herbs, pecorino",
+        "Raviolo - ramps, brown butter, parmesan",
+        "Cavatelli - italian sausage, kale, white beans",
+        "Pierogi - mussels, potato, the champagne of beers",
+        "Agnolotti - beets, smoked trout roe, dill",
+        "Rigatoni - nduja, lemon breadcrumbs, fermented tomato",
+        "Gnocchi - morels, tripe, green beans",
+        "Ravioli - spring peas, preserved lemon, whey",
+        "Potted Carrots - duck fat, carrot pickles, gnocco fritto",
+        "Grilled Little Gem - lardo, smokey blue vinaigrette, sunflower seeds",
+        "Strawberry Toast - whipped lardo, radish, hazelnuts",
+        "Half Chicken - sundried tomato marinade, creamy basil vinaigrette, charred lemon",
+        "Rainbow Trout - almond, salmoriglio, lemon",
+        "Pork Collar - porcini rub, confit onion salsa verde"
+      ]
+    },
+    {
+      "name": "Desserts and digestivi",
+      "items": [
+        "Roasted Vanilla Peanut Butter Cookie-Dough Brownie",
+        "Terrazzo Cheesecake - strawberry, pretzel crunch, candied fennel",
+        "Seven Sisters - poached rhubarb, poppyseed, elderflower anglaise",
+        "Waffle Cone Ice Cream Sandwich - pecan semifreddo, cherries, sassafras",
+        "Chocolate Crunch Cake - white coffee, almond praline, black raspberry sorbet",
+        "Marzadro Pistachio"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Daisies menu text without refetching the website.",
+    "The pasted menus explicitly mention pine nuts, hazelnuts, almond, peanut butter, pecan, almond praline, and pistachio.",
+    "The pasted menus also explicitly note that gluten-free substitutions are available, including pasta substitutions that need additional prep time."
+  ]
+}

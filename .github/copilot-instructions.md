@@ -27,6 +27,7 @@
 
 - When a site or menu is difficult to scrape or fetch cleanly, ask the user to paste the content instead of getting stuck.
 - If the user pastes content, structure it into the repo so later prompts can quote it, link it, and curate it.
+- If the user pastes a restaurant menu, save it as a raw repo-backed source file and synthesize it into menu links, pull quotes, and menu analysis instead of leaving it only in chat.
 - As new research comes in, preserve the raw source in the repo, include source links and quotes on the restaurant detail page, add analysis, and always reference the source.
 
 ## Product expectations
@@ -34,13 +35,14 @@
 - The homepage should be a searchable restaurant list with filters and a map, not grouped by neighborhood.
 - The homepage should default to hiding rejected restaurants by preselecting `ready-to-review`, `needs-more-info`, and `approved`.
 - The detail page should support rich review with quick read, research tags, quotes, menu links, and menu-specific red/green flag notes.
-- User approvals and promotion tags are browser-local unless the user asks for a shared backend.
+- User approvals, statuses, comments, and personal tags are stored in the JSON-backed review backend.
 
 ## Decision state model
 
-- Restaurant decision state is separate from research tags and uses the explicit states `ready-to-review`, `needs-more-info`, `approved`, and `rejected`.
+- Restaurant decision state is separate from research tags and uses the explicit states `ready-to-review`, `needs-more-info`, `awaiting-restaurant-response`, `approved`, and `rejected`.
 - Use `ready-to-review` for places that are ready to hand off for review now.
 - Use `needs-more-info` for places that should stay in circulation until more research or follow-up is added.
+- Use `awaiting-restaurant-response` when the next step is waiting on outreach rather than doing more internal research first.
 - `rejected` must never appear as a research tag; it belongs only in the decision-state system.
 - Rejection reasons should be preserved when the user supplies them.
 
@@ -63,8 +65,9 @@
 ## Menu and analysis conventions
 
 - Menu links should live in the main `Links` section alongside other resources.
-- If there is curated menu analysis, show it in a separate `Analysis` section instead of attaching it directly under the link.
-- For analysis notes, use `👍` for good things and `🚩` for red flags.
+- If there is curated menu analysis, show it in a separate `Menu analysis` section instead of attaching it directly under the link.
+- Menu analysis should be menu-specific, not mixed with general review evidence.
+- For menu analysis notes, use simple line items with `✅` for green flags, `⚠️` for yellow flags, and `🚩` for red flags.
 
 ## Link and source handling
 

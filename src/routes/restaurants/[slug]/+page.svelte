@@ -63,6 +63,22 @@
 			}
 		});
 	}
+
+	async function removePersonalTag(tag: string) {
+		const review = getUserReview(reviewState, data.place.slug);
+
+		if (!review.personalTags.includes(tag)) {
+			return;
+		}
+
+		reviewState = await saveUserReviews({
+			...reviewState,
+			[data.place.slug]: {
+				...review,
+				personalTags: review.personalTags.filter((value) => value !== tag)
+			}
+		});
+	}
 </script>
 
 <svelte:head>
@@ -83,6 +99,7 @@
 				onSetRejected={setRejected}
 				onSetComment={setComment}
 				onHideResearchTag={hideResearchTag}
+				onRemovePersonalTag={removePersonalTag}
 			/>
 		</div>
 
@@ -98,19 +115,6 @@
 </div>
 
 <style>
-	:global(body) {
-		margin: 0;
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-		background:
-			linear-gradient(180deg, #fff7ed 0%, #eff6ff 38%, #f8fafc 100%);
-		color: #0f172a;
-	}
-
-	:global(*) {
-		box-sizing: border-box;
-	}
-
 	.page-shell {
 		min-height: 100vh;
 		padding: 1.5rem;
@@ -119,14 +123,14 @@
 	}
 
 	.map-card {
-		background: rgb(255 255 255 / 0.9);
-		border: 1px solid rgb(226 232 240 / 0.92);
+		background: var(--panel-bg);
+		border: 1px solid var(--panel-border);
 		border-radius: 1.5rem;
-		box-shadow: 0 20px 50px rgb(15 23 42 / 0.1);
+		box-shadow: var(--panel-shadow);
 	}
 
 	.back-link {
-		color: #1d4ed8;
+		color: var(--accent);
 		text-decoration: none;
 		font-weight: 700;
 	}
@@ -165,7 +169,7 @@
 	.map-wrapper {
 		border-radius: 1rem;
 		overflow: hidden;
-		border: 1px solid #dbeafe;
+		border: 1px solid var(--map-frame);
 	}
 
 	@media (max-width: 1100px) {

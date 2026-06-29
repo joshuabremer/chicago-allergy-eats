@@ -1,0 +1,14 @@
+{
+  "sourceName": "User-provided Tortazo allergen guide",
+  "sourceUrl": "https://images.getbento.com/accounts/a648ce9bc66858b28a546b5b5115fc55/media/67IUIUXTNahVZlWHv73V_2025.06.02%20Tortazo%20Allergen%20Guide.pdf",
+  "capturedAt": "2026-06-28",
+  "location": "Tortazo - Willis Tower",
+  "notes": [
+    "User-provided allergen guide link: https://www.tortazo.com/menu/allergen-menu/.",
+    "User confirmed the guide definitely exists and that the only tree nut callout is horchata."
+  ],
+  "summary": {
+    "hasAllergenGuide": true,
+    "treeNutNote": "Only tree nuts in the horchata."
+  }
+}

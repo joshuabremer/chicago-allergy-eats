@@ -5,6 +5,14 @@
   "location": "Big Star Wicker Park",
   "sections": [
     {
+      "name": "Daily specials",
+      "items": [
+        "Monday - Big Star Smash Burger: double beef patty, crispy chihuahua cheese, special sauce, lettuce, onion, tomato",
+        "Taco Tuesday - Pastor, Pollo, Panza, Papas tacos; choose Carne Asada, Pescado, or Camerones for an upcharge",
+        "Thursday - Carnitas Tacos"
+      ]
+    },
+    {
       "name": "Starters",
       "items": [
         "Big Star Nachos - melty cheese sauce, crispy tortilla chips, pico de gallo, pickled jalapeños, black beans, salsa seca, guacamole, cilantro",
@@ -20,7 +28,11 @@
         "Al Pastor - marinated pork shoulder, grilled pineapple, grilled onion, cilantro",
         "Pollo - grilled chicken, poblano, poblano salsa, queso fresco, pickled red onion, cilantro",
         "Carne Asada - marinated skirt steak, banana pepper, salsa mocajete, guacamole, white onion, cilantro",
+        "Pescado - beer-battered tilapia fillet, chipotle mayo, cabbage, red onion, cilantro",
+        "Camarones Fritos - crispy shrimp, serrano crema, corn pico de gallo, cilantro",
+        "Panza - braised pork belly, salsa arriera, chicharrones, crema, cilantro",
         "Papas Con Rajas - potato, rajas chipotle, queso cotija, onion, cilantro",
+        "The Walking Taco - fritos chips, pinto bean dip, crema, cholula hot sauce, queso chihuahua, onion, cilantro",
         "Sprout Tostada - crispy brussels sprouts, refried beans, pipian verde, pickled guajillo chilis, cilantro",
         "Quesabirria - beef birria, chihuahua cheese, onion, cilantro, consommé"
       ]
@@ -31,12 +43,31 @@
         "Carne Asada Burrito - skirt steak, charred corn elotes, poblano rajas, salsa, lettuce, chipotle mayo, queso chihuahua",
         "Pollo Burrito - braised chicken, rice, charros beans, crema, poblano rajas, lettuce, and salsa seca",
         "Bean Burrito - refried beans, chihuahua cheese, onions, cilantro, cholula hot sauce",
+        "Crunch Star Supreme - chihuahua cheese, crunchy tostadas, lettuce, crema, salsa seca, pico de gallo in a flour tortilla with choice of beef birria, braised chicken, al pastor, papas con rajas or black beans",
+        "Kids Quesadilla - flour tortilla, chihuahua cheese, chips",
+        "Kids Nachos - crispy chips, cheese sauce, black beans, pico de gallo",
+        "Kids Burrito - flour tortilla, chihuahua cheese, rice, black beans, chips",
+        "Elotes",
+        "Rice & Beans",
+        "Vegetables Escabeche",
         "Hot Fudge Skillet Brownie - warm chocolate brownie, caramelized cinnamon ice cream"
+      ]
+    },
+    {
+      "name": "Brunch",
+      "items": [
+        "Breakfast Burrito - scrambled eggs, hashbrown, frijole charros, salsa seca, crema, avocado, green onions, griddled in a flour tortilla",
+        "Churro French Toast - thick cut brioche, churro butter, maple syrup",
+        "Brunch Papas - crispy potatoes, cotija cheese, chipotle mayo, cilantro",
+        "Chorizo Con Papas Taco - chorizo verde, scrambled eggs, fried potatoes, salsa verde, white onion",
+        "Chilaquiles Taco - tortilla chips, guajillo salsa, scrambled eggs, avocado, pickled red onion",
+        "Carne Asada Taco - marinated skirt steak, banana peppers, scrambled eggs, salsa molcajete, avocado"
       ]
     }
   ],
   "notes": [
     "Stored from a user paste so future rescans can use the pasted Wicker Park menu text without refetching the website.",
-    "The pasted menu included a warning that menu items can contain unlisted ingredients and asked diners to inform servers of allergy or dietary restrictions."
+    "The pasted menu included a warning that menu items can contain unlisted ingredients and asked diners to inform servers of allergy or dietary restrictions.",
+    "No explicit peanuts or tree nuts were called out in the pasted sections."
   ]
 }

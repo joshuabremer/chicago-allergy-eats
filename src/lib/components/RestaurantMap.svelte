@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import 'leaflet/dist/leaflet.css';
 	import type * as Leaflet from 'leaflet';
+	import { themeMode } from '$lib/theme';
 	import type { DecisionState, Restaurant } from '$lib/types';
 
 	let {
@@ -35,7 +36,9 @@
 	let leaflet: typeof Leaflet | null = null;
 	let map: Leaflet.Map | null = null;
 	let markersLayer: Leaflet.LayerGroup | null = null;
+	let tileLayer: Leaflet.TileLayer | null = null;
 	let hasAppliedInitialViewport = false;
+	let appliedTheme: 'light' | 'dark' | null = null;
 
 	onMount(() => {
 		if (!mapElement) {
@@ -58,6 +61,11 @@
 		markerDecisions;
 		showHotelMarker;
 		renderMarkers();
+	});
+
+	$effect(() => {
+		$themeMode;
+		syncTileLayer();
 	});
 
 	$effect(() => {
@@ -211,13 +219,38 @@
 		});
 
 		leaflet.control.zoom({ position: 'bottomright' }).addTo(map);
-		leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 19
-		}).addTo(map);
-
+		syncTileLayer();
 		markersLayer = leaflet.layerGroup().addTo(map);
 		renderMarkers();
 		syncViewport();
+	}
+
+	function syncTileLayer() {
+		if (!leaflet || !map) {
+			return;
+		}
+
+		if (appliedTheme === $themeMode && tileLayer) {
+			return;
+		}
+
+		appliedTheme = $themeMode;
+
+		if (tileLayer) {
+			map.removeLayer(tileLayer);
+		}
+
+		tileLayer =
+			$themeMode === 'dark'
+				? leaflet.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+						maxZoom: 19,
+						subdomains: 'abcd'
+					})
+				: leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+						maxZoom: 19
+					});
+
+		tileLayer.addTo(map);
 	}
 </script>
 
@@ -232,11 +265,24 @@
 
 	:global(.leaflet-control-zoom) {
 		border: none !important;
-		box-shadow: 0 12px 30px rgb(15 23 42 / 0.16) !important;
+		box-shadow: var(--map-control-shadow) !important;
 	}
 
 	:global(.leaflet-control-zoom a) {
-		color: #0f172a !important;
+		color: var(--map-control-text) !important;
+		background: var(--map-control-bg) !important;
+		border-color: var(--panel-border) !important;
+	}
+
+	:global(.leaflet-tooltip) {
+		background: var(--panel-bg);
+		color: var(--text-primary);
+		border: 1px solid var(--panel-border);
+		box-shadow: var(--panel-shadow-soft);
+	}
+
+	:global(.leaflet-tooltip-top:before) {
+		border-top-color: var(--panel-border);
 	}
 
 	:global(.hotel-marker-wrapper) {
@@ -255,15 +301,15 @@
 		width: 1.75rem;
 		height: 1.75rem;
 		border-radius: 999px;
-		background: #ffffff;
-		border: 2px solid #16a34a;
+		background: var(--marker-approved-bg);
+		border: 2px solid var(--marker-approved-border);
 		box-shadow: 0 10px 24px rgb(22 163 74 / 0.24);
 		font-size: 0.95rem;
 		line-height: 1;
 	}
 
 	:global(.approved-marker.selected) {
-		border-color: #1d4ed8;
+		border-color: var(--marker-approved-selected-border);
 		box-shadow: 0 10px 24px rgb(29 78 216 / 0.28);
 	}
 
@@ -273,9 +319,9 @@
 		width: 1.75rem;
 		height: 1.75rem;
 		border-radius: 999px;
-		background: #0f172a;
-		border: 2px solid #ffffff;
-		color: #ffffff;
+		background: var(--marker-hotel-bg);
+		border: 2px solid var(--marker-hotel-border);
+		color: var(--marker-hotel-text);
 		font-size: 0.85rem;
 		font-weight: 800;
 		box-shadow: 0 10px 24px rgb(15 23 42 / 0.3);

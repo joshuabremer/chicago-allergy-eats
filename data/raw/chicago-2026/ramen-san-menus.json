@@ -9,10 +9,95 @@
     "165 E Huron St, Chicago, IL 60611",
     "219 N Green St, Chicago, IL 60607"
   ],
-  "explicitNutMentions": [],
+  "explicitNutMentions": [
+    "Lincoln Park lunch and dinner menu: kale & cashew salad - roasted cashew vin, crispy noodles"
+  ],
+  "sections": [
+    {
+      "name": "Limited edition",
+      "items": [
+        "Fatty Ramen - fortified tonkatsu broth, crispy carnitas, burnt garlic oil, cabbage"
+      ]
+    },
+    {
+      "name": "Lunch and dinner specialties",
+      "items": [
+        "Miso soup",
+        "Karaage chicken nuggets - lime kosho aioli",
+        "Tuna & avocado tartare - sesame crisps, rice crisps, poblano, cilantro",
+        "Edamame hummus - sesame crisps, rice crisps",
+        "Salad-San - carrot-ginger dressing",
+        "Chili crunch cucumbers - szechuan chili crunch, soy vinegar",
+        "Bang Bang Shrimp - tobanjan, sesame",
+        "Fried brussels sprouts - crispy shallots, tofu sauce",
+        "Roasted edamame - garlic oil, s&p mix",
+        "Japanese eggplant fries - mint, cilantro, yuzu mayo",
+        "Kale & cashew salad - roasted cashew vin, crispy noodles"
+      ]
+    },
+    {
+      "name": "Mantou buns, wings, and dumplings",
+      "items": [
+        "Fried chicken bun - shredded cabbage, japanese mustard",
+        "Pork belly bun - spicy mayo, kimchi cucumber",
+        "Crispy tofu bun - sweet and spicy thai sauce, mixed greens",
+        "Sticky Thai wings",
+        "Spicy Szechuan wings",
+        "XOXO shrimp & pork dumplings",
+        "Chicken & vegetable gyoza",
+        "Crab rangoon"
+      ]
+    },
+    {
+      "name": "Ramen and additions",
+      "items": [
+        "Tantan-San - vegetable broth, cremini, bok choy, tofu",
+        "10 Hour Tonkotsu - traditional broth, chashu, molten egg",
+        "Kimchi & fried chicken - fried garlic, buttered corn",
+        "Chicken Shio - buttered corn, molten egg, nori",
+        "Sumo - chashu, xo wontons, spicy crushed egg",
+        "Addition: sesame chili",
+        "Addition: fried garlic",
+        "Addition: molten egg",
+        "Addition: buttered corn",
+        "Addition: bok choy",
+        "Addition: fresh tofu",
+        "Addition: karaage chicken",
+        "Addition: chashu pork",
+        "Addition: xo wontons",
+        "Addition: spicy kimchi",
+        "Addition: braised mushroom",
+        "Late Night Fried Rice: Crispy Carnitas LNFR - crispy carnitas, serrano, buttered corn, fried egg"
+      ]
+    },
+    {
+      "name": "Express lunch and lucky hour",
+      "items": [
+        "Express lunch mains include 10 Hour Tonkotsu, Chicken Shio, and Tantan-San",
+        "Express lunch rice plates include miso salmon, karaage chicken, skirt steak, and vegetable fried rice",
+        "Express lunch additions include sesame chili, kimchi, tofu, fried chicken, karaage chicken, chashu pork, and xo wontons",
+        "Lucky Hour food includes Fried Chicken Bun, Karaage Chicken Nuggets, and Chili Crunch Cucumbers"
+      ]
+    },
+    {
+      "name": "Deluxe maki, sides, and dessert",
+      "items": [
+        "Salmon avocado maki - faroe island salmon, toasted sesame",
+        "Avocado tempura maki - crispy tempura, yuzu mayo, sweet soy",
+        "Spicy tuna maki - avocado, cilantro, jalapeno",
+        "Crunchy tuna maki - avocado, cilantro, yuzu mayo, sweet soy",
+        "Shrimp tempura maki - spicy korean mayo, black sesame seeds",
+        "Spicy salmon maki - faroe island salmon, spicy yuzu, cilantro",
+        "Maki express set served with edamame, small salad-san, and miso soup",
+        "Veg sides include fried brussels and spicy kimchi",
+        "Desserts include hot donuts and thai tea creme brulee"
+      ]
+    }
+  ],
   "notes": [
-    "In the pasted lunch, dinner, and express lunch sections, no explicit tree nuts or peanuts stood out.",
-    "The menu repeatedly mentions sesame, but no explicit non-almond nuts were named in the pasted sections.",
+    "The pasted Lincoln Park lunch and dinner menu explicitly includes cashew in the kale & cashew salad.",
+    "The menu repeatedly mentions sesame, including sesame crisps, sesame on bang bang shrimp, sesame chili oil, toasted sesame, and black sesame seeds.",
+    "The menu says gluten-free items can be made gluten free with slight modifications and asks diners to advise the restaurant of any dietary restrictions and allergies.",
     "This source is repo-backed so future rescans do not need to re-fetch the live menu page."
   ]
 }

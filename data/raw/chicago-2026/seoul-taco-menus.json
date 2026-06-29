@@ -1,0 +1,43 @@
+{
+  "sourceName": "User-pasted Seoul Taco menu",
+  "sourceUrl": "https://www.seoultaco.com",
+  "capturedAt": "2026-06-28",
+  "location": "Seoul Taco",
+  "sections": [
+    {
+      "name": "Entrees",
+      "items": [
+        "Seoul Tacos - Korean salad mix, green onion, Seoul Sauce, crushed sesame seeds, lime; protein choice of bulgogi steak, chicken, spicy pork, or tofu",
+        "Street Tacos - white onion, cilantro, salsa verde; protein choice of bulgogi steak, chicken, spicy pork, or tofu",
+        "Burrito - flour tortilla, kimchi fried rice, shredded cheese, carrots, green onions, Korean salad mix, Seoul Sauce, wasabi sauce, sour cream; protein choice available",
+        "Quesadilla - jack and cheddar cheese, lettuce, Seoul Sauce, wasabi sauce, sour cream; protein choice available",
+        "Korean Cheesy Corn Quesadilla - melted mozzarella, roasted corn salad with Seoul Sauce, green onions, Tajin, spiced Cotija cheese on a flour tortilla",
+        "Gogi Bowl - white rice, Korean salad mix, carrots, green onions, sesame oil, gochujang sauce, sunny side up egg; protein choice available",
+        "Nachos - corn tortilla chips, Queso Blanco, green onion, roasted sesame seeds, kimchi, sour cream; protein choice available",
+        "Korean Fried Chicken - honey gochujang sauce, green onions, sesame seeds"
+      ]
+    },
+    {
+      "name": "Sides, sweets, and drinks",
+      "items": [
+        "Jack's Crispy Beef Taco - seasoned beef and beans, American cheese, lettuce, Tapatio",
+        "Side Seoul Taco or Street Taco",
+        "OG Kimchi",
+        "Kimchi Slaw - daikon radish, vinegar based",
+        "Kimchi Fried Rice - OG kimchi, green onion, sesame seeds",
+        "Chips and Queso - Queso Blanco, green onions, Korean pepper flakes",
+        "Chips and Salsa - Salsa Verde",
+        "Korean Cheesy Elote Bites - potato and corn croquettes with Seoul Sauce, Tajin, Cotija, green onion, lime",
+        "Wagyu Truffle Mandu - fried dumplings, chili crisp, white onion, cilantro, truffle soy, red pepper flakes",
+        "Miso Salted Caramel Cookie",
+        "Matcha Chocolate Chip Cookie",
+        "Churros"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Seoul Taco menu text without refetching the website.",
+    "The pasted menu does not explicitly mention tree nuts or peanuts, but it does repeatedly call out sesame seeds and sesame oil.",
+    "Many items rely on named sauces like Seoul Sauce, wasabi sauce, gochujang sauce, and truffle soy without ingredient breakdowns in the pasted menu."
+  ]
+}

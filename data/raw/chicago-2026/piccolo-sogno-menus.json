@@ -1,0 +1,79 @@
+{
+  "sourceName": "User-pasted Piccolo Sogno menus",
+  "sourceUrl": "https://piccolosognorestaurant.com/menus/",
+  "capturedAt": "2026-06-28",
+  "location": "Piccolo Sogno",
+  "sections": [
+    {
+      "name": "Dinner menu",
+      "items": [
+        "Mozzarella di Bufala - imported buffalo mozzarella, roasted bell peppers, capers, basil, extra virgin olive oil",
+        "Cavolo - Tuscan kale, radishes, croutons, lemon-parmesan dressing",
+        "Carciofini - lemon marinated baby artichokes, frisee, shaved parmesan",
+        "Mista - field greens, cucumbers, carrots, grape tomatoes, Dijon vinaigrette",
+        "Fava e Pecorino - fava beans, Pecorino DOP, olive oil, arugula",
+        "Barbabietole - roasted beets, little gem, pistachio pesto, whipped Capriolo goat cheese and ricotta",
+        "Prosciutto di Parma - sliced melon",
+        "Burrata - Italian mortadella, pistachios, aged balsamic, marinated roasted grapes",
+        "Vitello Tonnato - poached veal, sunchokes, hazelnuts, tuna caper sauce",
+        "Funghi al Forno - wood roasted oyster mushrooms, house cured pancetta, aged balsamic, radicchio, spinach",
+        "Frittura - fried calamari and shrimp, lemon",
+        "Minestrone - spring vegetable and white bean soup with pine nut-basil pesto",
+        "Ravioli Piccolo Sogno - four cheese ravioli, pine nuts, butter, Marsala glaze, parmesan curls",
+        "Spaghetti Neri - mussels, clams, shrimp, calamari, San Marzano tomatoes, red chili flakes",
+        "Lasagna - spinach pasta sheets, bechamel, Bolognese sauce",
+        "Agnolotti Prosciutto e Piselli - pea green and ricotta stuffed pasta, English peas, Prosciutto di Parma",
+        "Gnocchi - spring nettle and potato dumplings, slow-braised oxtail ragu",
+        "Pappardelle con Cinghiale - spiced wild boar ragu",
+        "Margherita pizza",
+        "Bianca pizza",
+        "Rossa con Stracciatella pizza",
+        "Prosciutto pizza",
+        "Salmone - roasted Loch Duart salmon, roasted peppers, olives, chickpea and olive oil puree, artichoke, frisee and herb salad",
+        "Halibut al Forno - roasted Alaskan halibut, sunchoke puree, farro, spring vegetables, white wine, lemon",
+        "Griglia Mista - grilled calamari, octopus, shrimp, grilled gem lettuce, lemon caper reduction",
+        "Petto di Pollo - wood roasted chicken breast, semolina, spring mushrooms, goat cheese",
+        "Rosticciana - braised beef short ribs, local white corn polenta, sauteed spring greens, red wine, aromatic vegetables",
+        "Bistecca alla Griglia - grilled local ribeye, arugula, onion, tomato salad"
+      ]
+    },
+    {
+      "name": "Lunch menu",
+      "items": [
+        "Carciofini - lemon marinated baby artichokes, frisee, shaved parmesan",
+        "Barbabietole - roasted beets, little gem, pistachio pesto, whipped Capriole goat cheese and ricotta",
+        "Mista - field greens, cucumbers, carrots, grape tomatoes, Dijon vinaigrette",
+        "Fava e Pecorino - fava beans, Pecorino DOP, olive oil, arugula",
+        "Cavolo Nero - Tuscan kale, radishes, croutons, lemon parmesan dressing",
+        "Prosciutto di Parma - sliced melon",
+        "Frittura - fried calamari and shrimp, lemon",
+        "Burrata - Italian burrata and mortadella, pistachios, aged balsamic, marinated roasted grapes",
+        "Funghi al Forno - wood roasted oyster mushrooms, house cured pancetta, aged balsamic, radicchio, spinach",
+        "Minestrone - spring vegetable and white bean soup with pinenut-basil pesto",
+        "Lasagna Tipica di Bologna - green pasta sheets layered with bechamel and Bolognese sauce",
+        "Spaghetti Neri - shrimp, garlic, olive oil, chili flakes, parsley",
+        "Ravioli Piccolo Sogno - four cheese ravioli, pine nuts, butter, Marsala glaze, parmesan shavings",
+        "Gnocchi - spring nettle dumplings, mushrooms, garlic, herbs, parmesan",
+        "Pappardelle con Cinghiale - spiced wild boar ragu",
+        "Paglia e Fieno - green and white ribbon pasta, veal ragu",
+        "Margherita pizza",
+        "Bianca pizza",
+        "Funghi pizza - mixed mushrooms, herbs, chopped black truffles",
+        "Prosciutto pizza",
+        "Panuzzo - wood fired bread stuffed with pork and beef polpettine, pomodoro sauce, fior di latte",
+        "Focaccia - rosemary bread, Italian mortadella, pistachio pesto, stracciatella",
+        "Branzino - Mediterranean sea bass fillet, grilled asparagus, citrus-caper reduction",
+        "Salmone - grilled Loch Duart salmon, little gem lettuce, citrus, fennel salad",
+        "Polpettone - pancetta wrapped meatloaf, green beans, mashed potatoes",
+        "Pollo alla Milanese - breaded chicken breast, arugula, radicchio, lemon",
+        "Tonno con Fagioli - grilled ahi tuna, warm cannellini bean salad",
+        "Griglia Mista - grilled calamari, shrimp, octopus, lemon caper oil, arugula"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Piccolo Sogno menu text without refetching the website.",
+    "The pasted menus explicitly mention pistachio pesto, pistachios, hazelnuts, and pine nuts in multiple dishes.",
+    "Several dishes are marked GF or GFA, which is useful menu-level labeling, but the pasted menu does not include a dedicated allergen handling statement."
+  ]
+}

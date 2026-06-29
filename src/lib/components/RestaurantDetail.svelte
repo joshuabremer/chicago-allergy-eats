@@ -8,7 +8,8 @@
 		onSetDecision,
 		onSetRejected,
 		onSetComment,
-		onHideResearchTag
+		onHideResearchTag,
+		onRemovePersonalTag
 	}: {
 		place: Restaurant;
 		review: UserReview;
@@ -17,6 +18,7 @@
 		onSetRejected: (note: string) => void | Promise<void>;
 		onSetComment: (comment: string) => void | Promise<void>;
 		onHideResearchTag: (tag: ResearchTag) => void | Promise<void>;
+		onRemovePersonalTag: (tag: string) => void | Promise<void>;
 	} = $props();
 
 	let showRejectForm = $state(false);
@@ -71,7 +73,11 @@
 	const visibleResearchTags = $derived(
 		place.researchTags.filter((tag) => !review.hiddenResearchTags.includes(tag))
 	);
-	const analysisFlags = $derived(place.resources.flatMap((resource) => resource.menuFlags ?? []));
+	const analysisFlags = $derived(
+		place.resources
+			.filter((resource) => resource.kind === 'menu')
+			.flatMap((resource) => resource.menuFlags ?? [])
+	);
 </script>
 
 <article class:full-page={fullPage} class="detail-card">
@@ -89,6 +95,7 @@
 			<select value={selectedDecision} onchange={handleDecisionChange}>
 				<option value="ready-to-review">Ready to review</option>
 				<option value="needs-more-info">Needs more info</option>
+				<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
 				<option value="approved">Approved</option>
 				<option value="rejected">Rejected</option>
 			</select>
@@ -119,6 +126,13 @@
 					</button>
 				</div>
 			</form>
+		</section>
+	{/if}
+
+	{#if review.decision === 'rejected' && review.rejectionNote}
+		<section class="decision-card rejection-note-card">
+			<h2>Why this was rejected</h2>
+			<p class="rejection-note">{review.rejectionNote}</p>
 		</section>
 	{/if}
 
@@ -155,6 +169,12 @@
 				{:else}
 					<span class="empty-chip">No research tags yet</span>
 				{/if}
+				{#each review.personalTags as tag}
+					<button type="button" class="chip personal-chip removable-chip" onclick={() => onRemovePersonalTag(tag)}>
+						<span>{tag}</span>
+						<span class="chip-dismiss" aria-hidden="true">×</span>
+					</button>
+				{/each}
 			</div>
 		</div>
 	</section>
@@ -176,14 +196,16 @@
 	</section>
 
 	{#if analysisFlags.length > 0}
-		<section>
-			<h2>Analysis</h2>
+		<section class="analysis-section">
+			<h2>Menu analysis</h2>
 			<div class="analysis-list">
 				{#each analysisFlags as flag}
-					<p class="analysis-flag">
-						<span aria-hidden="true">{flag.tone === 'green' ? '👍' : '🚩'}</span>
+					<div class:yellow-flag={flag.tone === 'yellow'} class:red-flag={flag.tone === 'red'} class="analysis-flag">
+						<span class="analysis-icon" aria-hidden="true">
+							{flag.tone === 'green' ? '✅' : flag.tone === 'yellow' ? '⚠️' : '🚩'}
+						</span>
 						<span>{flag.note}</span>
-					</p>
+					</div>
 				{/each}
 			</div>
 		</section>
@@ -246,12 +268,12 @@
 	.detail-card {
 		display: grid;
 		gap: 1.25rem;
-		background: rgb(255 255 255 / 0.9);
+		background: var(--panel-bg);
 		backdrop-filter: blur(16px);
-		border: 1px solid rgb(226 232 240 / 0.92);
+		border: 1px solid var(--panel-border);
 		border-radius: 1.5rem;
 		padding: 1.5rem;
-		box-shadow: 0 20px 50px rgb(15 23 42 / 0.12);
+		box-shadow: var(--panel-shadow);
 		max-height: min(82vh, 72rem);
 		overflow: auto;
 	}
@@ -274,7 +296,7 @@
 		font-weight: 700;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: #1d4ed8;
+		color: var(--accent);
 	}
 
 	h1 {
@@ -285,7 +307,7 @@
 
 	.summary {
 		margin: 0.6rem 0 0;
-		color: #334155;
+		color: var(--text-secondary);
 		line-height: 1.6;
 	}
 
@@ -303,8 +325,8 @@
 	}
 
 	.reject-action {
-		background: #fee2e2;
-		color: #b91c1c;
+		background: var(--danger-bg);
+		color: var(--danger-text);
 		cursor: pointer;
 	}
 
@@ -314,7 +336,7 @@
 		min-width: 12rem;
 		font-size: 0.82rem;
 		font-weight: 700;
-		color: #334155;
+		color: var(--text-secondary);
 	}
 
 	.status-field span {
@@ -324,9 +346,9 @@
 	}
 
 	.status-field select {
-		border: 1px solid #cbd5e1;
-		background: white;
-		color: #0f172a;
+		border: 1px solid var(--input-border);
+		background: var(--input-bg);
+		color: var(--text-primary);
 		cursor: pointer;
 	}
 
@@ -335,12 +357,22 @@
 		gap: 0.85rem;
 		padding: 1rem 1.1rem;
 		border-radius: 1rem;
-		background: white;
-		border: 1px solid #e2e8f0;
+		background: var(--card-bg);
+		border: 1px solid var(--card-border);
 	}
 
 	.decision-card h2 {
 		margin: 0;
+	}
+
+	.rejection-note-card {
+		gap: 0.55rem;
+	}
+
+	.rejection-note {
+		margin: 0;
+		color: var(--text-secondary);
+		line-height: 1.6;
 	}
 
 	.meta-grid {
@@ -380,9 +412,25 @@
 		display: flex;
 		align-items: start;
 		gap: 0.5rem;
-		font-size: 0.92rem;
+		font-size: 0.9rem;
 		line-height: 1.5;
-		color: #334155;
+		color: var(--analysis-green);
+		padding: 0;
+		border: none;
+		background: transparent;
+	}
+
+	.analysis-flag.yellow-flag {
+		color: var(--analysis-yellow);
+	}
+
+	.analysis-flag.red-flag {
+		color: var(--analysis-red);
+	}
+
+	.analysis-icon {
+		flex: 0 0 auto;
+		line-height: 1.3;
 	}
 
 	.chip,
@@ -392,13 +440,18 @@
 		border-radius: 999px;
 		padding: 0.45rem 0.8rem;
 		font-size: 0.9rem;
-		background: #eff6ff;
-		color: #1d4ed8;
+		background: var(--chip-info-bg);
+		color: var(--chip-info-text);
 	}
 
 	.empty-chip {
-		background: #f1f5f9;
-		color: #64748b;
+		background: var(--chip-empty-bg);
+		color: var(--chip-empty-text);
+	}
+
+	.personal-chip {
+		background: var(--chip-personal-bg);
+		color: var(--chip-personal-text);
 	}
 
 	.removable-chip {
@@ -415,7 +468,9 @@
 	textarea {
 		width: 100%;
 		border-radius: 0.9rem;
-		border: 1px solid #cbd5e1;
+		border: 1px solid var(--input-border);
+		background: var(--input-bg);
+		color: var(--text-primary);
 		padding: 0.8rem 0.95rem;
 		font: inherit;
 		resize: vertical;
@@ -444,16 +499,17 @@
 	}
 
 	.save-button {
-		background: #1d4ed8;
-		color: white;
+		background: var(--accent);
+		color: #ffffff;
 		cursor: pointer;
 	}
+
 
 	.clear-button {
 		padding: 0.8rem 1rem;
 		border-radius: 999px;
-		background: #e2e8f0;
-		color: #0f172a;
+		background: var(--button-secondary-bg);
+		color: var(--button-secondary-text);
 		font-weight: 700;
 	}
 
@@ -463,7 +519,7 @@
 		gap: 0.55rem;
 		padding: 0.2rem 0;
 		text-decoration: none;
-		color: #1d4ed8;
+		color: var(--accent);
 		width: fit-content;
 	}
 
@@ -473,7 +529,7 @@
 
 	.link-kind {
 		font-size: 0.8rem;
-		color: #64748b;
+		color: var(--text-muted);
 		text-transform: none;
 		letter-spacing: normal;
 	}
@@ -481,9 +537,9 @@
 	blockquote {
 		margin: 0;
 		padding: 1rem 1.1rem;
-		border-left: 4px solid #1d4ed8;
+		border-left: 4px solid var(--quote-border);
 		border-radius: 0.9rem;
-		background: white;
+		background: var(--quote-bg);
 		flex: 1 1 16rem;
 	}
 
@@ -495,12 +551,12 @@
 
 	blockquote footer {
 		font-size: 0.9rem;
-		color: #64748b;
+		color: var(--text-muted);
 	}
 
 	.empty-state {
 		margin: 0;
-		color: #64748b;
+		color: var(--text-muted);
 	}
 
 	@media (max-width: 900px) {

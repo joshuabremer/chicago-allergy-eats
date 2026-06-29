@@ -506,6 +506,11 @@ function buildRestaurants(): Restaurant[] {
 			const neighborhood = guessNeighborhood(name, latitude, longitude);
 			const references = articleIndex.get(canonicalKey) ?? [];
 			const type = guessRestaurantType(name, references);
+			const manualResearchEntries = getManualResearchEntries(
+				manualResearchIndex,
+				workingRestaurantKey(name),
+				canonicalKey
+			);
 			const workingRestaurant: WorkingRestaurant = {
 				slug: buildSlug(canonicalKey, latitude, longitude),
 				name,
@@ -530,7 +535,7 @@ function buildRestaurants(): Restaurant[] {
 			};
 
 			applyArticleReferences(workingRestaurant, references);
-			applyManualResearchData(workingRestaurant, manualResearchIndex.get(canonicalKey) ?? []);
+			applyManualResearchData(workingRestaurant, manualResearchEntries);
 			applyConversationData(workingRestaurant, conversationIndex.get(canonicalKey) ?? []);
 			applyGoogleMapsDetails(
 				workingRestaurant,
@@ -559,6 +564,11 @@ function buildRestaurants(): Restaurant[] {
 		const references = articleIndex.get(canonicalKey) ?? [];
 		const conversations = conversationIndex.get(canonicalKey) ?? [];
 		const type = guessRestaurantType(restaurant.name, references);
+		const manualResearchEntries = getManualResearchEntries(
+			manualResearchIndex,
+			workingRestaurantKey(restaurant.name),
+			canonicalKey
+		);
 		const workingRestaurant: WorkingRestaurant = {
 			slug: buildSlug(canonicalKey, restaurant.latitude, restaurant.longitude),
 			name: restaurant.name,
@@ -583,7 +593,7 @@ function buildRestaurants(): Restaurant[] {
 		};
 
 		applyArticleReferences(workingRestaurant, references);
-		applyManualResearchData(workingRestaurant, manualResearchIndex.get(canonicalKey) ?? []);
+		applyManualResearchData(workingRestaurant, manualResearchEntries);
 		applyConversationData(workingRestaurant, conversations);
 		applySupplementalDetails(workingRestaurant, restaurant);
 		applyGoogleMapsDetails(
@@ -838,12 +848,26 @@ function buildManualResearchIndex() {
 	const researchIndex = new Map<string, ManualRestaurantResearch[]>();
 
 	for (const entry of manualRestaurantResearch as ManualRestaurantResearch[]) {
-		const key = normalizeRestaurantName(entry.restaurantName);
+		const key = normalizeRestaurantNameWithoutAliases(entry.restaurantName);
 		const existing = researchIndex.get(key) ?? [];
 		researchIndex.set(key, [...existing, entry]);
 	}
 
 	return researchIndex;
+}
+
+function getManualResearchEntries(
+	researchIndex: Map<string, ManualRestaurantResearch[]>,
+	exactKey: string,
+	canonicalKey: string
+) {
+	const exactEntries = researchIndex.get(exactKey) ?? [];
+
+	if (exactKey === canonicalKey) {
+		return exactEntries;
+	}
+
+	return [...(researchIndex.get(canonicalKey) ?? []), ...exactEntries];
 }
 
 function applyConversationData(restaurant: WorkingRestaurant, conversations: RestaurantConversation[]) {
@@ -958,8 +982,8 @@ function guessRestaurantType(name: string, references: ArticleReference[]) {
 		return 'Bakery';
 	}
 
-	if (text.includes('cafe') || normalizedName === 'wheats-end') {
-		return 'Cafe';
+	if (isCafeStyleRestaurant(name, text)) {
+		return 'Sit-down';
 	}
 
 	if (
@@ -1094,6 +1118,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'Mexican sandwiches and quick bites';
 	}
 
+	if (isCafeStyleRestaurant(name)) {
+		return 'Cafe / brunch spot';
+	}
+
 	return defaultCuisineSummaryByType(type);
 }
 
@@ -1117,7 +1145,7 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 		return ['Lunch', 'Dinner'];
 	}
 
-	if (type === 'Cafe') {
+	if (isCafeStyleRestaurant(name)) {
 		return ['Breakfast', 'Lunch'];
 	}
 
@@ -1226,8 +1254,6 @@ function defaultCuisineSummaryByType(type: RestaurantType) {
 	switch (type) {
 		case 'Bakery':
 			return 'Bakery / pastry stop';
-		case 'Cafe':
-			return 'Cafe / brunch spot';
 		case 'Dessert':
 			return 'Dessert stop';
 		case 'Fast casual':
@@ -1241,6 +1267,10 @@ function defaultCuisineSummaryByType(type: RestaurantType) {
 	}
 }
 
+function isCafeStyleRestaurant(name: string, text = name.toLowerCase()) {
+	return text.includes('cafe') || normalizeRestaurantName(name) === 'wheats-end';
+}
+
 function guessResourceKind(href: string): ResourceKind {
 	if (href.includes('allergen') || href.includes('nutrition') || href.includes('faq')) {
 		return 'allergen';
@@ -1250,6 +1280,11 @@ function guessResourceKind(href: string): ResourceKind {
 }
 
 function normalizeRestaurantName(name: string) {
+	const cleaned = normalizeRestaurantNameWithoutAliases(name);
+	return NORMALIZED_NAME_ALIASES[cleaned] ?? cleaned;
+}
+
+function normalizeRestaurantNameWithoutAliases(name: string) {
 	const cleaned = cleanRestaurantName(name)
 		.toLowerCase()
 		.normalize('NFD')
@@ -1258,8 +1293,7 @@ function normalizeRestaurantName(name: string) {
 		.replace(/['’]/g, '')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '');
-
-	return NORMALIZED_NAME_ALIASES[cleaned] ?? cleaned;
+	return cleaned;
 }
 
 function cleanRestaurantName(name: string) {
@@ -1268,6 +1302,10 @@ function cleanRestaurantName(name: string) {
 
 function buildLocationKey(name: string, latitude: number, longitude: number) {
 	return `${normalizeRestaurantName(name)}:${latitude.toFixed(5)}:${longitude.toFixed(5)}`;
+}
+
+function workingRestaurantKey(name: string) {
+	return normalizeRestaurantNameWithoutAliases(name);
 }
 
 
@@ -1387,12 +1425,37 @@ function dedupeResources(resources: ResourceLink[]) {
 		const key = normalizeHref(resource.href);
 		const existing = byHref.get(key);
 
-		if (!existing || scoreResource(resource) > scoreResource(existing)) {
+		if (!existing) {
 			byHref.set(key, resource);
+			continue;
 		}
+
+		byHref.set(key, mergeResources(existing, resource));
 	}
 
 	return scrubWebsiteResources([...byHref.values()]);
+}
+
+function mergeResources(existing: ResourceLink, incoming: ResourceLink): ResourceLink {
+	const preferred =
+		scoreResource(incoming) > scoreResource(existing)
+			? incoming
+			: existing;
+	const menuFlags = [...(existing.menuFlags ?? []), ...(incoming.menuFlags ?? [])];
+
+	if (existing.kind === 'menu' || incoming.kind === 'menu') {
+		return {
+			...preferred,
+			kind: 'menu',
+			label: existing.kind === 'menu' ? existing.label : incoming.label,
+			menuFlags: menuFlags.length > 0 ? menuFlags : undefined
+		};
+	}
+
+	return {
+		...preferred,
+		menuFlags: menuFlags.length > 0 ? menuFlags : undefined
+	};
 }
 
 function dedupeQuotes(quotes: SourceQuote[]) {

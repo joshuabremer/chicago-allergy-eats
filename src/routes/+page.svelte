@@ -19,6 +19,7 @@
 	const DEFAULT_VISIBLE_DECISION_STATES: DecisionState[] = [
 		'ready-to-review',
 		'needs-more-info',
+		'awaiting-restaurant-response',
 		'approved'
 	];
 	const HOMEPAGE_FILTERS_STORAGE_KEY = 'chicago-allergy-eats:homepage-filters';
@@ -34,6 +35,7 @@
 	const decisionStateLabels: Record<DecisionState, string> = {
 		'ready-to-review': 'Ready to review',
 		'needs-more-info': 'Needs more info',
+		'awaiting-restaurant-response': 'Awaiting restaurant response',
 		approved: 'Approved',
 		rejected: 'Rejected'
 	};
@@ -139,15 +141,26 @@
 
 		try {
 			const parsed = JSON.parse(stored) as Record<string, unknown>;
+			const normalizedActiveTypes = Array.isArray(parsed.activeTypes)
+				? Array.from(
+						new Set(
+							parsed.activeTypes.flatMap((type) => {
+								if (type === 'Cafe') {
+									return ['Sit-down'];
+								}
+
+								return [type];
+							})
+						)
+					)
+				: [];
 
 			return {
 				searchText: typeof parsed.searchText === 'string' ? parsed.searchText : '',
-				activeTypes: Array.isArray(parsed.activeTypes)
-					? parsed.activeTypes.filter(
+				activeTypes: normalizedActiveTypes.filter(
 							(type): type is RestaurantType =>
 								typeof type === 'string' && allTypes.includes(type as RestaurantType)
-						)
-					: [],
+						),
 				activeResearchTags: Array.isArray(parsed.activeResearchTags)
 					? parsed.activeResearchTags.filter(
 							(tag): tag is ResearchTag => typeof tag === 'string' && RESEARCH_TAGS.includes(tag as ResearchTag)
@@ -284,6 +297,8 @@
 									<span class="approved-pill">Approved</span>
 								{:else if getUserReview(reviewState, restaurant.slug).decision === 'needs-more-info'}
 									<span class="needs-more-info-pill">Needs more info</span>
+								{:else if getUserReview(reviewState, restaurant.slug).decision === 'awaiting-restaurant-response'}
+									<span class="awaiting-response-pill">Awaiting restaurant response</span>
 								{:else}
 									<span class="ready-to-review-pill">Ready to review</span>
 								{/if}
@@ -291,6 +306,12 @@
 
 							{#if restaurant.summary}
 								<p class="place-summary">{restaurant.summary}</p>
+							{/if}
+
+							{#if getUserReview(reviewState, restaurant.slug).decision === 'rejected' && getUserReview(reviewState, restaurant.slug).rejectionNote}
+								<p class="rejection-note-preview">
+									<strong>Why:</strong> {getUserReview(reviewState, restaurant.slug).rejectionNote}
+								</p>
 							{/if}
 
 							<div class="chip-row compact">
@@ -348,19 +369,6 @@
 </div>
 
 <style>
-	:global(body) {
-		margin: 0;
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-		background:
-			linear-gradient(180deg, #fff7ed 0%, #eff6ff 38%, #f8fafc 100%);
-		color: #0f172a;
-	}
-
-	:global(*) {
-		box-sizing: border-box;
-	}
-
 	.shell {
 		display: grid;
 		grid-template-columns: minmax(19rem, 2fr) minmax(0, 3fr);
@@ -372,31 +380,22 @@
 		align-content: start;
 		gap: 0.75rem;
 		padding: 0.85rem;
-		background: rgb(248 250 252 / 0.92);
+		background: var(--panel-muted-bg);
 		backdrop-filter: blur(16px);
-		border-right: 1px solid rgb(226 232 240 / 0.95);
+		border-right: 1px solid var(--panel-border);
 		overflow: auto;
 	}
 
 	.sidebar-card,
 	.overview-card {
-		background: rgb(255 255 255 / 0.85);
+		background: var(--panel-bg);
 		border-radius: 1.5rem;
-		border: 1px solid rgb(226 232 240 / 0.9);
-		box-shadow: 0 16px 40px rgb(15 23 42 / 0.08);
+		border: 1px solid var(--panel-border);
+		box-shadow: var(--panel-shadow-soft);
 	}
 
 	.sidebar-card {
 		padding: 0.9rem;
-	}
-
-	.eyebrow {
-		margin: 0 0 0.45rem;
-		font-size: 0.72rem;
-		font-weight: 800;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: #1d4ed8;
 	}
 
 	h2,
@@ -418,8 +417,9 @@
 	.sidebar-card p,
 	.overview-card p,
 	.place-summary,
-	.empty-state {
-		color: #475569;
+	.empty-state,
+	.rejection-note-preview {
+		color: var(--text-secondary);
 		line-height: 1.45;
 		font-size: 0.9rem;
 	}
@@ -434,26 +434,10 @@
 		gap: 0.75rem;
 	}
 
-	.filter-heading {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 0.75rem;
-	}
-
-	.reset-button,
 	.filter-chip {
 		border: none;
 		cursor: pointer;
 		font: inherit;
-	}
-
-	.reset-button {
-		padding: 0.42rem 0.68rem;
-		border-radius: 999px;
-		background: #e2e8f0;
-		color: #0f172a;
-		font-size: 0.82rem;
 	}
 
 	.search-field {
@@ -466,7 +450,9 @@
 		width: 100%;
 		padding: 0.65rem 0.75rem;
 		border-radius: 0.8rem;
-		border: 1px solid #cbd5e1;
+		border: 1px solid var(--input-border);
+		background: var(--input-bg);
+		color: var(--text-primary);
 		font: inherit;
 	}
 
@@ -488,13 +474,13 @@
 	}
 
 	.filter-chip {
-		background: #e2e8f0;
-		color: #0f172a;
+		background: var(--chip-bg);
+		color: var(--chip-text);
 	}
 
 	.filter-chip.active {
-		background: #1d4ed8;
-		color: white;
+		background: var(--accent);
+		color: #ffffff;
 	}
 
 	.list-card {
@@ -504,7 +490,7 @@
 	.list-summary {
 		margin: 0.25rem 0 0;
 		font-size: 0.78rem;
-		color: #64748b;
+		color: var(--text-muted);
 	}
 
 	.group-list {
@@ -522,8 +508,8 @@
 		border-radius: 1rem;
 		text-decoration: none;
 		color: inherit;
-		background: white;
-		border: 1px solid #e2e8f0;
+		background: var(--card-bg);
+		border: 1px solid var(--card-border);
 		transition:
 			transform 120ms ease,
 			border-color 120ms ease,
@@ -532,14 +518,14 @@
 
 	.place-card:hover {
 		transform: translateY(-1px);
-		border-color: #93c5fd;
-		box-shadow: 0 12px 30px rgb(37 99 235 / 0.14);
+		border-color: var(--card-hover-border);
+		box-shadow: var(--card-hover-shadow);
 	}
 
 	.place-card.hovered {
 		transform: translateY(-1px);
-		border-color: #60a5fa;
-		box-shadow: 0 16px 36px rgb(37 99 235 / 0.18);
+		border-color: var(--card-hover-border-strong);
+		box-shadow: var(--card-hover-shadow-strong);
 	}
 
 	.place-card-top {
@@ -557,23 +543,35 @@
 		margin-bottom: 0;
 	}
 
+	.rejection-note-preview {
+		margin: 0;
+		padding: 0.6rem 0.7rem;
+		border-radius: 0.85rem;
+		background: var(--status-rejected-bg);
+		color: var(--status-rejected-text);
+	}
+
+	.rejection-note-preview strong {
+		color: inherit;
+	}
+
 	.compact {
 		gap: 0.4rem;
 	}
 
 	.info-chip {
-		background: #eff6ff;
-		color: #1d4ed8;
+		background: var(--chip-info-bg);
+		color: var(--chip-info-text);
 	}
 
 	.personal-chip {
-		background: #ede9fe;
-		color: #6d28d9;
+		background: var(--chip-personal-bg);
+		color: var(--chip-personal-text);
 	}
 
 	.approved-pill {
-		background: #dcfce7;
-		color: #166534;
+		background: var(--status-approved-bg);
+		color: var(--status-approved-text);
 		white-space: nowrap;
 	}
 
@@ -583,8 +581,8 @@
 		border-radius: 999px;
 		padding: 0.32rem 0.58rem;
 		font-size: 0.76rem;
-		background: #fee2e2;
-		color: #b91c1c;
+		background: var(--status-rejected-bg);
+		color: var(--status-rejected-text);
 		white-space: nowrap;
 	}
 
@@ -594,8 +592,8 @@
 		border-radius: 999px;
 		padding: 0.32rem 0.58rem;
 		font-size: 0.76rem;
-		background: #e2e8f0;
-		color: #475569;
+		background: var(--status-ready-bg);
+		color: var(--status-ready-text);
 		white-space: nowrap;
 	}
 
@@ -605,8 +603,19 @@
 		border-radius: 999px;
 		padding: 0.32rem 0.58rem;
 		font-size: 0.76rem;
-		background: #fef3c7;
-		color: #92400e;
+		background: var(--status-needs-bg);
+		color: var(--status-needs-text);
+		white-space: nowrap;
+	}
+
+	.awaiting-response-pill {
+		display: inline-flex;
+		align-items: center;
+		border-radius: 999px;
+		padding: 0.32rem 0.58rem;
+		font-size: 0.76rem;
+		background: var(--status-awaiting-bg);
+		color: var(--status-awaiting-text);
 		white-space: nowrap;
 	}
 
@@ -619,8 +628,8 @@
 		height: calc(100vh - 2.5rem);
 		border-radius: 2rem;
 		overflow: hidden;
-		box-shadow: 0 24px 60px rgb(15 23 42 / 0.16);
-		background: #dbeafe;
+		box-shadow: var(--panel-shadow-strong);
+		background: var(--map-shell-bg);
 	}
 
 	.overlay {
@@ -663,7 +672,7 @@
 
 		.sidebar {
 			border-right: none;
-			border-bottom: 1px solid rgb(226 232 240 / 0.95);
+			border-bottom: 1px solid var(--panel-border);
 		}
 
 		.group-list {

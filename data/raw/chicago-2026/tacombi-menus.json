@@ -1,0 +1,65 @@
+{
+  "sourceName": "User-pasted Tacombi menus",
+  "sourceUrl": "https://www.tacombi.com/menu",
+  "capturedAt": "2026-06-28",
+  "locations": [
+    "Tacombi",
+    "Tacombi Fulton Market"
+  ],
+  "sections": [
+    {
+      "name": "Entrees and tacos",
+      "items": [
+        "Corn Esquites",
+        "Rice and Beans",
+        "Guacamole con Totopos",
+        "Al Pastor taco - free-range pork, marinated in chiles and spices",
+        "Crispy Chicken Tinga taco - crispy breast, stewed thigh on red guajillo tortillas",
+        "Carne Asada taco - chopped arracher steak, charred onions and jalapeno",
+        "Baja Crispy Fish taco - beer-battered cod, poblano mayo, pico de gallo",
+        "Beef Birria taco - Jalisco brisket and Chihuahua cheese, served with broth",
+        "Seared Fish taco - cod marinated with herbs and garlic, topped with cabbage",
+        "Sinaloa Shrimp taco - melted cheese, avocado, pickled onions",
+        "Avocado Tostada - black beans, pickled red onion, Cotija cheese",
+        "Black Bean and Sweet Potato taco - Cotija cheese and chile salsa",
+        "Cheese quesadilla",
+        "Al Pastor quesadilla",
+        "Chicken Tinga quesadilla",
+        "Carne Asada quesadilla",
+        "Birria quesadilla",
+        "Shrimp quesadilla",
+        "Al Pastor burrita",
+        "Carne Asada burrita",
+        "Crispy Fish burrita",
+        "Chicken Tinga burrita",
+        "Birria burrita",
+        "Shrimp burrita",
+        "Vegan burrita",
+        "Lunchtime Taco Plato - choose two tacos with rice and beans",
+        "Huevos con Pastor taco",
+        "Huevos a la Mexicana taco",
+        "Huevos con Pastor burrita",
+        "Huevos a la Mexicana burrita",
+        "Churros con Xocolate"
+      ]
+    },
+    {
+      "name": "Drinks and notes",
+      "items": [
+        "Margarita Clasica",
+        "Spicy Poblano Margarita",
+        "Strawberry Mezcalita",
+        "Cucumber Mezcalita",
+        "Mango Margarita",
+        "Paloma",
+        "Sandia Santa",
+        "Pina Colada - rum, coconut, pineapple juice"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future rescans can use the pasted Tacombi menu text without refetching the website.",
+    "User confirmed this same menu applies to both Tacombi and Tacombi Fulton Market.",
+    "The pasted menu does not explicitly mention tree nuts or peanuts in the food menu, but it does include coconut in the pina colada and uses shared prep language only through a standard raw or undercooked foods warning."
+  ]
+}
