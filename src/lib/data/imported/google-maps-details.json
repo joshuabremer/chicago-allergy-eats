@@ -347,6 +347,27 @@
     "longitude": -87.62519
   },
   {
+    "name": "Small Cheval - Logan Square",
+    "address": "2815 W Armitage Ave, Chicago, IL 60647",
+    "website": "https://smallcheval.com",
+    "latitude": 41.917329,
+    "longitude": -87.6980593
+  },
+  {
+    "name": "Small Cheval - Lincoln Square",
+    "address": "2156 W Montrose Ave, Chicago, IL 60618",
+    "website": "https://smallcheval.com",
+    "latitude": 41.961699,
+    "longitude": -87.6836706
+  },
+  {
+    "name": "Small Cheval - Hyde Park",
+    "address": "1307 E 53rd St, Chicago, IL 60615",
+    "website": "https://smallcheval.com",
+    "latitude": 41.7993394,
+    "longitude": -87.5946453
+  },
+  {
     "name": "Daisies",
     "address": "2375 N Milwaukee Ave, Chicago, IL 60647",
     "website": "https://www.daisieschicago.com",

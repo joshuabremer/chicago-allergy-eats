@@ -447,6 +447,33 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 	},
 	{
 		title: 'Manual additions',
+		name: 'Small Cheval - Logan Square',
+		latitude: 41.917329,
+		longitude: -87.6980593,
+		researchTags: [],
+		address: '2815 W Armitage Ave, Chicago, IL 60647',
+		website: 'https://smallcheval.com'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Small Cheval - Lincoln Square',
+		latitude: 41.961699,
+		longitude: -87.6836706,
+		researchTags: [],
+		address: '2156 W Montrose Ave, Chicago, IL 60618',
+		website: 'https://smallcheval.com'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Small Cheval - Hyde Park',
+		latitude: 41.7993394,
+		longitude: -87.5946453,
+		researchTags: [],
+		address: '1307 E 53rd St, Chicago, IL 60615',
+		website: 'https://smallcheval.com'
+	},
+	{
+		title: 'Manual additions',
 		name: "Lucy's Humboldt Park",
 		latitude: 41.90056,
 		longitude: -87.69653,
@@ -508,7 +535,10 @@ const NORMALIZED_NAME_ALIASES: Record<string, string> = {
 	'small-cheval': 'small-cheval',
 	'small-cheval-fulton-market': 'small-cheval',
 	'small-cheval-gold-coast': 'small-cheval',
+	'small-cheval-hyde-park': 'small-cheval',
+	'small-cheval-lincoln-square': 'small-cheval',
 	'small-cheval-lincoln-park': 'small-cheval',
+	'small-cheval-logan-square': 'small-cheval',
 	'small-cheval-old-town': 'small-cheval',
 	'small-cheval-riverside': 'small-cheval',
 	'small-cheval-wicker-park': 'small-cheval',
@@ -1065,7 +1095,8 @@ function guessRestaurantType(name: string, references: ArticleReference[]) {
 		normalizedName.includes('bibibop') ||
 		normalizedName.includes('fat-shallot') ||
 		normalizedName.includes('epic-burger') ||
-		normalizedName.includes('tilly-bagel')
+		normalizedName.includes('tilly-bagel') ||
+		normalizedName.includes('lucys')
 	) {
 		return 'Fast casual';
 	}
@@ -1116,6 +1147,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 	}
 
 	if (normalizedName.includes('chick-fil-a')) {
+		return 'Chicken sandwiches';
+	}
+
+	if (normalizedName.includes('lucys')) {
 		return 'Chicken sandwiches';
 	}
 

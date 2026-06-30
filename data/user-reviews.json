@@ -6,8 +6,8 @@
     "personalTags": []
   },
   "au-cheval-41-8847-w87-6476": {
-    "decision": "awaiting-restaurant-response",
-    "comment": "Email to make sure they can accomodate. how about now.\n\nI emailed. I'll call on Monday.",
+    "decision": "ready-to-review",
+    "comment": "They replied via email",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -61,6 +61,11 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
+  "daisies-41-9244-w87-6996": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "deliz-italian-steakhouse-41-9107-w87-6742": {
     "decision": "approved",
     "comment": "I'm ok with this place but we'd need to make a reservation.",
@@ -69,6 +74,21 @@
   },
   "eataly-41-8922-w87-6263": {
     "decision": "awaiting-restaurant-response",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "epic-burger-41-8750-w87-6273": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "epic-burger-41-8977-w87-6266": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "epic-burger-41-9111-w87-6537": {
+    "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -268,7 +288,52 @@
     ],
     "personalTags": []
   },
+  "small-cheval-41-8850-w87-6384": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "small-cheval-41-8857-w87-6610": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-8996-w87-6252": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9070-w87-6340": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9128-w87-6815": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9173-w87-6981": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9177-w87-6481": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9489-w87-6577": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-9617-w87-6837": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "small-cheval-41-7993-w87-5946": {
     "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
