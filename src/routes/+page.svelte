@@ -657,11 +657,13 @@
 				<button
 					type="button"
 					class="mobile-menu-button"
+					aria-label="Open filters and restaurant list"
+					title="Open filters and restaurant list"
 					onclick={() => {
 						mobileSidebarOpen = true;
 					}}
 				>
-					Menu
+					<span aria-hidden="true" class="mobile-icon-button-label">☰</span>
 				</button>
 			</div>
 
@@ -714,8 +716,15 @@
 								target="_blank"
 								rel="noreferrer"
 								class="mobile-secondary-action"
+								aria-label="Open directions"
+								title="Open directions"
 							>
-								Directions
+								<span aria-hidden="true" class="mobile-directions-icon">
+									<svg viewBox="0 0 24 24" focusable="false">
+										<rect x="5" y="5" width="14" height="14" rx="1.5" transform="rotate(45 12 12)" />
+										<path d="M9 15V11.75C9 10.78 9.78 10 10.75 10H13V8.5L16 11.5L13 14.5V13H11.25C10.56 13 10 13.56 10 14.25V15H9Z" />
+									</svg>
+								</span>
 							</a>
 							<a href={restaurantHref(selectedMobileRestaurant.slug)} class="mobile-primary-action">
 								View details
@@ -1197,19 +1206,38 @@
 			left: 0;
 			z-index: 1000;
 			display: block;
-			padding: 0 1rem max(1rem, env(safe-area-inset-bottom));
+			padding: 0 1rem 0;
 			pointer-events: none;
 		}
 
 		.mobile-selection-card {
 			display: grid;
 			gap: 0.8rem;
-			padding: 1rem;
+			padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
 			border-radius: 1.4rem 1.4rem 0 0;
 			background: rgb(255 255 255 / 0.95);
 			backdrop-filter: blur(16px);
 			box-shadow: var(--panel-shadow-strong);
 			pointer-events: auto;
+		}
+
+		.mobile-icon-button-label {
+			font-size: 1.2rem;
+			line-height: 1;
+		}
+
+		.mobile-directions-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.35rem;
+			height: 1.35rem;
+		}
+
+		.mobile-directions-icon svg {
+			width: 100%;
+			height: 100%;
+			fill: currentColor;
 		}
 
 		.mobile-selection-card h2 {
