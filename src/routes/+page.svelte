@@ -499,7 +499,12 @@
 					mobileSidebarOpen = false;
 				}}
 			>
-				<span aria-hidden="true" class="mobile-icon-button-label">X</span>
+				<span aria-hidden="true" class="mobile-close-icon">
+					<svg viewBox="0 0 24 24" focusable="false">
+						<path d="M6 6L18 18" />
+						<path d="M18 6L6 18" />
+					</svg>
+				</span>
 			</button>
 		</div>
 
@@ -1164,6 +1169,12 @@
 			text-decoration: none;
 		}
 
+		.mobile-menu-button {
+			width: 3rem;
+			height: 3rem;
+			padding: 0;
+		}
+
 		.mobile-close-button,
 		.mobile-secondary-action {
 			background: var(--button-secondary-bg);
@@ -1225,6 +1236,23 @@
 		.mobile-icon-button-label {
 			font-size: 1.2rem;
 			line-height: 1;
+		}
+
+		.mobile-close-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.15rem;
+			height: 1.15rem;
+		}
+
+		.mobile-close-icon svg {
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 2.2;
+			stroke-linecap: round;
 		}
 
 		.mobile-directions-icon {
