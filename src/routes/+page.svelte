@@ -58,11 +58,11 @@
 	const isMobileLayout = $derived(viewportWidth <= 800);
 	const activeSelectedSlug = $derived(isMobileLayout ? mobileSelectedSlug : hoveredSlug);
 	const selectedMobileRestaurant = $derived.by(() => {
-		if (visiblePlaces.length === 0) {
+		if (visiblePlaces.length === 0 || !mobileSelectedSlug) {
 			return null;
 		}
 
-		return visiblePlaces.find((restaurant) => restaurant.slug === mobileSelectedSlug) ?? visiblePlaces[0];
+		return visiblePlaces.find((restaurant) => restaurant.slug === mobileSelectedSlug) ?? null;
 	});
 	const markerDecisions = $derived.by(() =>
 		Object.fromEntries(restaurants.map((restaurant) => [restaurant.slug, getUserReview(reviewState, restaurant.slug).decision]))
@@ -724,8 +724,13 @@
 					</section>
 				{:else}
 					<section class="mobile-selection-card">
-						<h2>No places match</h2>
-						<p class="place-summary">Try changing the filters to show more restaurants on the map.</p>
+						{#if visiblePlaces.length === 0}
+							<h2>No places match</h2>
+							<p class="place-summary">Try changing the filters to show more restaurants on the map.</p>
+						{:else}
+							<h2>Select a restaurant</h2>
+							<p class="place-summary">Tap a marker or a restaurant card to show its details here.</p>
+						{/if}
 					</section>
 				{/if}
 			</div>
