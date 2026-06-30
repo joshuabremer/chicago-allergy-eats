@@ -259,7 +259,7 @@
 	<aside class="sidebar" class:mobile-open={isMobileLayout && mobileSidebarOpen}>
 		<div class="mobile-sidebar-header">
 			<div>
-				<h2>Filters and list</h2>
+				<h2>Filters</h2>
 				<p class="list-summary">{visiblePlaces.length} visible</p>
 			</div>
 			<button
@@ -329,7 +329,7 @@
 
 		</section>
 
-		<section class="sidebar-card list-card">
+		<section class="list-card mobile-list-section">
 			<div class="filter-heading">
 				<div>
 					<h2>Restaurant list</h2>
@@ -461,12 +461,6 @@
 						<div class="mobile-selection-meta">
 							<p><strong>Type:</strong> {selectedMobileRestaurant.type}</p>
 							<p><strong>Food:</strong> {selectedMobileRestaurant.cuisineSummary}</p>
-						</div>
-
-						<div class="chip-row compact">
-							{#each getVisibleResearchTags(selectedMobileRestaurant).slice(0, 4) as tag}
-								<span class="info-chip">{tag}</span>
-							{/each}
 						</div>
 
 						<div class="mobile-selection-actions">
@@ -885,6 +879,14 @@
 			justify-content: space-between;
 			gap: 1rem;
 			margin-bottom: 0.75rem;
+		}
+
+		.mobile-list-section {
+			background: transparent;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 0;
 		}
 
 		.mobile-close-button,
