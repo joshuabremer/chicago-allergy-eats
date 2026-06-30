@@ -493,11 +493,13 @@
 			<button
 				type="button"
 				class="mobile-close-button"
+				aria-label="Close filters and restaurant list"
+				title="Close filters and restaurant list"
 				onclick={() => {
 					mobileSidebarOpen = false;
 				}}
 			>
-				Close
+				<span aria-hidden="true" class="mobile-icon-button-label">X</span>
 			</button>
 		</div>
 
@@ -577,7 +579,6 @@
 			<div class="filter-heading">
 				<div>
 					<h2>Restaurant list</h2>
-					<p class="list-summary">{visiblePlaces.length} visible</p>
 				</div>
 			</div>
 
@@ -721,8 +722,25 @@
 							>
 								<span aria-hidden="true" class="mobile-directions-icon">
 									<svg viewBox="0 0 24 24" focusable="false">
-										<rect x="5" y="5" width="14" height="14" rx="1.5" transform="rotate(45 12 12)" />
-										<path d="M9 15V11.75C9 10.78 9.78 10 10.75 10H13V8.5L16 11.5L13 14.5V13H11.25C10.56 13 10 13.56 10 14.25V15H9Z" />
+										<rect
+											x="5"
+											y="5"
+											width="14"
+											height="14"
+											rx="1.5"
+											transform="rotate(45 12 12)"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="1.8"
+										/>
+										<path
+											d="M9 15V11.75C9 10.78 9.78 10 10.75 10H13V8.5L16 11.5L13 14.5V13H11.25C10.56 13 10 13.56 10 14.25V15"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="1.8"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
 									</svg>
 								</span>
 							</a>
@@ -1237,7 +1255,6 @@
 		.mobile-directions-icon svg {
 			width: 100%;
 			height: 100%;
-			fill: currentColor;
 		}
 
 		.mobile-selection-card h2 {
