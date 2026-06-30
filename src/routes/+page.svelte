@@ -18,9 +18,6 @@
 	let { data }: { data: PageData } = $props();
 
 	const DEFAULT_VISIBLE_DECISION_STATES: DecisionState[] = [
-		'ready-to-review',
-		'needs-more-info',
-		'awaiting-restaurant-response',
 		'approved'
 	];
 	const HOMEPAGE_FILTERS_STORAGE_KEY = 'chicago-allergy-eats:homepage-filters';
