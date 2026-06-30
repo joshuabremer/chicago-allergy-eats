@@ -241,14 +241,16 @@
 				icon: leaflet.divIcon({
 					className: 'landmark-marker-wrapper',
 					html: '<div class="landmark-marker"></div>',
-					iconSize: [14, 14],
-					iconAnchor: [7, 7]
+					iconSize: [18, 18],
+					iconAnchor: [9, 9]
 				})
 			});
 
 			marker.bindPopup(landmark.name, {
 				autoPan: true,
+				autoClose: false,
 				closeButton: false,
+				closeOnClick: false,
 				offset: [0, -8]
 			});
 
@@ -542,8 +544,8 @@
 	}
 
 	:global(.landmark-marker) {
-		width: 0.7rem;
-		height: 0.7rem;
+		width: 0.9rem;
+		height: 0.9rem;
 		border-radius: 999px;
 		background: rgb(51 65 85 / 0.92);
 		border: 2px solid rgb(255 255 255 / 0.95);
