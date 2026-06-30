@@ -150,5 +150,13 @@
     "responseQuote": "They said there are no nuts in any of the food, but there are nuts in some drinks, so the food itself is completely tree nut free.",
     "summary": "Phone call with Tacombi: staff said the food is completely tree nut free, but some drinks contain nuts.",
     "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Au Cheval",
+    "date": "2026-06-30",
+    "contactName": "AuCheval Contact",
+    "responseQuote": "We do not carry tree nuts in the restaurant; however, we source ingredients from facilities that may handle tree nuts. Therefore, we cannot guarantee against cross-contamination.",
+    "summary": "Au Cheval said they do not carry tree nuts in the restaurant, but because some ingredients come from facilities that may handle tree nuts, they cannot guarantee against cross-contamination.",
+    "researchTags": ["Got email response"]
   }
 ]
