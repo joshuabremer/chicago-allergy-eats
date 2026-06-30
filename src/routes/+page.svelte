@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import RestaurantMap from '$lib/components/RestaurantMap.svelte';
 	import { restaurants } from '$lib/data/restaurants';
 	import type { PageData } from './$types';
@@ -8,6 +9,7 @@
 		DECISION_STATES,
 		RESEARCH_TAGS,
 		type DecisionState,
+		type MealService,
 		type ResearchTag,
 		type Restaurant,
 		type RestaurantType
@@ -23,18 +25,28 @@
 		'approved'
 	];
 	const HOMEPAGE_FILTERS_STORAGE_KEY = 'chicago-allergy-eats:homepage-filters';
+	const FILTERABLE_MEALS: MealService[] = ['Brunch', 'Lunch', 'Dinner'];
+	const FILTER_QUERY_PARAM_KEYS = {
+		searchText: 'search',
+		type: 'type',
+		meal: 'meal',
+		researchTag: 'tag',
+		decisionState: 'state'
+	} as const;
 	const allTypes = Array.from(new Set(restaurants.map((restaurant) => restaurant.type)));
-	const persistedFilters = loadHomepageFilters();
+	const initialFilters = loadInitialHomepageFilters(page.url);
 
 	let viewportWidth = $state(browser ? window.innerWidth : 1024);
-	let searchText = $state(persistedFilters.searchText);
-	let activeTypes = $state<string[]>(persistedFilters.activeTypes);
-	let activeResearchTags = $state<ResearchTag[]>(persistedFilters.activeResearchTags);
-	let activeDecisionStates = $state<DecisionState[]>(persistedFilters.activeDecisionStates);
+	let searchText = $state(initialFilters.searchText);
+	let activeTypes = $state<string[]>(initialFilters.activeTypes);
+	let activeMeals = $state<MealService[]>(initialFilters.activeMeals);
+	let activeResearchTags = $state<ResearchTag[]>(initialFilters.activeResearchTags);
+	let activeDecisionStates = $state<DecisionState[]>(initialFilters.activeDecisionStates);
 	let reviewState = $state(loadUserReviews({}));
 	let hoveredSlug = $state<string | null>(null);
 	let mobileSidebarOpen = $state(false);
 	let mobileSelectedSlug = $state<string | null>(null);
+	let didHydrateFilterState = false;
 	const decisionStateLabels: Record<DecisionState, string> = {
 		'ready-to-review': 'Ready to review',
 		'needs-more-info': 'Needs more info',
@@ -72,11 +84,59 @@
 		const nextFilters = {
 			searchText,
 			activeTypes,
+			activeMeals,
 			activeResearchTags,
 			activeDecisionStates
 		};
 
 		localStorage.setItem(HOMEPAGE_FILTERS_STORAGE_KEY, JSON.stringify(nextFilters));
+	});
+
+	$effect(() => {
+		if (!browser) {
+			return;
+		}
+
+		const nextSearchParams = buildFilterSearchParams({
+			searchText,
+			activeTypes,
+			activeMeals,
+			activeResearchTags,
+			activeDecisionStates
+		});
+		const currentSearch = page.url.searchParams.toString();
+		const nextSearch = nextSearchParams.toString();
+
+		if (currentSearch === nextSearch) {
+			return;
+		}
+
+		const nextHref = `${page.url.pathname}${nextSearch ? `?${nextSearch}` : ''}${page.url.hash}`;
+		void goto(nextHref, { replaceState: true, noScroll: true, keepFocus: true });
+	});
+
+	$effect(() => {
+		if (!browser) {
+			return;
+		}
+
+		const filtersFromUrl = readHomepageFiltersFromUrl(page.url);
+
+		if (!didHydrateFilterState) {
+			didHydrateFilterState = true;
+
+			if (!filtersFromUrl) {
+				return;
+			}
+		}
+
+		const nextFilters = filtersFromUrl ?? defaultHomepageFilters();
+
+		if (areFiltersEqual(getCurrentFilters(), nextFilters)) {
+			return;
+		}
+
+		applyFilters(nextFilters);
 	});
 
 	$effect(() => {
@@ -102,6 +162,12 @@
 			: [...activeResearchTags, tag];
 	}
 
+	function toggleMeal(meal: MealService) {
+		activeMeals = activeMeals.includes(meal)
+			? activeMeals.filter((value) => value !== meal)
+			: [...activeMeals, meal];
+	}
+
 	function toggleDecisionState(state: DecisionState) {
 		activeDecisionStates = activeDecisionStates.includes(state)
 			? activeDecisionStates.filter((value) => value !== state)
@@ -124,6 +190,10 @@
 		}
 
 		if (activeTypes.length > 0 && !activeTypes.includes(restaurant.type)) {
+			return false;
+		}
+
+		if (activeMeals.length > 0 && !activeMeals.every((meal) => restaurant.meals.includes(meal))) {
 			return false;
 		}
 
@@ -174,7 +244,13 @@
 		return restaurant.researchTags.filter((tag) => !hiddenResearchTags.includes(tag));
 	}
 
-	function loadHomepageFilters() {
+	function loadInitialHomepageFilters(url: URL) {
+		const filtersFromUrl = readHomepageFiltersFromUrl(url);
+
+		if (filtersFromUrl) {
+			return filtersFromUrl;
+		}
+
 		if (!browser) {
 			return defaultHomepageFilters();
 		}
@@ -207,6 +283,12 @@
 							(type): type is RestaurantType =>
 								typeof type === 'string' && allTypes.includes(type as RestaurantType)
 						),
+				activeMeals: Array.isArray(parsed.activeMeals)
+					? parsed.activeMeals.filter(
+							(meal): meal is MealService =>
+								typeof meal === 'string' && FILTERABLE_MEALS.includes(meal as MealService)
+						)
+					: [],
 				activeResearchTags: Array.isArray(parsed.activeResearchTags)
 					? parsed.activeResearchTags.filter(
 							(tag): tag is ResearchTag => typeof tag === 'string' && RESEARCH_TAGS.includes(tag as ResearchTag)
@@ -224,14 +306,155 @@
 		}
 	}
 
+	function readHomepageFiltersFromUrl(url: URL) {
+		const { searchParams } = url;
+
+		if (!hasFilterQueryParams(searchParams)) {
+			return null;
+		}
+
+		const normalizedActiveTypes = normalizeActiveTypes(
+			searchParams.getAll(FILTER_QUERY_PARAM_KEYS.type)
+		);
+
+		return {
+			searchText: searchParams.get(FILTER_QUERY_PARAM_KEYS.searchText)?.trim() ?? '',
+			activeTypes: normalizedActiveTypes,
+			activeMeals: searchParams
+				.getAll(FILTER_QUERY_PARAM_KEYS.meal)
+				.filter(
+					(meal): meal is MealService =>
+						FILTERABLE_MEALS.includes(meal as MealService)
+				),
+			activeResearchTags: searchParams
+				.getAll(FILTER_QUERY_PARAM_KEYS.researchTag)
+				.filter(
+					(tag): tag is ResearchTag => RESEARCH_TAGS.includes(tag as ResearchTag)
+				),
+			activeDecisionStates: searchParams
+				.getAll(FILTER_QUERY_PARAM_KEYS.decisionState)
+				.filter(
+					(state): state is DecisionState => DECISION_STATES.includes(state as DecisionState)
+				)
+		};
+	}
+
 	function defaultHomepageFilters() {
 		return {
 			searchText: '',
 			activeTypes: [],
+			activeMeals: [] as MealService[],
 			activeResearchTags: [] as ResearchTag[],
 			activeDecisionStates: [...DEFAULT_VISIBLE_DECISION_STATES]
 		};
 	}
+
+function buildFilterSearchParams(filters: {
+	searchText: string;
+	activeTypes: string[];
+	activeMeals: MealService[];
+	activeResearchTags: ResearchTag[];
+	activeDecisionStates: DecisionState[];
+}) {
+	const searchParams = new URLSearchParams();
+	const trimmedSearch = filters.searchText.trim();
+
+	if (trimmedSearch) {
+		searchParams.set(FILTER_QUERY_PARAM_KEYS.searchText, trimmedSearch);
+	}
+
+	for (const type of filters.activeTypes) {
+		searchParams.append(FILTER_QUERY_PARAM_KEYS.type, type);
+	}
+
+	for (const meal of filters.activeMeals) {
+		searchParams.append(FILTER_QUERY_PARAM_KEYS.meal, meal);
+	}
+
+	for (const tag of filters.activeResearchTags) {
+		searchParams.append(FILTER_QUERY_PARAM_KEYS.researchTag, tag);
+	}
+
+	for (const state of filters.activeDecisionStates) {
+		searchParams.append(FILTER_QUERY_PARAM_KEYS.decisionState, state);
+	}
+
+	return searchParams;
+}
+
+function hasFilterQueryParams(searchParams: URLSearchParams) {
+	return Object.values(FILTER_QUERY_PARAM_KEYS).some((key) => searchParams.has(key));
+}
+
+function normalizeActiveTypes(types: string[]) {
+	return Array.from(
+		new Set(
+			types.flatMap((type) => {
+				if (type === 'Cafe') {
+					return ['Sit-down'];
+				}
+
+				return [type];
+			})
+		)
+	).filter(
+		(type): type is RestaurantType =>
+			typeof type === 'string' && allTypes.includes(type as RestaurantType)
+	);
+}
+
+function getCurrentFilters() {
+	return {
+		searchText,
+		activeTypes,
+		activeMeals,
+		activeResearchTags,
+		activeDecisionStates
+	};
+}
+
+function applyFilters(filters: {
+	searchText: string;
+	activeTypes: RestaurantType[];
+	activeMeals: MealService[];
+	activeResearchTags: ResearchTag[];
+	activeDecisionStates: DecisionState[];
+}) {
+	searchText = filters.searchText;
+	activeTypes = filters.activeTypes;
+	activeMeals = filters.activeMeals;
+	activeResearchTags = filters.activeResearchTags;
+	activeDecisionStates = filters.activeDecisionStates;
+}
+
+function areFiltersEqual(
+	left: {
+		searchText: string;
+		activeTypes: string[];
+		activeMeals: MealService[];
+		activeResearchTags: ResearchTag[];
+		activeDecisionStates: DecisionState[];
+	},
+	right: {
+		searchText: string;
+		activeTypes: string[];
+		activeMeals: MealService[];
+		activeResearchTags: ResearchTag[];
+		activeDecisionStates: DecisionState[];
+	}
+) {
+	return (
+		left.searchText === right.searchText &&
+		haveSameValues(left.activeTypes, right.activeTypes) &&
+		haveSameValues(left.activeMeals, right.activeMeals) &&
+		haveSameValues(left.activeResearchTags, right.activeResearchTags) &&
+		haveSameValues(left.activeDecisionStates, right.activeDecisionStates)
+	);
+}
+
+function haveSameValues<T>(left: T[], right: T[]) {
+	return left.length === right.length && left.every((value, index) => value === right[index]);
+}
 </script>
 
 <svelte:head>
@@ -312,6 +535,22 @@
 			</div>
 
 			<div>
+				<h3>Meals</h3>
+				<div class="chip-row">
+					{#each FILTERABLE_MEALS as meal}
+						<button
+							type="button"
+							class:active={activeMeals.includes(meal)}
+							class="filter-chip"
+							onclick={() => toggleMeal(meal)}
+						>
+							{meal}
+						</button>
+					{/each}
+				</div>
+			</div>
+
+			<div>
 				<h3>Research tags</h3>
 				<div class="chip-row">
 					{#each RESEARCH_TAGS as tag}
@@ -365,7 +604,7 @@
 							<div class="place-card-top">
 								<div>
 									<strong>{restaurant.name}</strong>
-									<p>{restaurant.neighborhood} • {restaurant.type} • {restaurant.meals.join(', ')}</p>
+									<p>{restaurant.neighborhood} • {restaurant.type} • {restaurant.cuisineSummary}</p>
 								</div>
 								{#if getUserReview(reviewState, restaurant.slug).decision === 'rejected'}
 									<span class="rejected-pill">Rejected</span>
@@ -497,7 +736,7 @@
 						<div>
 							<h3>What is already wired up</h3>
 							<ul>
-								<li>Searchable restaurant list with type and research tag filters</li>
+								<li>Searchable restaurant list with type, meal, and research tag filters</li>
 								<li>Dedicated restaurant pages for deep review</li>
 								<li>Browser-saved decision states and comments</li>
 								<li>Repo-backed research sources for raw links, PDFs, ideas, and notes</li>

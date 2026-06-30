@@ -1,0 +1,25 @@
+{
+  "sourceName": "User-pasted Pequod's Pizza overview",
+  "sourceUrl": "https://pequodspizza.com/",
+  "capturedAt": "2026-06-30",
+  "restaurantName": "Pequod's Pizza",
+  "location": "2207 N Clybourn Ave, Chicago, IL 60614",
+  "phone": "+1 773-327-1512",
+  "summary": "Local institution known for deep-dish pizza with a caramelized crust, served in a relaxed setting.",
+  "resources": [
+    {
+      "label": "Reservation link",
+      "href": "https://www.exploretock.com/",
+      "kind": "reservation"
+    },
+    {
+      "label": "Menu link",
+      "href": "https://pequodspizza.com/",
+      "kind": "menu"
+    }
+  ],
+  "notes": [
+    "Stored from a user paste so future prompts can reuse the Pequod's source without refetching.",
+    "The user pasted the business overview, address, phone, and links, but did not include the actual itemized menu text yet."
+  ]
+}

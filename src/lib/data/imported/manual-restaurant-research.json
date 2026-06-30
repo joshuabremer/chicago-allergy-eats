@@ -1313,5 +1313,30 @@
       "The pasted menu appears to be shared across both Lucy's Chicago locations.",
       "The source material included both location details and the full menu text from the user."
     ]
+  },
+  {
+    "restaurantName": "Pequod's Pizza",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://pequodspizza.com/",
+        "kind": "menu"
+      },
+      {
+        "label": "Reservations",
+        "href": "https://www.exploretock.com/",
+        "kind": "reservation"
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Local institution known for deep-dish pizza with a caramelized crust, served in a relaxed setting.",
+        "sourceLabel": "User-pasted Pequod's Pizza overview"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/pequods-pizza-source.json.",
+      "The pasted source included the restaurant overview, address, phone number, and links, but not the actual itemized menu text yet."
+    ]
   }
 ]

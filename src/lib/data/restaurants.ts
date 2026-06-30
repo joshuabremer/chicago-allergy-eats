@@ -493,6 +493,16 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		website: 'https://lucyschicago.com/',
 		phone: '+1 312-675-8385',
 		email: 'eat@lucyschicago.com'
+	},
+	{
+		title: 'Manual additions',
+		name: "Pequod's Pizza",
+		latitude: 41.9219163,
+		longitude: -87.6643863,
+		researchTags: [],
+		address: '2207 N Clybourn Ave, Chicago, IL 60614',
+		website: 'https://pequodspizza.com/',
+		phone: '+1 773-327-1512'
 	}
 ];
 
@@ -505,6 +515,7 @@ const NORMALIZED_NAME_ALIASES: Record<string, string> = {
 	'big-star-wrigleyville': 'big-star',
 	cindys: 'cindys-rooftop',
 	'del-sur-bakery': 'del-sur-bakery',
+	dove: 'doves-luncheonette',
 	doves: 'doves-luncheonette',
 	'doves-luncheonette': 'doves-luncheonette',
 	'epic-burger': 'epic-burger',
@@ -515,12 +526,14 @@ const NORMALIZED_NAME_ALIASES: Record<string, string> = {
 	'jeni-s-splendid-ice-creams': 'jenis-splendid-ice-creams',
 	'jenis-splendid-ice-creams': 'jenis-splendid-ice-creams',
 	'lou-malnatis-pizzeria': 'lou-malnatis-pizzeria',
+	lucy: 'lucys',
 	'paulie-gees': 'paulie-gees',
 	'parlor-pizza': 'parlor-pizza',
 	'parlor-pizza-bar-river-north': 'parlor-pizza',
 	'parlor-pizza-bar-west-loop': 'parlor-pizza',
 	'parlor-pizza-bar-wicker-park': 'parlor-pizza',
 	'piccolo-sogno': 'piccolo-sogno',
+	pizano: 'pizanos',
 	'portillos': 'portillos',
 	'portillos-and-barnellis-chicago': 'portillos',
 	'portillos-chicago': 'portillos',
@@ -569,7 +582,9 @@ function buildRestaurants(): Restaurant[] {
 			}
 
 			const locationKey = buildLocationKey(name, latitude, longitude);
-			const existing = groupedRestaurants.get(locationKey);
+			const existing =
+				groupedRestaurants.get(locationKey) ??
+				findNearbyMatchingRestaurant(groupedRestaurants, name, latitude, longitude);
 
 			if (existing) {
 				addCollectionMetadata(existing, collection);
@@ -631,8 +646,17 @@ function buildRestaurants(): Restaurant[] {
 		}
 
 		const locationKey = buildLocationKey(restaurant.name, restaurant.latitude, restaurant.longitude);
+		const existing =
+			groupedRestaurants.get(locationKey) ??
+			findNearbyMatchingRestaurant(
+				groupedRestaurants,
+				restaurant.name,
+				restaurant.latitude,
+				restaurant.longitude
+			);
 
-		if (groupedRestaurants.has(locationKey)) {
+		if (existing) {
+			applySupplementalDetails(existing, restaurant);
 			continue;
 		}
 
@@ -1117,7 +1141,8 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		normalizedName.includes('pizzeria-due') ||
 		normalizedName.includes('ginos-east') ||
 		normalizedName.includes('pizanos') ||
-		normalizedName.includes('paulie-gees')
+		normalizedName.includes('paulie-gees') ||
+		normalizedName.includes('pequod')
 	) {
 		return 'Pizza';
 	}
@@ -1174,6 +1199,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'Mexican street food';
 	}
 
+	if (normalizedName.includes('tacombi')) {
+		return 'Mexican tacos and quesadillas';
+	}
+
 	if (normalizedName.includes('doves-luncheonette')) {
 		return 'Tex-Mex diner';
 	}
@@ -1186,8 +1215,28 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'Italian market dining';
 	}
 
+	if (normalizedName.includes('beatrix')) {
+		return 'American cafe and brunch';
+	}
+
+	if (normalizedName.includes('aba') || normalizedName.includes('ema')) {
+		return 'Mediterranean mezze';
+	}
+
+	if (normalizedName.includes('summer-house-santa-monica')) {
+		return 'California-inspired American';
+	}
+
 	if (normalizedName.includes('steakhouse')) {
 		return 'Steakhouse';
+	}
+
+	if (normalizedName.includes('piccolo-sogno') || normalizedName.includes('rpm-italian')) {
+		return 'Italian';
+	}
+
+	if (normalizedName.includes('rpm-seafood')) {
+		return 'Seafood';
 	}
 
 	if (normalizedName.includes('daisies')) {
@@ -1210,6 +1259,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'New American small plates';
 	}
 
+	if (normalizedName.includes('beatnik-on-the-river')) {
+		return 'Global small plates and cocktails';
+	}
+
 	if (normalizedName.includes('cindys')) {
 		return 'American rooftop dining';
 	}
@@ -1227,6 +1280,9 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 
 function guessMeals(name: string, type: RestaurantType): MealService[] {
 	const normalizedName = normalizeRestaurantName(name);
+	const breakfastLunchMeals: MealService[] = ['Breakfast', 'Lunch'];
+	const bakeryMeals: MealService[] = ['Breakfast', 'Lunch', 'Dessert'];
+	const lunchDinnerMeals: MealService[] = ['Lunch', 'Dinner'];
 
 	if (
 		normalizedName.includes('bagel') ||
@@ -1234,7 +1290,7 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 		normalizedName.includes('bakery') ||
 		normalizedName.includes('wheats-end')
 	) {
-		return type === 'Bakery' ? ['Breakfast', 'Lunch', 'Dessert'] : ['Breakfast', 'Lunch'];
+		return maybeAddBrunch(name, normalizedName, type === 'Bakery' ? bakeryMeals : breakfastLunchMeals);
 	}
 
 	if (type === 'Dessert') {
@@ -1242,18 +1298,43 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 	}
 
 	if (type === 'Fast food' || type === 'Fast casual' || type === 'Unknown') {
-		return ['Lunch', 'Dinner'];
+		return maybeAddBrunch(name, normalizedName, lunchDinnerMeals);
 	}
 
 	if (isCafeStyleRestaurant(name)) {
-		return ['Breakfast', 'Lunch'];
+		return maybeAddBrunch(name, normalizedName, breakfastLunchMeals);
 	}
 
 	if (type === 'Bakery') {
-		return ['Breakfast', 'Lunch', 'Dessert'];
+		return maybeAddBrunch(name, normalizedName, bakeryMeals);
 	}
 
-	return ['Lunch', 'Dinner'];
+	return maybeAddBrunch(name, normalizedName, lunchDinnerMeals);
+}
+
+function maybeAddBrunch(name: string, normalizedName: string, meals: MealService[]) {
+	if (!hasBrunchEvidence(name, normalizedName) || meals.includes('Brunch')) {
+		return meals;
+	}
+
+	const mealOrder: MealService[] = ['Breakfast', 'Brunch', 'Lunch', 'Dinner', 'Dessert', 'Late night'];
+	return [...new Set<MealService>([...meals, 'Brunch'])].sort(
+		(left, right) => mealOrder.indexOf(left) - mealOrder.indexOf(right)
+	);
+}
+
+function hasBrunchEvidence(name: string, normalizedName: string) {
+	return (
+		name === 'Beatrix Fulton Market' ||
+		name === 'Beatrix River North' ||
+		name === 'Big Star' ||
+		name === "Cindy's Rooftop" ||
+		name === 'Eataly' ||
+		name === 'Summer House Santa Monica' ||
+		normalizedName.includes('aba') ||
+		normalizedName.includes('daisies') ||
+		normalizedName.includes('ema')
+	);
 }
 
 function buildApproximateAddress(latitude: number, longitude: number) {
@@ -1418,6 +1499,27 @@ function buildLocationKey(name: string, latitude: number, longitude: number) {
 
 function workingRestaurantKey(name: string) {
 	return normalizeRestaurantNameWithoutAliases(name);
+}
+
+function findNearbyMatchingRestaurant(
+	groupedRestaurants: Map<string, WorkingRestaurant>,
+	name: string,
+	latitude: number,
+	longitude: number
+) {
+	const normalizedName = normalizeRestaurantName(name);
+
+	for (const restaurant of groupedRestaurants.values()) {
+		if (restaurant.canonicalKey !== normalizedName) {
+			continue;
+		}
+
+		const distance = Math.abs(restaurant.latitude - latitude) + Math.abs(restaurant.longitude - longitude);
+
+		if (distance <= 0.001) {
+			return restaurant;
+		}
+	}
 }
 
 

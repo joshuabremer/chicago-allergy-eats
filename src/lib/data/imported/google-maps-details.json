@@ -611,5 +611,14 @@
     "email": "eat@lucyschicago.com",
     "latitude": 41.96523,
     "longitude": -87.6576
+  },
+  {
+    "name": "Pequod's Pizza",
+    "address": "2207 N Clybourn Ave, Chicago, IL 60614",
+    "website": "https://pequodspizza.com/",
+    "phone": "+1 773-327-1512",
+    "rating": 4.4,
+    "latitude": 41.9219163,
+    "longitude": -87.6643863
   }
 ]
