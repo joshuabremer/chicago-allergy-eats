@@ -16,7 +16,9 @@ This folder is the repo-backed home for the raw source material imported from:
 - `big-star-wicker-park-menu.json` — user-pasted Big Star Wicker Park menu capture
 - `doves-luncheonette-menu.json` — user-pasted Dove's Luncheonette menu capture
 - `parlor-pizza-menu.json` — user-pasted Parlor Pizza menu capture
+- `pizzeria-uno-and-due-menus.json` — user-pasted Uno takeout menu, Uno site menu, Due menu, and phone-call allergy notes
 - `pizanos-chicago-loop-menu.json` — user-pasted Pizano's Chicago Loop menu capture plus allergen notes
+- `pizanos-state-street-menu.json` — user-pasted Pizano's State Street menu capture plus comparison notes against the Loop page
 - `reddit-chicagofood-food-allergy-thread.json` — user-supplied takeaway and source URL for a Reddit allergy discussion that needs manual follow-up if exact quotes are needed
 - `reddit-foodallergies-chicago-trip-with-food-allergies.json` — Reddit travel thread URL plus clearly labeled search-layer synthesis because direct Reddit fetch was blocked
 - `reddit-peanutallergy-traveling-to-chicago-this-summer.json` — Reddit peanut-allergy Chicago travel thread preserved as a blocked-fetch lead with secondary synthesis

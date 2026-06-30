@@ -1,17 +1,9 @@
 {
-  "sourceName": "User-pasted Pizano's Chicago Loop menu and allergen notes",
-  "sourceUrl": "https://www.pizanoschicago.com/locations/chicago-loop/menu/#",
-  "capturedAt": "2026-06-28",
-  "location": "Pizano's Chicago Loop",
+  "sourceName": "User-pasted Pizano's State Street menu capture",
+  "sourceUrl": "https://www.pizanoschicago.com/locations/chicago-state-street/menu/#",
+  "capturedAt": "2026-06-29",
+  "location": "Pizano's State Street",
   "sections": [
-    {
-      "name": "Location info",
-      "items": [
-        "61 E. Madison Street, Chicago, IL 60603",
-        "Phone: 312-236-1777",
-        "Dine in and carryout: Sunday through Thursday 11 AM-11 PM; Friday and Saturday 11 AM-11 PM"
-      ]
-    },
     {
       "name": "Appetizers",
       "items": [
@@ -31,7 +23,7 @@
       "name": "Deep dish and thin crust pizza",
       "items": [
         "Cheese Pizza - available in deep dish and thin crust sizes",
-        "Cheese, Sausage or Pepperoni Pizza - available in deep dish and thin crust sizes",
+        "Cheese, Sausage or Pepperoni Pizza - individual deep dish price is 14.25 in this State Street capture",
         "Vegetarian Special - mushrooms, onion, green pepper",
         "Mark's Special - sliced tomatoes, basil, fresh garlic",
         "Rudy's Special - sausage, mushroom, onion, green pepper",
@@ -59,19 +51,11 @@
         "Annette's Cookie - freshly baked peanut butter cookie with ice cream, caramel, and whipped cream",
         "Traditional Cheesecake - chocolate, caramel, or strawberry"
       ]
-    },
-    {
-      "name": "Allergen notes from user-provided source work",
-      "items": [
-        "Peanuts or Tree Nuts: We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients.",
-        "A few items, such as the vanilla ice cream and chocolate chip cookie dough, are made in a facility where peanuts and tree nuts are present.",
-        "Gluten-free pizza dough may contain traces of almond and coconut."
-      ]
     }
   ],
   "notes": [
-    "Stored from user-pasted menu and follow-up allergen source work so future rescans can reuse it without refetching the site.",
-    "The pasted menu does not explicitly name tree nuts in the item descriptions that were captured here, but pesto appears as both a pasta sauce option and a sandwich ingredient without a further breakdown.",
-    "This combines the menu paste with the specific allergen notes the user wanted preserved."
+    "Stored from a user-pasted State Street menu capture so future rescans can reuse it without refetching the site.",
+    "Compared against the user-pasted Chicago Loop menu capture, the menu items matched aside from location chrome and one substantive price difference: the individual deep dish cheese, sausage, or pepperoni pizza was 14.25 here versus 13.25 on the Loop page.",
+    "The pasted menu does not explicitly name tree nuts in the captured item descriptions, but pesto appears as both a pasta sauce option and a sandwich ingredient without a further breakdown."
   ]
 }

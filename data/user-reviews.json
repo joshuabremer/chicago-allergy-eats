@@ -175,8 +175,28 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
+  "pizanos-pizza-and-pasta-41-8536-w87-6223": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "pizanos-pizza-and-pasta-41-8824-w87-6254": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "pizanos-pizza-and-pasta-41-8982-w87-6283": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "pizzeria-due-41-8931-w87-6264": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "pizzeria-uno-41-8923-w87-6269": {
-    "decision": "needs-more-info",
+    "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -212,8 +232,8 @@
     "personalTags": []
   },
   "ramen-san-41-8948-w87-6230": {
-    "decision": "awaiting-restaurant-response",
-    "comment": "This particular location shows a cashew dressing. Email for more info. Maybe it's the same email for all of them???",
+    "decision": "ready-to-review",
+    "comment": "Called and talked to staff.",
     "hiddenResearchTags": [
       "Nut free kitchen"
     ],
@@ -250,6 +270,18 @@
   },
   "small-cheval-41-8857-w87-6610": {
     "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "tacombi-41-9080-w87-6741": {
+    "decision": "ready-to-review",
+    "comment": "Called them and found out the details above.",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "tacombi-fulton-market-41-8836-w87-6496": {
+    "decision": "ready-to-review",
+    "comment": "Called them and found out the details above.",
     "hiddenResearchTags": [],
     "personalTags": []
   },

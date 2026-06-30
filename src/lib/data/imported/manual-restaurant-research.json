@@ -102,7 +102,7 @@
   },
   {
     "restaurantName": "Tacombi",
-    "researchTags": ["Reached out"],
+    "researchTags": ["Can accommodate"],
     "resources": [
       {
         "label": "Menu",
@@ -111,15 +111,15 @@
         "menuFlags": [
           {
             "tone": "green",
+            "note": "Green flag: a phone call with Tacombi said they do not use nuts in any of the food, and that the food is completely tree nut free."
+          },
+          {
+            "tone": "green",
             "note": "Green flag: the pasted Tacombi menu is fairly ingredient-specific, and the food menu does not explicitly call out tree nuts in the items shared here."
           },
           {
             "tone": "yellow",
-            "note": "Yellow flag: the pasted menu only includes a standard raw or undercooked foods warning and does not include a dedicated allergen guide or nut-handling statement, so cross-contact still needs a direct question."
-          },
-          {
-            "tone": "red",
-            "note": "Red flag: the drinks menu explicitly includes coconut in the pina colada."
+            "note": "Yellow flag: the staff said there are nuts in some drinks, so beverages still need a separate check even though the food is tree nut free."
           }
         ]
       },
@@ -141,6 +141,7 @@
       }
     ],
     "notes": [
+      "Phone call note: Tacombi said there are no nuts in any of the food, but there are nuts in some drinks.",
       "Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification.",
       "Raw source stored at data/raw/chicago-2026/tacombi-menus.json.",
       "User confirmed the pasted menu is the same for both Tacombi and Tacombi Fulton Market."
@@ -148,7 +149,7 @@
   },
   {
     "restaurantName": "Tacombi Fulton Market",
-    "researchTags": ["Reached out"],
+    "researchTags": ["Can accommodate"],
     "resources": [
       {
         "label": "Menu",
@@ -157,15 +158,15 @@
         "menuFlags": [
           {
             "tone": "green",
+            "note": "Green flag: a phone call with Tacombi said they do not use nuts in any of the food, and that the food is completely tree nut free."
+          },
+          {
+            "tone": "green",
             "note": "Green flag: the pasted Tacombi menu is fairly ingredient-specific, and the food menu does not explicitly call out tree nuts in the items shared here."
           },
           {
             "tone": "yellow",
-            "note": "Yellow flag: the pasted menu only includes a standard raw or undercooked foods warning and does not include a dedicated allergen guide or nut-handling statement, so cross-contact still needs a direct question."
-          },
-          {
-            "tone": "red",
-            "note": "Red flag: the drinks menu explicitly includes coconut in the pina colada."
+            "note": "Yellow flag: the staff said there are nuts in some drinks, so beverages still need a separate check even though the food is tree nut free."
           }
         ]
       },
@@ -187,6 +188,7 @@
       }
     ],
     "notes": [
+      "Phone call note: Tacombi said there are no nuts in any of the food, but there are nuts in some drinks.",
       "Instagram review references Tacombi locations in New York, so treat it as chain-level context rather than Chicago-specific verification.",
       "Raw source stored at data/raw/chicago-2026/tacombi-menus.json.",
       "User confirmed the pasted menu is the same for both Tacombi and Tacombi Fulton Market."
@@ -437,15 +439,19 @@
         "menuFlags": [
           {
             "tone": "green",
-            "note": "Green flag: they publish a real allergen guide, and the menu has a dedicated Gluten Free Specialties section."
+            "note": "Green flag: both pasted Pizano's menus have a dedicated Gluten Free Specialties section with gluten-free thin crust pizza, brown rice fusilli, and a separate gluten-free fusilli option in the build-your-own pasta section."
           },
           {
             "tone": "green",
-            "note": "Green flag: their allergen page says the regular pizza dough does not contain egg or dairy, and the pizza sauce does not contain dairy, onion, or garlic."
+            "note": "Green flag: both pasted menus are fairly ingredient-specific, and neither one explicitly names tree nuts in the pizza, appetizer, pasta, sandwich, or dessert descriptions that were captured."
           },
           {
-            "tone": "red",
-            "note": "Red flag: the dessert menu includes Annette's PB Cookie, and the allergen page says they cannot guarantee dishes are free from trace allergens."
+            "tone": "green",
+            "note": "Green flag: a phone call with the Madison Street location said the pesto contains pine nuts but is only used on sandwiches, and the pizza is cooked in its own section away from that area."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: their allergen page says they cannot guarantee dishes are free from trace allergens, so it is still important to tell the server about the allergy even though the staff said they always notify the cooks."
           }
         ]
       },
@@ -460,12 +466,103 @@
         "quote": "Pizano's publishes a full allergen guide and notes that regular pizza dough does not contain egg or dairy, while pizza sauce does not contain dairy, onion, or garlic.",
         "sourceLabel": "Pizano's allergen guide",
         "href": "https://www.pizanoschicago.com/allergen/"
+      },
+      {
+        "quote": "Alfredo, Hot Mama's, Pesto, Vodka Sauce",
+        "sourceLabel": "User-pasted Pizano's Chicago Loop menu"
       }
     ],
     "notes": [
-      "User-provided note: nuts are not listed on the allergen guide, which feels like a meaningful green flag even though the site still gives a standard cross-contact disclaimer.",
+      "The pasted Chicago Loop and State Street menus matched item-for-item in this comparison except for one substantive price difference: the individual deep dish cheese, sausage, or pepperoni pizza was 13.25 on the Loop page and 14.25 on the State Street page.",
+      "Phone call note: the Madison Street location said pesto with pine nuts is only used on sandwiches, pizza is cooked in its own section away from that area, and servers always notify the cooks about allergies. You said to treat that as applying to all Pizano's locations.",
       "The allergen guide also says specials and limited-time offerings are not included, and ingredients may change.",
-      "Raw source stored at data/raw/chicago-2026/pizanos-chicago-loop-menu.json."
+      "Raw sources stored at data/raw/chicago-2026/pizanos-chicago-loop-menu.json and data/raw/chicago-2026/pizanos-state-street-menu.json."
+    ]
+  },
+  {
+    "restaurantName": "Pizzeria Uno",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://pizzeriaunochicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Uno menus are fairly ingredient-specific, and the phone call said there are no nuts on the menu and that the pesto is nut free."
+          },
+          {
+            "tone": "green",
+            "note": "Green flag: the phone call said guests can tell the server about the allergy, and the server will notify the manager and the cooks. Staff also said they have recently handled severe nut allergies successfully."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the gluten sensitive pizzas are explicitly cooked in a shared oven, so those pies still need extra caution even with the positive phone guidance."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the dessert menu explicitly includes walnuts in the Four-Layer Carrot Cake."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Made with gluten-free ingredients, but cooked in a shared oven.",
+        "sourceLabel": "User-pasted Pizzeria Uno menus"
+      },
+      {
+        "quote": "Layers of moist carrot cake studded with raisins, walnuts and pineapple.",
+        "sourceLabel": "User-pasted Pizzeria Uno menus"
+      }
+    ],
+    "notes": [
+      "The pasted Uno takeout menu and the pasted Uno site menu matched closely in the overlapping sections, with the takeout capture adding Romano-Crusted Chicken Parm, Chicken and Broccoli Alfredo, more kids items, drinks, and explicit prices.",
+      "The pasted Due menu overlapped heavily with Uno but added a separate thin crust pizza section, so preserve it as related source material rather than assuming the menus are identical.",
+      "Raw source stored at data/raw/chicago-2026/pizzeria-uno-and-due-menus.json."
+    ]
+  },
+  {
+    "restaurantName": "Pizzeria Due",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://www.pizzeriaunodue.com",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Due menu is fairly ingredient-specific, and the phone call said there are no nuts on the menu, the pesto is nut free, and there are no nuts anywhere with the pizza."
+          },
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Due menu adds a separate thin crust section while keeping the same overall allergy-positive phone guidance, and staff said the server can notify the manager and cooks about the allergy."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the gluten sensitive pizzas are explicitly cooked in a shared oven, so those pies still need extra caution even with the positive phone guidance."
+          },
+          {
+            "tone": "red",
+            "note": "Red flag: the dessert menu explicitly includes walnuts in the Four-Layer Carrot Cake."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Made with gluten-free ingredients, but cooked in a shared oven.",
+        "sourceLabel": "User-pasted Pizzeria Due menu"
+      },
+      {
+        "quote": "Layers of moist carrot cake studded with raisins, walnuts and pineapple.",
+        "sourceLabel": "User-pasted Pizzeria Due menu"
+      }
+    ],
+    "notes": [
+      "The pasted Due menu overlapped heavily with Uno on appetizers, salads, deep dish pizzas, sandwiches, pastas, gluten sensitive pizzas, and desserts, but it also added a distinct thin crust pizza section.",
+      "Phone call note shared from Uno and applied to Due per user instruction: staff said there are no nuts on the menu, the pesto is nut free, the server can notify the manager and cooks, and they have recently handled severe nut allergies successfully.",
+      "Raw source stored at data/raw/chicago-2026/pizzeria-uno-and-due-menus.json."
     ]
   },
   {
@@ -722,6 +819,34 @@
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Ramen-San, Ramen-San Deluxe, and Ramen-San Whisky Bar.",
       "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/ramen-san-menus.json."
+    ]
+  },
+  {
+    "restaurantName": "Ramen-San Deluxe",
+    "resources": [
+      {
+        "label": "Menus",
+        "href": "https://www.ramensan.com/menus/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: a phone call with Ramen-San Deluxe said they do not have tree nuts on the menu."
+          },
+          {
+            "tone": "green",
+            "note": "Green flag: the staff said the cookie bar only shares storage with Deluxe, while Deluxe has its own prep area and has not had cross-contact issues."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: they asked guests to let them know about the allergy when they arrive so the team can handle it appropriately."
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "Phone call note: Ramen-San Deluxe said they do not have tree nuts on the menu.",
+      "Phone call note: the cookie bar shares storage but not Deluxe's prep area, and the staff said they have not had cross-contact issues there."
     ]
   },
   {

@@ -134,7 +134,8 @@ type RestaurantConversation = {
 	restaurantName: string;
 	date: string;
 	contactName: string;
-	contactEmail: string;
+	contactEmail?: string;
+	contactMethod?: 'email' | 'phone';
 	responseQuote: string;
 	summary: string;
 	researchTags: ResearchTag[];
@@ -293,6 +294,16 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 	},
 	{
 		title: 'Manual additions',
+		name: 'Tacombi',
+		latitude: 41.908,
+		longitude: -87.6741,
+		researchTags: [],
+		address: '1442 N Milwaukee Ave, Chicago, IL 60622',
+		website: 'https://tacombi.com',
+		phone: '+1 773-234-5384'
+	},
+	{
+		title: 'Manual additions',
 		name: 'Epic Burger',
 		latitude: 41.8977275,
 		longitude: -87.6265873,
@@ -423,6 +434,16 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		address: '2106 S Indiana Ave, Chicago, IL 60616',
 		website: 'https://www.pizanoschicago.com/locations/by-mccormick-place/',
 		phone: '+1 312-842-0777'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Pizzeria Due',
+		latitude: 41.8931124,
+		longitude: -87.6264465,
+		researchTags: [],
+		address: '619 N Wabash Ave, Chicago, IL 60611',
+		website: 'https://www.pizzeriaunodue.com',
+		phone: '+1 312-943-2400'
 	}
 ];
 
@@ -536,7 +557,10 @@ function buildRestaurants(): Restaurant[] {
 
 			applyArticleReferences(workingRestaurant, references);
 			applyManualResearchData(workingRestaurant, manualResearchEntries);
-			applyConversationData(workingRestaurant, conversationIndex.get(canonicalKey) ?? []);
+			applyConversationData(
+				workingRestaurant,
+				getConversationEntries(conversationIndex, workingRestaurantKey(name), canonicalKey)
+			);
 			applyGoogleMapsDetails(
 				workingRestaurant,
 				findMatchingGoogleMapsDetail(workingRestaurant.originalName, latitude, longitude, googleMapsIndex)
@@ -562,7 +586,11 @@ function buildRestaurants(): Restaurant[] {
 
 		const neighborhood = guessNeighborhood(restaurant.name, restaurant.latitude, restaurant.longitude);
 		const references = articleIndex.get(canonicalKey) ?? [];
-		const conversations = conversationIndex.get(canonicalKey) ?? [];
+		const conversations = getConversationEntries(
+			conversationIndex,
+			workingRestaurantKey(restaurant.name),
+			canonicalKey
+		);
 		const type = guessRestaurantType(restaurant.name, references);
 		const manualResearchEntries = getManualResearchEntries(
 			manualResearchIndex,
@@ -836,7 +864,7 @@ function buildConversationIndex() {
 	const conversationIndex = new Map<string, RestaurantConversation[]>();
 
 	for (const conversation of restaurantConversations as RestaurantConversation[]) {
-		const key = normalizeRestaurantName(conversation.restaurantName);
+		const key = normalizeRestaurantNameWithoutAliases(conversation.restaurantName);
 		const existing = conversationIndex.get(key) ?? [];
 		conversationIndex.set(key, [...existing, conversation]);
 	}
@@ -870,6 +898,20 @@ function getManualResearchEntries(
 	return [...(researchIndex.get(canonicalKey) ?? []), ...exactEntries];
 }
 
+function getConversationEntries(
+	conversationIndex: Map<string, RestaurantConversation[]>,
+	exactKey: string,
+	canonicalKey: string
+) {
+	const exactEntries = conversationIndex.get(exactKey) ?? [];
+
+	if (exactKey === canonicalKey) {
+		return exactEntries;
+	}
+
+	return [...(conversationIndex.get(canonicalKey) ?? []), ...exactEntries];
+}
+
 function applyConversationData(restaurant: WorkingRestaurant, conversations: RestaurantConversation[]) {
 	for (const conversation of conversations) {
 		for (const tag of conversation.researchTags) {
@@ -878,10 +920,10 @@ function applyConversationData(restaurant: WorkingRestaurant, conversations: Res
 
 		restaurant.quotes.push({
 			quote: conversation.responseQuote,
-			sourceLabel: `Email from ${conversation.contactName} (${conversation.date})`
+			sourceLabel: buildConversationSourceLabel(conversation)
 		});
 
-		restaurant.notes.push(`Direct reply summary: ${conversation.summary}`);
+		restaurant.notes.push(`${buildConversationSummaryPrefix(conversation)} ${conversation.summary}`);
 
 		if (conversation.decision) {
 			restaurant.notes.push(`Decision: ${conversation.decision}`);
@@ -1019,6 +1061,7 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 	if (
 		normalizedName.includes('lou-malnatis') ||
 		normalizedName.includes('pizzeria-uno') ||
+		normalizedName.includes('pizzeria-due') ||
 		normalizedName.includes('ginos-east') ||
 		normalizedName.includes('pizanos') ||
 		normalizedName.includes('paulie-gees')
@@ -1298,6 +1341,18 @@ function normalizeRestaurantNameWithoutAliases(name: string) {
 
 function cleanRestaurantName(name: string) {
 	return name.replace(/\s+/g, ' ').trim();
+}
+
+function buildConversationSourceLabel(conversation: RestaurantConversation) {
+	if (conversation.contactMethod === 'phone') {
+		return `Phone call with ${conversation.contactName} (${conversation.date})`;
+	}
+
+	return `Email from ${conversation.contactName} (${conversation.date})`;
+}
+
+function buildConversationSummaryPrefix(conversation: RestaurantConversation) {
+	return conversation.contactMethod === 'phone' ? 'Phone call summary:' : 'Direct reply summary:';
 }
 
 function buildLocationKey(name: string, latitude: number, longitude: number) {

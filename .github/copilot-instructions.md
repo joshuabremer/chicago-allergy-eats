@@ -20,7 +20,13 @@
 - `src/lib/data/research-dump.ts` is the inbox for raw notes, links, quotes, PDFs, and ideas that are already distilled enough to show in-app.
 - `data/raw/chicago-2026/` stores larger imported source datasets and article captures.
 - `data/raw/chicago-2026/manual-restaurant-research.json` stores manually added menus, review links, menu notes, and small synthesized research add-ons.
+- `src/lib/data/imported/manual-restaurant-research.json` is the app-facing mirror of the manual research file and must stay in sync with the raw version.
+- `data/raw/chicago-2026/restaurant-conversations.json` stores direct email replies and other outreach responses from restaurants.
+- `src/lib/data/imported/restaurant-conversations.json` is the app-facing mirror of the restaurant conversation file and must stay in sync with the raw version.
 - `data/raw/chicago-2026/restaurant-decisions.json` stores repo-backed default approved/rejected decisions and rejection notes.
+- `data/raw/chicago-2026/google-maps-details.json` stores address, phone, website, rating, and map metadata.
+- `src/lib/data/imported/google-maps-details.json` is the app-facing mirror of the Google Maps details file and must stay in sync with the raw version.
+- `data/user-reviews.json` is git-tracked shared review state for approval and decision data; do not treat it as disposable local-only runtime state.
 - When adding new source material, favor searchable structured files such as JSON, GeoJSON, or clearly organized markdown/text exports.
 
 ## Source collection
@@ -30,12 +36,45 @@
 - If the user pastes a restaurant menu, save it as a raw repo-backed source file and synthesize it into menu links, pull quotes, and menu analysis instead of leaving it only in chat.
 - As new research comes in, preserve the raw source in the repo, include source links and quotes on the restaurant detail page, add analysis, and always reference the source.
 
+## Update workflow
+
+- When adding or editing curated research, update the raw source file first and then update the matching imported mirror so the app reflects the same data.
+- Keep repo-backed raw sources and curated summaries separate: raw files preserve source material, while manual research and conversation files hold the distilled app-facing synthesis.
+- Prefer adding new evidence to the existing restaurant entry rather than creating duplicate entries for the same location.
+- If a restaurant is location-specific, attach the research to the exact location name used by the app instead of a chain-wide name.
+
+## Menu workflow
+
+- Save pasted or manually collected menus as dedicated raw source files in `data/raw/chicago-2026/`, usually one file per restaurant or per location-specific menu set.
+- Then add or update that restaurant in `data/raw/chicago-2026/manual-restaurant-research.json` and mirror the same change in `src/lib/data/imported/manual-restaurant-research.json`.
+- Add the menu as a `resource` with kind `menu`, and put menu-specific flags on that menu resource.
+- Keep `quotes` for short source-backed excerpts that are useful to show directly on the detail page.
+- Put broader interpretation in `menuFlags` and `notes`, not in `quotes`.
+- When a menu source already supports the conclusion, avoid adding a redundant quote that only restates the analysis.
+- If a menu analysis changes because the user clarifies the allergy scope, update the existing flags instead of layering on contradictory notes.
+
+## Email and outreach workflow
+
+- Save direct restaurant replies in `data/raw/chicago-2026/restaurant-conversations.json` and mirror them into `src/lib/data/imported/restaurant-conversations.json`.
+- Use the exact restaurant name that the app uses so the reply attaches to the correct restaurant or location.
+- Add `Can accommodate` when the restaurant says they can handle the allergy, `Got email response` when they replied, and `Reached out` only when outreach happened but no reply has arrived yet.
+- Store the most useful sentence or short passage from the email in `responseQuote`; this becomes a pull quote on the detail page.
+- Use `summary` for the practical takeaway, such as whether they can accommodate, whether special ordering steps are needed, or whether there is a shared-kitchen caveat.
+- Keep source-accurate operational details that matter to diners, such as telling the server, using a new cutting board, chef coordination, or shared-kitchen warnings.
+
+## Pull quote rules
+
+- Pull quotes should be short, source-backed, and worth reading on their own.
+- Do not turn internal analysis summaries into quotes.
+- Do not duplicate the same source as both a quote and a generic link if the quote already carries the source URL.
+- Prefer quotes that show concrete restaurant language over paraphrases when the original wording is useful.
+
 ## Product expectations
 
 - The homepage should be a searchable restaurant list with filters and a map, not grouped by neighborhood.
 - The homepage should default to hiding rejected restaurants by preselecting `ready-to-review`, `needs-more-info`, and `approved`.
 - The detail page should support rich review with quick read, research tags, quotes, menu links, and menu-specific red/green flag notes.
-- User approvals, statuses, comments, and personal tags are stored in the JSON-backed review backend.
+- User approvals and decision state should stay durable and shared through git-backed JSON so local and deployed use the same underlying data.
 
 ## Decision state model
 
@@ -68,6 +107,7 @@
 - If there is curated menu analysis, show it in a separate `Menu analysis` section instead of attaching it directly under the link.
 - Menu analysis should be menu-specific, not mixed with general review evidence.
 - For menu analysis notes, use simple line items with `✅` for green flags, `⚠️` for yellow flags, and `🚩` for red flags.
+- Keep menu analysis focused on the current allergy scope for this project rather than generic allergen warnings.
 
 ## Link and source handling
 

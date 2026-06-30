@@ -94,6 +94,7 @@
 			<RestaurantDetail
 				place={data.place}
 				review={getUserReview(reviewState, data.place.slug)}
+				reviewReadOnly={data.reviewReadOnly}
 				fullPage={true}
 				onSetDecision={setDecision}
 				onSetRejected={setRejected}

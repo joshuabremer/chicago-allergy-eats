@@ -96,5 +96,59 @@
     "responseQuote": "This is not an issue. There are almonds in the Horchata so do not order this. We also have peanuts and pumpkin seeds on site if that is an issue. Please let the cashier know about your allergies when you arrive so we can take extra precautions like using a new cutting board and washing hands before cooking your items.",
     "summary": "Heather Terhune said Tortazo can accommodate the allergy, asked guests to tell the cashier on arrival, and said the team can use a new cutting board and wash hands before cooking allergy orders.",
     "researchTags": ["Can accommodate", "Got email response"]
+  },
+  {
+    "restaurantName": "Pizano's Pizza & Pasta",
+    "date": "2026-06-29",
+    "contactName": "Pizano's Madison Street staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said the pesto with pine nuts is only used on the sandwiches, the pizza is cooked in its own section away from that area, and servers always let the cooks know about allergies.",
+    "summary": "Phone call with the Madison Street location, which you said to treat as applying to all Pizano's locations: pesto with pine nuts is only used on sandwiches, pizza is cooked in a separate section away from that station, and servers always notify the cooks about allergies.",
+    "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Pizzeria Uno",
+    "date": "2026-06-29",
+    "contactName": "Pizzeria Uno staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said there are no nuts on the menu, the pesto is nut free, and guests can tell the server so the manager and cooks know about the allergy.",
+    "summary": "Phone call with Uno, which you said can count for both Uno and Due: staff said there are no nuts on the menu, the pesto is nut free, the server can notify the manager and cooks, and they have recently handled severe nut allergies successfully.",
+    "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Pizzeria Due",
+    "date": "2026-06-29",
+    "contactName": "Pizzeria Uno staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said there are no nuts on the menu, the pesto is nut free, and guests can tell the server so the manager and cooks know about the allergy.",
+    "summary": "Phone call with Uno, which you said can count for both Uno and Due: staff said there are no nuts on the menu, the pesto is nut free, the server can notify the manager and cooks, and they have recently handled severe nut allergies successfully.",
+    "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Ramen-San Deluxe",
+    "date": "2026-06-29",
+    "contactName": "Ramen-San Deluxe staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said they do not have tree nuts on the menu, the cookie bar only shares storage with them, they have their own prep area, and we can let them know about the allergy when we arrive.",
+    "summary": "Phone call with Ramen-San Deluxe: staff said there are no tree nuts on the menu, the cookie bar only shares storage rather than prep space, they have not had cross-contact issues there, and guests can tell them about the allergy on arrival.",
+    "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Tacombi",
+    "date": "2026-06-29",
+    "contactName": "Tacombi staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said there are no nuts in any of the food, but there are nuts in some drinks, so the food itself is completely tree nut free.",
+    "summary": "Phone call with Tacombi: staff said the food is completely tree nut free, but some drinks contain nuts.",
+    "researchTags": ["Can accommodate"]
+  },
+  {
+    "restaurantName": "Tacombi Fulton Market",
+    "date": "2026-06-29",
+    "contactName": "Tacombi staff",
+    "contactMethod": "phone",
+    "responseQuote": "They said there are no nuts in any of the food, but there are nuts in some drinks, so the food itself is completely tree nut free.",
+    "summary": "Phone call with Tacombi: staff said the food is completely tree nut free, but some drinks contain nuts.",
+    "researchTags": ["Can accommodate"]
   }
 ]

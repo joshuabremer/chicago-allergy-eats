@@ -33,6 +33,15 @@
     "longitude": -87.6496
   },
   {
+    "name": "Tacombi",
+    "address": "1442 N Milwaukee Ave, Chicago, IL 60622",
+    "website": "https://tacombi.com",
+    "phone": "+1 773-234-5384",
+    "rating": 4.5,
+    "latitude": 41.908,
+    "longitude": -87.6741
+  },
+  {
     "name": "Lou Malnati's Pizzeria",
     "address": "410 N Michigan Ave, Chicago, IL 60611",
     "website": "https://www.loumalnatis.com",
@@ -545,5 +554,23 @@
     "rating": 4.4,
     "latitude": 41.9034707,
     "longitude": -87.6734502
+  },
+  {
+    "name": "Pizzeria Uno",
+    "address": "29 E Ohio St, Chicago, IL 60611",
+    "website": "https://www.pizzeriaunodue.com",
+    "phone": "+1 312-321-1000",
+    "rating": 4.3,
+    "latitude": 41.8923043,
+    "longitude": -87.626929
+  },
+  {
+    "name": "Pizzeria Due",
+    "address": "619 N Wabash Ave, Chicago, IL 60611",
+    "website": "https://www.pizzeriaunodue.com",
+    "phone": "+1 312-943-2400",
+    "rating": 4.3,
+    "latitude": 41.8931124,
+    "longitude": -87.6264465
   }
 ]

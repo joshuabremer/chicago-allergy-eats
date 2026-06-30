@@ -4,6 +4,7 @@
 	let {
 		place,
 		review,
+		reviewReadOnly = false,
 		fullPage = false,
 		onSetDecision,
 		onSetRejected,
@@ -13,6 +14,7 @@
 	}: {
 		place: Restaurant;
 		review: UserReview;
+		reviewReadOnly?: boolean;
 		fullPage?: boolean;
 		onSetDecision: (decision: DecisionState) => void | Promise<void>;
 		onSetRejected: (note: string) => void | Promise<void>;
@@ -30,6 +32,11 @@
 
 	function handleRejectSubmit(event: SubmitEvent) {
 		event.preventDefault();
+
+		if (reviewReadOnly) {
+			return;
+		}
+
 		const note = rejectionDraft.trim();
 
 		if (!note) {
@@ -43,6 +50,10 @@
 	const selectedDecision = $derived(showRejectForm ? 'rejected' : review.decision);
 
 	function handleDecisionChange(event: Event) {
+		if (reviewReadOnly) {
+			return;
+		}
+
 		const nextDecision = (event.currentTarget as HTMLSelectElement).value as DecisionState;
 
 		if (nextDecision === 'rejected') {
@@ -57,6 +68,10 @@
 	}
 
 	function handleCommentSave() {
+		if (reviewReadOnly) {
+			return;
+		}
+
 		const normalizedComment = commentDraft.trim();
 		lastSyncedComment = normalizedComment || undefined;
 		commentDraft = normalizedComment;
@@ -92,7 +107,7 @@
 
 		<label class="status-field">
 			<span>Status</span>
-			<select value={selectedDecision} onchange={handleDecisionChange}>
+			<select value={selectedDecision} onchange={handleDecisionChange} disabled={reviewReadOnly}>
 				<option value="ready-to-review">Ready to review</option>
 				<option value="needs-more-info">Needs more info</option>
 				<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
@@ -101,6 +116,14 @@
 			</select>
 		</label>
 	</header>
+
+	{#if reviewReadOnly}
+		<section class="decision-card read-only-card">
+			<p>
+				This deployment is read-only. Use your local git-backed copy to change statuses, comments, or hidden tags.
+			</p>
+		</section>
+	{/if}
 
 	{#if showRejectForm}
 		<section class="decision-card">
@@ -111,12 +134,14 @@
 					name="rejection-note"
 					rows="4"
 					placeholder="Add the reason so you can remember later"
+					disabled={reviewReadOnly}
 				></textarea>
 				<div class="decision-actions">
-					<button type="submit" class="reject-action">Save rejection</button>
+					<button type="submit" class="reject-action" disabled={reviewReadOnly}>Save rejection</button>
 					<button
 						type="button"
 						class="clear-button"
+						disabled={reviewReadOnly}
 						onclick={() => {
 							showRejectForm = false;
 							rejectionDraft = review.rejectionNote ?? '';
@@ -161,19 +186,27 @@
 			<div class="chip-row">
 				{#if visibleResearchTags.length > 0}
 					{#each visibleResearchTags as tag}
-						<button type="button" class="chip removable-chip" onclick={() => onHideResearchTag(tag)}>
-							<span>{tag}</span>
-							<span class="chip-dismiss" aria-hidden="true">×</span>
-						</button>
+						{#if reviewReadOnly}
+							<span class="chip">{tag}</span>
+						{:else}
+							<button type="button" class="chip removable-chip" onclick={() => onHideResearchTag(tag)}>
+								<span>{tag}</span>
+								<span class="chip-dismiss" aria-hidden="true">×</span>
+							</button>
+						{/if}
 					{/each}
 				{:else}
 					<span class="empty-chip">No research tags yet</span>
 				{/if}
 				{#each review.personalTags as tag}
-					<button type="button" class="chip personal-chip removable-chip" onclick={() => onRemovePersonalTag(tag)}>
-						<span>{tag}</span>
-						<span class="chip-dismiss" aria-hidden="true">×</span>
-					</button>
+					{#if reviewReadOnly}
+						<span class="chip personal-chip">{tag}</span>
+					{:else}
+						<button type="button" class="chip personal-chip removable-chip" onclick={() => onRemovePersonalTag(tag)}>
+							<span>{tag}</span>
+							<span class="chip-dismiss" aria-hidden="true">×</span>
+						</button>
+					{/if}
 				{/each}
 			</div>
 		</div>
@@ -241,16 +274,18 @@
 				name="comment"
 				rows="4"
 				placeholder="Add any notes or follow-up questions for this restaurant"
+				disabled={reviewReadOnly}
 				onblur={handleCommentSave}
 			></textarea>
 			<div class="comment-actions">
-				<button type="button" class="save-button" onclick={handleCommentSave} disabled={!commentIsDirty}>
+				<button type="button" class="save-button" onclick={handleCommentSave} disabled={reviewReadOnly || !commentIsDirty}>
 					{commentIsDirty ? 'Save comment' : 'Saved'}
 				</button>
 				{#if review.comment}
 					<button
 						type="button"
 						class="clear-button"
+						disabled={reviewReadOnly}
 						onclick={() => {
 							commentDraft = '';
 							onSetComment('');
@@ -367,6 +402,12 @@
 
 	.rejection-note-card {
 		gap: 0.55rem;
+	}
+
+	.read-only-card p {
+		margin: 0;
+		color: var(--text-secondary);
+		line-height: 1.5;
 	}
 
 	.rejection-note {
@@ -511,6 +552,13 @@
 		background: var(--button-secondary-bg);
 		color: var(--button-secondary-text);
 		font-weight: 700;
+	}
+
+	button:disabled,
+	select:disabled,
+	textarea:disabled {
+		cursor: not-allowed;
+		opacity: 0.65;
 	}
 
 	.link-entry {

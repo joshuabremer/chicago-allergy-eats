@@ -1,4 +1,5 @@
 import { error, json } from '@sveltejs/kit';
+import { env } from '$env/dynamic/public';
 
 import { loadStoredUserReviews, saveStoredUserReviews } from '$lib/server/user-review-store';
 import { normalizeUserReviewState } from '$lib/user-reviews';
@@ -8,6 +9,10 @@ export async function GET() {
 }
 
 export async function PUT({ request }) {
+	if (env.PUBLIC_READ_ONLY_REVIEW_STATE === 'true') {
+		throw error(403, 'Review state is read-only on this deployment.');
+	}
+
 	let payload: unknown;
 
 	try {

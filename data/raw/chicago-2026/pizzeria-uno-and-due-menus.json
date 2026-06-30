@@ -1,0 +1,112 @@
+{
+  "sourceName": "User-pasted Pizzeria Uno and Pizzeria Due menu captures plus phone notes",
+  "capturedAt": "2026-06-29",
+  "sources": [
+    {
+      "label": "Pizzeria Uno takeout menu capture",
+      "location": "Pizzeria Uno",
+      "address": "29 E Ohio St, Chicago, IL 60611",
+      "sections": [
+        {
+          "name": "Appetizers",
+          "items": [
+            "Florences Soup - vegetarian soup",
+            "Garlic Bread",
+            "Garlic Bread with Cheese",
+            "Garlic Bread Chicago Style - with cheese and giardiniera",
+            "Veggie Dip - served with hummus and a tasty dip",
+            "Buffalo Wings and Boneless Wings - served with celery sticks and a tasty dip",
+            "Cheese Sticks",
+            "Fried Calamari - with cocktail and marinara sauces",
+            "Shrimp and Crab Dip - parmesan, tomatoes, toasted garlic baguette slices",
+            "Housemade Meatballs",
+            "Spinach and Creamy Ricotta Arancini Balls",
+            "Buffalo Mac and Cheese Arancini Balls",
+            "Chicago Style Arancini Balls - Italian beef, cheese, giardiniera",
+            "Side of Fries"
+          ]
+        },
+        {
+          "name": "Deep dish pizzas",
+          "items": [
+            "Cheese Deep Dish",
+            "Pepperoni Deep Dish",
+            "Numero Uno Deep Dish - sausage, pepperoni, mushrooms, onions, green peppers",
+            "Four Cheese and Pesto Deep Dish - pesto base, fresh tomatoes",
+            "Spinach Deep Dish",
+            "Veggie Deep Dish - mushrooms, onions, green peppers",
+            "Spinoccoli Deep Dish - spinach, broccoli, garlic, chunky tomatoes",
+            "BBQ Chicken Deep Dish",
+            "The Meats Deep Dish - sausage, pepperoni, bacon",
+            "The Chicagoan Deep Dish - Italian beef and giardiniera"
+          ]
+        },
+        {
+          "name": "Pastas, salads, sandwiches, and gluten sensitive pizzas",
+          "items": [
+            "Pomodoro - served with house salad and garlic bread",
+            "Spaghetti with Meatballs - served with house salad and garlic bread",
+            "Romano-Crusted Chicken Parm",
+            "Chicken and Broccoli Alfredo",
+            "Salad Bowl, Special Salad Bowl, Caesar Salad, Spinach Salad",
+            "Italian Beef",
+            "Meatball",
+            "GS Cheese Pizza - made with gluten-free ingredients, cooked in a shared oven",
+            "GS Pepperoni Pizza - made with gluten-free ingredients, cooked in a shared oven",
+            "GS Veggie Pizza - made with gluten-free ingredients, cooked in a shared oven"
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            "Chocolate Cake",
+            "Four-Layer Carrot Cake - raisins, walnuts, pineapple",
+            "Tiramisu",
+            "Chicago Cheesecake",
+            "Reese's Peanut Butter Pie"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Pizzeria Uno official site menu capture",
+      "location": "Pizzeria Uno",
+      "sourceUrl": "https://pizzeriaunochicago.com/",
+      "sections": [
+        {
+          "name": "Notable overlaps and differences",
+          "items": [
+            "The official Uno site menu closely matches the pasted takeout menu for appetizers, salads, deep dish pizzas, sandwiches, gluten sensitive pizzas, and desserts.",
+            "The official Uno site menu pasted here lists Pomodoro and Spaghetti with Meatballs in pasta, while the takeout capture also listed Romano-Crusted Chicken Parm and Chicken and Broccoli Alfredo.",
+            "The official Uno site menu pasted here included hours: Sunday through Saturday 11 AM-11 PM."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Pizzeria Due menu capture",
+      "location": "Pizzeria Due",
+      "sections": [
+        {
+          "name": "Relationship to Uno",
+          "items": [
+            "The Due menu overlaps heavily with Uno on appetizers, salads, deep dish pizzas, sandwiches, pastas, gluten sensitive pizzas, and desserts.",
+            "The pasted Due menu adds a Thin Crust Pizzas section with Windy City Works, Super Roni, Veggie Extravaganza Thin Crust, Northside Cheese Thin Crust, and Southside Sausage Thin Crust.",
+            "The pasted Due menu shared the Four Cheese and Pesto Deep Dish item description used for Uno."
+          ]
+        }
+      ]
+    }
+  ],
+  "phoneCallNotes": [
+    "User said the phone call response can count for both Uno and Due.",
+    "Staff said there are no nuts on the menu.",
+    "Staff said there is pesto but it is nut free, and there are no nuts anywhere with the pizza.",
+    "Guests can tell the server, who will let the manager and the cooks know about the allergy.",
+    "Staff said they have recently handled severe nut allergies successfully."
+  ],
+  "notes": [
+    "Stored from user-pasted Uno takeout menu, Uno site menu, Due menu, and phone call summary so future rescans can reuse the source material without refetching.",
+    "The Uno takeout menu and Uno site menu matched closely in the pasted sections, while Due appeared very similar but added a distinct thin crust section."
+  ]
+}

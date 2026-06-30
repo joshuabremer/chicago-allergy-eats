@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/public';
 import { error } from '@sveltejs/kit';
 import { restaurants } from '$lib/data/restaurants';
 import { getRestaurantBySlug } from '$lib/restaurant-helpers';
@@ -12,6 +13,7 @@ export async function load({ params }) {
 
 	return {
 		place,
+		reviewReadOnly: env.PUBLIC_READ_ONLY_REVIEW_STATE === 'true',
 		reviewState: await loadStoredUserReviews()
 	};
 }

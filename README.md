@@ -58,3 +58,18 @@ npm run dev
 npm run check
 npm run build
 ```
+
+## Fly.io deploy
+
+This repo is ready for a simple Fly deploy using the checked-in `Dockerfile` and `fly.toml`.
+
+```sh
+flyctl auth login
+flyctl launch --copy-config --ha=false --now
+```
+
+Notes:
+
+1. `fly.toml` defaults to `PUBLIC_READ_ONLY_REVIEW_STATE=true`, so the deployed site is intentionally read-only.
+2. That keeps Fly from pretending to be the shared source of truth for approvals while review state is still meant to stay git-backed.
+3. If `jb-chicago-allergy-eats` is already taken, change the `app` name in `fly.toml` and rerun the launch/deploy command.
