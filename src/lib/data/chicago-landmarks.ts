@@ -13,6 +13,12 @@ export const chicagoLandmarks: ChicagoLandmark[] = [
 		longitude: -87.6258
 	},
 	{
+		name: 'Art Institute of Chicago',
+		address: '111 S Michigan Ave, Chicago, IL 60603',
+		latitude: 41.8796,
+		longitude: -87.6237
+	},
+	{
 		name: 'Money Museum',
 		address: '230 S LaSalle St, Chicago, IL 60604',
 		latitude: 41.8786,
@@ -77,6 +83,12 @@ export const chicagoLandmarks: ChicagoLandmark[] = [
 		address: '2001 N Clark St, Chicago, IL 60614',
 		latitude: 41.9211,
 		longitude: -87.6338
+	},
+	{
+		name: 'Wrigley Field',
+		address: '1060 W Addison St, Chicago, IL 60613',
+		latitude: 41.9484,
+		longitude: -87.6553
 	},
 	{
 		name: 'Navy Pier',
