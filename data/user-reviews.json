@@ -6,7 +6,7 @@
     "personalTags": []
   },
   "au-cheval-41-8847-w87-6476": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "comment": "They replied via email",
     "hiddenResearchTags": [],
     "personalTags": []
@@ -14,6 +14,21 @@
   "beatnik-on-the-river-41-8859-w87-6372": {
     "decision": "rejected",
     "rejectionNote": "I don't think james wants anything off the menu.",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "beatrix-41-8863-w87-6493": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "beatrix-41-8905-w87-6300": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "beatrix-41-8946-w87-6222": {
+    "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -61,6 +76,12 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
+  "cindys-rooftop-41-8818-w87-6248": {
+    "decision": "rejected",
+    "rejectionNote": "didn't feel great about it",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "daisies-41-9244-w87-6996": {
     "decision": "approved",
     "hiddenResearchTags": [],
@@ -72,8 +93,19 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
+  "doves-luncheonette-41-9094-w87-6773": {
+    "decision": "awaiting-restaurant-response",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "eataly-41-8922-w87-6263": {
     "decision": "awaiting-restaurant-response",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
+  "ema-41-8909-w87-6313": {
+    "decision": "rejected",
+    "rejectionNote": "Medditerrain is has stuff we want to avoid like sumac.",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -190,8 +222,13 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
+  "pequods-pizza-41-9219-w87-6644": {
+    "decision": "needs-more-info",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "piccolo-sogno-41-8909-w87-6478": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
   },
@@ -252,7 +289,8 @@
     "personalTags": []
   },
   "ramen-san-41-8948-w87-6230": {
-    "decision": "ready-to-review",
+    "decision": "rejected",
+    "rejectionNote": "It shares a kitchen with a cookie place",
     "comment": "Called and talked to staff.",
     "hiddenResearchTags": [
       "Nut free kitchen"
@@ -267,25 +305,35 @@
     ],
     "personalTags": []
   },
+  "rpm-italian-41-8910-w87-6300": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
+    "personalTags": []
+  },
   "seoul-taco-41-8960-w87-6316": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "hiddenResearchTags": [
       "Got email response"
     ],
     "personalTags": []
   },
   "seoul-taco-41-9077-w87-6735": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "hiddenResearchTags": [
       "Got email response"
     ],
     "personalTags": []
   },
   "seoul-taco-41-9401-w87-6555": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "hiddenResearchTags": [
       "Got email response"
     ],
+    "personalTags": []
+  },
+  "small-cheval-41-7993-w87-5946": {
+    "decision": "approved",
+    "hiddenResearchTags": [],
     "personalTags": []
   },
   "small-cheval-41-8850-w87-6384": {
@@ -333,19 +381,19 @@
     "hiddenResearchTags": [],
     "personalTags": []
   },
-  "small-cheval-41-7993-w87-5946": {
+  "summer-house-santa-monica-41-9176-w87-6488": {
     "decision": "approved",
     "hiddenResearchTags": [],
     "personalTags": []
   },
   "tacombi-41-9080-w87-6741": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "comment": "Called them and found out the details above.",
     "hiddenResearchTags": [],
     "personalTags": []
   },
   "tacombi-fulton-market-41-8836-w87-6496": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "comment": "Called them and found out the details above.",
     "hiddenResearchTags": [],
     "personalTags": []
@@ -382,7 +430,7 @@
     "personalTags": []
   },
   "tortazo-willis-tower-41-8788-w87-6363": {
-    "decision": "ready-to-review",
+    "decision": "approved",
     "hiddenResearchTags": [
       "Got email response"
     ],
