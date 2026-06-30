@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import 'leaflet/dist/leaflet.css';
 	import type * as Leaflet from 'leaflet';
@@ -13,7 +14,9 @@
 		initialZoom,
 		showHotelMarker = false,
 		markerDecisions = {},
-		centerOnSelected = false
+		centerOnSelected = false,
+		showCurrentLocation = false,
+		preferCurrentLocation = false
 	}: {
 		places: Restaurant[];
 		selectedSlug?: string | null;
@@ -23,6 +26,8 @@
 		showHotelMarker?: boolean;
 		markerDecisions?: Partial<Record<string, DecisionState>>;
 		centerOnSelected?: boolean;
+		showCurrentLocation?: boolean;
+		preferCurrentLocation?: boolean;
 	} = $props();
 
 	const PALMER_HOUSE = {
@@ -39,6 +44,8 @@
 	let tileLayer: Leaflet.TileLayer | null = null;
 	let hasAppliedInitialViewport = false;
 	let appliedTheme: 'light' | 'dark' | null = null;
+	let currentLocation = $state<[number, number] | null>(null);
+	let geolocationWatchId: number | null = null;
 
 	onMount(() => {
 		if (!mapElement) {
@@ -48,6 +55,7 @@
 		void initializeMap();
 
 		return () => {
+			stopCurrentLocationTracking();
 			map?.remove();
 			map = null;
 			markersLayer = null;
@@ -60,6 +68,7 @@
 		selectedSlug;
 		markerDecisions;
 		showHotelMarker;
+		currentLocation;
 		renderMarkers();
 	});
 
@@ -73,6 +82,8 @@
 		initialCenter;
 		initialZoom;
 		showHotelMarker;
+		currentLocation;
+		preferCurrentLocation;
 		syncViewport();
 	});
 
@@ -81,6 +92,11 @@
 		selectedSlug;
 		centerOnSelected;
 		focusSelectedPlace();
+	});
+
+	$effect(() => {
+		showCurrentLocation;
+		syncCurrentLocationTracking();
 	});
 
 	function renderMarkers() {
@@ -92,6 +108,10 @@
 
 		if (showHotelMarker) {
 			addHotelMarker();
+		}
+
+		if (currentLocation) {
+			addCurrentLocationMarker();
 		}
 
 		for (const place of places) {
@@ -109,6 +129,11 @@
 			return;
 		}
 
+		if (preferCurrentLocation && currentLocation && !selectedSlug) {
+			map.setView(currentLocation, initialZoom ?? 14, { animate: false });
+			return;
+		}
+
 		if (places.length === 1 && !showHotelMarker) {
 			map.setView([places[0].latitude, places[0].longitude], 14);
 			return;
@@ -118,6 +143,10 @@
 
 		if (showHotelMarker) {
 			bounds.extend([PALMER_HOUSE.latitude, PALMER_HOUSE.longitude]);
+		}
+
+		if (currentLocation) {
+			bounds.extend(currentLocation);
 		}
 
 		for (const place of places) {
@@ -206,6 +235,28 @@
 		hotelMarker.addTo(markersLayer);
 	}
 
+	function addCurrentLocationMarker() {
+		if (!leaflet || !markersLayer || !currentLocation) {
+			return;
+		}
+
+		const marker = leaflet.marker(currentLocation, {
+			icon: leaflet.divIcon({
+				className: 'current-location-marker-wrapper',
+				html: '<div class="current-location-marker"></div>',
+				iconSize: [18, 18],
+				iconAnchor: [9, 9]
+			})
+		});
+
+		marker.bindTooltip('Your location', {
+			direction: 'top',
+			offset: [0, -6]
+		});
+
+		marker.addTo(markersLayer);
+	}
+
 	async function initializeMap() {
 		if (!mapElement) {
 			return;
@@ -223,6 +274,7 @@
 		markersLayer = leaflet.layerGroup().addTo(map);
 		renderMarkers();
 		syncViewport();
+		syncCurrentLocationTracking();
 	}
 
 	function syncTileLayer() {
@@ -252,15 +304,125 @@
 
 		tileLayer.addTo(map);
 	}
+
+	function centerOnCurrentLocation() {
+		if (!map) {
+			return;
+		}
+
+		if (!currentLocation) {
+			requestCurrentLocation();
+			return;
+		}
+
+		map.setView(currentLocation, initialZoom ?? Math.max(map.getZoom(), 15), {
+			animate: true,
+			duration: 0.35
+		});
+	}
+
+	function syncCurrentLocationTracking() {
+		if (!browser || !navigator.geolocation || !showCurrentLocation) {
+			stopCurrentLocationTracking();
+			currentLocation = null;
+			return;
+		}
+
+		if (geolocationWatchId !== null) {
+			return;
+		}
+
+		geolocationWatchId = navigator.geolocation.watchPosition(
+			(position) => {
+				currentLocation = [position.coords.latitude, position.coords.longitude];
+			},
+			(error) => {
+				console.warn('Unable to read current location for map view.', error);
+				stopCurrentLocationTracking();
+			},
+			{
+				enableHighAccuracy: true,
+				maximumAge: 60_000,
+				timeout: 10_000
+			}
+		);
+	}
+
+	function requestCurrentLocation() {
+		if (!browser || !navigator.geolocation) {
+			return;
+		}
+
+		navigator.geolocation.getCurrentPosition(
+			(position) => {
+				currentLocation = [position.coords.latitude, position.coords.longitude];
+				centerOnCurrentLocation();
+			},
+			(error) => {
+				console.warn('Unable to center on current location.', error);
+			},
+			{
+				enableHighAccuracy: true,
+				maximumAge: 0,
+				timeout: 10_000
+			}
+		);
+	}
+
+	function stopCurrentLocationTracking() {
+		if (!browser || geolocationWatchId === null) {
+			return;
+		}
+
+		navigator.geolocation.clearWatch(geolocationWatchId);
+		geolocationWatchId = null;
+	}
 </script>
 
-<div bind:this={mapElement} class="map"></div>
+<div class="map-shell">
+	<div bind:this={mapElement} class="map"></div>
+
+	{#if showCurrentLocation}
+		<button
+			type="button"
+			class="current-location-button"
+			onclick={centerOnCurrentLocation}
+			aria-label="Center map on current location"
+			title="Center on my location"
+		>
+			My location
+		</button>
+	{/if}
+</div>
 
 <style>
+	.map-shell {
+		position: relative;
+		height: 100%;
+	}
+
 	.map {
 		height: 100%;
 		width: 100%;
 		min-height: 32rem;
+	}
+
+	.current-location-button {
+		position: absolute;
+		right: 0.9rem;
+		top: 0.9rem;
+		z-index: 700;
+		border: none;
+		border-radius: 999px;
+		padding: 0.7rem 0.95rem;
+		background: rgb(255 255 255 / 0.94);
+		color: var(--text-primary);
+		font: inherit;
+		font-size: 0.85rem;
+		font-weight: 700;
+		box-shadow: var(--panel-shadow-soft);
+		backdrop-filter: blur(12px);
+		cursor: pointer;
 	}
 
 	:global(.leaflet-control-zoom) {
@@ -311,6 +473,22 @@
 	:global(.approved-marker.selected) {
 		border-color: var(--marker-approved-selected-border);
 		box-shadow: 0 10px 24px rgb(29 78 216 / 0.28);
+	}
+
+	:global(.current-location-marker-wrapper) {
+		background: transparent;
+		border: none;
+	}
+
+	:global(.current-location-marker) {
+		width: 1rem;
+		height: 1rem;
+		border-radius: 999px;
+		background: #2563eb;
+		border: 3px solid rgb(255 255 255 / 0.95);
+		box-shadow:
+			0 0 0 6px rgb(37 99 235 / 0.2),
+			0 10px 24px rgb(37 99 235 / 0.24);
 	}
 
 	:global(.hotel-marker) {

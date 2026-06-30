@@ -27,8 +27,16 @@
 	let rejectionDraft = $state('');
 	let commentDraft = $state('');
 	let lastSyncedComment = $state<string | undefined>(undefined);
+	const decisionLabels: Record<DecisionState, string> = {
+		'ready-to-review': 'Ready to review',
+		'needs-more-info': 'Needs more info',
+		'awaiting-restaurant-response': 'Awaiting restaurant response',
+		approved: 'Approved',
+		rejected: 'Rejected'
+	};
 	const savedComment = $derived(review.comment ?? '');
 	const commentIsDirty = $derived(commentDraft.trim() !== savedComment);
+	const decisionLabel = $derived(decisionLabels[review.decision]);
 
 	function handleRejectSubmit(event: SubmitEvent) {
 		event.preventDefault();
@@ -105,16 +113,28 @@
 			{/if}
 		</div>
 
-		<label class="status-field">
+		<div class="status-field">
 			<span>Status</span>
-			<select value={selectedDecision} onchange={handleDecisionChange} disabled={reviewReadOnly}>
-				<option value="ready-to-review">Ready to review</option>
-				<option value="needs-more-info">Needs more info</option>
-				<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
-				<option value="approved">Approved</option>
-				<option value="rejected">Rejected</option>
-			</select>
-		</label>
+			{#if reviewReadOnly}
+				<p
+					class:approved-status={review.decision === 'approved'}
+					class:needs-more-info-status={review.decision === 'needs-more-info'}
+					class:awaiting-response-status={review.decision === 'awaiting-restaurant-response'}
+					class:rejected-status={review.decision === 'rejected'}
+					class="status-display"
+				>
+					{decisionLabel}
+				</p>
+			{:else}
+				<select value={selectedDecision} onchange={handleDecisionChange}>
+					<option value="ready-to-review">Ready to review</option>
+					<option value="needs-more-info">Needs more info</option>
+					<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
+					<option value="approved">Approved</option>
+					<option value="rejected">Rejected</option>
+				</select>
+			{/if}
+		</div>
 	</header>
 
 	{#if reviewReadOnly}
@@ -269,32 +289,40 @@
 	<section>
 		<h2>Comments</h2>
 		<div class="comment-form">
-			<textarea
-				bind:value={commentDraft}
-				name="comment"
-				rows="4"
-				placeholder="Add any notes or follow-up questions for this restaurant"
-				disabled={reviewReadOnly}
-				onblur={handleCommentSave}
-			></textarea>
-			<div class="comment-actions">
-				<button type="button" class="save-button" onclick={handleCommentSave} disabled={reviewReadOnly || !commentIsDirty}>
-					{commentIsDirty ? 'Save comment' : 'Saved'}
-				</button>
-				{#if review.comment}
-					<button
-						type="button"
-						class="clear-button"
-						disabled={reviewReadOnly}
-						onclick={() => {
-							commentDraft = '';
-							onSetComment('');
-						}}
-					>
-						Clear
+			{#if reviewReadOnly}
+				<div class="comment-display">
+					{#if review.comment}
+						<p>{review.comment}</p>
+					{:else}
+						<p class="empty-state">No saved comment.</p>
+					{/if}
+				</div>
+			{:else}
+				<textarea
+					bind:value={commentDraft}
+					name="comment"
+					rows="4"
+					placeholder="Add any notes or follow-up questions for this restaurant"
+					onblur={handleCommentSave}
+				></textarea>
+				<div class="comment-actions">
+					<button type="button" class="save-button" onclick={handleCommentSave} disabled={!commentIsDirty}>
+						{commentIsDirty ? 'Save comment' : 'Saved'}
 					</button>
-				{/if}
-			</div>
+					{#if review.comment}
+						<button
+							type="button"
+							class="clear-button"
+							onclick={() => {
+								commentDraft = '';
+								onSetComment('');
+							}}
+						>
+							Clear
+						</button>
+					{/if}
+				</div>
+			{/if}
 		</div>
 	</section>
 </article>
@@ -385,6 +413,35 @@
 		background: var(--input-bg);
 		color: var(--text-primary);
 		cursor: pointer;
+	}
+
+	.status-display {
+		margin: 0;
+		padding: 0.8rem 1rem;
+		border-radius: 999px;
+		background: var(--status-ready-bg);
+		color: var(--status-ready-text);
+		line-height: 1.2;
+	}
+
+	.status-display.approved-status {
+		background: var(--status-approved-bg);
+		color: var(--status-approved-text);
+	}
+
+	.status-display.needs-more-info-status {
+		background: var(--status-needs-bg);
+		color: var(--status-needs-text);
+	}
+
+	.status-display.awaiting-response-status {
+		background: var(--status-awaiting-bg);
+		color: var(--status-awaiting-text);
+	}
+
+	.status-display.rejected-status {
+		background: var(--status-rejected-bg);
+		color: var(--status-rejected-text);
 	}
 
 	.decision-card {
@@ -525,6 +582,20 @@
 	.comment-form {
 		display: grid;
 		gap: 0.8rem;
+	}
+
+	.comment-display {
+		padding: 0.9rem 1rem;
+		border-radius: 1rem;
+		border: 1px solid var(--input-border);
+		background: var(--input-bg);
+	}
+
+	.comment-display p {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		white-space: pre-wrap;
 	}
 
 	.comment-actions {
