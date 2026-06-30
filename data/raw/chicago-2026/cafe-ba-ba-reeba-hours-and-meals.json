@@ -1,0 +1,37 @@
+{
+  "sourceName": "User-pasted Cafe Ba-Ba-Reeba meals and hours",
+  "capturedAt": "2026-06-30",
+  "restaurantName": "Cafe Ba-Ba-Reeba!",
+  "location": "2024 N Halsted St, Chicago, IL 60614",
+  "mealSections": [
+    "Dining Menu",
+    "Weekend Brunch",
+    "Specials",
+    "Aperitivos",
+    "Sangria",
+    "Cocktails",
+    "Beer",
+    "Spanish Wines",
+    "Happy Hour",
+    "Dessert",
+    "Digestivos",
+    "Kids Menu"
+  ],
+  "mealTakeaway": [
+    "Brunch",
+    "Dinner"
+  ],
+  "hours": {
+    "Tuesday": "4–9 PM",
+    "Wednesday": "4–9 PM",
+    "Thursday": "4–9 PM",
+    "Friday": "11:30 AM–11 PM",
+    "Saturday": "10 AM–9:30 PM",
+    "Sunday": "10 AM–9 PM",
+    "Monday": "4–9 PM"
+  },
+  "notes": [
+    "User-pasted hours support brunch service on weekends and dinner service across the week.",
+    "The user explicitly clarified the practical meal takeaway as brunch and dinner."
+  ]
+}

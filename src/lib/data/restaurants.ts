@@ -1283,6 +1283,11 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 	const breakfastLunchMeals: MealService[] = ['Breakfast', 'Lunch'];
 	const bakeryMeals: MealService[] = ['Breakfast', 'Lunch', 'Dessert'];
 	const lunchDinnerMeals: MealService[] = ['Lunch', 'Dinner'];
+	const knownMeals = knownMealsForRestaurant(name, normalizedName);
+
+	if (knownMeals) {
+		return knownMeals;
+	}
 
 	if (
 		normalizedName.includes('bagel') ||
@@ -1310,6 +1315,12 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 	}
 
 	return maybeAddBrunch(name, normalizedName, lunchDinnerMeals);
+}
+
+function knownMealsForRestaurant(name: string, normalizedName: string) {
+	if (name === 'Cafe Ba-Ba-Reeba!' || normalizedName.includes('cafe-ba-ba-reeba')) {
+		return ['Brunch', 'Dinner'] as MealService[];
+	}
 }
 
 function maybeAddBrunch(name: string, normalizedName: string, meals: MealService[]) {

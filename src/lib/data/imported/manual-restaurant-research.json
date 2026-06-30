@@ -899,7 +899,8 @@
     "notes": [
       "User takeaway from the linked Reddit thread: Lettuce restaurants seem especially good for food-allergy handling.",
       "Source reference: the Lettuce Entertain You restaurant list includes Cafe Ba-Ba-Reeba! in Chicago.",
-      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, and data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json."
+      "Raw sources stored at data/raw/chicago-2026/reddit-chicagofood-food-allergy-thread.json, data/raw/chicago-2026/lettuce-entertain-you-chicagoland-list.json, data/raw/chicago-2026/kid-cultivation-allergy-friendly-restaurants.json, data/raw/chicago-2026/lettuce-contact-dietary-restrictions.json, and data/raw/chicago-2026/cafe-ba-ba-reeba-hours-and-meals.json.",
+      "User-pasted menu sections and hours indicate a practical meal profile of brunch and dinner."
     ]
   },
   {

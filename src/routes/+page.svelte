@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
-	import { page } from '$app/state';
 	import RestaurantMap from '$lib/components/RestaurantMap.svelte';
 	import { restaurants } from '$lib/data/restaurants';
 	import type { PageData } from './$types';
@@ -34,7 +33,7 @@
 		decisionState: 'state'
 	} as const;
 	const allTypes = Array.from(new Set(restaurants.map((restaurant) => restaurant.type)));
-	const initialFilters = loadInitialHomepageFilters(page.url);
+	const initialFilters = defaultHomepageFilters();
 
 	let viewportWidth = $state(browser ? window.innerWidth : 1024);
 	let searchText = $state(initialFilters.searchText);
@@ -77,7 +76,16 @@
 	});
 
 	$effect(() => {
-		if (!browser) {
+		if (!browser || didHydrateFilterState) {
+			return;
+		}
+
+		applyFilters(loadInitialHomepageFilters(new URL(window.location.href)));
+		didHydrateFilterState = true;
+	});
+
+	$effect(() => {
+		if (!browser || !didHydrateFilterState) {
 			return;
 		}
 
@@ -93,10 +101,11 @@
 	});
 
 	$effect(() => {
-		if (!browser) {
+		if (!browser || !didHydrateFilterState) {
 			return;
 		}
 
+		const currentUrl = new URL(window.location.href);
 		const nextSearchParams = buildFilterSearchParams({
 			searchText,
 			activeTypes,
@@ -104,39 +113,38 @@
 			activeResearchTags,
 			activeDecisionStates
 		});
-		const currentSearch = page.url.searchParams.toString();
+		const currentSearch = currentUrl.searchParams.toString();
 		const nextSearch = nextSearchParams.toString();
 
 		if (currentSearch === nextSearch) {
 			return;
 		}
 
-		const nextHref = `${page.url.pathname}${nextSearch ? `?${nextSearch}` : ''}${page.url.hash}`;
+		const nextHref = `${currentUrl.pathname}${nextSearch ? `?${nextSearch}` : ''}${currentUrl.hash}`;
 		void goto(nextHref, { replaceState: true, noScroll: true, keepFocus: true });
 	});
 
 	$effect(() => {
-		if (!browser) {
+		if (!browser || !didHydrateFilterState) {
 			return;
 		}
 
-		const filtersFromUrl = readHomepageFiltersFromUrl(page.url);
+		const syncFiltersFromUrl = () => {
+			const filtersFromUrl = readHomepageFiltersFromUrl(new URL(window.location.href));
+			const nextFilters = filtersFromUrl ?? defaultHomepageFilters();
 
-		if (!didHydrateFilterState) {
-			didHydrateFilterState = true;
-
-			if (!filtersFromUrl) {
+			if (areFiltersEqual(getCurrentFilters(), nextFilters)) {
 				return;
 			}
-		}
 
-		const nextFilters = filtersFromUrl ?? defaultHomepageFilters();
+			applyFilters(nextFilters);
+		};
 
-		if (areFiltersEqual(getCurrentFilters(), nextFilters)) {
-			return;
-		}
+		window.addEventListener('popstate', syncFiltersFromUrl);
 
-		applyFilters(nextFilters);
+		return () => {
+			window.removeEventListener('popstate', syncFiltersFromUrl);
+		};
 	});
 
 	$effect(() => {
@@ -251,10 +259,10 @@
 			return filtersFromUrl;
 		}
 
-		if (!browser) {
-			return defaultHomepageFilters();
-		}
+		return readHomepageFiltersFromStorage();
+	}
 
+	function readHomepageFiltersFromStorage() {
 		const stored = localStorage.getItem(HOMEPAGE_FILTERS_STORAGE_KEY);
 
 		if (!stored) {
@@ -349,112 +357,112 @@
 		};
 	}
 
-function buildFilterSearchParams(filters: {
-	searchText: string;
-	activeTypes: string[];
-	activeMeals: MealService[];
-	activeResearchTags: ResearchTag[];
-	activeDecisionStates: DecisionState[];
-}) {
-	const searchParams = new URLSearchParams();
-	const trimmedSearch = filters.searchText.trim();
-
-	if (trimmedSearch) {
-		searchParams.set(FILTER_QUERY_PARAM_KEYS.searchText, trimmedSearch);
-	}
-
-	for (const type of filters.activeTypes) {
-		searchParams.append(FILTER_QUERY_PARAM_KEYS.type, type);
-	}
-
-	for (const meal of filters.activeMeals) {
-		searchParams.append(FILTER_QUERY_PARAM_KEYS.meal, meal);
-	}
-
-	for (const tag of filters.activeResearchTags) {
-		searchParams.append(FILTER_QUERY_PARAM_KEYS.researchTag, tag);
-	}
-
-	for (const state of filters.activeDecisionStates) {
-		searchParams.append(FILTER_QUERY_PARAM_KEYS.decisionState, state);
-	}
-
-	return searchParams;
-}
-
-function hasFilterQueryParams(searchParams: URLSearchParams) {
-	return Object.values(FILTER_QUERY_PARAM_KEYS).some((key) => searchParams.has(key));
-}
-
-function normalizeActiveTypes(types: string[]) {
-	return Array.from(
-		new Set(
-			types.flatMap((type) => {
-				if (type === 'Cafe') {
-					return ['Sit-down'];
-				}
-
-				return [type];
-			})
-		)
-	).filter(
-		(type): type is RestaurantType =>
-			typeof type === 'string' && allTypes.includes(type as RestaurantType)
-	);
-}
-
-function getCurrentFilters() {
-	return {
-		searchText,
-		activeTypes,
-		activeMeals,
-		activeResearchTags,
-		activeDecisionStates
-	};
-}
-
-function applyFilters(filters: {
-	searchText: string;
-	activeTypes: RestaurantType[];
-	activeMeals: MealService[];
-	activeResearchTags: ResearchTag[];
-	activeDecisionStates: DecisionState[];
-}) {
-	searchText = filters.searchText;
-	activeTypes = filters.activeTypes;
-	activeMeals = filters.activeMeals;
-	activeResearchTags = filters.activeResearchTags;
-	activeDecisionStates = filters.activeDecisionStates;
-}
-
-function areFiltersEqual(
-	left: {
+	function buildFilterSearchParams(filters: {
 		searchText: string;
 		activeTypes: string[];
 		activeMeals: MealService[];
 		activeResearchTags: ResearchTag[];
 		activeDecisionStates: DecisionState[];
-	},
-	right: {
+	}) {
+		const searchParams = new URLSearchParams();
+		const trimmedSearch = filters.searchText.trim();
+
+		if (trimmedSearch) {
+			searchParams.set(FILTER_QUERY_PARAM_KEYS.searchText, trimmedSearch);
+		}
+
+		for (const type of filters.activeTypes) {
+			searchParams.append(FILTER_QUERY_PARAM_KEYS.type, type);
+		}
+
+		for (const meal of filters.activeMeals) {
+			searchParams.append(FILTER_QUERY_PARAM_KEYS.meal, meal);
+		}
+
+		for (const tag of filters.activeResearchTags) {
+			searchParams.append(FILTER_QUERY_PARAM_KEYS.researchTag, tag);
+		}
+
+		for (const state of filters.activeDecisionStates) {
+			searchParams.append(FILTER_QUERY_PARAM_KEYS.decisionState, state);
+		}
+
+		return searchParams;
+	}
+
+	function hasFilterQueryParams(searchParams: URLSearchParams) {
+		return Object.values(FILTER_QUERY_PARAM_KEYS).some((key) => searchParams.has(key));
+	}
+
+	function normalizeActiveTypes(types: string[]) {
+		return Array.from(
+			new Set(
+				types.flatMap((type) => {
+					if (type === 'Cafe') {
+						return ['Sit-down'];
+					}
+
+					return [type];
+				})
+			)
+		).filter(
+			(type): type is RestaurantType =>
+				typeof type === 'string' && allTypes.includes(type as RestaurantType)
+		);
+	}
+
+	function getCurrentFilters() {
+		return {
+			searchText,
+			activeTypes,
+			activeMeals,
+			activeResearchTags,
+			activeDecisionStates
+		};
+	}
+
+	function applyFilters(filters: {
 		searchText: string;
-		activeTypes: string[];
+		activeTypes: RestaurantType[];
 		activeMeals: MealService[];
 		activeResearchTags: ResearchTag[];
 		activeDecisionStates: DecisionState[];
+	}) {
+		searchText = filters.searchText;
+		activeTypes = filters.activeTypes;
+		activeMeals = filters.activeMeals;
+		activeResearchTags = filters.activeResearchTags;
+		activeDecisionStates = filters.activeDecisionStates;
 	}
-) {
-	return (
-		left.searchText === right.searchText &&
-		haveSameValues(left.activeTypes, right.activeTypes) &&
-		haveSameValues(left.activeMeals, right.activeMeals) &&
-		haveSameValues(left.activeResearchTags, right.activeResearchTags) &&
-		haveSameValues(left.activeDecisionStates, right.activeDecisionStates)
-	);
-}
 
-function haveSameValues<T>(left: T[], right: T[]) {
-	return left.length === right.length && left.every((value, index) => value === right[index]);
-}
+	function areFiltersEqual(
+		left: {
+			searchText: string;
+			activeTypes: string[];
+			activeMeals: MealService[];
+			activeResearchTags: ResearchTag[];
+			activeDecisionStates: DecisionState[];
+		},
+		right: {
+			searchText: string;
+			activeTypes: string[];
+			activeMeals: MealService[];
+			activeResearchTags: ResearchTag[];
+			activeDecisionStates: DecisionState[];
+		}
+	) {
+		return (
+			left.searchText === right.searchText &&
+			haveSameValues(left.activeTypes, right.activeTypes) &&
+			haveSameValues(left.activeMeals, right.activeMeals) &&
+			haveSameValues(left.activeResearchTags, right.activeResearchTags) &&
+			haveSameValues(left.activeDecisionStates, right.activeDecisionStates)
+		);
+	}
+
+	function haveSameValues<T>(left: T[], right: T[]) {
+		return left.length === right.length && left.every((value, index) => value === right[index]);
+	}
 </script>
 
 <svelte:head>
