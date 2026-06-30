@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { chicagoLandmarks } from '$lib/data/chicago-landmarks';
 	import 'leaflet/dist/leaflet.css';
 	import type * as Leaflet from 'leaflet';
 	import { themeMode } from '$lib/theme';
@@ -13,6 +14,7 @@
 		initialCenter,
 		initialZoom,
 		showHotelMarker = false,
+		showLandmarks = false,
 		markerDecisions = {},
 		centerOnSelected = false,
 		showCurrentLocation = false
@@ -23,6 +25,7 @@
 		initialCenter?: [number, number];
 		initialZoom?: number;
 		showHotelMarker?: boolean;
+		showLandmarks?: boolean;
 		markerDecisions?: Partial<Record<string, DecisionState>>;
 		centerOnSelected?: boolean;
 		showCurrentLocation?: boolean;
@@ -66,6 +69,7 @@
 		selectedSlug;
 		markerDecisions;
 		showHotelMarker;
+		showLandmarks;
 		currentLocation;
 		renderMarkers();
 	});
@@ -80,6 +84,7 @@
 		initialCenter;
 		initialZoom;
 		showHotelMarker;
+		showLandmarks;
 		syncViewport();
 	});
 
@@ -104,6 +109,10 @@
 
 		if (showHotelMarker) {
 			addHotelMarker();
+		}
+
+		if (showLandmarks) {
+			addLandmarkMarkers();
 		}
 
 		if (currentLocation) {
@@ -220,6 +229,31 @@
 		});
 
 		hotelMarker.addTo(markersLayer);
+	}
+
+	function addLandmarkMarkers() {
+		if (!leaflet || !markersLayer) {
+			return;
+		}
+
+		for (const landmark of chicagoLandmarks) {
+			const marker = leaflet.marker([landmark.latitude, landmark.longitude], {
+				icon: leaflet.divIcon({
+					className: 'landmark-marker-wrapper',
+					html: '<div class="landmark-marker"></div>',
+					iconSize: [14, 14],
+					iconAnchor: [7, 7]
+				})
+			});
+
+			marker.bindPopup(landmark.name, {
+				autoPan: true,
+				closeButton: false,
+				offset: [0, -8]
+			});
+
+			marker.addTo(markersLayer);
+		}
 	}
 
 	function addCurrentLocationMarker() {
@@ -449,6 +483,11 @@
 		border: none;
 	}
 
+	:global(.landmark-marker-wrapper) {
+		background: transparent;
+		border: none;
+	}
+
 	:global(.approved-marker-wrapper) {
 		background: transparent;
 		border: none;
@@ -500,5 +539,14 @@
 		font-size: 0.85rem;
 		font-weight: 800;
 		box-shadow: 0 10px 24px rgb(15 23 42 / 0.3);
+	}
+
+	:global(.landmark-marker) {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 999px;
+		background: rgb(51 65 85 / 0.92);
+		border: 2px solid rgb(255 255 255 / 0.95);
+		box-shadow: 0 6px 14px rgb(15 23 42 / 0.22);
 	}
 </style>

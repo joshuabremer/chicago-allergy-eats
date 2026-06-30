@@ -428,6 +428,7 @@
 				initialCenter={[41.8848, -87.6296]}
 				initialZoom={15}
 				showHotelMarker
+				showLandmarks
 				{markerDecisions}
 				centerOnSelected={isMobileLayout ? Boolean(mobileSelectedSlug) : true}
 				showCurrentLocation
