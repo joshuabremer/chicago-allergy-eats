@@ -84,7 +84,6 @@
 		initialCenter;
 		initialZoom;
 		showHotelMarker;
-		currentLocation;
 		preferCurrentLocation;
 		syncViewport();
 	});
@@ -336,6 +335,7 @@
 		geolocationWatchId = navigator.geolocation.watchPosition(
 			(position) => {
 				currentLocation = [position.coords.latitude, position.coords.longitude];
+				applyPreferredCurrentLocationViewport();
 			},
 			(error) => {
 				console.warn('Unable to read current location for map view.', error);
@@ -377,6 +377,15 @@
 
 		navigator.geolocation.clearWatch(geolocationWatchId);
 		geolocationWatchId = null;
+	}
+
+	function applyPreferredCurrentLocationViewport() {
+		if (!map || !preferCurrentLocation || !currentLocation || selectedSlug || hasCenteredOnCurrentLocation) {
+			return;
+		}
+
+		map.setView(currentLocation, initialZoom ?? 14, { animate: false });
+		hasCenteredOnCurrentLocation = true;
 	}
 </script>
 
