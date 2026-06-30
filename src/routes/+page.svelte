@@ -722,25 +722,8 @@
 							>
 								<span aria-hidden="true" class="mobile-directions-icon">
 									<svg viewBox="0 0 24 24" focusable="false">
-										<rect
-											x="5"
-											y="5"
-											width="14"
-											height="14"
-											rx="1.5"
-											transform="rotate(45 12 12)"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="1.8"
-										/>
-										<path
-											d="M9 15V11.75C9 10.78 9.78 10 10.75 10H13V8.5L16 11.5L13 14.5V13H11.25C10.56 13 10 13.56 10 14.25V15"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="1.8"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
+										<path d="M12 21S6 15.9 6 11a6 6 0 1 1 12 0c0 4.9-6 10-6 10Z" />
+										<circle cx="12" cy="11" r="2.5" fill="var(--button-secondary-bg)" />
 									</svg>
 								</span>
 							</a>
