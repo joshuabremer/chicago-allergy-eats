@@ -431,7 +431,6 @@
 				{markerDecisions}
 				centerOnSelected={isMobileLayout ? Boolean(mobileSelectedSlug) : true}
 				showCurrentLocation
-				preferCurrentLocation
 			/>
 
 			<div class="mobile-selection-sheet">

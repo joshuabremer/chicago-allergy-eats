@@ -15,8 +15,7 @@
 		showHotelMarker = false,
 		markerDecisions = {},
 		centerOnSelected = false,
-		showCurrentLocation = false,
-		preferCurrentLocation = false
+		showCurrentLocation = false
 	}: {
 		places: Restaurant[];
 		selectedSlug?: string | null;
@@ -27,7 +26,6 @@
 		markerDecisions?: Partial<Record<string, DecisionState>>;
 		centerOnSelected?: boolean;
 		showCurrentLocation?: boolean;
-		preferCurrentLocation?: boolean;
 	} = $props();
 
 	const PALMER_HOUSE = {
@@ -43,7 +41,6 @@
 	let markersLayer: Leaflet.LayerGroup | null = null;
 	let tileLayer: Leaflet.TileLayer | null = null;
 	let hasAppliedInitialViewport = false;
-	let hasCenteredOnCurrentLocation = false;
 	let appliedTheme: 'light' | 'dark' | null = null;
 	let currentLocation = $state<[number, number] | null>(null);
 	let geolocationWatchId: number | null = null;
@@ -61,7 +58,6 @@
 			map = null;
 			markersLayer = null;
 			hasAppliedInitialViewport = false;
-			hasCenteredOnCurrentLocation = false;
 		};
 	});
 
@@ -84,7 +80,6 @@
 		initialCenter;
 		initialZoom;
 		showHotelMarker;
-		preferCurrentLocation;
 		syncViewport();
 	});
 
@@ -127,12 +122,6 @@
 
 		if (places.length === 0) {
 			map.setView([41.8781, -87.6298], 11);
-			return;
-		}
-
-		if (preferCurrentLocation && currentLocation && !selectedSlug && !hasCenteredOnCurrentLocation) {
-			map.setView(currentLocation, initialZoom ?? 14, { animate: false });
-			hasCenteredOnCurrentLocation = true;
 			return;
 		}
 
@@ -313,7 +302,6 @@
 			return;
 		}
 
-		hasCenteredOnCurrentLocation = true;
 		map.setView(currentLocation, initialZoom ?? Math.max(map.getZoom(), 15), {
 			animate: true,
 			duration: 0.35
@@ -324,7 +312,6 @@
 		if (!browser || !navigator.geolocation || !showCurrentLocation) {
 			stopCurrentLocationTracking();
 			currentLocation = null;
-			hasCenteredOnCurrentLocation = false;
 			return;
 		}
 
@@ -335,7 +322,6 @@
 		geolocationWatchId = navigator.geolocation.watchPosition(
 			(position) => {
 				currentLocation = [position.coords.latitude, position.coords.longitude];
-				applyPreferredCurrentLocationViewport();
 			},
 			(error) => {
 				console.warn('Unable to read current location for map view.', error);
@@ -377,15 +363,6 @@
 
 		navigator.geolocation.clearWatch(geolocationWatchId);
 		geolocationWatchId = null;
-	}
-
-	function applyPreferredCurrentLocationViewport() {
-		if (!map || !preferCurrentLocation || !currentLocation || selectedSlug || hasCenteredOnCurrentLocation) {
-			return;
-		}
-
-		map.setView(currentLocation, initialZoom ?? 14, { animate: false });
-		hasCenteredOnCurrentLocation = true;
 	}
 </script>
 
