@@ -1248,8 +1248,8 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			width: 1.35rem;
-			height: 1.35rem;
+			width: 1.6rem;
+			height: 1.6rem;
 		}
 
 		.mobile-directions-icon svg {
