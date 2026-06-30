@@ -43,6 +43,7 @@
 	let markersLayer: Leaflet.LayerGroup | null = null;
 	let tileLayer: Leaflet.TileLayer | null = null;
 	let hasAppliedInitialViewport = false;
+	let hasCenteredOnCurrentLocation = false;
 	let appliedTheme: 'light' | 'dark' | null = null;
 	let currentLocation = $state<[number, number] | null>(null);
 	let geolocationWatchId: number | null = null;
@@ -60,6 +61,7 @@
 			map = null;
 			markersLayer = null;
 			hasAppliedInitialViewport = false;
+			hasCenteredOnCurrentLocation = false;
 		};
 	});
 
@@ -129,8 +131,9 @@
 			return;
 		}
 
-		if (preferCurrentLocation && currentLocation && !selectedSlug) {
+		if (preferCurrentLocation && currentLocation && !selectedSlug && !hasCenteredOnCurrentLocation) {
 			map.setView(currentLocation, initialZoom ?? 14, { animate: false });
+			hasCenteredOnCurrentLocation = true;
 			return;
 		}
 
@@ -143,10 +146,6 @@
 
 		if (showHotelMarker) {
 			bounds.extend([PALMER_HOUSE.latitude, PALMER_HOUSE.longitude]);
-		}
-
-		if (currentLocation) {
-			bounds.extend(currentLocation);
 		}
 
 		for (const place of places) {
@@ -315,6 +314,7 @@
 			return;
 		}
 
+		hasCenteredOnCurrentLocation = true;
 		map.setView(currentLocation, initialZoom ?? Math.max(map.getZoom(), 15), {
 			animate: true,
 			duration: 0.35
@@ -325,6 +325,7 @@
 		if (!browser || !navigator.geolocation || !showCurrentLocation) {
 			stopCurrentLocationTracking();
 			currentLocation = null;
+			hasCenteredOnCurrentLocation = false;
 			return;
 		}
 
@@ -390,7 +391,9 @@
 			aria-label="Center map on current location"
 			title="Center on my location"
 		>
-			My location
+			<svg viewBox="0 0 24 24" aria-hidden="true" class="current-location-icon">
+				<path d="M21.5 3.5 14.2 20a1 1 0 0 1-1.86-.1l-1.72-6.31-6.31-1.72a1 1 0 0 1-.1-1.86L20.5 2.5a.75.75 0 0 1 1 .99Z" />
+			</svg>
 		</button>
 	{/if}
 </div>
@@ -414,15 +417,23 @@
 		z-index: 700;
 		border: none;
 		border-radius: 999px;
-		padding: 0.7rem 0.95rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
 		background: rgb(255 255 255 / 0.94);
 		color: var(--text-primary);
 		font: inherit;
-		font-size: 0.85rem;
-		font-weight: 700;
 		box-shadow: var(--panel-shadow-soft);
 		backdrop-filter: blur(12px);
 		cursor: pointer;
+		display: grid;
+		place-items: center;
+	}
+
+	.current-location-icon {
+		width: 1rem;
+		height: 1rem;
+		fill: currentColor;
 	}
 
 	:global(.leaflet-control-zoom) {
