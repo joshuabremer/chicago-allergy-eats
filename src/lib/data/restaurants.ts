@@ -444,6 +444,28 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		address: '619 N Wabash Ave, Chicago, IL 60611',
 		website: 'https://www.pizzeriaunodue.com',
 		phone: '+1 312-943-2400'
+	},
+	{
+		title: 'Manual additions',
+		name: "Lucy's Humboldt Park",
+		latitude: 41.90056,
+		longitude: -87.69653,
+		researchTags: [],
+		address: '1043 N California Ave, Chicago, IL 60622',
+		website: 'https://lucyschicago.com/',
+		phone: '+1 312-675-8385',
+		email: 'eat@lucyschicago.com'
+	},
+	{
+		title: 'Manual additions',
+		name: "Lucy's Uptown",
+		latitude: 41.96523,
+		longitude: -87.6576,
+		researchTags: [],
+		address: '4570 N Broadway, Chicago, IL 60640',
+		website: 'https://lucyschicago.com/',
+		phone: '+1 312-675-8385',
+		email: 'eat@lucyschicago.com'
 	}
 ];
 

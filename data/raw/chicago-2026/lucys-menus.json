@@ -1,0 +1,66 @@
+{
+  "sourceName": "User-pasted Lucy's website and menu",
+  "sourceUrl": "https://lucyschicago.com/",
+  "capturedAt": "2026-06-30",
+  "locations": [
+    {
+      "name": "Lucy's Humboldt Park",
+      "address": "1043 N California Ave, Chicago, IL 60622",
+      "phone": "+1 312-675-8385",
+      "email": "eat@lucyschicago.com"
+    },
+    {
+      "name": "Lucy's Uptown",
+      "address": "4570 N Broadway, Chicago, IL 60640",
+      "phone": "+1 312-675-8385",
+      "email": "eat@lucyschicago.com"
+    }
+  ],
+  "sections": [
+    {
+      "name": "Fried chicken",
+      "items": [
+        "Signature Spicy Fried Chicken Sandwich - crispy fried chicken sandwich with coleslaw, pickles, and American cheese",
+        "Bacon Jam Spicy Fried Chicken Sandwich - crispy spicy fried chicken sandwich with bacon jam, garlic aioli, and American cheese on brioche",
+        "Buffalo Blue Spicy Fried Chicken Sandwich - crispy spicy fried chicken tossed in house buffalo sauce with lettuce, tomato, and blue cheese on brioche",
+        "Fried Chicken Pieces - 2 spicy crispy fried chicken thighs with a buttermilk biscuit, coleslaw, and a dipping sauce"
+      ]
+    },
+    {
+      "name": "Burgers",
+      "items": [
+        "Classic Burger - double patty, American cheese, red onion, Dijonnaise, and pickles on brioche",
+        "Bleu Burger - double patty, blue cheese, caramelized red onions, sauteed mushrooms, and house ketchup on brioche",
+        "BLT Burger - double patty, American cheese, triple bacon, lettuce, tomato, and garlic aioli on brioche",
+        "Juicy Lucy - double patty with melted cheese sandwiched between and Lucy's secret sauce on brioche",
+        "Impossible Burger patty substitute available"
+      ]
+    },
+    {
+      "name": "Fries and sides",
+      "items": [
+        "Hand Cut Golden Fries",
+        "Cheese Fries - cheddar cheese sauce with optional jalapenos",
+        "Porky Fries - smoked pork shoulder, bacon, BBQ, queso cotija, and pickled jalapenos",
+        "Fried Pickles - dill pickle spears fried and served with Lucy's secret sauce",
+        "House Salad - basket of salad tossed in lemon garlic vinaigrette",
+        "Mac & Cheese - elbow noodles smothered in cheese"
+      ]
+    },
+    {
+      "name": "Dipping sauces and sweets",
+      "items": [
+        "Dipping sauces: buttermilk ranch, honey mustard, house BBQ, dill pickle ranch, honey butter, and Lucy's secret sauce",
+        "Milkshake - chocolate, strawberry, or vanilla, with malt option",
+        "Soft serve ice cream",
+        "Vintage bottled soda",
+        "Can soda"
+      ]
+    }
+  ],
+  "notes": [
+    "Stored from the user's pasted location page and menu so future rescans can reuse the source without refetching the site.",
+    "The pasted menu appears to be shared across both the Humboldt Park and Uptown locations.",
+    "The menu text does not publish an allergen guide or a fryer and cross-contact protocol."
+  ]
+}

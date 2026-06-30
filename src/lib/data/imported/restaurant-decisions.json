@@ -13,5 +13,13 @@
     "slug": "rpm-seafood-41-8879-w87-6306",
     "decision": "rejected",
     "rejectionNote": "Rejected because it is really expensive."
+  },
+  {
+    "slug": "lucys-humboldt-park-41-9006-w87-6965",
+    "decision": "approved"
+  },
+  {
+    "slug": "lucys-uptown-41-9652-w87-6576",
+    "decision": "approved"
   }
 ]

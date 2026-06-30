@@ -24,7 +24,8 @@
     "data/raw/chicago-2026/aba-menus.json",
     "data/raw/chicago-2026/ema-menus.json",
     "data/raw/chicago-2026/ramen-san-menus.json",
-    "data/raw/chicago-2026/restaurant-outreach-sent.json"
+    "data/raw/chicago-2026/restaurant-outreach-sent.json",
+    "data/raw/chicago-2026/lucys-menus.json"
   ],
   "files": [
     {

@@ -1229,10 +1229,89 @@
         "kind": "allergen"
       }
     ],
-    "quotes": [
-    ],
+    "quotes": [],
     "notes": [
       "Raw sources stored at data/raw/chicago-2026/tortazo-allergen-guide.json and data/raw/chicago-2026/tortazo-menu.json."
+    ]
+  },
+  {
+    "restaurantName": "Lucy's Humboldt Park",
+    "email": "eat@lucyschicago.com",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://lucyschicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Lucy's menu is short and ingredient-forward, and the savory food items shown do not explicitly call out tree nuts."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu relies on named sauces and dips like Lucy's secret sauce, garlic aioli, honey butter, house BBQ, and dill pickle ranch without publishing ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu does not include an allergen guide or a fryer and cross-contact handling note, so fried items still need a direct question before relying on them."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Lucy’s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
+        "sourceLabel": "User-pasted Lucy's menu"
+      },
+      {
+        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY’S SECRET SAUCE",
+        "sourceLabel": "User-pasted Lucy's menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/lucys-menus.json.",
+      "The pasted menu appears to be shared across both Lucy's Chicago locations.",
+      "The source material included both location details and the full menu text from the user."
+    ]
+  },
+  {
+    "restaurantName": "Lucy's Uptown",
+    "email": "eat@lucyschicago.com",
+    "resources": [
+      {
+        "label": "Menu",
+        "href": "https://lucyschicago.com/",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "Green flag: the pasted Lucy's menu is short and ingredient-forward, and the savory food items shown do not explicitly call out tree nuts."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu relies on named sauces and dips like Lucy's secret sauce, garlic aioli, honey butter, house BBQ, and dill pickle ranch without publishing ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "Yellow flag: the menu does not include an allergen guide or a fryer and cross-contact handling note, so fried items still need a direct question before relying on them."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "Lucy’s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
+        "sourceLabel": "User-pasted Lucy's menu"
+      },
+      {
+        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY’S SECRET SAUCE",
+        "sourceLabel": "User-pasted Lucy's menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/lucys-menus.json.",
+      "The pasted menu appears to be shared across both Lucy's Chicago locations.",
+      "The source material included both location details and the full menu text from the user."
     ]
   }
 ]

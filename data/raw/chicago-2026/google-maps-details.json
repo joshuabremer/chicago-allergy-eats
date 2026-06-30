@@ -572,5 +572,23 @@
     "rating": 4.3,
     "latitude": 41.8931124,
     "longitude": -87.6264465
+  },
+  {
+    "name": "Lucy's Humboldt Park",
+    "address": "1043 N California Ave, Chicago, IL 60622",
+    "website": "https://lucyschicago.com/",
+    "phone": "+1 312-675-8385",
+    "email": "eat@lucyschicago.com",
+    "latitude": 41.90056,
+    "longitude": -87.69653
+  },
+  {
+    "name": "Lucy's Uptown",
+    "address": "4570 N Broadway, Chicago, IL 60640",
+    "website": "https://lucyschicago.com/",
+    "phone": "+1 312-675-8385",
+    "email": "eat@lucyschicago.com",
+    "latitude": 41.96523,
+    "longitude": -87.6576
   }
 ]
