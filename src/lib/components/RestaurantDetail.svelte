@@ -113,28 +113,30 @@
 			{/if}
 		</div>
 
-		<div class="status-field">
-			<span>Status</span>
-			{#if reviewReadOnly}
-				<p
-					class:approved-status={review.decision === 'approved'}
-					class:needs-more-info-status={review.decision === 'needs-more-info'}
-					class:awaiting-response-status={review.decision === 'awaiting-restaurant-response'}
-					class:rejected-status={review.decision === 'rejected'}
-					class="status-display"
-				>
-					{decisionLabel}
-				</p>
-			{:else}
-				<select value={selectedDecision} onchange={handleDecisionChange}>
-					<option value="ready-to-review">Ready to review</option>
-					<option value="needs-more-info">Needs more info</option>
-					<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
-					<option value="approved">Approved</option>
-					<option value="rejected">Rejected</option>
-				</select>
-			{/if}
-		</div>
+		{#if !reviewReadOnly || review.decision !== 'approved'}
+			<div class="status-field">
+				<span>Status</span>
+				{#if reviewReadOnly}
+					<p
+						class:approved-status={review.decision === 'approved'}
+						class:needs-more-info-status={review.decision === 'needs-more-info'}
+						class:awaiting-response-status={review.decision === 'awaiting-restaurant-response'}
+						class:rejected-status={review.decision === 'rejected'}
+						class="status-display"
+					>
+						{decisionLabel}
+					</p>
+				{:else}
+					<select value={selectedDecision} onchange={handleDecisionChange}>
+						<option value="ready-to-review">Ready to review</option>
+						<option value="needs-more-info">Needs more info</option>
+						<option value="awaiting-restaurant-response">Awaiting restaurant response</option>
+						<option value="approved">Approved</option>
+						<option value="rejected">Rejected</option>
+					</select>
+				{/if}
+			</div>
+		{/if}
 	</header>
 
 	{#if reviewReadOnly}

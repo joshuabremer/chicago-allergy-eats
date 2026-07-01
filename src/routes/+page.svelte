@@ -639,7 +639,7 @@
 								</div>
 								{#if getUserReview(reviewState, restaurant.slug).decision === 'rejected'}
 									<span class="rejected-pill">Rejected</span>
-								{:else if getUserReview(reviewState, restaurant.slug).decision === 'approved'}
+								{:else if getUserReview(reviewState, restaurant.slug).decision === 'approved' && !data.reviewReadOnly}
 									<span class="approved-pill">Approved</span>
 								{:else if getUserReview(reviewState, restaurant.slug).decision === 'needs-more-info'}
 									<span class="needs-more-info-pill">Needs more info</span>
@@ -716,7 +716,7 @@
 							</div>
 							{#if getUserReview(reviewState, selectedMobileRestaurant.slug).decision === 'rejected'}
 								<span class="rejected-pill">Rejected</span>
-							{:else if getUserReview(reviewState, selectedMobileRestaurant.slug).decision === 'approved'}
+							{:else if getUserReview(reviewState, selectedMobileRestaurant.slug).decision === 'approved' && !data.reviewReadOnly}
 								<span class="approved-pill">Approved</span>
 							{:else if getUserReview(reviewState, selectedMobileRestaurant.slug).decision === 'needs-more-info'}
 								<span class="needs-more-info-pill">Needs more info</span>
