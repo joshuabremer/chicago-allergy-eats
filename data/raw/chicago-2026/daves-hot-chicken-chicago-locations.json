@@ -1,0 +1,25 @@
+{
+  "sourceName": "User-pasted approved Dave's Hot Chicken locations",
+  "capturedAt": "2026-06-30",
+  "brand": "Dave's Hot Chicken",
+  "website": "https://www.daveshotchicken.com/",
+  "summary": "Approved Dave's Hot Chicken locations to add to the Chicago Allergy Eats map.",
+  "locations": [
+    {
+      "name": "Dave's Hot Chicken (Ontario St)",
+      "address": "169 W Ontario St, Chicago, IL 60654",
+      "phone": "+1 872-345-3066",
+      "rating": 4.0
+    },
+    {
+      "name": "Dave's Hot Chicken (Western Ave)",
+      "address": "3643 N Western Ave, Chicago, IL 60618",
+      "phone": "+1 773-754-1555",
+      "rating": 4.0
+    }
+  ],
+  "notes": [
+    "Stored from the user's pasted list of approved Dave's Hot Chicken locations so later prompts can reuse the set without refetching.",
+    "The user described Dave's as a fast food chicken sandwich place."
+  ]
+}

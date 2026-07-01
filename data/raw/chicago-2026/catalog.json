@@ -27,7 +27,11 @@
     "data/raw/chicago-2026/restaurant-outreach-sent.json",
     "data/raw/chicago-2026/lucys-menus.json",
     "data/raw/chicago-2026/pequods-pizza-source.json",
-    "data/raw/chicago-2026/cafe-ba-ba-reeba-hours-and-meals.json"
+    "data/raw/chicago-2026/cafe-ba-ba-reeba-hours-and-meals.json",
+    "data/raw/chicago-2026/chicago-brewhouse-riverwalk-menu.json",
+    "data/raw/chicago-2026/sweetwater-tavern-and-grille-michigan-plaza-menu.json",
+    "data/raw/chicago-2026/chipotle-chicago-locations.json",
+    "data/raw/chicago-2026/daves-hot-chicken-chicago-locations.json"
   ],
   "files": [
     {

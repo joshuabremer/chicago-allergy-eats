@@ -620,5 +620,166 @@
     "rating": 4.4,
     "latitude": 41.9219163,
     "longitude": -87.6643863
+  },
+  {
+    "name": "Sweetwater Tavern & Grille (Michigan Plaza - Chicago)",
+    "address": "225 N Michigan Ave, Chicago, IL 60601",
+    "website": "https://www.sweetwatertavernandgrille.com/",
+    "rating": 4.4,
+    "latitude": 41.8864391,
+    "longitude": -87.6237899
+  },
+  {
+    "name": "Chipotle Mexican Grill (Grand Ave)",
+    "address": "6 W Grand Ave, Chicago, IL 60654",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-828-0613",
+    "rating": 3.7,
+    "latitude": 41.8917466,
+    "longitude": -87.628293
+  },
+  {
+    "name": "Chipotle Mexican Grill (State St)",
+    "address": "1166 N State St, Chicago, IL 60610",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-654-8637",
+    "rating": 3.6,
+    "latitude": 41.9037103,
+    "longitude": -87.6288791
+  },
+  {
+    "name": "Chipotle Mexican Grill (Ontario St)",
+    "address": "291 E Ontario St, Chicago, IL 60611",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-587-7753",
+    "rating": 3.8,
+    "latitude": 41.8932428,
+    "longitude": -87.6205733
+  },
+  {
+    "name": "Chipotle Mexican Grill (Clinton St)",
+    "address": "1132 S Clinton St, Chicago, IL 60607",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 773-453-3021",
+    "rating": 3.9,
+    "latitude": 41.8680307,
+    "longitude": -87.6410378
+  },
+  {
+    "name": "Chipotle Mexican Grill (Jackson Blvd)",
+    "address": "10 E Jackson Blvd, Chicago, IL 60604",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-566-0308",
+    "rating": 4.0,
+    "latitude": 41.8783372,
+    "longitude": -87.6272521
+  },
+  {
+    "name": "Chipotle Mexican Grill (Wabash Ave)",
+    "address": "1142 S Wabash Ave, Chicago, IL 60605",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-635-9278",
+    "rating": 3.2,
+    "latitude": 41.8680726,
+    "longitude": -87.6260702
+  },
+  {
+    "name": "Chipotle Mexican Grill (Monroe St Lower)",
+    "address": "525 W Monroe St L1A, Chicago, IL 60661",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-379-0246",
+    "rating": 3.7,
+    "latitude": 41.8802268,
+    "longitude": -87.6403869
+  },
+  {
+    "name": "Chipotle Mexican Grill (N Michigan Ave)",
+    "address": "316 N Michigan Ave, Chicago, IL 60601",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-578-0950",
+    "rating": 4.1,
+    "latitude": 41.8872854,
+    "longitude": -87.6251188
+  },
+  {
+    "name": "Chipotle Mexican Grill (Lake St)",
+    "address": "233 W Lake St, Chicago, IL 60606",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-263-6230",
+    "rating": 3.8,
+    "latitude": 41.8856473,
+    "longitude": -87.6342576
+  },
+  {
+    "name": "Chipotle Mexican Grill (Huron St)",
+    "address": "160 E Huron St, Chicago, IL 60611",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-324-0290",
+    "rating": 3.3,
+    "latitude": 41.8951053,
+    "longitude": -87.6229664
+  },
+  {
+    "name": "Chipotle Mexican Grill (Pearson St)",
+    "address": "109 E Pearson St, Chicago, IL 60611",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-680-0911",
+    "rating": 2.9,
+    "latitude": 41.8974326,
+    "longitude": -87.6254038
+  },
+  {
+    "name": "Chipotle Mexican Grill (Madison St)",
+    "address": "8 E Madison St, Chicago, IL 60602",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-629-3662",
+    "rating": 3.8,
+    "latitude": 41.8822307,
+    "longitude": -87.6270628
+  },
+  {
+    "name": "Chipotle Mexican Grill (Wacker Dr)",
+    "address": "311 S Wacker Dr, Chicago, IL 60606",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-291-4949",
+    "rating": 3.7,
+    "latitude": 41.8774661,
+    "longitude": -87.6359049
+  },
+  {
+    "name": "Chipotle Mexican Grill (Monroe and Franklin)",
+    "address": "230 W Monroe St, Chicago, IL 60606",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-727-0054",
+    "rating": 3.8,
+    "latitude": 41.8810067,
+    "longitude": -87.6349169
+  },
+  {
+    "name": "Chipotle Mexican Grill (LaSalle St)",
+    "address": "10 S LaSalle St, Chicago, IL 60603",
+    "website": "https://www.chipotle.com/",
+    "phone": "+1 312-977-0506",
+    "rating": 3.9,
+    "latitude": 41.881587,
+    "longitude": -87.6327454
+  },
+  {
+    "name": "Dave's Hot Chicken (Ontario St)",
+    "address": "169 W Ontario St, Chicago, IL 60654",
+    "website": "https://www.daveshotchicken.com/",
+    "phone": "+1 872-345-3066",
+    "rating": 4.0,
+    "latitude": 41.8930405,
+    "longitude": -87.6338981
+  },
+  {
+    "name": "Dave's Hot Chicken (Western Ave)",
+    "address": "3643 N Western Ave, Chicago, IL 60618",
+    "website": "https://www.daveshotchicken.com/",
+    "phone": "+1 773-754-1555",
+    "rating": 4.0,
+    "latitude": 41.9479271,
+    "longitude": -87.6879975
   }
 ]

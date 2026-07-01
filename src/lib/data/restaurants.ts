@@ -503,6 +503,185 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		address: '2207 N Clybourn Ave, Chicago, IL 60614',
 		website: 'https://pequodspizza.com/',
 		phone: '+1 773-327-1512'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Sweetwater Tavern & Grille (Michigan Plaza - Chicago)',
+		latitude: 41.8864391,
+		longitude: -87.6237899,
+		researchTags: [],
+		address: '225 N Michigan Ave, Chicago, IL 60601',
+		website: 'https://www.sweetwatertavernandgrille.com/'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Grand Ave)',
+		latitude: 41.8917466,
+		longitude: -87.628293,
+		researchTags: [],
+		address: '6 W Grand Ave, Chicago, IL 60654',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-828-0613'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (State St)',
+		latitude: 41.9037103,
+		longitude: -87.6288791,
+		researchTags: [],
+		address: '1166 N State St, Chicago, IL 60610',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-654-8637'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Ontario St)',
+		latitude: 41.8932428,
+		longitude: -87.6205733,
+		researchTags: [],
+		address: '291 E Ontario St, Chicago, IL 60611',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-587-7753'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Clinton St)',
+		latitude: 41.8680307,
+		longitude: -87.6410378,
+		researchTags: [],
+		address: '1132 S Clinton St, Chicago, IL 60607',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 773-453-3021'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Jackson Blvd)',
+		latitude: 41.8783372,
+		longitude: -87.6272521,
+		researchTags: [],
+		address: '10 E Jackson Blvd, Chicago, IL 60604',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-566-0308'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Wabash Ave)',
+		latitude: 41.8680726,
+		longitude: -87.6260702,
+		researchTags: [],
+		address: '1142 S Wabash Ave, Chicago, IL 60605',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-635-9278'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Monroe St Lower)',
+		latitude: 41.8802268,
+		longitude: -87.6403869,
+		researchTags: [],
+		address: '525 W Monroe St L1A, Chicago, IL 60661',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-379-0246'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (N Michigan Ave)',
+		latitude: 41.8872854,
+		longitude: -87.6251188,
+		researchTags: [],
+		address: '316 N Michigan Ave, Chicago, IL 60601',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-578-0950'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Lake St)',
+		latitude: 41.8856473,
+		longitude: -87.6342576,
+		researchTags: [],
+		address: '233 W Lake St, Chicago, IL 60606',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-263-6230'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Huron St)',
+		latitude: 41.8951053,
+		longitude: -87.6229664,
+		researchTags: [],
+		address: '160 E Huron St, Chicago, IL 60611',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-324-0290'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Pearson St)',
+		latitude: 41.8974326,
+		longitude: -87.6254038,
+		researchTags: [],
+		address: '109 E Pearson St, Chicago, IL 60611',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-680-0911'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Madison St)',
+		latitude: 41.8822307,
+		longitude: -87.6270628,
+		researchTags: [],
+		address: '8 E Madison St, Chicago, IL 60602',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-629-3662'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Wacker Dr)',
+		latitude: 41.8774661,
+		longitude: -87.6359049,
+		researchTags: [],
+		address: '311 S Wacker Dr, Chicago, IL 60606',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-291-4949'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (Monroe and Franklin)',
+		latitude: 41.8810067,
+		longitude: -87.6349169,
+		researchTags: [],
+		address: '230 W Monroe St, Chicago, IL 60606',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-727-0054'
+	},
+	{
+		title: 'Manual additions',
+		name: 'Chipotle Mexican Grill (LaSalle St)',
+		latitude: 41.881587,
+		longitude: -87.6327454,
+		researchTags: [],
+		address: '10 S LaSalle St, Chicago, IL 60603',
+		website: 'https://www.chipotle.com/',
+		phone: '+1 312-977-0506'
+	},
+	{
+		title: 'Manual additions',
+		name: "Dave's Hot Chicken (Ontario St)",
+		latitude: 41.8930405,
+		longitude: -87.6338981,
+		researchTags: [],
+		address: '169 W Ontario St, Chicago, IL 60654',
+		website: 'https://www.daveshotchicken.com/',
+		phone: '+1 872-345-3066'
+	},
+	{
+		title: 'Manual additions',
+		name: "Dave's Hot Chicken (Western Ave)",
+		latitude: 41.9479271,
+		longitude: -87.6879975,
+		researchTags: [],
+		address: '3643 N Western Ave, Chicago, IL 60618',
+		website: 'https://www.daveshotchicken.com/',
+		phone: '+1 773-754-1555'
 	}
 ];
 
@@ -1120,7 +1299,9 @@ function guessRestaurantType(name: string, references: ArticleReference[]) {
 		normalizedName.includes('fat-shallot') ||
 		normalizedName.includes('epic-burger') ||
 		normalizedName.includes('tilly-bagel') ||
-		normalizedName.includes('lucys')
+		normalizedName.includes('lucys') ||
+		normalizedName.includes('chipotle') ||
+		normalizedName.includes('daves-hot-chicken')
 	) {
 		return 'Fast casual';
 	}
@@ -1179,6 +1360,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'Chicken sandwiches';
 	}
 
+	if (normalizedName.includes('daves-hot-chicken')) {
+		return 'Hot chicken sandwiches';
+	}
+
 	if (normalizedName.includes('jimmy-john')) {
 		return 'Sandwich shop';
 	}
@@ -1203,6 +1388,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 		return 'Mexican tacos and quesadillas';
 	}
 
+	if (normalizedName.includes('chipotle')) {
+		return 'Mexican bowls and burritos';
+	}
+
 	if (normalizedName.includes('doves-luncheonette')) {
 		return 'Tex-Mex diner';
 	}
@@ -1225,6 +1414,10 @@ function guessCuisineSummary(name: string, type: RestaurantType) {
 
 	if (normalizedName.includes('summer-house-santa-monica')) {
 		return 'California-inspired American';
+	}
+
+	if (normalizedName.includes('sweetwater')) {
+		return 'American tavern and brunch';
 	}
 
 	if (normalizedName.includes('steakhouse')) {
@@ -1320,6 +1513,10 @@ function guessMeals(name: string, type: RestaurantType): MealService[] {
 function knownMealsForRestaurant(name: string, normalizedName: string) {
 	if (name === 'Cafe Ba-Ba-Reeba!' || normalizedName.includes('cafe-ba-ba-reeba')) {
 		return ['Brunch', 'Dinner'] as MealService[];
+	}
+
+	if (normalizedName.includes('sweetwater')) {
+		return ['Brunch', 'Lunch', 'Dinner'] as MealService[];
 	}
 }
 
