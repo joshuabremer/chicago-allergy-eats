@@ -43,6 +43,7 @@
 	let map: Leaflet.Map | null = null;
 	let markersLayer: Leaflet.LayerGroup | null = null;
 	let tileLayer: Leaflet.TileLayer | null = null;
+	let labelTileLayer: Leaflet.TileLayer | null = null;
 	let hasAppliedInitialViewport = false;
 	let appliedTheme: 'light' | 'dark' | null = null;
 	let currentLocation = $state<[number, number] | null>(null);
@@ -315,17 +316,35 @@
 			map.removeLayer(tileLayer);
 		}
 
-		tileLayer =
-			$themeMode === 'dark'
-				? leaflet.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-						maxZoom: 19,
-						subdomains: 'abcd'
-					})
-				: leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-						maxZoom: 19
-					});
+		if (labelTileLayer) {
+			map.removeLayer(labelTileLayer);
+			labelTileLayer = null;
+		}
+
+		if ($themeMode === 'dark') {
+			tileLayer = leaflet.tileLayer(
+				'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+				{
+					maxZoom: 19,
+					subdomains: 'abcd'
+				}
+			);
+			labelTileLayer = leaflet.tileLayer(
+				'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png',
+				{
+					maxZoom: 19,
+					subdomains: 'abcd',
+					pane: 'overlayPane'
+				}
+			);
+		} else {
+			tileLayer = leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19
+			});
+		}
 
 		tileLayer.addTo(map);
+		labelTileLayer?.addTo(map);
 	}
 
 	function centerOnCurrentLocation() {
