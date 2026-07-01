@@ -206,6 +206,10 @@
 			return false;
 		}
 
+		if (data.reviewReadOnly && review.decision !== 'approved') {
+			return false;
+		}
+
 		if (activeDecisionStates.length > 0 && !activeDecisionStates.includes(review.decision)) {
 			return false;
 		}
@@ -299,12 +303,14 @@
 							(tag): tag is ResearchTag => typeof tag === 'string' && RESEARCH_TAGS.includes(tag as ResearchTag)
 						)
 					: [],
-				activeDecisionStates: Array.isArray(parsed.activeDecisionStates)
-					? parsed.activeDecisionStates.filter(
-							(state): state is DecisionState =>
-								typeof state === 'string' && DECISION_STATES.includes(state as DecisionState)
-						)
-					: [...DEFAULT_VISIBLE_DECISION_STATES]
+				activeDecisionStates: normalizeDecisionStates(
+					Array.isArray(parsed.activeDecisionStates)
+						? parsed.activeDecisionStates.filter(
+								(state): state is DecisionState =>
+									typeof state === 'string' && DECISION_STATES.includes(state as DecisionState)
+							)
+						: [...DEFAULT_VISIBLE_DECISION_STATES]
+				)
 			};
 		} catch {
 			return defaultHomepageFilters();
@@ -336,11 +342,13 @@
 				.filter(
 					(tag): tag is ResearchTag => RESEARCH_TAGS.includes(tag as ResearchTag)
 				),
-			activeDecisionStates: searchParams
-				.getAll(FILTER_QUERY_PARAM_KEYS.decisionState)
-				.filter(
-					(state): state is DecisionState => DECISION_STATES.includes(state as DecisionState)
-				)
+			activeDecisionStates: normalizeDecisionStates(
+				searchParams
+					.getAll(FILTER_QUERY_PARAM_KEYS.decisionState)
+					.filter(
+						(state): state is DecisionState => DECISION_STATES.includes(state as DecisionState)
+					)
+			)
 		};
 	}
 
@@ -350,7 +358,7 @@
 			activeTypes: [],
 			activeMeals: [] as MealService[],
 			activeResearchTags: [] as ResearchTag[],
-			activeDecisionStates: [...DEFAULT_VISIBLE_DECISION_STATES]
+			activeDecisionStates: normalizeDecisionStates([...DEFAULT_VISIBLE_DECISION_STATES])
 		};
 	}
 
@@ -380,8 +388,10 @@
 			searchParams.append(FILTER_QUERY_PARAM_KEYS.researchTag, tag);
 		}
 
-		for (const state of filters.activeDecisionStates) {
-			searchParams.append(FILTER_QUERY_PARAM_KEYS.decisionState, state);
+		if (!data.reviewReadOnly) {
+			for (const state of filters.activeDecisionStates) {
+				searchParams.append(FILTER_QUERY_PARAM_KEYS.decisionState, state);
+			}
 		}
 
 		return searchParams;
@@ -406,6 +416,14 @@
 			(type): type is RestaurantType =>
 				typeof type === 'string' && allTypes.includes(type as RestaurantType)
 		);
+	}
+
+	function normalizeDecisionStates(states: DecisionState[]) {
+		if (data.reviewReadOnly) {
+			return ['approved'] as DecisionState[];
+		}
+
+		return states;
 	}
 
 	function getCurrentFilters() {
@@ -530,21 +548,23 @@
 				</div>
 			</div>
 
-			<div>
-				<h3>Decision state</h3>
-				<div class="chip-row">
-					{#each DECISION_STATES as state}
-						<button
-							type="button"
-							class:active={activeDecisionStates.includes(state)}
-							class="filter-chip"
-							onclick={() => toggleDecisionState(state)}
-						>
-							{decisionStateLabels[state]}
-						</button>
-					{/each}
+			{#if !data.reviewReadOnly}
+				<div>
+					<h3>Decision state</h3>
+					<div class="chip-row">
+						{#each DECISION_STATES as state}
+							<button
+								type="button"
+								class:active={activeDecisionStates.includes(state)}
+								class="filter-chip"
+								onclick={() => toggleDecisionState(state)}
+							>
+								{decisionStateLabels[state]}
+							</button>
+						{/each}
+					</div>
 				</div>
-			</div>
+			{/if}
 
 			<div>
 				<h3>Meals</h3>
