@@ -582,21 +582,23 @@
 				</div>
 			</div>
 
-			<div>
-				<h3>Research tags</h3>
-				<div class="chip-row">
-					{#each RESEARCH_TAGS as tag}
-						<button
-							type="button"
-							class:active={activeResearchTags.includes(tag)}
-							class="filter-chip"
-							onclick={() => toggleResearchTag(tag)}
-						>
-							{tag}
-						</button>
-					{/each}
+			{#if !data.reviewReadOnly}
+				<div>
+					<h3>Research tags</h3>
+					<div class="chip-row">
+						{#each RESEARCH_TAGS as tag}
+							<button
+								type="button"
+								class:active={activeResearchTags.includes(tag)}
+								class="filter-chip"
+								onclick={() => toggleResearchTag(tag)}
+							>
+								{tag}
+							</button>
+						{/each}
+					</div>
 				</div>
-			</div>
+			{/if}
 
 		</section>
 
@@ -660,14 +662,16 @@
 								</p>
 							{/if}
 
-							<div class="chip-row compact">
-								{#each getVisibleResearchTags(restaurant) as tag}
-									<span class="info-chip">{tag}</span>
-								{/each}
-								{#each getUserReview(reviewState, restaurant.slug).personalTags as tag}
-									<span class="personal-chip">{tag}</span>
-								{/each}
-							</div>
+							{#if !data.reviewReadOnly}
+								<div class="chip-row compact">
+									{#each getVisibleResearchTags(restaurant) as tag}
+										<span class="info-chip">{tag}</span>
+									{/each}
+									{#each getUserReview(reviewState, restaurant.slug).personalTags as tag}
+										<span class="personal-chip">{tag}</span>
+									{/each}
+								</div>
+							{/if}
 						</a>
 					{/each}
 				</div>

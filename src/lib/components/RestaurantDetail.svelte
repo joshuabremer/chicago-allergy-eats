@@ -203,35 +203,29 @@
 			</ul>
 		</div>
 
-		<div>
-			<h2>Research tags</h2>
-			<div class="chip-row">
-				{#if visibleResearchTags.length > 0}
-					{#each visibleResearchTags as tag}
-						{#if reviewReadOnly}
-							<span class="chip">{tag}</span>
-						{:else}
+		{#if !reviewReadOnly}
+			<div>
+				<h2>Research tags</h2>
+				<div class="chip-row">
+					{#if visibleResearchTags.length > 0}
+						{#each visibleResearchTags as tag}
 							<button type="button" class="chip removable-chip" onclick={() => onHideResearchTag(tag)}>
 								<span>{tag}</span>
 								<span class="chip-dismiss" aria-hidden="true">×</span>
 							</button>
-						{/if}
-					{/each}
-				{:else}
-					<span class="empty-chip">No research tags yet</span>
-				{/if}
-				{#each review.personalTags as tag}
-					{#if reviewReadOnly}
-						<span class="chip personal-chip">{tag}</span>
+						{/each}
 					{:else}
+						<span class="empty-chip">No research tags yet</span>
+					{/if}
+					{#each review.personalTags as tag}
 						<button type="button" class="chip personal-chip removable-chip" onclick={() => onRemovePersonalTag(tag)}>
 							<span>{tag}</span>
 							<span class="chip-dismiss" aria-hidden="true">×</span>
 						</button>
-					{/if}
-				{/each}
+					{/each}
+				</div>
 			</div>
-		</div>
+		{/if}
 	</section>
 
 	<section>
