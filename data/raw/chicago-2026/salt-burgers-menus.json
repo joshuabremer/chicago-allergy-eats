@@ -1,0 +1,113 @@
+{
+  "sourceType": "user-pasted-menu",
+  "capturedAt": "2026-07-02T20:53:46.735Z",
+  "restaurant": "SALT Burgers + Fries",
+  "menu": {
+    "burgers": [
+      {
+        "name": "JR. CHEESEBURGER (Single Patty)",
+        "price": "$7.25",
+        "description": "single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce"
+      },
+      {
+        "name": "DOUBLE CHEESEBURGER",
+        "price": "$9.95",
+        "description": "double patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce"
+      },
+      {
+        "name": "IMPOSSIBLE",
+        "price": "$9.95",
+        "description": "IMPOSSIBLE burger, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "notes": ["Vegetarian"]
+      }
+    ],
+    "sides": [
+      {
+        "name": "FRIES",
+        "price": "$2.95"
+      },
+      {
+        "name": "SALT FRIES",
+        "price": "$4.50",
+        "description": "Cheese, Grilled Onions, SALT sauce, Hot peppers"
+      },
+      {
+        "name": "FUEGO FRIES",
+        "price": "$3.20",
+        "description": "Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "notes": ["Hot"]
+      },
+      {
+        "name": "CHEESE FRIES",
+        "price": "$3.95",
+        "description": "Fries, with cheese on the side."
+      },
+      {
+        "name": "ONION RINGS",
+        "price": "$3.50",
+        "description": "Onion rings, will leave your breath smelling like flowers"
+      },
+      {
+        "name": "FUEGO ONION RINGS",
+        "price": "$3.75",
+        "description": "Onion rings that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "notes": ["Hot"]
+      }
+    ],
+    "drinks": [
+      {
+        "name": "FOUNTAIN DRINKS",
+        "price": "$2.50"
+      },
+      {
+        "name": "BOTTLED WATER",
+        "price": "$1.75"
+      },
+      {
+        "name": "BOTTLED DRINK",
+        "price": "$3.25"
+      },
+      {
+        "name": "BILLS LEMONADE",
+        "price": "$3.75"
+      },
+      {
+        "name": "TOPO CHICO",
+        "price": "$2.75"
+      }
+    ]
+  },
+  "locations": [
+    {
+      "name": "Wicker Park",
+      "address": "1920 W. North Ave, Chicago, IL 60622",
+      "phone": "312.786.5929"
+    },
+    {
+      "name": "Belmont",
+      "address": "851 W. Belmont, Chicago, IL 60657",
+      "phone": "773.672.2780"
+    },
+    {
+      "name": "Navy Pier",
+      "address": "600 E. Grand, Chicago, IL 60611"
+    },
+    {
+      "name": "Loyola",
+      "address": "6558 N. Sheridan, Chicago, IL 60626",
+      "phone": "872.999.8521"
+    },
+    {
+      "name": "Oakbrook Terrace",
+      "address": "17W635 Roosevelt, Oakbrook Terrace, IL"
+    },
+    {
+      "name": "Loop",
+      "address": "60 E. Jackson, Chicago, IL 60604"
+    }
+  ],
+  "hours": {
+    "monThu": "11AM-9PM",
+    "friSun": "11AM-10PM"
+  }
+}

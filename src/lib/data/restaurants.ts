@@ -682,6 +682,57 @@ const SUPPLEMENTAL_RESTAURANTS: SupplementalRestaurant[] = [
 		address: '3643 N Western Ave, Chicago, IL 60618',
 		website: 'https://www.daveshotchicken.com/',
 		phone: '+1 773-754-1555'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Wicker Park)',
+		latitude: 41.9105,
+		longitude: -87.6764,
+		researchTags: [],
+		address: '1920 W. North Ave, Chicago, IL 60622',
+		phone: '+1 312-786-5929'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Belmont)',
+		latitude: 41.9397,
+		longitude: -87.651,
+		researchTags: [],
+		address: '851 W. Belmont Ave, Chicago, IL 60657',
+		phone: '+1 773-672-2780'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Navy Pier)',
+		latitude: 41.8917,
+		longitude: -87.6077,
+		researchTags: [],
+		address: '600 E. Grand Ave, Chicago, IL 60611'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Loyola)',
+		latitude: 42.0007,
+		longitude: -87.6558,
+		researchTags: [],
+		address: '6558 N. Sheridan Rd, Chicago, IL 60626',
+		phone: '+1 872-999-8521'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Oakbrook Terrace)',
+		latitude: 41.8594,
+		longitude: -87.9665,
+		researchTags: [],
+		address: '17W635 Roosevelt Rd, Oakbrook Terrace, IL'
+	},
+	{
+		title: 'Manual additions',
+		name: 'SALT Burgers + Fries (Loop)',
+		latitude: 41.878,
+		longitude: -87.6256,
+		researchTags: [],
+		address: '60 E. Jackson Blvd, Chicago, IL 60604'
 	}
 ];
 
@@ -1285,6 +1336,7 @@ function guessRestaurantType(name: string, references: ArticleReference[]) {
 
 	if (
 		normalizedName.includes('chick-fil-a') ||
+		normalizedName.includes('chipotle') ||
 		normalizedName.includes('jimmy-john') ||
 		normalizedName.includes('portillos')
 	) {
@@ -1300,7 +1352,6 @@ function guessRestaurantType(name: string, references: ArticleReference[]) {
 		normalizedName.includes('epic-burger') ||
 		normalizedName.includes('tilly-bagel') ||
 		normalizedName.includes('lucys') ||
-		normalizedName.includes('chipotle') ||
 		normalizedName.includes('daves-hot-chicken')
 	) {
 		return 'Fast casual';

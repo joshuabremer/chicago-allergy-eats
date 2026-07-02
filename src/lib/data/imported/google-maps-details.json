@@ -177,7 +177,7 @@
     "longitude": -87.63153
   },
   {
-    "name": "Portillo's Chicago – Canal and Taylor",
+    "name": "Portillo's Chicago \u2013 Canal and Taylor",
     "address": "520 W Taylor St, Chicago, IL 60607",
     "website": "https://www.portillos.com",
     "phone": "+1 312-667-4560",
@@ -195,7 +195,7 @@
     "longitude": -87.71207
   },
   {
-    "name": "Dēliz Italian Steakhouse",
+    "name": "D\u0113liz Italian Steakhouse",
     "address": "1840 W North Ave, Chicago, IL 60622",
     "website": "https://www.delizitalian.com",
     "phone": "+1 773-477-0000",
@@ -391,7 +391,7 @@
     "website": "https://www.ramensan.com/menus/",
     "rating": 4.8,
     "latitude": 41.8948,
-    "longitude": -87.6230
+    "longitude": -87.623
   },
   {
     "name": "Ramen-San Lincoln Park",
@@ -781,5 +781,44 @@
     "rating": 4.0,
     "latitude": 41.9479271,
     "longitude": -87.6879975
+  },
+  {
+    "name": "SALT Burgers + Fries (Wicker Park)",
+    "address": "1920 W. North Ave, Chicago, IL 60622",
+    "latitude": 41.9105,
+    "longitude": -87.6764,
+    "phone": "+1 312-786-5929"
+  },
+  {
+    "name": "SALT Burgers + Fries (Belmont)",
+    "address": "851 W. Belmont Ave, Chicago, IL 60657",
+    "latitude": 41.9397,
+    "longitude": -87.651,
+    "phone": "+1 773-672-2780"
+  },
+  {
+    "name": "SALT Burgers + Fries (Navy Pier)",
+    "address": "600 E. Grand Ave, Chicago, IL 60611",
+    "latitude": 41.8917,
+    "longitude": -87.6077
+  },
+  {
+    "name": "SALT Burgers + Fries (Loyola)",
+    "address": "6558 N. Sheridan Rd, Chicago, IL 60626",
+    "latitude": 42.0007,
+    "longitude": -87.6558,
+    "phone": "+1 872-999-8521"
+  },
+  {
+    "name": "SALT Burgers + Fries (Oakbrook Terrace)",
+    "address": "17W635 Roosevelt Rd, Oakbrook Terrace, IL",
+    "latitude": 41.8594,
+    "longitude": -87.9665
+  },
+  {
+    "name": "SALT Burgers + Fries (Loop)",
+    "address": "60 E. Jackson Blvd, Chicago, IL 60604",
+    "latitude": 41.878,
+    "longitude": -87.6256
   }
 ]

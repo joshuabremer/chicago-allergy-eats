@@ -1,7 +1,9 @@
 [
   {
     "restaurantName": "Piccolo Sogno",
-    "researchTags": ["Spokin verified"],
+    "researchTags": [
+      "Spokin verified"
+    ],
     "resources": [
       {
         "label": "Menus",
@@ -46,7 +48,11 @@
   },
   {
     "restaurantName": "Epic Burger",
-    "researchTags": ["Spokin verified", "Has allergy guide", "Reached out"],
+    "researchTags": [
+      "Spokin verified",
+      "Has allergy guide",
+      "Reached out"
+    ],
     "resources": [
       {
         "label": "Menu",
@@ -59,12 +65,18 @@
         "kind": "allergen"
       }
     ],
-    "notes": ["User-provided note: Epic Burger is Spokin verified."]
+    "notes": [
+      "User-provided note: Epic Burger is Spokin verified."
+    ]
   },
   {
     "restaurantName": "BIBIBOP Asian Grill",
-    "researchTags": ["Has allergy guide"],
-    "notes": ["User-provided note: BIBIBOP has a full allergy guide."]
+    "researchTags": [
+      "Has allergy guide"
+    ],
+    "notes": [
+      "User-provided note: BIBIBOP has a full allergy guide."
+    ]
   },
   {
     "restaurantName": "Seoul Taco",
@@ -102,7 +114,9 @@
   },
   {
     "restaurantName": "Tacombi",
-    "researchTags": ["Can accommodate"],
+    "researchTags": [
+      "Can accommodate"
+    ],
     "resources": [
       {
         "label": "Menu",
@@ -149,7 +163,9 @@
   },
   {
     "restaurantName": "Tacombi Fulton Market",
-    "researchTags": ["Can accommodate"],
+    "researchTags": [
+      "Can accommodate"
+    ],
     "resources": [
       {
         "label": "Menu",
@@ -251,7 +267,9 @@
   },
   {
     "restaurantName": "Eataly",
-    "researchTags": ["Reached out"],
+    "researchTags": [
+      "Reached out"
+    ],
     "email": "guestrelationschi@eataly.com",
     "resources": [
       {
@@ -268,7 +286,10 @@
   },
   {
     "restaurantName": "Au Cheval",
-    "researchTags": ["Has allergy labels", "Reached out"],
+    "researchTags": [
+      "Has allergy labels",
+      "Reached out"
+    ],
     "resources": [
       {
         "label": "Menu",
@@ -284,11 +305,13 @@
     ],
     "quotes": [
       {
-        "quote": "The pasted menu legend marks nut-containing dishes with ‡. In the items shared here, none of the listed dishes were marked with the nut symbol.",
+        "quote": "The pasted menu legend marks nut-containing dishes with \u2021. In the items shared here, none of the listed dishes were marked with the nut symbol.",
         "sourceLabel": "Pasted menu notes"
       }
     ],
-    "notes": ["User-provided menu paste suggested no listed dishes were marked with the menu's nut symbol."]
+    "notes": [
+      "User-provided menu paste suggested no listed dishes were marked with the menu's nut symbol."
+    ]
   },
   {
     "restaurantName": "Small Cheval",
@@ -306,7 +329,9 @@
         "href": "https://www.instagram.com/p/DO1dWENDlEm/"
       }
     ],
-    "notes": ["User-provided review: signature burgers and fries looked safe, but desserts and shakes may include Nutella or peanuts."]
+    "notes": [
+      "User-provided review: signature burgers and fries looked safe, but desserts and shakes may include Nutella or peanuts."
+    ]
   },
   {
     "restaurantName": "Big Star",
@@ -335,7 +360,9 @@
         "href": "https://www.bigstarchicago.com/location/wicker-park/#wicker-park-food"
       }
     ],
-    "notes": ["Raw source stored at data/raw/chicago-2026/big-star-wicker-park-menu.json."]
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/big-star-wicker-park-menu.json."
+    ]
   },
   {
     "restaurantName": "Big Star Wrigleyville",
@@ -367,7 +394,9 @@
         ]
       }
     ],
-    "notes": ["Raw source stored at data/raw/chicago-2026/doves-luncheonette-menu.json."]
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/doves-luncheonette-menu.json."
+    ]
   },
   {
     "restaurantName": "Parlor Pizza Bar Wicker Park",
@@ -388,7 +417,9 @@
         ]
       }
     ],
-    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."
+    ]
   },
   {
     "restaurantName": "Parlor Pizza Bar River North",
@@ -405,7 +436,9 @@
         ]
       }
     ],
-    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."
+    ]
   },
   {
     "restaurantName": "Parlor Pizza Bar West Loop",
@@ -422,15 +455,21 @@
         ]
       }
     ],
-    "notes": ["Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."]
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/parlor-pizza-menu.json."
+    ]
   },
   {
     "restaurantName": "Del Sur Bakery",
-    "notes": ["User-provided Google listing note: temporarily closed."]
+    "notes": [
+      "User-provided Google listing note: temporarily closed."
+    ]
   },
   {
     "restaurantName": "Pizano's Pizza & Pasta",
-    "researchTags": ["Has allergy guide"],
+    "researchTags": [
+      "Has allergy guide"
+    ],
     "resources": [
       {
         "label": "Menu",
@@ -567,7 +606,9 @@
   },
   {
     "restaurantName": "Lou Malnati's Pizzeria",
-    "researchTags": ["Has allergy guide"],
+    "researchTags": [
+      "Has allergy guide"
+    ],
     "resources": [
       {
         "label": "Allergen information",
@@ -597,7 +638,7 @@
         "href": "https://www.loumalnatis.com/allergen-information/"
       },
       {
-        "quote": "Here’s their official allergen-information page. (If you’re averse to clicking, the gist is that there aren’t any peanuts or tree nuts in the kitchen.)",
+        "quote": "Here\u2019s their official allergen-information page. (If you\u2019re averse to clicking, the gist is that there aren\u2019t any peanuts or tree nuts in the kitchen.)",
         "sourceLabel": "Nut Free New York Chicago trip review",
         "href": "https://nutfreenewyork.com/2017/08/29/chicago/"
       }
@@ -1198,7 +1239,9 @@
   },
   {
     "restaurantName": "Tortazo - Willis Tower",
-    "researchTags": ["Has allergy guide"],
+    "researchTags": [
+      "Has allergy guide"
+    ],
     "resources": [
       {
         "label": "Allergen guide",
@@ -1261,11 +1304,11 @@
     ],
     "quotes": [
       {
-        "quote": "Lucy’s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
+        "quote": "Lucy\u2019s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
         "sourceLabel": "User-pasted Lucy's menu"
       },
       {
-        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY’S SECRET SAUCE",
+        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY\u2019S SECRET SAUCE",
         "sourceLabel": "User-pasted Lucy's menu"
       }
     ],
@@ -1301,11 +1344,11 @@
     ],
     "quotes": [
       {
-        "quote": "Lucy’s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
+        "quote": "Lucy\u2019s famous crispy fried chicken sandwich. Served with coleslaw, pickles and American cheese.",
         "sourceLabel": "User-pasted Lucy's menu"
       },
       {
-        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY’S SECRET SAUCE",
+        "quote": "WE TRULY BELIEVE EVERYTHING IS BETTER DIPPED: CHOOSE FROM BUTTERMILK RANCH, Honey Mustard, house bbq, DILL PICKLE RANCH, hONEY BUTTER, OR LUCY\u2019S SECRET SAUCE",
         "sourceLabel": "User-pasted Lucy's menu"
       }
     ],
@@ -1338,6 +1381,240 @@
     "notes": [
       "Raw source stored at data/raw/chicago-2026/pequods-pizza-source.json.",
       "The pasted source included the restaurant overview, address, phone number, and links, but not the actual itemized menu text yet."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Wicker Park)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Belmont)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Navy Pier)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Loyola)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Oakbrook Terrace)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
+    ]
+  },
+  {
+    "restaurantName": "SALT Burgers + Fries (Loop)",
+    "resources": [
+      {
+        "label": "Menu (user-pasted source)",
+        "href": "https://github.com/joshuabremer/chicago-allergy-eats/blob/main/data/raw/chicago-2026/salt-burgers-menus.json",
+        "kind": "menu",
+        "menuFlags": [
+          {
+            "tone": "green",
+            "note": "\u2705 Core burger builds are short and ingredient-forward, with no explicit tree nuts listed in the pasted menu items."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Signature sauces and toppings (like SALT sauce and house-style add-ons) are listed by name without ingredient breakdowns."
+          },
+          {
+            "tone": "yellow",
+            "note": "\u26a0\ufe0f Fryer and cross-contact handling details are not listed in the pasted menu and should be confirmed at ordering time."
+          }
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "quote": "JR. CHEESEBURGER (Single Patty) \u2014 single patty, american cheese, lettuce, grilled onions, tomato, pickles, SALT sauce",
+        "sourceLabel": "User-pasted SALT menu"
+      },
+      {
+        "quote": "FUEGO FRIES \u2014 Fries that will leave your tongue buzzin. Dusted with our ghost pepper blend.",
+        "sourceLabel": "User-pasted SALT menu"
+      }
+    ],
+    "notes": [
+      "Raw source stored at data/raw/chicago-2026/salt-burgers-menus.json.",
+      "Menu and locations were captured from user-pasted source text.",
+      "Hours from source: Mon-Thu 11AM-9PM, Fri-Sun 11AM-10PM."
     ]
   }
 ]
